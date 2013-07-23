@@ -1,5 +1,6 @@
 {
     "name": "insales",
+    "homepage" : "https://github.com/pomeo/node-insales",
     "version": "0.0.1",
     "description": "Insales.ru module for node.js",
     "keywords": ["insales", "insales.ru", "api"],
@@ -14,5 +15,8 @@
     "directories": {
         "lib": "./lib"
     },
-    "main": "./lib/index"
+    "main": "./lib/index",
+    "dependencies" : {
+        "xml2js" : "0.2.x"
+    }
 }
