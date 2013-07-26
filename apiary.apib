@@ -918,3 +918,91 @@ PUT /admin/products/variants_group_update.xml
   </object>
 </objects>
 
+--
+Свойства товара
+--
+
+Получение списка свойств
+GET /admin/option_names.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-names type="array">
+    <option-name>
+        <id type="integer">1093</id>
+        <title>Модификация</title>
+        <position type="integer">1</position>
+    </option-name>
+    <option-name>
+        <id type="integer">1575</id>
+        <title>Размер</title>
+        <position type="integer">2</position>
+    </option-name>
+    <option-name>
+        <id type="integer">1576</id>
+        <title>Цвет</title>
+        <position type="integer">3</position>
+    </option-name>
+    <option-name>
+        <id type="integer">1786</id>
+        <title>Чашечка</title>
+        <position type="integer">4</position>
+    </option-name>
+    <option-name>
+        <id type="integer">4331</id>
+        <title>Ден</title>
+        <position type="integer">5</position>
+    </option-name>
+    <option-name>
+        <id type="integer">10091</id>
+        <title>Рост</title>
+        <position type="integer">6</position>
+    </option-name>
+</option-names>
+
+Получение информации о свойстве
+GET /admin/option_names/1575.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-name>
+    <id type="integer">1575</id>
+    <title>Размер</title>
+    <position type="integer">2</position>
+</option-name>
+
+Добавление свойства
+POST /admin/option_names.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-name>
+    <title>Размер</title>
+</option-name>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-name>
+    <id type="integer">1575</id>
+    <title>Размер</title>
+    <position type="integer">2</position>
+</option-name>
+
+Изменение свойства
+PUT /admin/option_names/1575.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-name>
+    <position type="integer">7</position>
+</option-name>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-name>
+    <id type="integer">1575</id>
+    <title>Размер</title>
+    <position type="integer">7</position>
+</option-name>
+
+Удаление свойства
+DELETE /admin/option_names/1575.xml
+< 200
