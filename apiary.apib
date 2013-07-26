@@ -1,36 +1,104 @@
-HOST: http://www.google.com/
+HOST: http://insales.ru/
 
---- insales.ru ---
-
----
-Welcome to the our sample API documentation. All comments can be written in (support [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax)
----
+--- insales.ru test API ---
 
 --
-Shopping Cart Resources
-The following is a section of resources related to the shopping cart
+Категории на складе
 --
-
-List products added into your shopping-cart. (comment block again in Markdown)
-GET /shopping-cart
+Получение списка категорий
+GET /admin/categories.xml
 < 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<categories type="array">
+    <category>
+        <id type="integer">28429</id>
+        <parent-id type="integer" nil="true"/>
+        <title>Склад</title>
+        <position type="integer">1</position>
+        <created-at type="timestamp">2009-10-22 19:41:19 +0400</created-at>
+        <updated-at type="timestamp">2009-11-05 15:00:11 +0300</updated-at>
+    </category>
+    <category>
+        <id type="integer">32142</id>
+        <parent-id type="integer">28429</parent-id>
+        <title>Мужская одежда</title>
+        <position type="integer">2</position>
+        <created-at type="timestamp">2009-11-19 14:06:31 +0300</created-at>
+        <updated-at type="timestamp">2009-11-19 14:06:36 +0300</updated-at>
+    </category>
+    <category>
+        <id type="integer">28479</id>
+        <parent-id type="integer">28429</parent-id>
+        <title>Женская одежда</title>
+        <position type="integer">1</position>
+        <created-at type="timestamp">2009-10-23 19:47:24 +0400</created-at>
+        <updated-at type="timestamp">2009-10-23 19:47:24 +0400</updated-at>
+    </category>
+    <category>
+        <id type="integer">28480</id>
+        <parent-id type="integer">28429</parent-id>
+        <title>Платья</title>
+        <position type="integer">1</position>
+        <created-at type="timestamp">2009-10-23 19:47:24 +0400</created-at>
+        <updated-at type="timestamp">2009-10-23 19:47:24 +0400</updated-at>
+   </category>
+</categories>
 
-Save new products in your shopping cart
-POST /shopping-cart
-> Content-Type: application/json
-{ "product":"1AB23ORM", "quantity": 2 }
-< 201
-< Content-Type: application/json
-{ "status": "created", "url": "/shopping-cart/2" }
-
--- Payment Resources --
-
-This resource allows you to submit payment information to process your *shopping cart* items
-POST /payment
-{ "cc": "12345678900", "cvc": "123", "expiry": "0112" }
+Получение информации о категории
+GET /admin/categories/32142.xml
 < 200
-{ "receipt": "/payment/receipt/1" }
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<category>
+    <id type="integer">32142</id>
+    <parent-id type="integer">28429</parent-id>
+    <title>Мужская одежда</title>
+    <position type="integer">2</position>
+    <created-at type="timestamp">2009-11-19 14:06:31 +0300</created-at>
+    <updated-at type="timestamp">2009-11-19 14:06:36 +0300</updated-at>
+</category>
+
+Добавление новой категории
+POST /admin/categories.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<category>
+    <parent-id type="integer">28429</parent-id>
+    <title>Мужская одежда</title>
+</category>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<category>
+    <id type="integer">32142</id>
+    <parent-id type="integer">28429</parent-id>
+    <title>Мужская одежда</title>
+    <position type="integer">2</position>
+    <created-at type="timestamp">2009-11-19 14:06:31 +0300</created-at>
+    <updated-at type="timestamp">2009-11-19 14:06:36 +0300</updated-at>
+</category>
+
+Редактирование категории
+PUT /admin/categories/32142.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<category>
+    <id type="integer">32142</id>
+    <title>Одежда</title>
+</category>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<category>
+    <id type="integer">32142</id>
+    <parent-id type="integer">28429</parent-id>
+    <title>Одежда</title>
+    <position type="integer">2</position>
+    <created-at type="timestamp">2009-11-19 14:06:31 +0300</created-at>
+    <updated-at type="timestamp">2009-11-19 14:06:36 +0300</updated-at>
+</category>
+
+Удаление категории
+DELETE /admin/categories/32142.xml
+< 200
