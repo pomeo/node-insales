@@ -526,3 +526,163 @@ PUT /admin/products/41658.xml
 Удаление товара
 DELETE /admin/products/41658.xml
 < 200
+
+--
+Изображения товара
+--
+
+Получение всех изображений
+GET /admin/products/2336153/images.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<images type="array">
+    <image>
+        <id type="integer">1489191</id>
+        <product-id type="integer">2336153</product-id>
+        <position type="integer">1</position>
+        <original-url>http://static.insales.ru/images/products/1/6439/1489191/yhst-71326348041790_2147_5697670.jpg</original-url>
+        <title nil="true"/>
+        <created-at type="timestamp">2011-04-04 15:48:33 +0400</created-at>
+    </image>
+    <image>
+        <id type="integer">1489187</id>
+        <product-id type="integer">2336153</product-id>
+        <position type="integer">2</position>
+        <original-url>http://static.insales.ru/images/products/1/6435/1489187/yhst-71326348041790_2147_5571401.jpg</original-url>
+        <title nil="true"/>
+        <created-at type="timestamp">2011-04-04 15:48:27 +0400</created-at>
+    </image>
+</images>
+
+Получение изображения
+GET /admin/products/2336153/images/1489191.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+    <id type="integer">1489191</id>
+    <product-id type="integer">2336153</product-id>
+    <position type="integer">1</position>
+    <original-url>http://static.insales.ru/images/products/1/6439/1489191/yhst-71326348041790_2147_5697670.jpg</original-url>
+    <title nil="true"/>
+    <created-at type="timestamp">2011-04-04 15:48:33 +0400</created-at>
+</image>
+
+--
+Добавление изображения
+--
+
+Добавлении изображения выложенного в интернет
+POST /admin/products/2336153/images.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+    <title>ImageTile</title>
+    <filename>myimage.jpg</filename>
+    <src>http://some-hosting.ru/some_image.jpg</src>
+</image>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+    <id type="integer">1489191</id>
+    <product-id type="integer">2336153</product-id>
+    <position type="integer">1</position>
+    <original-url>http://static.insales.ru/images/products/1/6439/1489191/some_image.jpg</original-url>
+    <title>ImageTile</title>
+    <created-at type="timestamp">2011-04-04 15:48:33 +0400</created-at>
+</image>
+
+Передача изображения в теле запроса
+POST /admin/products/2336153/images.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+    <title>ImageTile</title>
+    <filename>myimage.jpg</filename>
+    <attachment>
+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
+    </attachment>
+</image>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+    <id type="integer">1489191</id>
+    <product-id type="integer">2336153</product-id>
+    <position type="integer">1</position>
+    <original-url>http://static.insales.ru/images/products/1/6439/1489191/myimage.jpg</original-url>
+    <title>ImageTile</title>
+    <created-at type="timestamp">2011-04-04 15:48:33 +0400</created-at>
+</image>
+
+Изменение изображения
+PUT /admin/products/2336153/images/1489191.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<image>
+    <position type="integer">5</position>
+    <title>Other ImageTile</title>
+</image>
+< 200
+
+Удаление изображения
+DELETE /admin/products/2336153/images/1489191.xml
+< 200
+
+--
+
+--
