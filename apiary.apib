@@ -5,6 +5,7 @@ HOST: http://insales.ru/
 --
 Категории на складе
 --
+
 Получение списка категорий
 GET /admin/categories.xml
 < 200
@@ -101,4 +102,427 @@ PUT /admin/categories/32142.xml
 
 Удаление категории
 DELETE /admin/categories/32142.xml
+< 200
+
+--
+Товары
+--
+
+Получение списка товаров
+GET /admin/products.xml?category_id=478
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<products type="array">
+    <product>
+        <category-id type="integer">478</category-id>
+        <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+        <id type="integer">41658</id>
+        <is-hidden type="boolean">false</is-hidden>
+        <updated-at type="timestamp">2010-07-14 13:40:01 +0400</updated-at>
+        <title>Van Gogh Ruled Peach Notebook</title>
+        <description>&lt;p&gt;&lt;span style=&quot;font-family: 'Times New Roman'; font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;/p&gt;</description>
+        <short-description>Алая записная книжка "Ван Гог" в линейку</short-description>
+        <permalink>Van-Gogh-Ruled-Rose-Notebook</permalink>
+        <html-title nil="true"/>
+        <meta-keywords nil="true"/>
+        <meta-description nil="true"/>
+        <characteristics type="array">
+            <characteristic>
+                <id type="integer">328</id>
+                <position type="integer">1</position>
+                <property-id type="integer">106</property-id>
+                <title>в линейку</title>
+                <permalink>rulled</permalink>
+            </characteristic>
+        </characteristics>
+        <properties type="array">
+            <property>
+                <id type="integer">106</id>
+                <position type="integer">1</position>
+                <title>Бумага</title>
+                <permalink>bumaga</permalink>
+            </property>
+        </properties>
+        <option-names type="array"/>
+        <images type="array">
+            <image>
+                <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+                <id type="integer">24690</id>
+                <position type="integer">1</position>
+                <url>http://static.insales.ru/images/products/24690/thumb/vangogh-red.jpg</url>
+                <title nil="true"/>
+            </image>
+        </images>
+        <variants type="array">
+            <variant>
+                <cost-price type="decimal">487.0</cost-price>
+                <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+                <id type="integer">48136</id>
+                <old-price type="decimal" nil="true"/>
+                <price type="decimal">740.0</price>
+                <product-id type="integer">41658</product-id>
+                <quantity type="integer" nil="true"/>
+                <sku>QP021MVEN-r</sku>
+                <updated-at type="timestamp">2010-07-16 13:20:04 +0400</updated-at>
+                <title nil="true"/>
+                <option-values type="array"/>
+            </variant>
+        </variants>
+    </product>
+    <product>
+        <category-id type="integer">478</category-id>
+        <created-at type="timestamp">2009-04-10 00:00:05 +0400</created-at>
+        <id type="integer">15757</id>
+        <is-hidden type="boolean">false</is-hidden>
+        <updated-at type="timestamp">2009-12-08 14:58:34 +0300</updated-at>
+        <title>Van Gogh Sketchbook Peach</title>
+        <description nil="true" />
+        <short-description>Персиковая записная книжка "Ван Гог" для рисунков</short-description>
+        <permalink>Van-Gogh-Sketchbook-Peach</permalink>
+        <html-title nil="true"/>
+        <meta-keywords nil="true"/>
+        <meta-description nil="true"/>
+        <characteristics type="array">
+            <characteristic>
+                <id type="integer">328</id>
+                <position type="integer">1</position>
+                <property-id type="integer">106</property-id>
+                <title>в линейку</title>
+                <permalink>rulled</permalink>
+            </characteristic>
+        </characteristics>
+        <properties type="array">
+            <property>
+                <id type="integer">106</id>
+                <position type="integer">1</position>
+                <title>Бумага</title>
+                <permalink>bumaga</permalink>
+            </property>
+        </properties>
+        <option-names type="array"/>
+        <images type="array">
+            <image>
+                <created-at type="timestamp">2009-04-10 00:00:05 +0400</created-at>
+                <id type="integer">13886</id>
+                <position type="integer">1</position>
+                <url>http://static.insales.ru/images/products/13886/thumb/vangogh-orange.jpg</url>
+                <title nil="true"/>
+            </image>
+        </images>
+        <variants type="array">
+            <variant>
+                <cost-price type="decimal">487.0</cost-price>
+                <created-at type="timestamp">2009-04-10 00:00:05 +0400</created-at>
+                <id type="integer">16638</id>
+                <old-price type="decimal" nil="true"/>
+                <price type="decimal">740.0</price>
+                <product-id type="integer">15757</product-id>
+                <quantity type="integer">0</quantity>
+                <sku>QP023MVEN-o</sku>
+                <updated-at type="timestamp">2010-07-16 13:20:05 +0400</updated-at>
+                <title nil="true"/>
+                <option-values type="array"/>
+            </variant>
+        </variants>
+    </product>
+</products>
+
+Получение информации о товаре
+GET /admin/products/41658.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <category-id type="integer">478</category-id>
+    <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+    <id type="integer">41658</id>
+    <is-hidden type="boolean">false</is-hidden>
+    <updated-at type="timestamp">2010-07-14 13:40:01 +0400</updated-at>
+    <title>Van Gogh Ruled Peach Notebook</title>
+    <description>&lt;p&gt;&lt;span style=&quot;font-family: 'Times New Roman'; font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;/p&gt;</description>
+    <short-description>Алая записная книжка "Ван Гог" в линейку</short-description>
+    <permalink>Van-Gogh-Ruled-Rose-Notebook</permalink>
+    <html-title nil="true"/>
+    <meta-keywords nil="true"/>
+    <meta-description nil="true"/>
+    <characteristics type="array">
+        <characteristic>
+            <id type="integer">328</id>
+            <position type="integer">1</position>
+            <property-id type="integer">106</property-id>
+            <title>в линейку</title>
+            <permalink>rulled</permalink>
+        </characteristic>
+    </characteristics>
+    <properties type="array">
+        <property>
+            <id type="integer">106</id>
+            <position type="integer">1</position>
+            <title>Бумага</title>
+            <permalink>bumaga</permalink>
+        </property>
+    </properties>
+    <option-names type="array"/>
+    <images type="array">
+        <image>
+            <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+            <id type="integer">24690</id>
+            <position type="integer">1</position>
+            <url>http://static.insales.ru/images/products/24690/thumb/vangogh-red.jpg</url>
+            <title nil="true"/>
+        </image>
+    </images>
+    <variants type="array">
+        <variant>
+            <cost-price type="decimal">487.0</cost-price>
+            <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+            <id type="integer">48136</id>
+            <old-price type="decimal" nil="true"/>
+            <price type="decimal">740.0</price>
+            <product-id type="integer">41658</product-id>
+            <quantity type="integer" nil="true"/>
+            <sku>QP021MVEN-r</sku>
+            <updated-at type="timestamp">2010-07-16 13:20:04 +0400</updated-at>
+            <title nil="true"/>
+            <option-values type="array"/>
+        </variant>
+    </variants>
+</product>
+
+--
+Добавление товара
+--
+
+Добавление товара с параметрами
+POST /admin/products.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <category-id type="integer">478</category-id>
+    <title>Van Gogh Ruled Peach Notebook</title>
+    <description>&lt;p&gt;&lt;span style=&quot;font-family: 'Times New Roman'; font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;/p&gt;</description>
+    <short-description>Алая записная книжка "Ван Гог" в линейку</short-description>
+    <properties-attributes type="array">
+        <properties-attribute>
+            <title>Бумага</title>
+            <value>в линейку</value>
+        </properties-attribute>
+    </properties-attributes>
+    <variants-attributes type="array">
+        <variant>
+            <sku>QP021MVEN-r</sku>
+            <quantity type="integer" nil="true"/>
+            <price type="decimal">740.0</price>
+            <cost-price type="decimal">487.0</cost-price>
+            <old-price type="decimal" nil="true"/>
+        </variant>
+    </variants-attributes>
+</product>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <category-id type="integer">478</category-id>
+    <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+    <id type="integer">41658</id>
+    <is-hidden type="boolean">false</is-hidden>
+    <updated-at type="timestamp">2010-07-14 13:40:01 +0400</updated-at>
+    <title>Van Gogh Ruled Peach Notebook</title>
+    <description>&lt;p&gt;&lt;span style=&quot;font-family: 'Times New Roman'; font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;/p&gt;</description>
+    <short-description>Алая записная книжка "Ван Гог" в линейку</short-description>
+    <permalink>Van-Gogh-Ruled-Rose-Notebook</permalink>
+    <html-title nil="true"/>
+    <meta-keywords nil="true"/>
+    <meta-description nil="true"/>
+    <characteristics type="array">
+        <characteristic>
+            <id type="integer">328</id>
+            <position type="integer">1</position>
+            <property-id type="integer">106</property-id>
+            <title>в линейку</title>
+            <permalink>rulled</permalink>
+        </characteristic>
+    </characteristics>
+    <properties type="array">
+        <property>
+            <id type="integer">106</id>
+            <position type="integer">1</position>
+            <title>Бумага</title>
+            <permalink>bumaga</permalink>
+        </property>
+    </properties>
+    <option-names type="array"/>
+    <images type="array" />
+    <variants type="array">
+        <variant>
+            <cost-price type="decimal">487.0</cost-price>
+            <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+            <id type="integer">48136</id>
+            <old-price type="decimal" nil="true"/>
+            <price type="decimal">740.0</price>
+            <product-id type="integer">41658</product-id>
+            <quantity type="integer" nil="true"/>
+            <sku>QP021MVEN-r</sku>
+            <updated-at type="timestamp">2010-07-16 13:20:04 +0400</updated-at>
+            <title nil="true"/>
+            <option-values type="array"/>
+        </variant>
+    </variants>
+</product>
+
+Добавление товара со свойствами
+POST /admin/products.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <category-id type="integer">478</category-id>
+    <is-hidden type="boolean">false</is-hidden>
+    <title>Модная майка</title>
+    <options type="array">
+        <option>
+            <title>Размер</title>
+            <value>XL</value>
+        </option>
+        <option>
+            <title>Цвет</title>
+            <value>белый</value>
+        </option>
+    </options>
+    <variants-attributes type="array">
+        <variant>
+            <cost-price type="decimal">487.0</cost-price>
+            <old-price type="decimal">1000</old-price>
+            <price type="decimal">740.0</price>
+            <quantity type="integer">10</quantity>
+        </variant>
+    </variants-attributes>
+</product>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <id type="integer">41658</id>
+    <category-id type="integer">478</category-id>
+    <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+    <is-hidden type="boolean">false</is-hidden>
+    <updated-at type="timestamp">2010-07-14 13:40:01 +0400</updated-at>
+    <title>Майка</title>
+    <description nil="true">
+    <short-description nil="true">
+    <permalink>Majka</permalink>
+    <html-title nil="true"/>
+    <meta-keywords nil="true"/>
+    <meta-description nil="true"/>
+    <characteristics type="array"/>
+    <properties type="array"/>
+    <option-names type="array">
+        <option-name>
+            <id type="integer">1171</id>
+            <position type="integer">1</position>
+            <title>Размер</title>
+        </option-name>
+        <option-name>
+            <id type="integer">1172</id>
+            <position type="integer">2</position>
+            <title>Цвет</title>
+        </option-name>
+    </option-names>
+    <images type="array" />
+    <variants type="array">
+        <variant>
+            <id type="integer">48136</id>
+            <product-id type="integer">41658</product-id>
+            <cost-price type="decimal">487.0</cost-price>
+            <old-price type="decimal">1000</old-price>
+            <price type="decimal">740.0</price>
+            <quantity type="integer">10</quantity>
+            <sku nil="true" />
+            <title>XL/белый</title>
+            <created-at type="timestamp">2009-06-04 14:22:34 +0400</created-at>
+            <updated-at type="timestamp">2010-07-16 13:20:04 +0400</updated-at>
+            <option-values type="array">
+                <option-value>
+                    <id type="integer">5649</id>
+                    <option-name-id type="integer">1171</option-name-id>
+                    <position type="integer">1</position>
+                    <value>XL</value>
+                </option-value>
+                <option-value>
+                    <id type="integer">5650</id>
+                    <option-name-id type="integer">1172</option-name-id>
+                    <position type="integer">1</position>
+                    <value>белый</value>
+                </option-value>
+            </option-values>
+        </variant>
+    </variants>
+</product>
+
+Добавление товара с несколькими модификациями
+PUT /admin/products/478.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <id type="integer">478</category-id>
+    <variants-attributes type="array">
+        <variant>
+            <cost-price type="decimal">487.0</cost-price>
+            <old-price type="decimal">1000</old-price>
+            <price type="decimal">740.0</price>
+            <quantity type="integer">10</quantity>
+            <options>
+                <option> 
+                    <option-name-id type="integer">202088</option-name-id> 
+                    <value>value 1</value> 
+                </option> 
+            </options>
+        </variant>
+        <variant>
+            <cost-price type="decimal">600.0</cost-price>
+            <old-price type="decimal">1100</old-price>
+            <price type="decimal">800.0</price>
+            <quantity type="integer">2</quantity>
+            <options>
+                <option> 
+                    <option-name-id type="integer">202088</option-name-id> 
+                    <value>value 2</value> 
+                </option> 
+            </options>
+        </variant>
+    </variants-attributes>
+</product>
+< 200
+
+--
+Редактирование товара
+--
+
+Изменение наименования товара
+PUT /admin/products/41658.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <id type="integer">41658</id>
+    <title>Van Gogh Ruled Peach Notebook</title>
+</product>
+< 200
+
+Изменение параметров товара
+PUT /admin/products/41658.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+    <id type="integer">41658</id>
+    <properties-attributes type="array">
+        <properties-attribute>
+            <title>Бумага</title>
+            <value>в линейку</value>
+        </properties-attribute>
+    </properties-attributes>
+</product>
+< 200
+
+Удаление товара
+DELETE /admin/products/41658.xml
 < 200
