@@ -1006,3 +1006,126 @@ PUT /admin/option_names/1575.xml
 Удаление свойства
 DELETE /admin/option_names/1575.xml
 < 200
+
+--
+Значения свойств
+--
+
+--
+Получение списка значений свойств
+--
+
+Вывод значений для всех свойств
+GET /admin/option_values.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-values type="array">
+    <option-value>
+        <id type="integer">7942</id>
+        <option-name-id type="integer">1576</option-name-id>
+        <position type="integer">1</position>
+        <title>Бежевый</title>
+    </option-value>
+    <option-value>
+        <id type="integer">7941</id>
+        <option-name-id type="integer">1576</option-name-id>
+        <position type="integer">2</position>
+        <title>Белый</title>
+    </option-value>
+    <option-value>
+        <id type="integer">8093</id>
+        <option-name-id type="integer">1576</option-name-id>
+        <position type="integer">3</position>
+        <title>Чёрный</title>
+    </option-value>
+    <option-value>
+        <id type="integer">24987</id>
+        <option-name-id type="integer">1575</option-name-id>
+        <position type="integer">2</position>
+        <title>40</title>
+    </option-value>
+    <option-value>
+        <id type="integer">7452</id>
+        <option-name-id type="integer">1575</option-name-id>
+        <position type="integer">3</position>
+        <title>42</title>
+    </option-value>
+</option-values>
+
+Вывод значения для определённого свойства
+GET /admin/option_names/1576/option_values.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-values type="array">
+    <option-value>
+        <id type="integer">7942</id>
+        <option-name-id type="integer">1576</option-name-id>
+        <position type="integer">1</position>
+        <title>Бежевый</title>
+    </option-value>
+    <option-value>
+        <id type="integer">7941</id>
+        <option-name-id type="integer">1576</option-name-id>
+        <position type="integer">2</position>
+        <title>Белый</title>
+    </option-value>
+    <option-value>
+        <id type="integer">8093</id>
+        <option-name-id type="integer">1576</option-name-id>
+        <position type="integer">3</position>
+        <title>Чёрный</title>
+    </option-value>
+</option-values>
+
+Получение информации о значении свойства
+GET /admin/option_names/1576/option_values/7942.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-value>
+    <id type="integer">7942</id>
+    <option-name-id type="integer">1576</option-name-id>
+    <position type="integer">1</position>
+    <title>Бежевый</title>
+</option-value>
+
+Добавление значения свойства
+POST /admin/option_names/1576/option_values.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-value>
+    <title>Бежевый</title>
+</option-value>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-value>
+    <id type="integer">7942</id>
+    <option-name-id type="integer">1576</option-name-id>
+    <position type="integer">1</position>
+    <title>Бежевый</title>
+</option-value>
+
+Изменение значения свойства
+PUT /admin/option_names/1576/option_values/7942.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-value>
+    <position type="integer">7</position>
+</option-value>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<option-value>
+    <id type="integer">7942</id>
+    <option-name-id type="integer">1576</option-name-id>
+    <position type="integer">7</position>
+    <title>Бежевый</title>
+</option-value>
+
+Удаление значения свойства
+DELETE /admin/option_names/1576/option_values/7942.xml
+< 200
+
