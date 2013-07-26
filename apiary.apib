@@ -684,5 +684,237 @@ DELETE /admin/products/2336153/images/1489191.xml
 < 200
 
 --
-
+Модификации товара
 --
+
+Получение всех модификаций товара
+GET /admin/products/1157664/variants.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<variants type="array">
+    <variant>
+        <id type="integer">1157664</id>
+        <product-id type="integer">182183</product-id>
+        <cost-price type="decimal" nil="true"/>
+        <old-price type="decimal" nil="true"/>
+        <price type="decimal">440.0</price>
+        <quantity type="integer" nil="true"/>
+        <sku nil="true"/>
+        <created-at type="timestamp">2010-07-03 20:04:28 +0400</created-at>
+        <updated-at type="timestamp">2010-07-03 20:04:28 +0400</updated-at>
+        <option-values type="array">
+            <option-value>
+                <id type="integer">8093</id>
+                <option-name-id type="integer">1576</option-name-id>
+                <position type="integer">3</position>
+                <title>Черный</title>
+            </option-value>
+            <option-value>
+                <id type="integer">8092</id>
+                <option-name-id type="integer">1575</option-name-id>
+                <position type="integer">24</position>
+                <title>96</title>
+            </option-value>
+        </option-values>
+    </variant>
+    <variant>
+        <id type="integer">1157665</id>
+        <product-id type="integer">182183</product-id>
+        <cost-price type="decimal" nil="true"/>
+        <old-price type="decimal" nil="true"/>
+        <price type="decimal">440.0</price>
+        <quantity type="integer" nil="true"/>
+        <sku nil="true"/>
+        <created-at type="timestamp">2010-07-03 20:04:39 +0400</created-at>
+        <updated-at type="timestamp">2010-07-03 20:04:39 +0400</updated-at>
+        <option-values type="array">
+            <option-value>
+                <id type="integer">7941</id>
+                <option-name-id type="integer">1576</option-name-id>
+                <position type="integer">2</position>
+                <title>Белый</title>
+            </option-value>
+            <option-value>
+                <id type="integer">8094</id>
+                <option-name-id type="integer">1575</option-name-id>
+                <position type="integer">25</position>
+                <title>100</title>
+            </option-value>
+        </option-values>
+    </variant>
+    <variant>
+        <id type="integer">1157666</id>
+        <product-id type="integer">182183</product-id>
+        <cost-price type="decimal" nil="true"/>
+        <old-price type="decimal" nil="true"/>
+        <price type="decimal">440.0</price>
+        <quantity type="integer" nil="true"/>
+        <sku nil="true"/>
+        <created-at type="timestamp">2010-07-03 20:04:39 +0400</created-at>
+        <updated-at type="timestamp">2010-07-03 20:04:39 +0400</updated-at>
+        <option-values type="array">
+            <option-value>
+                <id type="integer">8093</id>
+                <option-name-id type="integer">1576</option-name-id>
+                <position type="integer">3</position>
+                <title>Черный</title>
+            </option-value>
+            <option-value>
+                <id type="integer">8094</id>
+                <option-name-id type="integer">1575</option-name-id>
+                <position type="integer">25</position>
+                <title>100</title>
+            </option-value>
+        </option-values>
+    </variant>
+</variants>
+
+Получение модификации
+GET /admin/products/182183/variants/1157664.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<variant>
+    <id type="integer">1157664</id>
+    <product-id type="integer">182183</product-id>
+    <cost-price type="decimal" nil="true"/>
+    <old-price type="decimal" nil="true"/>
+    <price type="decimal">440.0</price>
+    <quantity type="integer" nil="true"/>
+    <sku nil="true"/>
+    <created-at type="timestamp">2010-07-03 20:04:28 +0400</created-at>
+    <updated-at type="timestamp">2010-07-03 20:04:28 +0400</updated-at>
+    <option-values type="array">
+        <option-value>
+            <id type="integer">8093</id>
+            <option-name-id type="integer">1576</option-name-id>
+            <position type="integer">3</position>
+            <title>Черный</title>
+        </option-value>
+        <option-value>
+            <id type="integer">8092</id>
+            <option-name-id type="integer">1575</option-name-id>
+            <position type="integer">24</position>
+            <title>96</title>
+        </option-value>
+    </option-values>
+</variant>
+
+Добавление модификации
+POST /admin/products/182183/variants.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<variant>
+    <price type="decimal">440.0</price>
+    <options type="array">
+        <option>
+            <option-name-id type="integer">1576</option-name-id>
+            <value>Черный</value>
+        </option>
+        <option>
+            <option-name-id type="integer">1575</option-name-id>
+            <value>96</value>
+        </option>
+    </options>
+</variant>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<variant>
+    <id type="integer">1157664</id>
+    <product-id type="integer">182183</product-id>
+    <cost-price type="decimal" nil="true"/>
+    <old-price type="decimal" nil="true"/>
+    <price type="decimal">440.0</price>
+    <quantity type="integer" nil="true"/>
+    <sku nil="true"/>
+    <created-at type="timestamp">2010-07-03 20:04:28 +0400</created-at>
+    <updated-at type="timestamp">2010-07-03 20:04:28 +0400</updated-at>
+    <option-values type="array">
+        <option-value>
+            <id type="integer">8093</id>
+            <option-name-id type="integer">1576</option-name-id>
+            <position type="integer">3</position>
+            <title>Черный</title>
+        </option-value>
+        <option-value>
+            <id type="integer">8092</id>
+            <option-name-id type="integer">1575</option-name-id>
+            <position type="integer">24</position>
+            <title>96</title>
+        </option-value>
+    </option-values>
+</variant>
+
+Изменение модификации
+PUT /admin/products/182183/variants/1157664.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<variant>
+    <id type="integer">1157664</id>
+    <price type="decimal">440.0</price>
+</variant>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<variant>
+    <id type="integer">1157664</id>
+    <product-id type="integer">182183</product-id>
+    <cost-price type="decimal" nil="true"/>
+    <old-price type="decimal" nil="true"/>
+    <price type="decimal">440.0</price>
+    <quantity type="integer" nil="true"/>
+    <sku nil="true"/>
+    <created-at type="timestamp">2010-07-03 20:04:28 +0400</created-at>
+    <updated-at type="timestamp">2010-07-03 20:04:28 +0400</updated-at>
+    <option-values type="array">
+        <option-value>
+            <id type="integer">8093</id>
+            <option-name-id type="integer">1576</option-name-id>
+            <position type="integer">3</position>
+            <title>Черный</title>
+        </option-value>
+        <option-value>
+            <id type="integer">8092</id>
+            <option-name-id type="integer">1575</option-name-id>
+            <position type="integer">24</position>
+            <title>96</title>
+        </option-value>
+    </option-values>
+</variant>
+
+Удаление модификации
+DELETE /admin/products/182183/variants/1157664.xml
+< 200
+
+Групповое обновление модификаций
+PUT /admin/products/variants_group_update.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<variants type="array">
+  <variant>
+    <id type="integer">1</id>
+    <price type="decimal">110.0</price>
+    <quantity type="integer">2</quantity>
+  </variant>
+  <variant>
+    <id type="integer">2</id>
+    <price type="decimal">200.0</price>
+    <quantity type="integer">3</quantity>
+  </variant> 
+</variants>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<objects type="array">
+  <object>
+    <id type="integer">1</id>
+    <status>ok</status>
+  </object>
+  <object>
+    <id type="integer">2</id>
+    <status>ok</status>
+  </object>
+</objects>
+
