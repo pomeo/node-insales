@@ -1487,3 +1487,174 @@ PUT /admin/collections/7830.xml
 DELETE /admin/collections/7830.xml
 < 200
 
+--
+Размещение товаров на сайте
+--
+
+Добавление товара в категорию
+POST /admin/collects.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collect>
+    <collection-id type="integer">12148</collection-id>
+    <product-id type="integer">89973</product-id>
+</collect>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collect>
+    <id type="integer">47514</id>
+    <product-id type="integer">89973</product-id>
+    <collection-id type="integer">12148</collection-id>
+    <position type="integer">3</position>
+    <created-at type="timestamp">2009-08-24 21:43:20 +0400</created-at>
+</collect>
+
+Удаление товара из категории
+DELETE /admin/collects/89973.xml
+< 200
+
+Получение списка размещений
+GET /admin/collects.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collects type="array">
+    <collect>
+        <collection-id type="integer">108528</collection-id>
+        <created-at type="timestamp">2010-06-07 02:22:12 +0400</created-at>
+        <id type="integer">742440</id>
+        <position type="integer">5</position>
+        <product-id type="integer">806547</product-id>
+    </collect>
+    <collect>
+        <collection-id type="integer">108528</collection-id>
+        <created-at type="timestamp">2010-06-07 02:07:46 +0400</created-at>
+        <id type="integer">742439</id>
+        <position type="integer">2</position>
+        <product-id type="integer">806546</product-id>
+    </collect>
+    <collect>
+        <collection-id type="integer">108528</collection-id>
+        <created-at type="timestamp">2010-06-08 13:09:05 +0400</created-at>
+        <id type="integer">745442</id>
+        <position type="integer">6</position>
+        <product-id type="integer">809688</product-id>
+    </collect>
+    <collect>
+        <collection-id type="integer">108528</collection-id>
+        <created-at type="timestamp">2010-06-08 13:16:30 +0400</created-at>
+        <id type="integer">745449</id>
+        <position type="integer">7</position>
+        <product-id type="integer">809691</product-id>
+    </collect>
+    <collect>
+        <collection-id type="integer">12148</collection-id>
+        <created-at type="timestamp">2009-08-24 21:43:20 +0400</created-at>
+        <id type="integer">47514</id>
+        <position type="integer">3</position>
+        <product-id type="integer">89973</product-id>
+    </collect>
+    <collect>
+        <collection-id type="integer">12149</collection-id>
+        <created-at type="timestamp">2010-06-23 14:28:39 +0400</created-at>
+        <id type="integer">830921</id>
+        <position type="integer">5</position>
+        <product-id type="integer">89973</product-id>
+    </collect>
+</collects>
+
+Получение списка категорий содержащих товар
+GET /admin/collects.xml?product_id=89973
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collects type="array">
+    <collect>
+        <collection-id type="integer">12148</collection-id>
+        <created-at type="timestamp">2009-08-24 21:43:20 +0400</created-at>
+        <id type="integer">47514</id>
+        <position type="integer">3</position>
+        <product-id type="integer">89973</product-id>
+    </collect>
+    <collect>
+        <collection-id type="integer">12149</collection-id>
+        <created-at type="timestamp">2010-06-23 14:28:39 +0400</created-at>
+        <id type="integer">830921</id>
+        <position type="integer">5</position>
+        <product-id type="integer">89973</product-id>
+    </collect>
+</collects>
+
+Получение списка товаров в категории
+GET /admin/collects.xml?collection_id=108528
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collects type="array">
+    <collect>
+        <collection-id type="integer">108528</collection-id>
+        <created-at type="timestamp">2010-06-07 02:22:12 +0400</created-at>
+        <id type="integer">742440</id>
+        <position type="integer">5</position>
+        <product-id type="integer">806547</product-id>
+    </collect>
+    <collect>
+        <collection-id type="integer">108528</collection-id>
+        <created-at type="timestamp">2010-06-07 02:07:46 +0400</created-at>
+        <id type="integer">742439</id>
+        <position type="integer">2</position>
+        <product-id type="integer">806546</product-id>
+    </collect>
+    <collect>
+        <collection-id type="integer">108528</collection-id>
+        <created-at type="timestamp">2010-06-08 13:09:05 +0400</created-at>
+        <id type="integer">745442</id>
+        <position type="integer">6</position>
+        <product-id type="integer">809688</product-id>
+    </collect>
+    <collect>
+        <collection-id type="integer">108528</collection-id>
+        <created-at type="timestamp">2010-06-08 13:16:30 +0400</created-at>
+        <id type="integer">745449</id>
+        <position type="integer">7</position>
+        <product-id type="integer">809691</product-id>
+    </collect>
+</collects>
+
+Ручная сортировка
+PUT /admin/collects/89973.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collect>
+    <position type="integer">10</position>
+</collect>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collect>
+    <id type="integer">47514</id>
+    <product-id type="integer">89973</product-id>
+    <collection-id type="integer">12148</collection-id>
+    <position type="integer">10</position>
+    <created-at type="timestamp">2009-08-24 21:43:20 +0400</created-at>
+</collect>
+
+Перемещение товара из одной категории в другую
+PUT /admin/collects/89973.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collect>
+    <collection-id type="integer">12148</collection-id>
+</collect>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collect>
+    <id type="integer">47514</id>
+    <product-id type="integer">89973</product-id>
+    <collection-id type="integer">12148</collection-id>
+    <position type="integer">3</position>
+    <created-at type="timestamp">2009-08-24 21:43:20 +0400</created-at>
+</collect>
+
