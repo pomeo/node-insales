@@ -1129,3 +1129,222 @@ PUT /admin/option_names/1576/option_values/7942.xml
 DELETE /admin/option_names/1576/option_values/7942.xml
 < 200
 
+--
+Дополнительные поля товара
+--
+
+Получение списка дополнительных полей
+GET /admin/product_fields.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<objects type="array">
+  <product-field>
+    <application-id type="integer" nil="true"/>
+    <handle>color</handle>
+    <id type="integer">3</id>
+    <is-hidden type="boolean">false</is-hidden>
+    <position type="integer">1</position>
+    <title>Цвет</title>
+    <type>ProductField::TextArea</type>
+  </product-field>
+  <product-field>
+    <application-id type="integer" nil="true"/>
+    <handle>description</handle>
+    <id type="integer">8</id>
+    <is-hidden type="boolean">false</is-hidden>
+    <position type="integer" nil="true"/>
+    <title>доп. описание</title>
+    <type>ProductField::TextField</type>
+  </product-field>
+</objects>
+
+Получение информации о дополнительном поле
+GET /admin/product_fields/8.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field>
+  <application-id type="integer" nil="true"/>
+  <handle>description</handle>
+  <id type="integer">8</id>
+  <is-hidden type="boolean">false</is-hidden>
+  <position type="integer" nil="true"/>
+  <title>доп. описание</title>
+  <type>ProductField::TextField</type>
+</product-field>
+
+Добавление дополнительного поля
+POST /admin/product_fields.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field>
+  <title>Размер</title>
+  <handle>size</handle>
+  <type>ProductField::TextField</type>
+</product-field>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field>
+  <application-id type="integer">2</application-id>
+  <handle>size</handle>
+  <id type="integer">9</id>
+  <is-hidden type="boolean" nil="true"/>
+  <position type="integer" nil="true"/>
+  <title>Размер</title>
+  <type>ProductField::TextField</type>
+</product-field>
+
+Изменение дополнительного поля
+PUT /admin/product_fields/9.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field>
+  <position>2</position>
+</product-field>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field>
+  <application-id type="integer">2</application-id>
+  <handle>size</handle>
+  <id type="integer">9</id>
+  <is-hidden type="boolean" nil="true"/>
+  <position type="integer">2</position>
+  <title>Размер</title>
+  <type>ProductField::TextField</type>
+</product-field>
+
+Удаление дополнительного поля
+DELETE /admin/product_fields/9.xml
+< 200
+
+--
+Значения дополнительных полей товара
+--
+
+Получение списка значений дополнительных полей товара
+GET /admin/products/1/product_field_values.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field-values type="array">
+  <product-field-value>
+    <id type="integer">851</id>
+    <product-field-id type="integer">9</product-field-id>
+    <value>three</value>
+  </product-field-value>
+  <product-field-value>
+    <id type="integer">850</id>
+    <product-field-id type="integer">8</product-field-id>
+    <value>two</value>
+  </product-field-value>
+</product-field-values>
+
+Получение информации о значении дополнительного поля товара
+GET /admin/products/1/product_field_values/9.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+  <product-field-value>
+    <id type="integer">851</id>
+    <product-field-id type="integer">9</product-field-id>
+    <value>three</value>
+  </product-field-value>
+
+Добавление значения дополнительного поля товара
+POST /admin/products/1/product_field_values.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field-value>
+  <product-field-id>8</product-field-id>
+  <value>seek and destroy</value>
+</product-field-value>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field-value>
+  <id type="integer">853</id>
+  <product-field-id type="integer">8</product-field-id>
+  <value>seek and destroy</value>
+</product-field-value>
+
+Изменение значения дополнительного поля товара
+PUT /admin/products/1/product_field_values/8.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field-value>
+  <value>updated value</value>
+</product-field-value>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<product-field-value>
+  <id type="integer">853</id>
+  <product-field-id type="integer">8</product-field-id>
+  <value>updated value</value>
+</product-field-value>
+
+Удаление значения дополнительного поля товара
+DELETE /admin/products/1/product_field_values/8.xml
+< 200
+
+--
+Сопутствующие товары
+--
+
+Получение списка сопутствующих товаров
+GET /admin/products/1/supplementaries.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<products type="array">
+  <product>
+    <id type="integer">83983</id>
+  </product>
+  <product>
+    <id type="integer">23423</id>
+  </product>
+</products>
+
+Добавление сопутствующего товара
+POST /admin/products/1/supplementaries.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<supplementary_ids>87987</supplementary_ids>
+< 200
+
+Удаление сопутствующего товара
+DELETE /admin/products/1/supplementaries/87987.xml
+< 200
+
+--
+Аналогичные товары
+--
+
+Получение списка аналогичных товаров
+GET /admin/products/1/similars.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<products type="array">
+  <product>
+    <id type="integer">83983</id>
+  </product>
+  <product>
+    <id type="integer">23423</id>
+  </product>
+</products>
+
+Добавление аналогичного товара
+POST /admin/products/1/similars.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<similar_ids>87987</similar_ids>
+< 200
+
+Удаление аналогичного товара
+DELETE /admin/products/1/similars/87987.xml
+< 200
+
