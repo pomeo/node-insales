@@ -1348,3 +1348,142 @@ POST /admin/products/1/similars.xml
 DELETE /admin/products/1/similars/87987.xml
 < 200
 
+--
+Категории на сайте
+--
+
+Получение списка категорий
+GET /admin/collections.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<collections type="array">
+    <collection>
+        <id type="integer">119233</id>
+        <is-hidden type="boolean">false</is-hidden>
+        <parent-id type="integer">2628</parent-id>
+        <to-torg-mail type="boolean">false</to-torg-mail>
+        <to-yandex-market type="boolean">true</to-yandex-market>
+        <title>Ежедневники  Moleskine 2011</title>
+        <description nil="true"></description>
+        <html-title nil="true"></html-title>
+        <meta-description nil="true"></meta-description>
+        <meta-keywords nil="true"></meta-keywords>
+        <permalink>Ежедневники-Moleskine-2011</permalink>
+        <url>/collection/Ежедневники-Moleskine-2011</url>
+    </collection>
+    <collection>
+        <id type="integer">72</id>
+        <is-hidden type="boolean">false</is-hidden>
+        <parent-id type="integer">2628</parent-id>
+        <to-torg-mail type="boolean" nil="true"></to-torg-mail>
+        <to-yandex-market type="boolean">true</to-yandex-market>
+        <title>Moleskine Reporter</title>
+        <description nil="true"></description>
+        <html-title nil="true"></html-title>
+        <meta-description>Moleskine Reporter</meta-description>
+        <meta-keywords>Moleskine Reporter</meta-keywords>
+        <permalink>moleskine-reporter</permalink>
+        <url>/collection/moleskine-reporter</url>
+    </collection>
+    <collection>
+        <id type="integer">12149</id>
+        <is-hidden type="boolean">true</is-hidden>
+        <parent-id type="integer">2628</parent-id>
+        <to-torg-mail type="boolean" nil="true"></to-torg-mail>
+        <to-yandex-market type="boolean">true</to-yandex-market>
+        <title>Artistic Collection</title>
+        <description nil="true"></description>
+        <html-title nil="true"></html-title>
+        <meta-description nil="true"></meta-description>
+        <meta-keywords nil="true"></meta-keywords>
+        <permalink>moleskine-artistic-collection</permalink>
+        <url>/collection/moleskine-artistic-collection</url>
+    </collection>
+    <collection>
+        <id type="integer">7830</id>
+        <is-hidden type="boolean">false</is-hidden>
+        <parent-id type="integer">2628</parent-id>
+        <to-torg-mail type="boolean" nil="true"></to-torg-mail>
+        <to-yandex-market type="boolean">true</to-yandex-market>
+        <title>Moleskine XLarge 19х25</title>
+        <description nil="true"></description>
+        <html-title nil="true"></html-title>
+        <meta-description nil="true"></meta-description>
+        <meta-keywords nil="true"></meta-keywords>
+        <permalink>xlarge-notebook</permalink>
+        <url>/collection/xlarge-notebook</url>
+    </collection>
+</collections>
+
+Получение информации о категории
+GET /admin/collections/7830.xml
+< 200
+< Content-Type: application/xml
+<collection>
+    <id type="integer">7830</id>
+    <is-hidden type="boolean">false</is-hidden>
+    <parent-id type="integer">2628</parent-id>
+    <to-torg-mail type="boolean" nil="true"></to-torg-mail>
+    <to-yandex-market type="boolean">true</to-yandex-market>
+    <title>Moleskine XLarge 19х25</title>
+    <description nil="true"></description>
+    <html-title nil="true"></html-title>
+    <meta-description nil="true"></meta-description>
+    <meta-keywords nil="true"></meta-keywords>
+    <permalink>xlarge-notebook</permalink>
+    <url>/collection/xlarge-notebook</url>
+</collection>
+
+Добавление новой категории
+POST /admin/collections.xml
+> Content-Type: application/xml
+<collection>
+    <parent-id type="integer">2628</parent-id>
+    <title>Moleskine XLarge 19х25</title>
+</collection>
+< 200
+< Content-Type: application/xml
+<collection>
+    <id type="integer">7830</id>
+    <is-hidden type="boolean">false</is-hidden>
+    <parent-id type="integer">2628</parent-id>
+    <to-torg-mail type="boolean" nil="true"></to-torg-mail>
+    <to-yandex-market type="boolean" nil="true"></to-yandex-market>
+    <title>Moleskine XLarge 19х25</title>
+    <description nil="true"></description>
+    <html-title nil="true"></html-title>
+    <meta-description nil="true"></meta-description>
+    <meta-keywords nil="true"></meta-keywords>
+    <permalink>xlarge-notebook</permalink>
+    <url>/collection/xlarge-notebook</url>
+</collection>
+
+Редактирование категории
+PUT /admin/collections/7830.xml
+> Content-Type: application/xml
+<collection>
+    <is-hidden type="boolean">true</is-hidden>
+</collection>
+< 200
+< Content-Type: application/xml
+<collection>
+    <id type="integer">7830</id>
+    <is-hidden type="boolean">true</is-hidden>
+    <parent-id type="integer">2628</parent-id>
+    <to-torg-mail type="boolean" nil="true"></to-torg-mail>
+    <to-yandex-market type="boolean" nil="true"></to-yandex-market>
+    <title>Moleskine XLarge 19х25</title>
+    <description nil="true"></description>
+    <html-title nil="true"></html-title>
+    <meta-description nil="true"></meta-description>
+    <meta-keywords nil="true"></meta-keywords>
+    <permalink>xlarge-notebook</permalink>
+    <url>/collection/xlarge-notebook</url>
+    <sort-type type="integer">3</sort-type>
+</collection>
+
+Удаление категории
+DELETE /admin/collections/7830.xml
+< 200
+
