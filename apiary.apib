@@ -2357,3 +2357,138 @@ POST /admin/orders.xml
   </client>
 </order>
 
+--
+Скидки по купонам
+--
+
+Получение списка купонов
+GET /admin/discount_codes.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<discount-codes type="array">
+  <discount-code>
+    <act-once type="boolean">true</act-once>
+    <code>DC1</code>
+    <created-at type="datetime">2011-11-07T13:28:42+04:00</created-at>
+    <description>discount campaign</description>
+    <disabled type="boolean">false</disabled>
+    <discount type="decimal">10.0</discount>
+    <expired-at type="date">2012-06-09</expired-at>
+    <id type="integer">628</id>
+    <type-id type="integer">1</type-id>
+    <updated-at type="datetime">2011-11-07T13:28:42+04:00</updated-at>
+  </discount-code>
+  <discount-code>
+    <act-once type="boolean">true</act-once>
+    <code>DC2</code>
+    <created-at type="datetime">2011-10-24T16:29:42+04:00</created-at>
+    <description>discount campaign</description>
+    <disabled type="boolean">false</disabled>
+    <discount type="decimal">12.0</discount>
+    <expired-at type="date">2012-06-09</expired-at>
+    <id type="integer">626</id>
+    <type-id type="integer">1</type-id>
+    <updated-at type="datetime">2011-11-01T19:49:14+04:00</updated-at>
+  </discount-code>
+  <discount-code>
+    <act-once type="boolean">true</act-once>
+    <code>DC3</code>
+    <created-at type="datetime">2011-10-24T16:29:42+04:00</created-at>
+    <description>discount campaign</description>
+    <disabled type="boolean">false</disabled>
+    <discount type="decimal">13.0</discount>
+    <expired-at type="date">2012-06-09</expired-at>
+    <id type="integer">627</id>
+    <type-id type="integer">2</type-id>
+    <updated-at type="datetime">2011-11-01T19:49:14+04:00</updated-at>
+  </discount-code>
+  <discount-code>
+    <act-once type="boolean">false</act-once>
+    <code>DC4</code>
+    <created-at type="datetime">2011-10-24T16:29:42+04:00</created-at>
+    <description>discount campaign</description>
+    <disabled type="boolean">true</disabled>
+    <discount type="decimal">14.0</discount>
+    <expired-at type="date">2012-06-09</expired-at>
+    <id type="integer">628</id>
+    <type-id type="integer">1</type-id>
+    <updated-at type="datetime">2011-11-01T19:49:14+04:00</updated-at>
+  </discount-code>
+  <discount-code>
+    <act-once type="boolean">true</act-once>
+    <code>DC5</code>
+    <created-at type="datetime">2011-10-24T16:29:42+04:00</created-at>
+    <description>discount campaign</description>
+    <disabled type="boolean">false</disabled>
+    <discount type="decimal">12.0</discount>
+    <expired-at type="date">2012-06-09</expired-at>
+    <id type="integer">629</id>
+    <type-id type="integer">1</type-id>
+    <updated-at type="datetime">2011-11-01T19:49:14+04:00</updated-at>
+  </discount-code>
+</discount-codes>
+
+Получение информации о купоне
+GET /admin/discount_codes/626.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<discount-code>
+  <act-once type="boolean">true</act-once>
+  <code>DC2</code>
+  <created-at type="datetime">2011-10-24T16:29:42+04:00</created-at>
+  <description>discount campaign</description>
+  <disabled type="boolean">false</disabled>
+  <discount type="decimal">12.0</discount>
+  <expired-at type="date">2012-06-09</expired-at>
+  <id type="integer">626</id>
+  <type-id type="integer">1</type-id>
+  <updated-at type="datetime">2011-11-01T19:49:14+04:00</updated-at>
+</discount-code>
+
+Добавление купона
+POST /admin/discount_codes.xml
+> Content-Type: application/xml
+<discount_code>
+  <code>frandom2</code>
+  <act_once>true</act_once>
+  <discount>10</discount>
+  <type_id>1</type_id>
+  <description>API code</description>
+  <disabled>0</disabled>
+  <expired-at>2013-06-09</expired-at>
+</discount_code>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<discount-code>
+  <act-once type="boolean">true</act-once>
+  <code>frandom2</code>
+  <created-at type="datetime">2011-10-24T16:29:42+04:00</created-at>
+  <description>API code</description>
+  <disabled type="boolean">false</disabled>
+  <discount type="decimal">10.0</discount>
+  <expired-at type="date">2013-06-09</expired-at>
+  <id type="integer">626</id>
+  <type-id type="integer">1</type-id>
+  <updated-at type="datetime">2011-11-01T19:49:14+04:00</updated-at>
+</discount-code>
+
+Редактирование купона
+PUT /admin/discount_codes/1.xml
+> Content-Type: application/xml
+<discount_code>
+  <code>frandom3</code>
+  <act_once>true</act_once>
+  <discount>15</discount>
+  <type_id>1</type_id>
+  <description>API code</description>
+  <disabled>0</disabled>
+  <expired-at>2013-06-09</expired-at>
+</discount_code>
+< 200
+
+Удаление купона
+DELETE /admin/discount_codes/1.xml
+< 200
