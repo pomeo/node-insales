@@ -1658,3 +1658,702 @@ PUT /admin/collects/89973.xml
     <created-at type="timestamp">2009-08-24 21:43:20 +0400</created-at>
 </collect>
 
+--
+Заказы
+--
+
+Получение списка заказов
+GET /admin/orders.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<orders type="array">
+    <order>
+        <accepted-at type="timestamp" nil="true"/>
+        <comment/>
+        <created-at type="timestamp">2010-08-16 18:39:58 +0400</created-at>
+        <delivered-at type="timestamp">2010-08-19 10:26:16 +0400</delivered-at>
+        <delivery-description>
+            Самовывоз + скидка 2%, тк. до этого делала зказ свыше 2 тысяч
+        </delivery-description>
+        <delivery-price type="decimal">0.0</delivery-price>
+        <financial-status>paid</financial-status>
+        <fulfillment-status>delivered</fulfillment-status>
+        <id type="integer">36289</id>
+        <key>c6a090e74498a8e18d78f2f1424ffa5e</key>
+        <number type="integer">2900</number>
+        <payment-description nil="true"/>
+        <payment-title>Наличными</payment-title>
+        <referer/>
+        <updated-at type="timestamp">2010-08-19 10:26:16 +0400</updated-at>
+        <delivery-date type="date">2011-06-02</delivery-date>
+        <delivery-from-hour type="integer">22</delivery-from-hour>
+        <delivery-to-hour type="integer">23</delivery-to-hour>
+        <shipping-address>
+            <address>Самовывоз</address>
+            <city>Москва</city>
+            <country>RU</country>
+            <name>Самовывоз</name>
+            <phone>Самовывоз</phone>
+            <state>Московская область</state>
+            <zip nil="true"/>
+        </shipping-address>
+        <order-lines type="array">
+            <order-line>
+                <created-at type="timestamp">2010-08-16 18:39:58 +0400</created-at>
+                <id type="integer">94695</id>
+                <quantity type="integer">1</quantity>
+                <sale-price type="decimal">740.0</sale-price>
+                <sku>QP023MVEN-g</sku>
+                <title>Van Gogh Sketchbook Emerald</title>
+                <updated-at type="timestamp">2010-08-16 18:39:58 +0400</updated-at>
+                <variant-id type="integer">16637</variant-id>
+                <weight type="decimal">1.5</weight>
+            </order-line>
+        </order-lines>
+        <discounts type="array">
+            <discount>
+                <created-at type="timestamp">2010-08-19 10:25:51 +0400</created-at>
+                <description>2%</description>
+                <id type="integer">3347</id>
+                <updated-at type="timestamp">2010-08-19 10:25:51 +0400</updated-at>
+                <amount type="integer">15</amount>
+            </discount>
+        </discounts>
+        <client>
+            <client-group-id type="integer" nil="true"/>
+            <created-at type="timestamp">2010-08-16 18:39:58 +0400</created-at>
+            <email nil="true"/>
+            <id type="integer">36854</id>
+            <name>Самовывоз</name>
+            <phone>Самовывоз</phone>
+            <registered type="boolean">false</registered>
+            <subscribe type="boolean">true</subscribe>
+            <updated-at type="timestamp">2010-08-16 18:39:58 +0400</updated-at>
+        </client>
+    </order>
+    <order>
+        <accepted-at type="timestamp" nil="true"/>
+        <comment/>
+        <created-at type="timestamp">2010-08-16 14:39:46 +0400</created-at>
+        <delivered-at type="timestamp">2010-08-19 10:25:11 +0400</delivered-at>
+        <delivery-description>Курьером по Москве (на следующий рабочий день)</delivery-description>
+        <delivery-price type="decimal">200.0</delivery-price>
+        <financial-status>paid</financial-status>
+        <fulfillment-status>delivered</fulfillment-status>
+        <id type="integer">36228</id>
+        <key>93dc91ffaa5d48025c38d4663f2adb93</key>
+        <number type="integer">2899</number>
+        <payment-description nil="true"/>
+        <payment-title>Наличными</payment-title>
+        <referer>
+            http://www.google.ru/search?hl=ru&newwindow=1&q=%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%BD%D0%B0%D1%8F+%D0%BA%D0%BD%D0%B8%D0%B6%D0%BA%D0%B0+%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C&lr=&aq=f&aqi=&aql=&oq=&gs_rfai=
+        </referer>
+        <updated-at type="timestamp">2010-08-19 10:25:11 +0400</updated-at>
+        <delivery-date type="date">2011-06-02</delivery-date>
+        <delivery-from-hour type="integer">22</delivery-from-hour>
+        <delivery-to-hour type="integer">23</delivery-to-hour>
+        <shipping-address>
+            <address>ул. Ленина д. 12</address>
+            <city>Москва</city>
+            <country>RU</country>
+            <name>Артем Демидчик</name>
+            <phone>8 915 123 45 67</phone>
+            <state>Московская область</state>
+            <zip nil="true"/>
+        </shipping-address>
+        <order-lines type="array">
+            <order-line>
+                <created-at type="timestamp">2010-08-16 16:04:40 +0400</created-at>
+                <id type="integer">94612</id>
+                <quantity type="integer">1</quantity>
+                <sale-price type="decimal">720.0</sale-price>
+                <sku>QP617EN</sku>
+                <title>Moleskine Soft Large Squared Notebook</title>
+                <updated-at type="timestamp">2010-08-16 16:04:40 +0400</updated-at>
+                <variant-id type="integer">16325</variant-id>
+                <weight type="decimal">1.5</weight>
+            </order-line>
+        </order-lines>
+        <discounts type="array"/>
+        <client>
+            <client-group-id type="integer" nil="true"/>
+            <created-at type="timestamp">2010-08-16 14:39:46 +0400</created-at>
+            <email>artem@gmail.com</email>
+            <id type="integer">36794</id>
+            <name>Артем Демидчик</name>
+            <phone>8 915 123 45 67</phone>
+            <registered type="boolean">true</registered>
+            <subscribe type="boolean">true</subscribe>
+            <updated-at type="timestamp">2010-08-16 14:39:46 +0400</updated-at>
+        </client>
+    </order>
+    <order>
+        <accepted-at type="timestamp">2010-08-16 14:31:01 +0400</accepted-at>
+        <comment/>
+        <created-at type="timestamp">2010-08-16 14:14:50 +0400</created-at>
+        <delivered-at type="timestamp" nil="true"/>
+        <delivery-description>
+            Самовывоз (Бронь заказа не более 2 дней, забор  с 10 до 18  часов по рабочим дням, адрес см. на сайте магазина)
+        </delivery-description>
+        <delivery-price type="decimal">0.0</delivery-price>
+        <financial-status>pending</financial-status>
+        <fulfillment-status>approved</fulfillment-status>
+        <id type="integer">36218</id>
+        <key>4ecee989d7e429bf55cead7cdc616adf</key>
+        <number type="integer">2898</number>
+        <payment-description nil="true"/>
+        <payment-title>Наличными</payment-title>
+        <referer>
+            http://yandex.ru/yandsearch?text=%D0%B1%D0%BB%D0%BE%D0%BA%D0%BD%D0%BE%D1%82%D1%8B+moleskine&lr=213
+        </referer>
+        <updated-at type="timestamp">2010-08-20 15:25:02 +0400</updated-at>
+        <delivery-date type="date" nil="true"/>
+        <delivery-from-hour type="integer" nil="true"/>
+        <delivery-to-hour type="integer" nil="true"/>
+        <shipping-address>
+            <address>Рязанский проспект 12</address>
+            <city>Москва</city>
+            <country>RU</country>
+            <name>Слесарев Игорь</name>
+            <phone>+7 903 321-54-76</phone>
+            <state>Московская область</state>
+            <zip nil="true"/>
+        </shipping-address>
+        <order-lines type="array">
+            <order-line>
+                <created-at type="timestamp">2010-08-16 14:14:50 +0400</created-at>
+                <id type="integer">94519</id>
+                <quantity type="integer">1</quantity>
+                <sale-price type="decimal">1590.0</sale-price>
+                <sku>DHB12DC5QEN</sku>
+                <title>Ежедневник "Classic" (2011), A4, черный</title>
+                <updated-at type="timestamp">2010-08-16 14:14:50 +0400</updated-at>
+                <variant-id type="integer">1199651</variant-id>
+                <weight type="decimal">1.5</weight>
+            </order-line>
+        </order-lines>
+        <discounts type="array"/>
+        <client>
+            <client-group-id type="integer" nil="true"/>
+            <created-at type="timestamp">2010-08-16 14:14:50 +0400</created-at>
+            <email>igor@yandex.ru</email>
+            <id type="integer">36784</id>
+            <name>Слесарев Игорь</name>
+            <phone>+7 903 321-54-65</phone>
+            <registered type="boolean">true</registered>
+            <subscribe type="boolean">true</subscribe>
+            <updated-at type="timestamp">2010-08-16 14:14:50 +0400</updated-at>
+        </client>
+    </order>
+</orders>
+
+Получение информации о заказе
+GET /admin/orders/58409.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+    <accepted-at type="timestamp" nil="true"/>
+    <comment/>
+    <created-at type="timestamp">2010-08-16 18:39:58 +0400</created-at>
+    <delivery-variant-id type="integer">58409</delivery-variant-id>
+    <delivered-at type="timestamp">2010-08-19 10:26:16 +0400</delivered-at>
+    <delivery-description>
+        Самовывоз + скидка 2%, тк. до этого делала зказ свыше 2 тысяч
+    </delivery-description>
+    <delivery-price type="decimal">0.0</delivery-price>
+    <financial-status>paid</financial-status>
+    <fulfillment-status>delivered</fulfillment-status>
+    <id type="integer">36289</id>
+    <key>c6a090e74498a8e18d78f2f1424ffa5e</key>
+    <number type="integer">2900</number>
+    <payment-gateway-id type="integer">32541</payment-gateway-id>
+    <payment-description nil="true"/>
+    <payment-title>Наличными</payment-title>
+    <referer/>
+    <updated-at type="timestamp">2010-08-19 10:26:16 +0400</updated-at>
+    <delivery-date type="date">2011-06-02</delivery-date>
+    <delivery-from-hour type="integer">22</delivery-from-hour>
+    <delivery-to-hour type="integer">23</delivery-to-hour>
+    <shipping-address>
+        <address nil="true"/>
+        <city nil="true"/>
+        <country>RU</country>
+        <name nil="true"/>
+        <phone nil="true"/>
+        <state nil="true"/>
+        <zip nil="true"/>
+        <fields-values type="array">
+            <fields_value>
+                <id>58735</id>
+                <type>Выпадающий список</type>
+                <name>Время доставки</name>
+                <value/>
+            </fields_value>
+            <fields_value>
+                <id>58734</id>
+                <type>Российский адрес</type>
+                <name>Адрес по КЛАДР-у</name>
+                <number/>
+                <korp>2</korp>
+                <house>8</house>
+                <flat>307</flat>
+                <manual_index>355000</manual_index>
+                <str/>
+                <adr1>Ставропольский</adr1>
+                <socr1>край</socr1>
+                <adr2/>
+                <socr2/>
+                <adr3>Ставрополь</adr3>
+                <socr3>г</socr3>
+                <adr4/>
+                <socr4/><code>26000001000025900</code>
+                <adr5>М.Морозова</adr5>
+                <socr5>ул</socr5>
+                <address_type>1</address_type>
+                 <index/>
+                <string>г. Ставрополь, ул. М.Морозова</string>
+            </fields_value>
+        </fields-values>
+    </shipping-address>
+    <order-lines type="array">
+        <order-line>
+            <created-at type="timestamp">2010-08-16 18:39:58 +0400</created-at>
+            <id type="integer">94695</id>
+            <quantity type="integer">1</quantity>
+            <sale-price type="decimal">740.0</sale-price>
+            <sku>QP023MVEN-g</sku>
+            <title>Van Gogh Sketchbook Emerald</title>
+            <updated-at type="timestamp">2010-08-16 18:39:58 +0400</updated-at>
+            <variant-id type="integer">16637</variant-id>
+            <weight type="decimal">1.5</weight>
+        </order-line>
+    </order-lines>
+    <discounts type="array">
+        <discount>
+            <created-at type="timestamp">2010-08-19 10:25:51 +0400</created-at>
+            <description>2%</description>
+            <id type="integer">3347</id>
+            <updated-at type="timestamp">2010-08-19 10:25:51 +0400</updated-at>
+            <amount type="integer">15</amount>
+        </discount>
+    </discounts>
+    <client>
+        <client-group-id type="integer" nil="true"/>
+        <fields-values type="array">
+            <fields_value>
+                <id>58749</id>
+                <type>Текстовое поле</type>
+                <name>Дополнительная информация</name>
+                <value/>
+            </fields_value>
+        </fields-values>
+        <created-at type="timestamp">2010-08-16 18:39:58 +0400</created-at>
+        <email nil="true"/>
+        <id type="integer">36854</id>
+        <name>Самовывоз</name>
+        <phone>Самовывоз</phone>
+        <registered type="boolean">false</registered>
+        <subscribe type="boolean">true</subscribe>
+        <updated-at type="timestamp">2010-08-16 18:39:58 +0400</updated-at>
+    </client>
+</order>
+
+Редактирование заказа
+PUT /admin/orders/46443.xml
+> Content-Type: application/xml
+<order>
+    <id type="integer">46443</id>
+    <order-lines-attributes type="array">
+        <order-line-attributes>
+            <id>123</id>
+            <variant-id>523375</variant-id>
+            <quantity>1</quantity>
+        </order-line-attributes>
+    </order-lines-attributes>
+    <comment>
+</order>
+< 200
+
+Удаление заказа
+DELETE /admin/orders/46443.xml
+< 200
+
+Получение списка полей для оформления заказа
+GET /admin/orders/fields.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+  <client-fields type="array">
+    <client-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title></title>
+      <office-title>Фамилия</office-title>
+      <active type="boolean">true</active>
+      <system-name>surname</system-name>
+      <obligatory type="boolean">true</obligatory>
+      <position type="integer">0</position>
+      <id type="integer">105202</id>
+    </client-field>
+    <client-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title>Имя</title>
+      <office-title>Имя</office-title>
+      <active type="boolean">true</active>
+      <system-name>name</system-name>
+      <obligatory type="boolean">true</obligatory>
+      <position type="integer">1</position>
+      <id type="integer">53194</id>
+    </client-field>
+    <client-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title></title>
+      <office-title>Отчество</office-title>
+      <active type="boolean">true</active>
+      <system-name>middlename</system-name>
+      <obligatory type="boolean">true</obligatory>
+      <position type="integer">2</position>
+      <id type="integer">115839</id>
+    </client-field>
+    <client-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title nil="true"></title>
+      <office-title>Телефон</office-title>
+      <active type="boolean">true</active>
+      <system-name>phone</system-name>
+      <obligatory type="boolean">true</obligatory>
+      <position type="integer">3</position>
+      <id type="integer">63831</id>
+    </client-field>
+    <client-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title nil="true"></title>
+      <office-title>E-mail</office-title>
+      <active type="boolean">true</active>
+      <system-name>email</system-name>
+      <obligatory type="boolean">true</obligatory>
+      <position type="integer">4</position>
+      <id type="integer">74468</id>
+    </client-field>
+    <client-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title nil="true"></title>
+      <office-title>Подтверждение email</office-title>
+      <active type="boolean">true</active>
+      <system-name>email_confirmation</system-name>
+      <obligatory type="boolean">true</obligatory>
+      <position type="integer">5</position>
+      <id type="integer">75165</id>
+    </client-field>
+  </client-fields>
+  <shipping-address-fields type="array">
+    <shipping-address-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title></title>
+      <office-title>Область</office-title>
+      <active type="boolean">true</active>
+      <system-name>state</system-name>
+      <obligatory type="boolean">false</obligatory>
+      <position type="integer">2</position>
+      <id type="integer">3</id>
+    </shipping-address-field>
+    <shipping-address-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title></title>
+      <office-title>Город</office-title>
+      <active type="boolean">true</active>
+      <system-name>city</system-name>
+      <obligatory type="boolean">false</obligatory>
+      <position type="integer">3</position>
+      <id type="integer">4</id>
+    </shipping-address-field>
+    <shipping-address-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title nil="true"></title>
+      <office-title>Адрес</office-title>
+      <active type="boolean">true</active>
+      <system-name>address</system-name>
+      <obligatory type="boolean">false</obligatory>
+      <position type="integer">4</position>
+      <id type="integer">5</id>
+    </shipping-address-field>
+    <shipping-address-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title></title>
+      <office-title>Почтовый индекс</office-title>
+      <active type="boolean">true</active>
+      <system-name>zip</system-name>
+      <obligatory type="boolean">true</obligatory>
+      <position type="integer">5</position>
+      <id type="integer">6</id>
+    </shipping-address-field>
+    <shipping-address-field>
+      <for-buyer type="boolean">true</for-buyer>
+      <title>Новое поле</title>
+      <office-title>Новое поле</office-title>
+      <active type="boolean">true</active>
+      <system-name nil="true"></system-name>
+      <obligatory type="boolean">false</obligatory>
+      <position type="integer">13</position>
+      <id type="integer">127872</id>
+    </shipping-address-field>
+  </shipping-address-fields>
+</fields>
+
+Получение способов доставки
+POST /admin/delivery_variants.xml
+> Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+  <shipping-address>
+    <address>Moscow sdfsdfsdf</address>
+  </shipping-address>
+  <client>
+    <email>test@test.com</email>
+    <phone>+7 903 223 33 44</phone>
+    <name>vasya</name>
+  </client>
+  <order-lines-attributes type="array">
+      <order-line-attributes>
+          <variant-id>523375</variant-id>
+          <quantity>1</quantity>
+      </order-line-attributes>
+  </order-lines-attributes>
+</order>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<delivery-variants type="array">
+  <delivery-variant>
+    <description nil="true"></description>
+    <price type="float">500.0</price>
+    <position type="integer">1</position>
+    <id type="integer">12398</id>
+    <title>Электронной почтой</title>
+  </delivery-variant>
+  <delivery-variant>
+    <description>Доставка производится на следующий день.</description>
+    <price type="float">0.0</price>
+    <position type="integer">2</position>
+    <id type="integer">15297</id>
+    <title>Курьером</title>
+  </delivery-variant>
+  <delivery-variant>
+    <description>больше 100 рублей бесплатно</description>
+    <price type="float">0.0</price>
+    <position type="integer">4</position>
+    <id type="integer">15320</id>
+    <title>больше 100 рублей бесплатно</title>
+  </delivery-variant>
+</delivery-variants>
+
+Получение способов оплаты
+POST /admin/payment_gateways.xml
+> Content-Type: application/xml
+<order>
+    <shipping-address>
+      <address>Moscow sdfsdfsdf</address>
+    </shipping-address>
+    <client>
+      <email>test@test.com</email>
+      <phone>+7 903 223 33 44</phone>
+      <name>vasya</name>
+    </client>
+    <order-lines-attributes type="array">
+        <order-line-attributes>
+            <variant-id>523375</variant-id>
+            <quantity>1</quantity>
+        </order-line-attributes>
+    </order-lines-attributes>
+    <delivery-variant-id type="integer">12398</delivery-variant-id>
+</order>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<payment-gateways type="array">
+  <payment-gateway>
+    <description></description>
+    <margin-fraction type="float">0.0</margin-fraction>
+    <price type="float">0.0</price>
+    <position type="integer">5</position>
+    <margin type="decimal">0.0</margin>
+    <id type="integer">1797</id>
+    <account-id type="integer">10</account-id>
+    <title>Через систему Web Money</title>
+  </payment-gateway>
+  <payment-gateway>
+    <description></description>
+    <margin-fraction type="float">0.4</margin-fraction>
+    <price type="float">535.2</price>
+    <position type="integer">6</position>
+    <margin type="decimal">40.0</margin>
+    <id type="integer">2958</id>
+    <account-id type="integer">10</account-id>
+    <title>Наложенным платежом</title>
+  </payment-gateway>
+  <payment-gateway>
+    <description></description>
+    <margin-fraction type="float">0.0</margin-fraction>
+    <price type="float">0.0</price>
+    <position type="integer">8</position>
+    <margin type="decimal">0.0</margin>
+    <id type="integer">8190</id>
+    <account-id type="integer">10</account-id>
+    <title>Через систему Robox</title>
+  </payment-gateway>
+  <payment-gateway>
+    <description></description>
+    <margin-fraction type="float">0.0</margin-fraction>
+    <price type="float">0.0</price>
+    <position type="integer">9</position>
+    <margin type="decimal">0.0</margin>
+    <id type="integer">16141</id>
+    <account-id type="integer">10</account-id>
+    <title>Выставление счета для юр. лиц</title>
+  </payment-gateway>
+  <payment-gateway>
+    <description></description>
+    <margin-fraction type="float">0.0</margin-fraction>
+    <price type="float">0.0</price>
+    <position type="integer">10</position>
+    <margin type="decimal">0.0</margin>
+    <id type="integer">16142</id>
+    <account-id type="integer">10</account-id>
+    <title>Пластиковой картой через систему Assist</title>
+  </payment-gateway>
+  <payment-gateway>
+    <description></description>
+    <margin-fraction type="float">0.0</margin-fraction>
+    <price type="float">0.0</price>
+    <position type="integer">12</position>
+    <margin type="decimal">0.0</margin>
+    <id type="integer">16146</id>
+    <account-id type="integer">10</account-id>
+    <title>Платеж через систему RBKMoney</title>
+  </payment-gateway>
+  <payment-gateway>
+    <description></description>
+    <margin-fraction type="float">0.0</margin-fraction>
+    <price type="float">0.0</price>
+    <position type="integer">14</position>
+    <margin type="decimal">0.0</margin>
+    <id type="integer">16163</id>
+    <account-id type="integer">10</account-id>
+    <title>Через Яндекс.Деньги</title>
+  </payment-gateway>
+  <payment-gateway>
+    <description></description>
+    <margin-fraction type="float">0.0</margin-fraction>
+    <price type="float">0.0</price>
+    <position type="integer">15</position>
+    <margin type="decimal">0.0</margin>
+    <id type="integer">16164</id>
+    <account-id type="integer">10</account-id>
+    <title>Через систему Liqpay</title>
+  </payment-gateway>
+  <payment-gateway>
+    <description></description>
+    <margin-fraction type="float">0.0</margin-fraction>
+    <price type="float">0.0</price>
+    <position type="integer">16</position>
+    <margin type="decimal">0.0</margin>
+    <id type="integer">16170</id>
+    <account-id type="integer">10</account-id>
+    <title>В кредит через систему Robox</title>
+  </payment-gateway>
+</payment-gateways>
+
+Создание заказа
+POST /admin/orders.xml
+> Content-Type: application/xml
+<order>
+    <shipping-address>
+      <address>Moscow sdfsdfsdf</address>
+    </shipping-address>
+    <client>
+      <email>test@test.com</email>
+      <phone>+7 903 223 33 44</phone>
+      <name>vasya</name>
+    </client>
+    <fields-values-attributes type="array">
+      <fields-value-attributes>
+        <value>test</value>
+        <field-id type="integer">12312</field-id>
+      </fields-value-attributes>
+    </fields-values-attributes>
+    <order-lines-attributes type="array">
+        <order-line-attributes>
+            <variant-id>523375</variant-id>
+            <quantity>1</quantity>
+        </order-line-attributes>
+    </order-lines-attributes>
+    <payment-gateway-id type="integer">1797</payment-gateway-id>
+    <delivery-variant-id type="integer">12398</delivery-variant-id>
+</order>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+  <accepted-at type="timestamp" nil="true"></accepted-at>
+  <comment nil="true"></comment>
+  <created-at type="timestamp">2011-12-23 11:31:40 +0400</created-at>
+  <delivered-at type="timestamp" nil="true"></delivered-at>
+  <delivery-date type="date" nil="true"></delivery-date>
+  <delivery-description>Электронной почтой</delivery-description>
+  <delivery-from-hour type="integer" nil="true"></delivery-from-hour>
+  <delivery-price type="decimal">500.0</delivery-price>
+  <delivery-to-hour type="integer" nil="true"></delivery-to-hour>
+  <financial-status>pending</financial-status>
+  <fulfillment-status>new</fulfillment-status>
+  <id type="integer">46543</id>
+  <key>0ee38fb18326fb242f4c6ee559bbdc93</key>
+  <number type="integer">1204</number>
+  <payment-description nil="true"></payment-description>
+  <payment-title>Через систему Web Money</payment-title>
+  <referer nil="true"></referer>
+  <updated-at type="timestamp">2011-12-23 11:31:40 +0400</updated-at>
+  <total-price type="decimal">506.0</total-price>
+  <shipping-address>
+    <address>Moscow sdfsdfsdf</address>
+    <city>Москва</city>
+    <country>RU</country>
+    <middlename nil="true"></middlename>
+    <name>vasya</name>
+    <phone>+79032233344</phone>
+    <state>Московская область</state>
+    <surname nil="true"></surname>
+    <zip nil="true"></zip>
+    <fields-values type="array"/>
+  </shipping-address>
+  <order-lines type="array">
+    <order-line>
+      <created-at type="timestamp">2011-12-23 11:31:40 +0400</created-at>
+      <id type="integer">123880</id>
+      <product-id type="integer">379982</product-id>
+      <quantity type="integer">1</quantity>
+      <sale-price type="decimal">6.0</sale-price>
+      <sku nil="true"></sku>
+      <title>DMW30AJ</title>
+      <updated-at type="timestamp">2011-12-23 11:31:40 +0400</updated-at>
+      <variant-id type="integer">517216</variant-id>
+      <weight type="decimal" nil="true"></weight>
+    </order-line>
+  </order-lines>
+  <discounts type="array"/>
+  <client>
+    <client-group-id type="integer" nil="true"></client-group-id>
+    <created-at type="timestamp">2011-12-23 11:31:40 +0400</created-at>
+    <email>test@test.com</email>
+    <id type="integer">46603</id>
+    <middlename nil="true"></middlename>
+    <name>vasya</name>
+    <phone>+7 903 223 33 44</phone>
+    <registered type="boolean">false</registered>
+    <subscribe type="boolean">true</subscribe>
+    <surname nil="true"></surname>
+    <updated-at type="timestamp">2011-12-23 11:31:40 +0400</updated-at>
+  </client>
+</order>
+
