@@ -2492,3 +2492,107 @@ PUT /admin/discount_codes/1.xml
 Удаление купона
 DELETE /admin/discount_codes/1.xml
 < 200
+
+--
+Способы доставки
+--
+
+Получение списка
+GET /admin/delivery_variants.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<objects type="array">
+  <object>
+    <id type="integer">57802</id>
+    <title>Курьером</title>
+    <description>Супер быстрая доставка</description>
+    <position type="integer">1</position>
+    <created-at type="timestamp">2012-02-22 12:56:51 +0400</created-at>
+    <updated-at type="timestamp">2012-05-17 11:55:07 +0400</updated-at>
+    <delivery-locations type="array">
+      <delivery-location>
+        <region>Респ Адыгея</region>
+        <city>Майкоп</city>
+      </delivery-location>
+      <delivery-location>
+        <region>Респ Адыгея</region>
+        <city>Красногвардейский район</city>
+      </delivery-location>
+    </delivery-locations>
+    <type>DeliveryVariant::PriceDepend</type>
+  </object>
+  <object>
+    <id type="integer">57955</id>
+    <title>Курьером</title>
+    <description nil="true"/>
+    <position type="integer">2</position>
+    <created-at type="timestamp">2012-02-24 11:36:46 +0400</created-at>
+    <updated-at type="timestamp">2012-02-24 11:38:26 +0400</updated-at>
+    <delivery-locations type="array"/>
+    <type>DeliveryVariant::Fixed</type>
+  </object>
+</objects>
+
+Получение информации о способе доставки
+GET /admin/delivery_variants/57955.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+  <id type="integer">57955</id>
+  <title>Курьером</title>
+  <description nil="true"/>
+  <position type="integer">2</position>
+  <created-at type="timestamp">2012-02-24 11:36:46 +0400</created-at>
+  <updated-at type="timestamp">2012-02-24 11:38:26 +0400</updated-at>
+  <delivery-locations type="array"/>
+  <type>DeliveryVariant::Fixed</type>
+</object>
+
+Добавление
+POST /admin/delivery_variants.xml
+> Content-Type: application/xml
+<delivery-variant>
+  <title>Курьером</title>
+  <description>Супер быстрая доставка</description>
+  <delivery-locations-attributes type="array">
+    <delivery-location>
+      <region>Респ Адыгея</region>
+      <city>Майкоп</city>
+    </delivery-location>
+    <delivery-location>
+      <region>Респ Адыгея</region>
+      <city>Красногвардейский район</city>
+    </delivery-location>
+  </delivery-locations-attributes>
+  <type>DeliveryVariant::PriceDepend</type>
+</delivery-variant>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<object>
+  <id type="integer">57802</id>
+  <title>Курьером</title>
+  <description>Супер быстрая доставка</description>
+  <position type="integer">3</position>
+  <created-at type="timestamp">2012-02-22 12:56:51 +0400</created-at>
+  <updated-at type="timestamp">2012-05-17 11:55:07 +0400</updated-at>
+  <delivery-locations type="array">
+    <delivery-location>
+      <id type="integer">12136</id>
+      <region>Респ Адыгея</region>
+      <city>Майкоп</city>
+    </delivery-location>
+    <delivery-location>
+      <id type="integer">12137</id>
+      <region>Респ Адыгея</region>
+      <city>Красногвардейский район</city>
+    </delivery-location>
+  </delivery-locations>
+  <type>DeliveryVariant::PriceDepend</type>
+</object>
+
+Удаление
+DELETE /admin/delivery_variants/57802.xml
+< 200
