@@ -2596,3 +2596,286 @@ POST /admin/delivery_variants.xml
 Удаление
 DELETE /admin/delivery_variants/57802.xml
 < 200
+
+--
+Дополнительные поля
+--
+
+Получение списка
+GET /admin/fields.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<objects type="array">
+  <field>
+    <position type="integer">0</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Страна</office-title>
+    <created-at type="datetime">2010-11-18T00:11:30+03:00</created-at>
+    <updated-at type="datetime">2012-05-30T16:51:19+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">1</id>
+    <title nil="true"></title>
+    <destiny type="integer">1</destiny>
+    <system-name>country</system-name>
+  </field>
+  <field>
+    <position type="integer">0</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Фамилия</office-title>
+    <created-at type="datetime" nil="true"></created-at>
+    <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">136291</id>
+    <title></title>
+    <destiny type="integer">2</destiny>
+    <system-name>surname</system-name>
+  </field>
+  <field>
+    <position type="integer">1</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Номер постамата</office-title>
+    <created-at type="datetime">2012-03-30T16:55:19+04:00</created-at>
+    <updated-at type="datetime">2012-03-30T16:55:19+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">511497</id>
+    <title>Номер постамата</title>
+    <destiny type="integer">3</destiny>
+    <system-name nil="true"></system-name>
+  </field>
+  <field>
+    <position type="integer">1</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Имя</office-title>
+    <created-at type="datetime" nil="true"></created-at>
+    <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+    <obligatory type="boolean">true</obligatory>
+    <id type="integer">65588</id>
+    <title>Имя</title>
+    <destiny type="integer">2</destiny>
+    <system-name>name</system-name>
+  </field>
+  <field>
+    <position type="integer">1</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Область</office-title>
+    <created-at type="datetime">2010-11-18T00:11:31+03:00</created-at>
+    <updated-at type="datetime">2012-07-10T14:18:34+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">2</id>
+    <title></title>
+    <destiny type="integer">1</destiny>
+    <system-name>state</system-name>
+  </field>
+  <field>
+    <position type="integer">2</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Отчество</office-title>
+    <created-at type="datetime" nil="true"></created-at>
+    <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">150050</id>
+    <title></title>
+    <destiny type="integer">2</destiny>
+    <system-name>middlename</system-name>
+  </field>
+  <field>
+    <position type="integer">2</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Адрес постомата</office-title>
+    <created-at type="datetime">2012-03-30T16:55:19+04:00</created-at>
+    <updated-at type="datetime">2012-03-30T16:55:19+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">511498</id>
+    <title>Адрес постомата</title>
+    <destiny type="integer">3</destiny>
+    <system-name nil="true"></system-name>
+  </field>
+  <field>
+    <position type="integer">2</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Город</office-title>
+    <created-at type="datetime">2010-11-18T00:11:31+03:00</created-at>
+    <updated-at type="datetime">2012-07-10T14:18:34+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">3</id>
+    <title></title>
+    <destiny type="integer">1</destiny>
+    <system-name>city</system-name>
+  </field>
+  <field>
+    <position type="integer">3</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example></example>
+    <office-title>ИНН</office-title>
+    <created-at type="datetime">2012-06-18T12:42:06+04:00</created-at>
+    <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">624245</id>
+    <title>ИНН</title>
+    <destiny type="integer">2</destiny>
+    <system-name nil="true"></system-name>
+  </field>
+  <field>
+    <position type="integer">3</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Адрес</office-title>
+    <created-at type="datetime">2010-11-18T00:11:31+03:00</created-at>
+    <updated-at type="datetime">2012-07-10T14:18:34+04:00</updated-at>
+    <obligatory type="boolean">true</obligatory>
+    <id type="integer">4</id>
+    <title></title>
+    <destiny type="integer">1</destiny>
+    <system-name>address</system-name>
+  </field>
+  <field>
+    <position type="integer">4</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Почтовый индекс</office-title>
+    <created-at type="datetime">2010-11-18T00:11:31+03:00</created-at>
+    <updated-at type="datetime">2012-07-10T14:18:34+04:00</updated-at>
+    <obligatory type="boolean">true</obligatory>
+    <id type="integer">5</id>
+    <title></title>
+    <destiny type="integer">1</destiny>
+    <system-name>zip</system-name>
+  </field>
+  <field>
+    <position type="integer">4</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example>Например: +7(926)111-11-11</example>
+    <office-title>Телефон</office-title>
+    <created-at type="datetime" nil="true"></created-at>
+    <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+    <obligatory type="boolean">true</obligatory>
+    <id type="integer">78672</id>
+    <title></title>
+    <destiny type="integer">2</destiny>
+    <system-name>phone</system-name>
+  </field>
+  <field>
+    <position type="integer">5</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>E-mail</office-title>
+    <created-at type="datetime" nil="true"></created-at>
+    <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">93555</id>
+    <title></title>
+    <destiny type="integer">2</destiny>
+    <system-name>email</system-name>
+  </field>
+  <field>
+    <position type="integer">6</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example/>
+    <office-title>КЛАДР</office-title>
+    <created-at type="datetime">2012-05-30T16:49:26+04:00</created-at>
+    <updated-at type="datetime">2012-07-09T18:21:43+04:00</updated-at>
+    <obligatory type="boolean">true</obligatory>
+    <id type="integer">605960</id>
+    <title>Адрес</title>
+    <destiny type="integer">1</destiny>
+    <system-name nil="true"></system-name>
+  </field>
+  <field>
+    <position type="integer">6</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Подтверждение email</office-title>
+    <created-at type="datetime" nil="true"></created-at>
+    <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">105738</id>
+    <title></title>
+    <destiny type="integer">2</destiny>
+    <system-name>email_confirmation</system-name>
+  </field>
+  <field>
+    <position type="integer">7</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example nil="true"></example>
+    <office-title>Подписка на новости/office-title>
+    <created-at type="datetime">2011-03-10T16:38:06+03:00</created-at>
+    <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">180611</id>
+    <title>Подписка на новости</title>
+    <destiny type="integer">2</destiny>
+    <system-name>subscribe</system-name>
+  </field>
+  <field>
+    <position type="integer">8</position>
+    <for-buyer type="boolean">true</for-buyer>
+    <example></example>
+    <office-title>Статус покупателя</office-title>
+    <created-at type="datetime">2011-11-14T13:21:13+04:00</created-at>
+    <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+    <obligatory type="boolean">false</obligatory>
+    <id type="integer">389591</id>
+    <title>Статус покупателя</title>
+    <destiny type="integer">2</destiny>
+    <system-name nil="true"></system-name>
+  </field>
+</objects>
+
+Получение информации
+GET /admin/fields/389591.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<field>
+  <position type="integer">8</position>
+  <for-buyer type="boolean">true</for-buyer>
+  <example></example>
+  <office-title>Статус покупателя</office-title>
+  <created-at type="datetime">2011-11-14T13:21:13+04:00</created-at>
+  <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+  <obligatory type="boolean">false</obligatory>
+  <id type="integer">389591</id>
+  <title>Статус покупателя</title>
+  <destiny type="integer">2</destiny>
+  <system-name nil="true"></system-name>
+</field>
+
+Добавление
+POST /admin/fields.xml
+> Content-Type: application/xml
+<field>
+  <type>Field::TextField</type>
+  <for-buyer type="boolean">true</for-buyer>
+  <office-title>Статус покупателя</office-title>
+  <obligatory type="boolean">false</obligatory>
+  <title>Статус покупателя</title>
+  <destiny type="integer">2</destiny>
+</field>
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<field>
+  <position type="integer">8</position>
+  <for-buyer type="boolean">true</for-buyer>
+  <example></example>
+  <office-title>Статус покупателя</office-title>
+  <created-at type="datetime">2011-11-14T13:21:13+04:00</created-at>
+  <updated-at type="datetime">2012-06-18T12:42:15+04:00</updated-at>
+  <obligatory type="boolean">false</obligatory>
+  <id type="integer">389591</id>
+  <title>Статус покупателя</title>
+  <destiny type="integer">2</destiny>
+  <system-name nil="true"></system-name>
+</field>
+
+DELETE /admin/fields/389591.xml
+< 200
