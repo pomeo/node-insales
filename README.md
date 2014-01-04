@@ -12,4 +12,5 @@ node-insales
 Материал:  
 http://nodejs.org/docs/latest/api/modules.html  
 https://github.com/danwrong/restler  
-https://github.com/learnboost/kue
+https://github.com/learnboost/kue  
+https://github.com/appsattic/node-coupon-code
