@@ -5,6 +5,5 @@ services:
 node_js:
   - "0.11"
   - "0.10"
-  - "0.8"
 script: make test-once
 after_script: make test-coveralls
