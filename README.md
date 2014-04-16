@@ -11,6 +11,7 @@ node-insales
 
 Материал:  
 http://nodejs.org/docs/latest/api/modules.html  
+https://www.npmjs.org/doc/cli/npm-link.html  
 https://github.com/danwrong/restler  
 https://github.com/learnboost/kue  
 https://github.com/appsattic/node-coupon-code
