@@ -19,6 +19,7 @@
     "dependencies" : {
         "xml2js"  : "0.4.x",
         "restler" : "3.1.x",
-        "mongoose": "3.8.x"
+        "mongoose": "3.8.x",
+        "kue"     : "0.7.x"
     }
 }
