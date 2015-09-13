@@ -30,12 +30,21 @@
     "babel": "^5.8.23",
     "coveralls": "^2.11.4",
     "istanbul": "^0.3.22",
-    "mocha": "^2.3.3"
+    "mocha": "^2.3.3",
+    "xo": "^0.9.0"
   },
   "scripts": {
-    "test": "make test-once"
+    "test": "xo && make test-once"
   },
   "bugs": {
     "url": "https://github.com/pomeo/node-insales/issues"
+  },
+  "xo": {
+    "esnext": true,
+    "space": true,
+    "envs": [
+      "node",
+      "mocha"
+    ]
   }
 }
