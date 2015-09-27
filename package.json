@@ -1,7 +1,7 @@
 {
     "name": "insales",
     "homepage" : "https://github.com/pomeo/node-insales",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Insales.ru module for node.js",
     "keywords": ["insales", "insales.ru", "api"],
     "author": "Sergey Ovechkin <me@pomeo.me>",
