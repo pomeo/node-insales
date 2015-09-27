@@ -1,10 +1,10 @@
 MOCHA_PATH=node_modules/mocha/bin/mocha
 
 test:
-	NODE_ENV=test $(MOCHA_PATH) -w --reporter spec
+	NODE_ENV=test $(MOCHA_PATH) -w -G --reporter spec
 
 test-debug:
-	NODE_ENV=test $(MOCHA_PATH) -w --reporter spec debug
+	NODE_ENV=test $(MOCHA_PATH) -w -G --reporter spec debug
 
 test-once:
 	NODE_ENV=test $(MOCHA_PATH) --reporter spec
