@@ -17,12 +17,6 @@
     },
     "main": "./lib/index",
     "dependencies" : {
-        "xml2js"  : "~0.4.4",
-        "restler" : "~3.2.2",
-        "mongoose": "~3.8.12",
-        "kue"     : "~0.8.0",
-        "moment"  : "~2.7.0",
-        "agenda"  : "~0.6.15"   
     },
     "devDependencies": {
         "mocha": "~1.20.1",
