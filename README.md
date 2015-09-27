@@ -9,6 +9,6 @@ node-insales
 В будущем node.js модуль для работы с [API insales.ru](https://wiki.insales.ru/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B_API).
 
 Материал:
-http://nodejs.org/docs/latest/api/modules.html
-https://www.npmjs.org/doc/cli/npm-link.html
+http://nodejs.org/docs/latest/api/modules.html  
+https://www.npmjs.org/doc/cli/npm-link.html  
 https://github.com/request/request
