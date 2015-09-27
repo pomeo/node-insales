@@ -4,7 +4,7 @@
     "version": "0.0.2",
     "description": "Insales.ru module for node.js",
     "keywords": ["insales", "insales.ru", "api"],
-    "author": "Sergey Ovechkin <me@sovechkin.com>",
+    "author": "Sergey Ovechkin <me@pomeo.me>",
     "engines": [
         "node"
     ],
