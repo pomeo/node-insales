@@ -1,7 +1,7 @@
-const insales = require('../lib');
+// const insales = require('../lib');
 
-describe('Test', function(){
-  it('should return 1', function(){
+describe('Test', () => {
+  it('should return 1', () => {
     return 1;
   });
 });
