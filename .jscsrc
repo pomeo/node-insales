@@ -1,0 +1,21 @@
+{
+    "preset": "airbnb",
+    "fileExtensions": [".js", "jscs"],
+
+    "jsDoc": {
+        "checkAnnotations": "closurecompiler",
+        "checkParamNames": true,
+        "requireParamTypes": true,
+        "checkRedundantParams": true,
+        "checkReturnTypes": true,
+        "checkRedundantReturns": true,
+        "requireReturnTypes": true,
+        "checkTypes": "capitalizedNativeCase",
+        "checkRedundantAccess": true,
+        "requireNewlineAfterDescription": true
+    },
+
+    "excludeFiles": [
+        "node_modules/**"
+    ]
+}
