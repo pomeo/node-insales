@@ -31,7 +31,7 @@
     "mocha-lcov-reporter": "^1.0.0"
   },
   "scripts": {
-    "test": "make test-all"
+    "test": "mocha --reporter spec"
   },
   "bugs": {
     "url": "https://github.com/pomeo/node-insales/issues"
