@@ -27,11 +27,16 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.4",
-    "mocha": "^2.3.3",
-    "mocha-lcov-reporter": "^1.0.0"
+    "istanbul": "^0.3.22",
+    "mocha": "^2.3.3"
   },
   "scripts": {
-    "test": "make test-all"
+    "test": "make test-once"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "node-insales/lib"
+    }
   },
   "bugs": {
     "url": "https://github.com/pomeo/node-insales/issues"
