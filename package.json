@@ -1,32 +1,39 @@
 {
-    "name": "insales",
-    "homepage" : "https://github.com/pomeo/node-insales",
-    "version": "0.0.4",
-    "description": "Insales.ru module for node.js",
-    "keywords": ["insales", "insales.ru", "api"],
-    "author": "Sergey Ovechkin <me@pomeo.me>",
-    "engines": [
-        "node"
-    ],
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/pomeo/node-insales.git"
-    },
-    "directories": {
-        "lib": "lib",
-        "test": "test"
-    },
-    "main": "./lib/index",
-    "dependencies" : {
-    },
-    "devDependencies": {
-
-    },
-    "scripts": {
-        "test": "make test-all"
-    },
-    "bugs": {
-        "url": "https://github.com/pomeo/node-insales/issues"
-    }
+  "name": "insales",
+  "homepage": "https://github.com/pomeo/node-insales",
+  "version": "0.0.5",
+  "description": "Insales.ru module for node.js",
+  "keywords": [
+    "insales",
+    "insales.ru",
+    "api"
+  ],
+  "author": "Sergey Ovechkin <me@pomeo.me>",
+  "engines": [
+    "node"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pomeo/node-insales.git"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "main": "./lib/index",
+  "dependencies": {
+    "restler": "^3.4.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "mocha": "^2.3.3",
+    "mocha-lcov-reporter": "^1.0.0"
+  },
+  "scripts": {
+    "test": "make test-all"
+  },
+  "bugs": {
+    "url": "https://github.com/pomeo/node-insales/issues"
+  }
 }
