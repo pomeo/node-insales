@@ -34,11 +34,6 @@
   "scripts": {
     "test": "make test-once"
   },
-  "config": {
-    "blanket": {
-      "pattern": "node-insales/lib"
-    }
-  },
   "bugs": {
     "url": "https://github.com/pomeo/node-insales/issues"
   }
