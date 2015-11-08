@@ -1,7 +1,7 @@
 {
   "name": "insales",
   "homepage": "https://github.com/pomeo/node-insales",
-  "version": "0.0.5",
+  "version": "0.2.0",
   "description": "Insales.ru module for node.js",
   "keywords": [
     "insales",
@@ -9,9 +9,9 @@
     "api"
   ],
   "author": "Sergey Ovechkin <me@pomeo.me>",
-  "engines": [
-    "node"
-  ],
+  "engines": {
+    "node": ">=4.0"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -23,22 +23,31 @@
   },
   "main": "./lib/index",
   "dependencies": {
-    "restler": "^3.4.0"
+    "restler": "^3.4.0",
+    "js2xml": "git://github.com/pomeo/js2xml.git"
   },
   "devDependencies": {
+    "babel": "^5.8.23",
     "coveralls": "^2.11.4",
     "istanbul": "^0.3.22",
-    "mocha": "^2.3.3"
+    "mocha": "^2.3.3",
+    "xo": "^0.9.0"
   },
   "scripts": {
-    "test": "make test-once"
-  },
-  "config": {
-    "blanket": {
-      "pattern": "node-insales/lib"
-    }
+    "test": "xo && make test-once"
   },
   "bugs": {
     "url": "https://github.com/pomeo/node-insales/issues"
+  },
+  "xo": {
+    "esnext": true,
+    "space": true,
+    "rules": {
+      "space-before-function-paren": [0]
+    },
+    "envs": [
+      "node",
+      "mocha"
+    ]
   }
 }
