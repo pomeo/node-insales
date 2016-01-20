@@ -1,7 +1,7 @@
 {
   "name": "insales",
   "homepage": "https://github.com/pomeo/node-insales",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Insales.ru module for node.js",
   "keywords": [
     "insales",
