@@ -1,7 +1,7 @@
 {
   "name": "insales",
   "homepage": "https://github.com/pomeo/node-insales",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Insales.ru module for node.js",
   "keywords": [
     "insales",
@@ -23,8 +23,8 @@
   },
   "main": "./lib/index",
   "dependencies": {
-    "restler": "^3.4.0",
-    "js2xml": "git://github.com/pomeo/js2xml.git"
+    "js2xml": "^1.0.4",
+    "restler": "^3.4.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
