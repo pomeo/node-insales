@@ -23,8 +23,8 @@
   },
   "main": "./lib/index",
   "dependencies": {
-    "restler": "^3.4.0",
-    "js2xml": "git://github.com/pomeo/js2xml.git"
+    "js2xml": "^1.0.4",
+    "restler": "^3.4.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
