@@ -26,7 +26,6 @@
     "restler": "^3.4.0"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
     "coveralls": "^2.11.4",
     "istanbul": "^0.3.22",
     "mocha": "^2.3.3",
