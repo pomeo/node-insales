@@ -18,7 +18,7 @@
     "lib": "lib",
     "test": "test"
   },
-  "main": "./lib/index",
+  "main": "./index",
   "dependencies": {
     "babel-core": "^6.7.2",
     "js2xml": "^1.0.4",
