@@ -9,9 +9,6 @@
     "api"
   ],
   "author": "Sergey Ovechkin <me@pomeo.me>",
-  "engines": {
-    "node": ">=4.0"
-  },
   "license": "MIT",
   "repository": {
     "type": "git",
