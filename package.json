@@ -23,6 +23,7 @@
   },
   "main": "./lib/index",
   "dependencies": {
+    "babel-core": "^6.7.2",
     "js2xml": "^1.0.4",
     "restler": "^3.4.0"
   },
