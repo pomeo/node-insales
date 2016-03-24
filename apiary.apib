@@ -3,6 +3,51 @@ HOST: http://insales.ru/
 --- insales.ru test API ---
 
 --
+Аккаунт
+--
+
+Получение информации о аккаунте
+GET /admin/account.xml
+< 200
+< Content-Type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<account>
+    <blocked type="boolean">false</blocked>
+    <city>Москва</city>
+    <contact-phone nil="true"/>
+    <country>RU</country>
+    <enable-cart-discounts type="boolean">true</enable-cart-discounts>
+    <enable-client-discounts type="boolean">false</enable-client-discounts>
+    <enable-group-discounts type="boolean">true</enable-group-discounts>
+    <enable-order-discounts type="boolean">false</enable-order-discounts>
+    <hide-items-out-of-stock type="boolean">false</hide-items-out-of-stock>
+    <id type="integer">12345</id>
+    <notification-email nil="true"/>
+    <organization nil="true"/>
+    <sms-notification-phone></sms-notification-phone>
+    <state>г Москва</state>
+    <subdomain>shop-test</subdomain>
+    <email>mail@mail.ru</email>
+    <icq nil="true"/>
+    <phone>+71234567890</phone>
+    <title>Название магазина</title>
+    <minimum-items-price nil="true"/>
+    <stock-currency-exchange-rate type="float">1.0</stock-currency-exchange-rate>
+    <client-cookies-whitelist>cookies1
+cookies2
+cookies3</client-cookies-whitelist>
+    <main-host>shop-test.myinsales.ru</main-host>
+    <next-order-number type="integer">1040</next-order-number>
+    <time-zone>Moscow</time-zone>
+    <owner>
+        <created-at type="timestamp">2013-02-18 00:20:01 +0400</created-at>
+        <email>mail@mail.ru</email>
+        <id type="integer">12345</id>
+        <name>Иван</name>
+    </owner>
+</account>
+
+--
 Категории на складе
 --
 
@@ -472,10 +517,10 @@ PUT /admin/products/478.xml
             <price type="decimal">740.0</price>
             <quantity type="integer">10</quantity>
             <options>
-                <option> 
-                    <option-name-id type="integer">202088</option-name-id> 
-                    <value>value 1</value> 
-                </option> 
+                <option>
+                    <option-name-id type="integer">202088</option-name-id>
+                    <value>value 1</value>
+                </option>
             </options>
         </variant>
         <variant>
@@ -484,10 +529,10 @@ PUT /admin/products/478.xml
             <price type="decimal">800.0</price>
             <quantity type="integer">2</quantity>
             <options>
-                <option> 
-                    <option-name-id type="integer">202088</option-name-id> 
-                    <value>value 2</value> 
-                </option> 
+                <option>
+                    <option-name-id type="integer">202088</option-name-id>
+                    <value>value 2</value>
+                </option>
             </options>
         </variant>
     </variants-attributes>
@@ -902,7 +947,7 @@ PUT /admin/products/variants_group_update.xml
     <id type="integer">2</id>
     <price type="decimal">200.0</price>
     <quantity type="integer">3</quantity>
-  </variant> 
+  </variant>
 </variants>
 < 200
 < Content-Type: application/xml
