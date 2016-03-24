@@ -1,5 +1,4 @@
 import should from 'should';
-
 import InSales from '../';
 
 describe('InSales', () => {
