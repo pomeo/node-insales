@@ -1,0 +1,132 @@
+{
+  "coverage": "3.22%",
+  "expectCount": 31,
+  "actualCount": 1,
+  "files": {
+    "lib/api/charge.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        16,
+        4,
+        41,
+        28
+      ]
+    },
+    "lib/api/coupon.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        66,
+        6,
+        18,
+        54
+      ]
+    },
+    "lib/api/file.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        17,
+        5,
+        30,
+        42
+      ]
+    },
+    "lib/api/jstag.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "lib/api/product.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        16,
+        4,
+        29
+      ]
+    },
+    "lib/api/recurringcharge.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        17,
+        5,
+        36
+      ]
+    },
+    "lib/error.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "lib/methods/get.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        6
+      ]
+    },
+    "lib/api/account.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "lib/api/collection.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        15
+      ]
+    },
+    "lib/output.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "lib/methods/post.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        7
+      ]
+    },
+    "lib/methods/put.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        7
+      ]
+    },
+    "lib/methods/remove.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        6
+      ]
+    },
+    "lib/request.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "lib/api/token.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    }
+  }
+}
