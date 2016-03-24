@@ -1,10 +1,4 @@
 {
   "source": "./lib",
-  "destination": "./esdoc",
-  "coverage": true,
-  "includeSource": true,
-  "test": {
-    "type": "mocha",
-    "source": "./test"
-  }
+  "destination": "./esdoc"
 }
