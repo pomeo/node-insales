@@ -1,7 +1,6 @@
 InSales
 ============
 [![Build Status](https://api.travis-ci.org/pomeo/node-insales.png)](http://travis-ci.org/pomeo/node-insales)
-[![Code Climate](https://codeclimate.com/github/pomeo/node-insales.png)](https://codeclimate.com/github/pomeo/node-insales)
 [![Coverage Status](https://img.shields.io/coveralls/pomeo/node-insales.svg)](https://coveralls.io/r/pomeo/node-insales)
 [![Dependencies](https://david-dm.org/pomeo/node-insales.png)](https://david-dm.org/pomeo/node-insales)
 [![NPM version](https://badge.fury.io/js/insales.svg)](http://badge.fury.io/js/insales)
