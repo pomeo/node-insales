@@ -71,10 +71,56 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { get } from &apos;../methods/get&apos;;
 
 /**
- * fuck
+ * GET /admin/account.xml
+ *
+ * Examples:
+ *
+ *      insales.getAccount({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;
+ *      }).then(response =&gt; {
+ *        console.info(response.data);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { account:
+ *         { blocked: &apos;false&apos;,
+ *           city: &apos;&#x41C;&#x43E;&#x441;&#x43A;&#x432;&#x430;&apos;,
+ *           &apos;contact-phone&apos;: &apos;&apos;,
+ *           country: &apos;RU&apos;,
+ *           &apos;enable-cart-discounts&apos;: &apos;true&apos;,
+ *           &apos;enable-client-discounts&apos;: &apos;false&apos;,
+ *           &apos;enable-group-discounts&apos;: &apos;true&apos;,
+ *           &apos;enable-order-discounts&apos;: &apos;false&apos;,
+ *           &apos;hide-items-out-of-stock&apos;: &apos;false&apos;,
+ *           id: &apos;12345&apos;,
+ *           &apos;notification-email&apos;: &apos;&apos;,
+ *           organization: &apos;&apos;,
+ *           &apos;sms-notification-phone&apos;: &apos;&apos;,
+ *           state: &apos;&#x433; &#x41C;&#x43E;&#x441;&#x43A;&#x432;&#x430;&apos;,
+ *           subdomain: &apos;shop-test&apos;,
+ *           email: &apos;mail@mail.ru&apos;,
+ *           icq: &apos;&apos;,
+ *           phone: &apos;+71234567890&apos;,
+ *           title: &apos;&#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x43C;&#x430;&#x433;&#x430;&#x437;&#x438;&#x43D;&#x430;&apos;,
+ *           &apos;minimum-items-price&apos;: &apos;&apos;,
+ *           &apos;stock-currency-exchange-rate&apos;: &apos;1.0&apos;,
+ *           &apos;client-cookies-whitelist&apos;: &apos;&apos;,
+ *           &apos;main-host&apos;: &apos;shop-test.myinsales.ru&apos;,
+ *           &apos;next-order-number&apos;: &apos;1040&apos;,
+ *           &apos;time-zone&apos;: &apos;Moscow&apos;,
+ *           owner:
+ *            { &apos;created-at&apos;: &apos;2011-11-11 11:11:11 +0400&apos;,
+ *              email: &apos;mail@mail.ru&apos;,
+ *              id: &apos;12345&apos;,
+ *               name: &apos;&#x418;&#x43C;&#x44F;&apos; } } }
  * @param {Object} options
- * @param {Number} id
- * @returns {Promise} fuck
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} id Required, app id
+ * @returns {Promise}
  */
 export function getAccount(options, id) {
   return new Promise((resolve, reject) =&gt; {

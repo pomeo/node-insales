@@ -73,6 +73,44 @@ import { post } from &apos;../methods/post&apos;;
 import { remove } from &apos;../methods/remove&apos;;
 import { put } from &apos;../methods/put&apos;;
 
+/**
+ * GET /admin/discount_codes/{id}.xml
+ *
+ * Examples:
+ *
+ *      insales.getCoupon({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        couponid: &apos;1076619&apos;
+ *      }).then(response =&gt; {
+ *        console.info(response.data);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;discount-code&apos;:
+ *         { &apos;act-once&apos;: &apos;false&apos;,
+ *           &apos;act-once-for-client&apos;: &apos;false&apos;,
+ *           code: &apos;WWWWWW&apos;,
+ *           &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *           description: &apos;&apos;,
+ *           disabled: &apos;false&apos;,
+ *           discount: &apos;10.0&apos;,
+ *           &apos;expired-at&apos;: &apos;2011-11-11&apos;,
+ *           id: &apos;1111111&apos;,
+ *           &apos;min-price&apos;: &apos;0.0&apos;,
+ *           &apos;type-id&apos;: &apos;1&apos;,
+ *           &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *           worked: &apos;true&apos;,
+ *           &apos;discount-collections&apos;: &apos;&apos; } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} options.id Required, coupon id
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function getCoupon(options, id) {
   return new Promise((resolve, reject) =&gt; {
     get({
@@ -85,6 +123,61 @@ export function getCoupon(options, id) {
   });
 }
 
+/**
+ * GET /admin/discount_codes.xml
+ *
+ * Examples:
+ *
+ *      insales.listCoupon({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *      }).then(response =&gt; {
+ *        console.info(response.data);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;discount-codes&apos;:
+ *         { &apos;discount-code&apos;:
+ *            [{ &apos;act-once&apos;: &apos;false&apos;,
+ *              &apos;act-once-for-client&apos;: &apos;false&apos;,
+ *              code: &apos;WWWWWW&apos;,
+ *              &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *              description: &apos;&apos;,
+ *              disabled: &apos;false&apos;,
+ *              discount: &apos;10.0&apos;,
+ *              &apos;expired-at&apos;: &apos;2011-11-11&apos;,
+ *              id: &apos;1111111&apos;,
+ *              &apos;min-price&apos;: &apos;0.0&apos;,
+ *              &apos;type-id&apos;: &apos;1&apos;,
+ *              &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *              worked: &apos;true&apos;,
+ *              &apos;discount-collections&apos;: &apos;&apos; },
+ *            { &apos;act-once&apos;: &apos;false&apos;,
+ *              &apos;act-once-for-client&apos;: &apos;false&apos;,
+ *              code: &apos;WWWWWY&apos;,
+ *              &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *              description: &apos;&apos;,
+ *              disabled: &apos;false&apos;,
+ *              discount: &apos;10.0&apos;,
+ *              &apos;expired-at&apos;: &apos;2011-11-11&apos;,
+ *              id: &apos;1111112&apos;,
+ *              &apos;min-price&apos;: &apos;0.0&apos;,
+ *              &apos;type-id&apos;: &apos;1&apos;,
+ *              &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *              worked: &apos;true&apos;,
+ *              &apos;discount-collections&apos;: &apos;&apos; }]}}
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} [options.page=1] Page
+ * @param {number|string} [options.per_page=250] Coupons per page
+ * @param {string} [options.updated_since] Coupons updated since. Format YYYY-MM-DD
+ * @param {boolean} [options.deleted] Deleted coupons
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function listCoupon(options, id) {
   const query = {};
   query.page = options.page ? options.page : 1;
@@ -108,6 +201,54 @@ export function listCoupon(options, id) {
   });
 }
 
+/**
+ * POST /admin/discount_codes.xml
+ *
+ * Examples:
+ *
+ *      insales.createCoupon({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        coupon: {
+ *           &apos;discount_code&apos;: {
+ *             &apos;code&apos;: &apos;frandom2&apos;,
+ *             &apos;act_once&apos;: &apos;true&apos;,
+ *             &apos;discount&apos;: 10,
+ *             &apos;type_id&apos;: 1,
+ *             &apos;description&apos;: &apos;API code&apos;,
+ *             &apos;disabled&apos;: 0,
+ *             &apos;expired-at&apos;: &apos;2030-06-09&apos;
+ *           }
+ *        }
+ *      }).then(output =&gt; {
+ *        console.info(output.response.statusCode);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;discount-code&apos;:
+ *         { &apos;act-once&apos;: &apos;true&apos;,
+ *           &apos;act-once-for-client&apos;: &apos;&apos;,
+ *           code: &apos;frandom2&apos;,
+ *           &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *           description: &apos;API code&apos;,
+ *           disabled: &apos;false&apos;,
+ *           discount: &apos;10.0&apos;,
+ *           &apos;expired-at&apos;: &apos;2030-06-09&apos;,
+ *           id: &apos;100000&apos;,
+ *           &apos;min-price&apos;: &apos;&apos;,
+ *           &apos;type-id&apos;: &apos;1&apos;,
+ *           &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *           worked: &apos;true&apos;,
+ *           &apos;discount-collections&apos;: &apos;&apos; } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {object} options.coupon Required, coupon
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function createCoupon(options, id) {
   return new Promise((resolve, reject) =&gt; {
     post({
@@ -121,6 +262,30 @@ export function createCoupon(options, id) {
   });
 }
 
+/**
+ * DELETE /admin/discount_codes/{id}.xml
+ *
+ * Examples:
+ *
+ *      insales.removeCoupon({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        couponid: &apos;1076619&apos;
+ *      }).then(output =&gt; {
+ *        console.info(output.response.statusCode);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      200
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} options.couponid Required, coupon id
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function removeCoupon(options, id) {
   return new Promise((resolve, reject) =&gt; {
     remove({

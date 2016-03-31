@@ -5,55 +5,37 @@
       "type": "ImportDeclaration",
       "specifiers": [
         {
-          "type": "ImportSpecifier",
+          "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
             "name": "crypto",
             "range": [
-              9,
-              15
+              7,
+              13
             ],
             "loc": {
               "start": {
                 "line": 1,
-                "column": 9
+                "column": 7
               },
               "end": {
                 "line": 1,
-                "column": 15
-              }
-            }
-          },
-          "imported": {
-            "type": "Identifier",
-            "name": "crypto",
-            "range": [
-              9,
-              15
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 9
-              },
-              "end": {
-                "line": 1,
-                "column": 15
+                "column": 13
               }
             }
           },
           "range": [
-            9,
-            15
+            7,
+            13
           ],
           "loc": {
             "start": {
               "line": 1,
-              "column": 9
+              "column": 7
             },
             "end": {
               "line": 1,
-              "column": 15
+              "column": 13
             }
           }
         }
@@ -63,23 +45,23 @@
         "value": "crypto",
         "raw": "'crypto'",
         "range": [
-          23,
-          31
+          19,
+          27
         ],
         "loc": {
           "start": {
             "line": 1,
-            "column": 23
+            "column": 19
           },
           "end": {
             "line": 1,
-            "column": 31
+            "column": 27
           }
         }
       },
       "range": [
         0,
-        32
+        28
       ],
       "loc": {
         "start": {
@@ -88,9 +70,29 @@
         },
         "end": {
           "line": 1,
-          "column": 32
+          "column": 28
         }
-      }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String} token Required, token receive when install app\n * @param {String} secret Required, app secret\n * @returns {String} access token\n ",
+          "range": [
+            30,
+            327
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 16,
+              "column": 3
+            }
+          }
+        }
+      ]
     },
     {
       "type": "ExportNamedDeclaration",
@@ -100,16 +102,16 @@
           "type": "Identifier",
           "name": "token",
           "range": [
-            50,
-            55
+            344,
+            349
           ],
           "loc": {
             "start": {
-              "line": 3,
+              "line": 17,
               "column": 16
             },
             "end": {
-              "line": 3,
+              "line": 17,
               "column": 21
             }
           }
@@ -119,16 +121,16 @@
             "type": "Identifier",
             "name": "token",
             "range": [
-              56,
-              61
+              350,
+              355
             ],
             "loc": {
               "start": {
-                "line": 3,
+                "line": 17,
                 "column": 22
               },
               "end": {
-                "line": 3,
+                "line": 17,
                 "column": 27
               }
             }
@@ -137,16 +139,16 @@
             "type": "Identifier",
             "name": "secret",
             "range": [
-              63,
-              69
+              357,
+              363
             ],
             "loc": {
               "start": {
-                "line": 3,
+                "line": 17,
                 "column": 29
               },
               "end": {
-                "line": 3,
+                "line": 17,
                 "column": 35
               }
             }
@@ -176,16 +178,16 @@
                             "type": "Identifier",
                             "name": "crypto",
                             "range": [
-                              82,
-                              88
+                              376,
+                              382
                             ],
                             "loc": {
                               "start": {
-                                "line": 4,
+                                "line": 18,
                                 "column": 9
                               },
                               "end": {
-                                "line": 4,
+                                "line": 18,
                                 "column": 15
                               }
                             }
@@ -194,31 +196,31 @@
                             "type": "Identifier",
                             "name": "createHash",
                             "range": [
-                              89,
-                              99
+                              383,
+                              393
                             ],
                             "loc": {
                               "start": {
-                                "line": 4,
+                                "line": 18,
                                 "column": 16
                               },
                               "end": {
-                                "line": 4,
+                                "line": 18,
                                 "column": 26
                               }
                             }
                           },
                           "range": [
-                            82,
-                            99
+                            376,
+                            393
                           ],
                           "loc": {
                             "start": {
-                              "line": 4,
+                              "line": 18,
                               "column": 9
                             },
                             "end": {
-                              "line": 4,
+                              "line": 18,
                               "column": 26
                             }
                           }
@@ -229,32 +231,32 @@
                             "value": "md5",
                             "raw": "'md5'",
                             "range": [
-                              100,
-                              105
+                              394,
+                              399
                             ],
                             "loc": {
                               "start": {
-                                "line": 4,
+                                "line": 18,
                                 "column": 27
                               },
                               "end": {
-                                "line": 4,
+                                "line": 18,
                                 "column": 32
                               }
                             }
                           }
                         ],
                         "range": [
-                          82,
-                          106
+                          376,
+                          400
                         ],
                         "loc": {
                           "start": {
-                            "line": 4,
+                            "line": 18,
                             "column": 9
                           },
                           "end": {
-                            "line": 4,
+                            "line": 18,
                             "column": 33
                           }
                         }
@@ -263,31 +265,31 @@
                         "type": "Identifier",
                         "name": "update",
                         "range": [
-                          112,
-                          118
+                          406,
+                          412
                         ],
                         "loc": {
                           "start": {
-                            "line": 5,
+                            "line": 19,
                             "column": 5
                           },
                           "end": {
-                            "line": 5,
+                            "line": 19,
                             "column": 11
                           }
                         }
                       },
                       "range": [
-                        82,
-                        118
+                        376,
+                        412
                       ],
                       "loc": {
                         "start": {
-                          "line": 4,
+                          "line": 18,
                           "column": 9
                         },
                         "end": {
-                          "line": 5,
+                          "line": 19,
                           "column": 11
                         }
                       }
@@ -300,16 +302,16 @@
                           "type": "Identifier",
                           "name": "token",
                           "range": [
-                            119,
-                            124
+                            413,
+                            418
                           ],
                           "loc": {
                             "start": {
-                              "line": 5,
+                              "line": 19,
                               "column": 12
                             },
                             "end": {
-                              "line": 5,
+                              "line": 19,
                               "column": 17
                             }
                           }
@@ -318,47 +320,47 @@
                           "type": "Identifier",
                           "name": "secret",
                           "range": [
-                            127,
-                            133
+                            421,
+                            427
                           ],
                           "loc": {
                             "start": {
-                              "line": 5,
+                              "line": 19,
                               "column": 20
                             },
                             "end": {
-                              "line": 5,
+                              "line": 19,
                               "column": 26
                             }
                           }
                         },
                         "range": [
-                          119,
-                          133
+                          413,
+                          427
                         ],
                         "loc": {
                           "start": {
-                            "line": 5,
+                            "line": 19,
                             "column": 12
                           },
                           "end": {
-                            "line": 5,
+                            "line": 19,
                             "column": 26
                           }
                         }
                       }
                     ],
                     "range": [
-                      82,
-                      134
+                      376,
+                      428
                     ],
                     "loc": {
                       "start": {
-                        "line": 4,
+                        "line": 18,
                         "column": 9
                       },
                       "end": {
-                        "line": 5,
+                        "line": 19,
                         "column": 27
                       }
                     }
@@ -367,31 +369,31 @@
                     "type": "Identifier",
                     "name": "digest",
                     "range": [
-                      140,
-                      146
+                      434,
+                      440
                     ],
                     "loc": {
                       "start": {
-                        "line": 6,
+                        "line": 20,
                         "column": 5
                       },
                       "end": {
-                        "line": 6,
+                        "line": 20,
                         "column": 11
                       }
                     }
                   },
                   "range": [
-                    82,
-                    146
+                    376,
+                    440
                   ],
                   "loc": {
                     "start": {
-                      "line": 4,
+                      "line": 18,
                       "column": 9
                     },
                     "end": {
-                      "line": 6,
+                      "line": 20,
                       "column": 11
                     }
                   }
@@ -402,63 +404,63 @@
                     "value": "hex",
                     "raw": "'hex'",
                     "range": [
-                      147,
-                      152
+                      441,
+                      446
                     ],
                     "loc": {
                       "start": {
-                        "line": 6,
+                        "line": 20,
                         "column": 12
                       },
                       "end": {
-                        "line": 6,
+                        "line": 20,
                         "column": 17
                       }
                     }
                   }
                 ],
                 "range": [
-                  82,
-                  153
+                  376,
+                  447
                 ],
                 "loc": {
                   "start": {
-                    "line": 4,
+                    "line": 18,
                     "column": 9
                   },
                   "end": {
-                    "line": 6,
+                    "line": 20,
                     "column": 18
                   }
                 }
               },
               "range": [
-                75,
-                154
+                369,
+                448
               ],
               "loc": {
                 "start": {
-                  "line": 4,
+                  "line": 18,
                   "column": 2
                 },
                 "end": {
-                  "line": 6,
+                  "line": 20,
                   "column": 19
                 }
               }
             }
           ],
           "range": [
-            71,
-            156
+            365,
+            450
           ],
           "loc": {
             "start": {
-              "line": 3,
+              "line": 17,
               "column": 37
             },
             "end": {
-              "line": 7,
+              "line": 21,
               "column": 1
             }
           }
@@ -466,44 +468,83 @@
         "generator": false,
         "expression": false,
         "range": [
-          41,
-          156
+          335,
+          450
         ],
         "loc": {
           "start": {
-            "line": 3,
+            "line": 17,
             "column": 7
           },
           "end": {
-            "line": 7,
+            "line": 21,
             "column": 1
           }
         },
-        "leadingComments": [],
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String} token Required, token receive when install app\n * @param {String} secret Required, app secret\n * @returns {String} access token\n ",
+            "range": [
+              30,
+              327
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 0
+              },
+              "end": {
+                "line": 16,
+                "column": 3
+              }
+            }
+          }
+        ],
         "trailingComments": []
       },
       "specifiers": [],
       "source": null,
       "range": [
-        34,
-        156
+        328,
+        450
       ],
       "loc": {
         "start": {
-          "line": 3,
+          "line": 17,
           "column": 0
         },
         "end": {
-          "line": 7,
+          "line": 21,
           "column": 1
         }
-      }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String} token Required, token receive when install app\n * @param {String} secret Required, app secret\n * @returns {String} access token\n ",
+          "range": [
+            30,
+            327
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 16,
+              "column": 3
+            }
+          }
+        }
+      ]
     }
   ],
   "sourceType": "module",
   "range": [
     0,
-    156
+    450
   ],
   "loc": {
     "start": {
@@ -511,9 +552,28 @@
       "column": 0
     },
     "end": {
-      "line": 7,
+      "line": 21,
       "column": 1
     }
   },
-  "comments": []
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String} token Required, token receive when install app\n * @param {String} secret Required, app secret\n * @returns {String} access token\n ",
+      "range": [
+        30,
+        327
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 3
+        }
+      }
+    }
+  ]
 }

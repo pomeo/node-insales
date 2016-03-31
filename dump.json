@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { get } from '../methods/get';\n\n/**\n * fuck\n * @param {Object} options\n * @param {Number} id\n * @returns {Promise} fuck\n */\nexport function getAccount(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `account`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { get } from '../methods/get';\n\n/**\n * GET /admin/account.xml\n *\n * Examples:\n *\n *      insales.getAccount({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru'\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { account:\n *         { blocked: 'false',\n *           city: 'Москва',\n *           'contact-phone': '',\n *           country: 'RU',\n *           'enable-cart-discounts': 'true',\n *           'enable-client-discounts': 'false',\n *           'enable-group-discounts': 'true',\n *           'enable-order-discounts': 'false',\n *           'hide-items-out-of-stock': 'false',\n *           id: '12345',\n *           'notification-email': '',\n *           organization: '',\n *           'sms-notification-phone': '',\n *           state: 'г Москва',\n *           subdomain: 'shop-test',\n *           email: 'mail@mail.ru',\n *           icq: '',\n *           phone: '+71234567890',\n *           title: 'Название магазина',\n *           'minimum-items-price': '',\n *           'stock-currency-exchange-rate': '1.0',\n *           'client-cookies-whitelist': '',\n *           'main-host': 'shop-test.myinsales.ru',\n *           'next-order-number': '1040',\n *           'time-zone': 'Moscow',\n *           owner:\n *            { 'created-at': '2011-11-11 11:11:11 +0400',\n *              email: 'mail@mail.ru',\n *              id: '12345',\n *               name: 'Имя' } } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} id Required, app id\n * @returns {Promise}\n */\nexport function getAccount(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `account`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
     "__docId__": 1,
@@ -24,12 +24,12 @@
     "export": true,
     "importPath": "insales/lib/api/account.js",
     "importStyle": "{getAccount}",
-    "description": "fuck",
-    "lineNumber": 9,
+    "description": "GET /admin/account.xml\n\nExamples:\n\n     insales.getAccount({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru'\n     }).then(response => {\n       console.info(response.data);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     { account:\n        { blocked: 'false',\n          city: 'Москва',\n          'contact-phone': '',\n          country: 'RU',\n          'enable-cart-discounts': 'true',\n          'enable-client-discounts': 'false',\n          'enable-group-discounts': 'true',\n          'enable-order-discounts': 'false',\n          'hide-items-out-of-stock': 'false',\n          id: '12345',\n          'notification-email': '',\n          organization: '',\n          'sms-notification-phone': '',\n          state: 'г Москва',\n          subdomain: 'shop-test',\n          email: 'mail@mail.ru',\n          icq: '',\n          phone: '+71234567890',\n          title: 'Название магазина',\n          'minimum-items-price': '',\n          'stock-currency-exchange-rate': '1.0',\n          'client-cookies-whitelist': '',\n          'main-host': 'shop-test.myinsales.ru',\n          'next-order-number': '1040',\n          'time-zone': 'Moscow',\n          owner:\n           { 'created-at': '2011-11-11 11:11:11 +0400',\n             email: 'mail@mail.ru',\n             id: '12345',\n              name: 'Имя' } } }",
+    "lineNumber": 55,
     "unknown": [
       {
         "tagName": "@returns",
-        "tagValue": "{Promise} fuck"
+        "tagValue": "{Promise}"
       }
     ],
     "params": [
@@ -46,12 +46,33 @@
       {
         "nullable": null,
         "types": [
-          "Number"
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
         ],
         "spread": false,
         "optional": false,
         "name": "id",
-        "description": ""
+        "description": "Required, app id"
       }
     ],
     "return": {
@@ -60,7 +81,7 @@
         "Promise"
       ],
       "spread": false,
-      "description": "fuck"
+      "description": ""
     },
     "generator": false
   },
@@ -317,7 +338,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\nimport { put } from '../methods/put';\n\nexport function getCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function listCoupon(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 250;\n  if ((options.updated_since) && (options.updated_since !== false)) {\n    options.updated_since = options.updated_since;\n  }\n  if (options.deleted === true) {\n    query.deleted = true;\n  }\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function createCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function removeCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function editCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    put({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\nimport { put } from '../methods/put';\n\n/**\n * GET /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '1076619'\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'false',\n *           'act-once-for-client': 'false',\n *           code: 'WWWWWW',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: '',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2011-11-11',\n *           id: '1111111',\n *           'min-price': '0.0',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.id Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * GET /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.listCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-codes':\n *         { 'discount-code':\n *            [{ 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWW',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111111',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' },\n *            { 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWY',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111112',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' }]}}\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} [options.page=1] Page\n * @param {number|string} [options.per_page=250] Coupons per page\n * @param {string} [options.updated_since] Coupons updated since. Format YYYY-MM-DD\n * @param {boolean} [options.deleted] Deleted coupons\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function listCoupon(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 250;\n  if ((options.updated_since) && (options.updated_since !== false)) {\n    options.updated_since = options.updated_since;\n  }\n  if (options.deleted === true) {\n    query.deleted = true;\n  }\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * POST /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.createCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        coupon: {\n *           'discount_code': {\n *             'code': 'frandom2',\n *             'act_once': 'true',\n *             'discount': 10,\n *             'type_id': 1,\n *             'description': 'API code',\n *             'disabled': 0,\n *             'expired-at': '2030-06-09'\n *           }\n *        }\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'true',\n *           'act-once-for-client': '',\n *           code: 'frandom2',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: 'API code',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2030-06-09',\n *           id: '100000',\n *           'min-price': '',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.coupon Required, coupon\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * DELETE /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.removeCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '1076619'\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.couponid Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function removeCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function editCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    put({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
     "__docId__": 11,
@@ -331,27 +352,75 @@
     "export": true,
     "importPath": "insales/lib/api/coupon.js",
     "importStyle": "{getCoupon}",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "GET /admin/discount_codes/{id}.xml\n\nExamples:\n\n     insales.getCoupon({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       couponid: '1076619'\n     }).then(response => {\n       console.info(response.data);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     { 'discount-code':\n        { 'act-once': 'false',\n          'act-once-for-client': 'false',\n          code: 'WWWWWW',\n          'created-at': '2011-11-11T11:11:11+03:00',\n          description: '',\n          disabled: 'false',\n          discount: '10.0',\n          'expired-at': '2011-11-11',\n          id: '1111111',\n          'min-price': '0.0',\n          'type-id': '1',\n          'updated-at': '2011-11-11T11:11:11+03:00',\n          worked: 'true',\n          'discount-collections': '' } }",
+    "lineNumber": 44,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.id",
+        "description": "Required, coupon id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -367,27 +436,110 @@
     "export": true,
     "importPath": "insales/lib/api/coupon.js",
     "importStyle": "{listCoupon}",
-    "description": null,
-    "lineNumber": 18,
-    "undocument": true,
+    "description": "GET /admin/discount_codes.xml\n\nExamples:\n\n     insales.listCoupon({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n     }).then(response => {\n       console.info(response.data);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     { 'discount-codes':\n        { 'discount-code':\n           [{ 'act-once': 'false',\n             'act-once-for-client': 'false',\n             code: 'WWWWWW',\n             'created-at': '2011-11-11T11:11:11+03:00',\n             description: '',\n             disabled: 'false',\n             discount: '10.0',\n             'expired-at': '2011-11-11',\n             id: '1111111',\n             'min-price': '0.0',\n             'type-id': '1',\n             'updated-at': '2011-11-11T11:11:11+03:00',\n             worked: 'true',\n             'discount-collections': '' },\n           { 'act-once': 'false',\n             'act-once-for-client': 'false',\n             code: 'WWWWWY',\n             'created-at': '2011-11-11T11:11:11+03:00',\n             description: '',\n             disabled: 'false',\n             discount: '10.0',\n             'expired-at': '2011-11-11',\n             id: '1111112',\n             'min-price': '0.0',\n             'type-id': '1',\n             'updated-at': '2011-11-11T11:11:11+03:00',\n             worked: 'true',\n             'discount-collections': '' }]}}",
+    "lineNumber": 111,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "1",
+        "defaultRaw": 1,
+        "name": "options.page",
+        "description": "Page"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "250",
+        "defaultRaw": 250,
+        "name": "options.per_page",
+        "description": "Coupons per page"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.updated_since",
+        "description": "Coupons updated since. Format YYYY-MM-DD"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.deleted",
+        "description": "Deleted coupons"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -403,27 +555,74 @@
     "export": true,
     "importPath": "insales/lib/api/coupon.js",
     "importStyle": "{createCoupon}",
-    "description": null,
-    "lineNumber": 41,
-    "undocument": true,
+    "description": "POST /admin/discount_codes.xml\n\nExamples:\n\n     insales.createCoupon({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       coupon: {\n          'discount_code': {\n            'code': 'frandom2',\n            'act_once': 'true',\n            'discount': 10,\n            'type_id': 1,\n            'description': 'API code',\n            'disabled': 0,\n            'expired-at': '2030-06-09'\n          }\n       }\n     }).then(output => {\n       console.info(output.response.statusCode);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     { 'discount-code':\n        { 'act-once': 'true',\n          'act-once-for-client': '',\n          code: 'frandom2',\n          'created-at': '2011-11-11T11:11:11+03:00',\n          description: 'API code',\n          disabled: 'false',\n          discount: '10.0',\n          'expired-at': '2030-06-09',\n          id: '100000',\n          'min-price': '',\n          'type-id': '1',\n          'updated-at': '2011-11-11T11:11:11+03:00',\n          worked: 'true',\n          'discount-collections': '' } }",
+    "lineNumber": 182,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.coupon",
+        "description": "Required, coupon"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -439,27 +638,75 @@
     "export": true,
     "importPath": "insales/lib/api/coupon.js",
     "importStyle": "{removeCoupon}",
-    "description": null,
-    "lineNumber": 54,
-    "undocument": true,
+    "description": "DELETE /admin/discount_codes/{id}.xml\n\nExamples:\n\n     insales.removeCoupon({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       couponid: '1076619'\n     }).then(output => {\n       console.info(output.response.statusCode);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     200",
+    "lineNumber": 219,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.couponid",
+        "description": "Required, coupon id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -476,7 +723,7 @@
     "importPath": "insales/lib/api/coupon.js",
     "importStyle": "{editCoupon}",
     "description": null,
-    "lineNumber": 66,
+    "lineNumber": 231,
     "undocument": true,
     "params": [
       {
@@ -958,7 +1205,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { crypto } from 'crypto';\n\nexport function token(token, secret) {\n  return crypto.createHash('md5')\n    .update(token + secret)\n    .digest('hex');\n}\n"
+    "content": "import crypto from 'crypto';\n\n/**\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String} token Required, token receive when install app\n * @param {String} secret Required, app secret\n * @returns {String} access token\n */\nexport function token(token, secret) {\n  return crypto.createHash('md5')\n    .update(token + secret)\n    .digest('hex');\n}\n"
   },
   {
     "__docId__": 32,
@@ -972,27 +1219,43 @@
     "export": true,
     "importPath": "insales/lib/api/token.js",
     "importStyle": "{token}",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "Generate access token for shop\n\nExamples:\n\n     insales.token('12345');\n\nOutput:\n\n     8cfa2282b17de0a598c010f5f0109e7d",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{String} access token"
+      }
+    ],
     "params": [
       {
-        "name": "token",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": "Required, token receive when install app"
       },
       {
-        "name": "secret",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "secret",
+        "description": "Required, app secret"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "String"
+      ],
+      "spread": false,
+      "description": "access token"
     },
     "generator": false
   },
@@ -1068,7 +1331,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { token }           from './api/token';\nimport { getAccount }      from './api/account';\nimport { getProduct,\n         createProduct,\n         listProduct }     from './api/product';\nimport { getCollection,\n         listCollection }  from './api/collection';\nimport { getFile,\n         listFile,\n         removeFile,\n         uploadFile }      from './api/file';\nimport { createJsTag }     from './api/jstag';\nimport { getRecurring,\n         createRecurring,\n         removeRecurring } from './api/recurringcharge';\nimport { getCharge,\n         createCharge,\n         removeCharge,\n         listCharge }      from './api/charge';\nimport { getCoupon,\n         createCoupon,\n         removeCoupon,\n         listCoupon,\n         editCoupon }      from './api/charge';\n\nclass InSales {\n  constructor(options) {\n    const _options = options || {};\n    if (!_options.id) throw new Error('Missing app id');\n    if (!_options.secret) throw new Error('Missing app secret');\n\n    this.id = _options.id;\n    this.secret = _options.secret;\n  }\n\n  token(tok) {\n    return token(tok, this.secret);\n  }\n\n  getProduct(options) {\n    return getProduct(options, this.id);\n  }\n\n  createProduct(options) {\n    return createProduct(options, this.id);\n  }\n\n  listProduct(options) {\n    return listProduct(options, this.id);\n  }\n\n  getCollection(options) {\n    return getCollection(options, this.id);\n  }\n\n  listCollection(options) {\n    return listCollection(options, this.id);\n  }\n\n  getFile(options) {\n    return getFile(options, this.id);\n  }\n\n  listFile(options) {\n    return listFile(options, this.id);\n  }\n\n  removeFile(options) {\n    return removeFile(options, this.id);\n  }\n\n  uploadFile(options) {\n    return uploadFile(options, this.id);\n  }\n\n  getAccount(options) {\n    return getAccount(options, this.id);\n  }\n\n  createJsTag(options) {\n    return createJsTag(options, this.id);\n  }\n\n  getRecurring(options) {\n    return getRecurring(options, this.id);\n  }\n\n  createRecurring(options) {\n    return createRecurring(options, this.id);\n  }\n\n  removeRecurring(options) {\n    return removeRecurring(options, this.id);\n  }\n\n  getCharge(options) {\n    return getCharge(options, this.id);\n  }\n\n  createCharge(options) {\n    return createCharge(options, this.id);\n  }\n\n  removeCharge(options) {\n    return removeCharge(options, this.id);\n  }\n\n  listCharge(options) {\n    return listCharge(options, this.id);\n  }\n\n  getCoupon(options) {\n    return getCoupon(options, this.id);\n  }\n\n  createCoupon(options) {\n    return createCoupon(options, this.id);\n  }\n\n  removeCoupon(options) {\n    return removeCoupon(options, this.id);\n  }\n\n  listCoupon(options) {\n    return listCoupon(options, this.id);\n  }\n\n  editCoupon(options) {\n    return editCoupon(options, this.id);\n  }\n}\n\nexport default options => new InSales(options);\n"
+    "content": "import { token }           from './api/token';\nimport { getAccount }      from './api/account';\nimport { getProduct,\n         createProduct,\n         listProduct }     from './api/product';\nimport { getCollection,\n         listCollection }  from './api/collection';\nimport { getFile,\n         listFile,\n         removeFile,\n         uploadFile }      from './api/file';\nimport { createJsTag }     from './api/jstag';\nimport { getRecurring,\n         createRecurring,\n         removeRecurring } from './api/recurringcharge';\nimport { getCharge,\n         createCharge,\n         removeCharge,\n         listCharge }      from './api/charge';\nimport { getCoupon,\n         createCoupon,\n         removeCoupon,\n         listCoupon,\n         editCoupon }      from './api/coupon';\n\nclass InSales {\n  constructor(options) {\n    const _options = options || {};\n    if (!_options.id) throw new Error('Missing app id');\n    if (!_options.secret) throw new Error('Missing app secret');\n\n    this.id = _options.id;\n    this.secret = _options.secret;\n  }\n\n  token(tok) {\n    return token(tok, this.secret);\n  }\n\n  getProduct(options) {\n    return getProduct(options, this.id);\n  }\n\n  createProduct(options) {\n    return createProduct(options, this.id);\n  }\n\n  listProduct(options) {\n    return listProduct(options, this.id);\n  }\n\n  getCollection(options) {\n    return getCollection(options, this.id);\n  }\n\n  listCollection(options) {\n    return listCollection(options, this.id);\n  }\n\n  getFile(options) {\n    return getFile(options, this.id);\n  }\n\n  listFile(options) {\n    return listFile(options, this.id);\n  }\n\n  removeFile(options) {\n    return removeFile(options, this.id);\n  }\n\n  uploadFile(options) {\n    return uploadFile(options, this.id);\n  }\n\n  getAccount(options) {\n    return getAccount(options, this.id);\n  }\n\n  createJsTag(options) {\n    return createJsTag(options, this.id);\n  }\n\n  getRecurring(options) {\n    return getRecurring(options, this.id);\n  }\n\n  createRecurring(options) {\n    return createRecurring(options, this.id);\n  }\n\n  removeRecurring(options) {\n    return removeRecurring(options, this.id);\n  }\n\n  getCharge(options) {\n    return getCharge(options, this.id);\n  }\n\n  createCharge(options) {\n    return createCharge(options, this.id);\n  }\n\n  removeCharge(options) {\n    return removeCharge(options, this.id);\n  }\n\n  listCharge(options) {\n    return listCharge(options, this.id);\n  }\n\n  getCoupon(options) {\n    return getCoupon(options, this.id);\n  }\n\n  createCoupon(options) {\n    return createCoupon(options, this.id);\n  }\n\n  removeCoupon(options) {\n    return removeCoupon(options, this.id);\n  }\n\n  listCoupon(options) {\n    return listCoupon(options, this.id);\n  }\n\n  editCoupon(options) {\n    return editCoupon(options, this.id);\n  }\n}\n\nexport default options => new InSales(options);\n"
   },
   {
     "__docId__": 36,
