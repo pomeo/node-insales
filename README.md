@@ -49,7 +49,6 @@ insales.getAccount({
 
 ## Methods
 
-```js
 [getAccount](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccount)  
 [createCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-createCharge)  
 [getCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-getCharge)  
@@ -74,4 +73,3 @@ insales.getAccount({
 [getRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring)  
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
-```
