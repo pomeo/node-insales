@@ -1,0 +1,10 @@
+apiary.apib
+coverage
+esdoc
+esdoc.json
+.git
+.gitignore
+Makefile
+node_modules
+test
+.travis.yml
