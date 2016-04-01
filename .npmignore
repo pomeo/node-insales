@@ -8,3 +8,6 @@ Makefile
 node_modules
 test
 .travis.yml
+index.js
+.babelrc
+dist
