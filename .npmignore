@@ -10,4 +10,4 @@ test
 .travis.yml
 index.js
 .babelrc
-dist
+lib
