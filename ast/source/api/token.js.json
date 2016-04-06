@@ -76,10 +76,10 @@
       "trailingComments": [
         {
           "type": "Block",
-          "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String} token Required, token receive when install app\n * @param {String} secret Required, app secret\n * @returns {String} access token\n ",
+          "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String|Number} token Required, token receive when install app\n * @param {String|Number} secret Required, app secret\n * @returns {String} access token\n ",
           "range": [
             30,
-            327
+            341
           ],
           "loc": {
             "start": {
@@ -102,8 +102,8 @@
           "type": "Identifier",
           "name": "token",
           "range": [
-            344,
-            349
+            358,
+            363
           ],
           "loc": {
             "start": {
@@ -121,8 +121,8 @@
             "type": "Identifier",
             "name": "token",
             "range": [
-              350,
-              355
+              364,
+              369
             ],
             "loc": {
               "start": {
@@ -139,8 +139,8 @@
             "type": "Identifier",
             "name": "secret",
             "range": [
-              357,
-              363
+              371,
+              377
             ],
             "loc": {
               "start": {
@@ -178,8 +178,8 @@
                             "type": "Identifier",
                             "name": "crypto",
                             "range": [
-                              376,
-                              382
+                              390,
+                              396
                             ],
                             "loc": {
                               "start": {
@@ -196,8 +196,8 @@
                             "type": "Identifier",
                             "name": "createHash",
                             "range": [
-                              383,
-                              393
+                              397,
+                              407
                             ],
                             "loc": {
                               "start": {
@@ -211,8 +211,8 @@
                             }
                           },
                           "range": [
-                            376,
-                            393
+                            390,
+                            407
                           ],
                           "loc": {
                             "start": {
@@ -231,8 +231,8 @@
                             "value": "md5",
                             "raw": "'md5'",
                             "range": [
-                              394,
-                              399
+                              408,
+                              413
                             ],
                             "loc": {
                               "start": {
@@ -247,8 +247,8 @@
                           }
                         ],
                         "range": [
-                          376,
-                          400
+                          390,
+                          414
                         ],
                         "loc": {
                           "start": {
@@ -265,8 +265,8 @@
                         "type": "Identifier",
                         "name": "update",
                         "range": [
-                          406,
-                          412
+                          420,
+                          426
                         ],
                         "loc": {
                           "start": {
@@ -280,8 +280,8 @@
                         }
                       },
                       "range": [
-                        376,
-                        412
+                        390,
+                        426
                       ],
                       "loc": {
                         "start": {
@@ -302,8 +302,8 @@
                           "type": "Identifier",
                           "name": "token",
                           "range": [
-                            413,
-                            418
+                            427,
+                            432
                           ],
                           "loc": {
                             "start": {
@@ -320,8 +320,8 @@
                           "type": "Identifier",
                           "name": "secret",
                           "range": [
-                            421,
-                            427
+                            435,
+                            441
                           ],
                           "loc": {
                             "start": {
@@ -335,8 +335,8 @@
                           }
                         },
                         "range": [
-                          413,
-                          427
+                          427,
+                          441
                         ],
                         "loc": {
                           "start": {
@@ -351,8 +351,8 @@
                       }
                     ],
                     "range": [
-                      376,
-                      428
+                      390,
+                      442
                     ],
                     "loc": {
                       "start": {
@@ -369,8 +369,8 @@
                     "type": "Identifier",
                     "name": "digest",
                     "range": [
-                      434,
-                      440
+                      448,
+                      454
                     ],
                     "loc": {
                       "start": {
@@ -384,8 +384,8 @@
                     }
                   },
                   "range": [
-                    376,
-                    440
+                    390,
+                    454
                   ],
                   "loc": {
                     "start": {
@@ -404,8 +404,8 @@
                     "value": "hex",
                     "raw": "'hex'",
                     "range": [
-                      441,
-                      446
+                      455,
+                      460
                     ],
                     "loc": {
                       "start": {
@@ -420,8 +420,8 @@
                   }
                 ],
                 "range": [
-                  376,
-                  447
+                  390,
+                  461
                 ],
                 "loc": {
                   "start": {
@@ -435,8 +435,8 @@
                 }
               },
               "range": [
-                369,
-                448
+                383,
+                462
               ],
               "loc": {
                 "start": {
@@ -451,8 +451,8 @@
             }
           ],
           "range": [
-            365,
-            450
+            379,
+            464
           ],
           "loc": {
             "start": {
@@ -468,8 +468,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          335,
-          450
+          349,
+          464
         ],
         "loc": {
           "start": {
@@ -484,10 +484,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String} token Required, token receive when install app\n * @param {String} secret Required, app secret\n * @returns {String} access token\n ",
+            "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String|Number} token Required, token receive when install app\n * @param {String|Number} secret Required, app secret\n * @returns {String} access token\n ",
             "range": [
               30,
-              327
+              341
             ],
             "loc": {
               "start": {
@@ -506,8 +506,8 @@
       "specifiers": [],
       "source": null,
       "range": [
-        328,
-        450
+        342,
+        464
       ],
       "loc": {
         "start": {
@@ -522,10 +522,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String} token Required, token receive when install app\n * @param {String} secret Required, app secret\n * @returns {String} access token\n ",
+          "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String|Number} token Required, token receive when install app\n * @param {String|Number} secret Required, app secret\n * @returns {String} access token\n ",
           "range": [
             30,
-            327
+            341
           ],
           "loc": {
             "start": {
@@ -544,7 +544,7 @@
   "sourceType": "module",
   "range": [
     0,
-    450
+    464
   ],
   "loc": {
     "start": {
@@ -559,10 +559,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String} token Required, token receive when install app\n * @param {String} secret Required, app secret\n * @returns {String} access token\n ",
+      "value": "*\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String|Number} token Required, token receive when install app\n * @param {String|Number} secret Required, app secret\n * @returns {String} access token\n ",
       "range": [
         30,
-        327
+        341
       ],
       "loc": {
         "start": {

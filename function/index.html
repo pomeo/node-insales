@@ -37,9 +37,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">api</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCharge">createCharge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-declineCharge">declineCharge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getCharge">getCharge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listCharge">listCharge</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeCharge">removeCharge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getCollection">getCollection</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listCollection">listCollection</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCoupon">createCoupon</a></span></span></li>
@@ -83,13 +83,14 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-createCharge">createCharge</a></span></span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-createCharge">createCharge</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>POST /admin/application_charges.xml</p>
+</div>
       </div>
     </td>
     <td>
@@ -235,6 +236,32 @@
     <td>
       <div>
         <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-declineCharge">declineCharge</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>POST /admin/application_charges/{id}/decline.xml</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
            <span data-ice="name"><span><a href="function/index.html#static-function-editCoupon">editCoupon</a></span></span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
         </p>
       </div>
@@ -338,13 +365,14 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-getCharge">getCharge</a></span></span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-getCharge">getCharge</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>GET /admin/application_charges/{id}.xml</p>
+</div>
       </div>
     </td>
     <td>
@@ -363,13 +391,14 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-getCollection">getCollection</a></span></span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-getCollection">getCollection</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>GET /admin/collections/{id}.xml</p>
+</div>
       </div>
     </td>
     <td>
@@ -465,13 +494,14 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-listCharge">listCharge</a></span></span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-listCharge">listCharge</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>GET /admin/application_charges.xml</p>
+</div>
       </div>
     </td>
     <td>
@@ -490,13 +520,14 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-listCollection">listCollection</a></span></span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-listCollection">listCollection</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>GET /admin/collections.xml</p>
+</div>
       </div>
     </td>
     <td>
@@ -695,31 +726,6 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-removeCharge">removeCharge</a></span></span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
            <span data-ice="name"><span><a href="function/index.html#static-function-removeCoupon">removeCoupon</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
@@ -822,7 +828,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-token">token</a></span></span><span data-ice="signature">(token: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, secret: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-token">token</a></span></span><span data-ice="signature">(token: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, secret: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
         </p>
       </div>
       <div>
@@ -874,18 +880,46 @@
     
     
     
-    <span data-ice="name">createCharge</span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">createCharge</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/charge.js.html#lineNumber16">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/charge.js.html#lineNumber88">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createCharge} from &apos;<span><a href="file/lib/api/charge.js.html#lineNumber16">insales/lib/api/charge.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createCharge} from &apos;<span><a href="file/lib/api/charge.js.html#lineNumber88">insales/lib/api/charge.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>POST /admin/application_charges.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.createCharge({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+   charge: {
+      &apos;application-charge&apos;: {
+        &apos;name&apos;: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+        &apos;price&apos;: &apos;180.0&apos;,
+        &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;
+      }
+   }
+ }).then(output =&gt; {
+   console.info(output.response.statusCode);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { &apos;application-charge&apos;:
+   { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+     id: &apos;1234&apos;,
+     name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+     price: &apos;180.0&apos;,
+     &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
+     status: &apos;pending&apos;,
+     test: &apos;&apos;,
+     &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+     &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } }</code>
+</code></pre></div>
 
   
 
@@ -899,15 +933,37 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.charge</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, charge info</p>
+</td>
+    </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -918,7 +974,7 @@
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
         
       </tr>
     </table>
@@ -1162,7 +1218,7 @@
   
   <div data-ice="description"><p>POST /admin/js_tags.xml</p>
 <p>Examples:</p>
-<pre><code><code class="source-code prettyprint"> insales.getCoupon({
+<pre><code><code class="source-code prettyprint"> insales.createJsTag({
    token: &apos;1234567890&apos;,
    url: &apos;shop-test.myinsales.ru&apos;,
    jstag: {
@@ -1385,6 +1441,122 @@
     <table>
       <tr>
         <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-declineCharge">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">declineCharge</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/api/charge.js.html#lineNumber178">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {declineCharge} from &apos;<span><a href="file/lib/api/charge.js.html#lineNumber178">insales/lib/api/charge.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>POST /admin/application_charges/{id}/decline.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.declineCharge({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+   chargeid: &apos;12345&apos;
+ }).then(output =&gt; {
+   console.info(output.response.statusCode);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { &apos;application-charge&apos;:
+   { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+     id: &apos;1234&apos;,
+     name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+     price: &apos;180.0&apos;,
+     &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
+     status: &apos;declined&apos;,
+     test: &apos;&apos;,
+     &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+     &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } }</code>
+</code></pre></div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">options</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.chargeid</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, charge id</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">id</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
         
       </tr>
     </table>
@@ -1842,18 +2014,40 @@
     
     
     
-    <span data-ice="name">getCharge</span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">getCharge</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/charge.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/charge.js.html#lineNumber37">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getCharge} from &apos;<span><a href="file/lib/api/charge.js.html#lineNumber4">insales/lib/api/charge.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getCharge} from &apos;<span><a href="file/lib/api/charge.js.html#lineNumber37">insales/lib/api/charge.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>GET /admin/application_charges/{id}.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.getCharge({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+   chargeid: &apos;12345&apos;
+ }).then(output =&gt; {
+   console.info(output.response.statusCode);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { &apos;application-charge&apos;:
+   { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+     id: &apos;1234&apos;,
+     name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+     price: &apos;180.0&apos;,
+     &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
+     status: &apos;pending&apos;,
+     test: &apos;&apos;,
+     &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+     &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } }</code>
+</code></pre></div>
 
   
 
@@ -1867,15 +2061,37 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.chargeid</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, charge id</p>
+</td>
+    </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1886,7 +2102,7 @@
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
         
       </tr>
     </table>
@@ -1914,18 +2130,46 @@
     
     
     
-    <span data-ice="name">getCollection</span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">getCollection</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/collection.js.html#lineNumber3">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/collection.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getCollection} from &apos;<span><a href="file/lib/api/collection.js.html#lineNumber3">insales/lib/api/collection.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getCollection} from &apos;<span><a href="file/lib/api/collection.js.html#lineNumber42">insales/lib/api/collection.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>GET /admin/collections/{id}.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.getCollection({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+   collectionid: &apos;11111&apos;
+ }).then(response =&gt; {
+   console.info(response.data);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { collection:
+   { &apos;created-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+     id: &apos;1234567&apos;,
+     &apos;is-hidden&apos;: &apos;true&apos;,
+     &apos;parent-id&apos;: &apos;22222&apos;,
+     position: &apos;1&apos;,
+     recursive: &apos;&apos;,
+     &apos;updated-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+     title: &apos;Name 1&apos;,
+     description: &apos;&apos;,
+     &apos;html-title&apos;: &apos;&apos;,
+     &apos;meta-description&apos;: &apos;&apos;,
+     &apos;meta-keywords&apos;: &apos;&apos;,
+     permalink: &apos;name1&apos;,
+     url: &apos;/collection/name1&apos;,
+     &apos;seo-description&apos;: &apos;&apos; } }</code>
+</code></pre></div>
 
   
 
@@ -1939,15 +2183,37 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="2">
+      <td data-ice="name" data-depth="2">options.collectionid.</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, collection id</p>
+</td>
+    </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1958,7 +2224,7 @@
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
         
       </tr>
     </table>
@@ -2300,18 +2566,40 @@
     
     
     
-    <span data-ice="name">listCharge</span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">listCharge</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/charge.js.html#lineNumber41">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/charge.js.html#lineNumber133">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {listCharge} from &apos;<span><a href="file/lib/api/charge.js.html#lineNumber41">insales/lib/api/charge.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {listCharge} from &apos;<span><a href="file/lib/api/charge.js.html#lineNumber133">insales/lib/api/charge.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>GET /admin/application_charges.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.listCharge({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;
+ }).then(output =&gt; {
+   console.info(output.response.statusCode);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { &apos;application-charges&apos;:
+   { &apos;application-charge&apos;:
+      { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+        id: &apos;1234&apos;,
+        name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+        price: &apos;180.0&apos;,
+        &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
+        status: &apos;pending&apos;,
+        test: &apos;&apos;,
+        &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+        &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } } }</code>
+</code></pre></div>
 
   
 
@@ -2325,15 +2613,30 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2344,7 +2647,7 @@
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
         
       </tr>
     </table>
@@ -2372,18 +2675,61 @@
     
     
     
-    <span data-ice="name">listCollection</span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">listCollection</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/collection.js.html#lineNumber15">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/collection.js.html#lineNumber107">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {listCollection} from &apos;<span><a href="file/lib/api/collection.js.html#lineNumber15">insales/lib/api/collection.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {listCollection} from &apos;<span><a href="file/lib/api/collection.js.html#lineNumber107">insales/lib/api/collection.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>GET /admin/collections.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.listCollection({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+ }).then(response =&gt; {
+   console.info(response.data);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { &apos;collections&apos;:
+    { &apos;collection&apos;:
+       [{ &apos;created-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+         id: &apos;1234567&apos;,
+         &apos;is-hidden&apos;: &apos;true&apos;,
+         &apos;parent-id&apos;: &apos;11111&apos;,
+         position: &apos;1&apos;,
+         recursive: &apos;&apos;,
+         &apos;updated-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+         title: &apos;Name 1&apos;,
+         description: &apos;&apos;,
+         &apos;html-title&apos;: &apos;&apos;,
+         &apos;meta-description&apos;: &apos;&apos;,
+         &apos;meta-keywords&apos;: &apos;&apos;,
+         permalink: &apos;name1&apos;,
+         url: &apos;/collection/name1&apos;,
+         &apos;seo-description&apos;: &apos;&apos; },
+        {&apos;created-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+          id: &apos;12345678&apos;,
+          &apos;is-hidden&apos;: &apos;true&apos;,
+          &apos;parent-id&apos;: &apos;11111&apos;,
+          position: &apos;2&apos;,
+          recursive: &apos;&apos;,
+          &apos;updated-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+          title: &apos;Name 2&apos;,
+          description: &apos;&apos;,
+          &apos;html-title&apos;: &apos;&apos;,
+          &apos;meta-description&apos;: &apos;&apos;,
+          &apos;meta-keywords&apos;: &apos;&apos;,
+          permalink: &apos;name2&apos;,
+          url: &apos;/collection/name2&apos;,
+          &apos;seo-description&apos;: &apos;&apos;}]}}</code>
+</code></pre></div>
 
   
 
@@ -2397,15 +2743,30 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2416,7 +2777,7 @@
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
         
       </tr>
     </table>
@@ -2902,7 +3263,7 @@
 <tr data-ice="property" data-depth="1">
       <td data-ice="name" data-depth="1">conn.obj</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>HTTP POST data</p>
 </td>
     </tr>
@@ -3113,78 +3474,6 @@
     <table>
       <tr>
         <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
-        
-      </tr>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-removeCharge">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">removeCharge</span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/lib/api/charge.js.html#lineNumber28">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {removeCharge} from &apos;<span><a href="file/lib/api/charge.js.html#lineNumber28">insales/lib/api/charge.js</a></span>&apos;</code></pre></div>
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
         
       </tr>
     </table>
@@ -3530,7 +3819,7 @@
     
     
     
-    <span data-ice="name">token</span><span data-ice="signature">(token: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, secret: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
+    <span data-ice="name">token</span><span data-ice="signature">(token: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, secret: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
     <span class="right-info">
       
       
@@ -3560,14 +3849,14 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">token</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Required, token receive when install app</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">secret</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Required, app secret</p>
 </td>

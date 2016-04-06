@@ -37,9 +37,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">api</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCharge">createCharge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-declineCharge">declineCharge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getCharge">getCharge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listCharge">listCharge</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeCharge">removeCharge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getCollection">getCollection</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listCollection">listCollection</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCoupon">createCoupon</a></span></span></li>
@@ -71,6 +71,39 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { get } from &apos;../methods/get&apos;;
 import { post } from &apos;../methods/post&apos;;
 
+/**
+ * GET /admin/application_charges/{id}.xml
+ *
+ * Examples:
+ *
+ *      insales.getCharge({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        chargeid: &apos;12345&apos;
+ *      }).then(output =&gt; {
+ *        console.info(output.response.statusCode);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;application-charge&apos;:
+ *        { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *          id: &apos;1234&apos;,
+ *          name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+ *          price: &apos;180.0&apos;,
+ *          &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
+ *          status: &apos;pending&apos;,
+ *          test: &apos;&apos;,
+ *          &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *          &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} options.chargeid Required, charge id
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function getCharge(options, id) {
   return new Promise((resolve, reject) =&gt; {
     get({
@@ -83,32 +116,136 @@ export function getCharge(options, id) {
   });
 }
 
+/**
+ * POST /admin/application_charges.xml
+ *
+ * Examples:
+ *
+ *      insales.createCharge({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        charge: {
+ *           &apos;application-charge&apos;: {
+ *             &apos;name&apos;: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+ *             &apos;price&apos;: &apos;180.0&apos;,
+ *             &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;
+ *           }
+ *        }
+ *      }).then(output =&gt; {
+ *        console.info(output.response.statusCode);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;application-charge&apos;:
+ *        { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *          id: &apos;1234&apos;,
+ *          name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+ *          price: &apos;180.0&apos;,
+ *          &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
+ *          status: &apos;pending&apos;,
+ *          test: &apos;&apos;,
+ *          &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *          &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {object} options.charge Required, charge info
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function createCharge(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    get({
-      id,
-      token: options.token,
-      url: options.url,
-      api: `application_charges`
-    }).then(resolve)
-      .catch(reject);
-  });
-}
-
-export function removeCharge(options, id) {
   return new Promise((resolve, reject) =&gt; {
     post({
       id,
       token: options.token,
       url: options.url,
-      api: &apos;application_charges&apos;,
+      api: `application_charges`,
       obj: options.charge
     }).then(resolve)
       .catch(reject);
   });
 }
 
+/**
+ * GET /admin/application_charges.xml
+ *
+ * Examples:
+ *
+ *      insales.listCharge({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;
+ *      }).then(output =&gt; {
+ *        console.info(output.response.statusCode);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;application-charges&apos;:
+ *        { &apos;application-charge&apos;:
+ *           { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *             id: &apos;1234&apos;,
+ *             name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+ *             price: &apos;180.0&apos;,
+ *             &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
+ *             status: &apos;pending&apos;,
+ *             test: &apos;&apos;,
+ *             &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *             &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function listCharge(options, id) {
+  return new Promise((resolve, reject) =&gt; {
+    get({
+      id,
+      token: options.token,
+      url: options.url,
+      api: &apos;application_charges&apos;
+    }).then(resolve)
+      .catch(reject);
+  });
+}
+
+/**
+ * POST /admin/application_charges/{id}/decline.xml
+ *
+ * Examples:
+ *
+ *      insales.declineCharge({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        chargeid: &apos;12345&apos;
+ *      }).then(output =&gt; {
+ *        console.info(output.response.statusCode);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;application-charge&apos;:
+ *        { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *          id: &apos;1234&apos;,
+ *          name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
+ *          price: &apos;180.0&apos;,
+ *          &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
+ *          status: &apos;declined&apos;,
+ *          test: &apos;&apos;,
+ *          &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *          &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} options.chargeid Required, charge id
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
+export function declineCharge(options, id) {
   return new Promise((resolve, reject) =&gt; {
     post({
       id,

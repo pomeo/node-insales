@@ -36,6 +36,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "insales/lib/api/charge.js~declinecharge",
+    "function/index.html#static-function-declineCharge",
+    "<span>declineCharge</span> <span class=\"search-result-import-path\">insales/lib/api/charge.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/api/coupon.js~editcoupon",
     "function/index.html#static-function-editCoupon",
     "<span>editCoupon</span> <span class=\"search-result-import-path\">insales/lib/api/coupon.js</span>",
@@ -141,12 +147,6 @@ window.esdocSearchIndex = [
     "insales/lib/methods/remove.js~remove",
     "function/index.html#static-function-remove",
     "<span>remove</span> <span class=\"search-result-import-path\">insales/lib/methods/remove.js</span>",
-    "function"
-  ],
-  [
-    "insales/lib/api/charge.js~removecharge",
-    "function/index.html#static-function-removeCharge",
-    "<span>removeCharge</span> <span class=\"search-result-import-path\">insales/lib/api/charge.js</span>",
     "function"
   ],
   [

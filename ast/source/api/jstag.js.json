@@ -94,10 +94,10 @@
       "trailingComments": [
         {
           "type": "Block",
-          "value": "*\n * POST /admin/js_tags.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        jstag: {\n *          'js-tag': {\n *            'type': 'JsTag::TextTag',\n *            'content': 'http://link'\n *          }\n *        }\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'file-tag':\n *        { 'account-id': '12345',\n *          'application-password-id': '12345',\n *          content: 'http://link',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          name: '',\n *          'updated-at': '2011-11-11 11:11:11 +0300' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.jstag Required, jstag\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n ",
+          "value": "*\n * POST /admin/js_tags.xml\n *\n * Examples:\n *\n *      insales.createJsTag({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        jstag: {\n *          'js-tag': {\n *            'type': 'JsTag::TextTag',\n *            'content': 'http://link'\n *          }\n *        }\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'file-tag':\n *        { 'account-id': '12345',\n *          'application-password-id': '12345',\n *          content: 'http://link',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          name: '',\n *          'updated-at': '2011-11-11 11:11:11 +0300' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.jstag Required, jstag\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n ",
           "range": [
             41,
-            1053
+            1055
           ],
           "loc": {
             "start": {
@@ -120,8 +120,8 @@
           "type": "Identifier",
           "name": "createJsTag",
           "range": [
-            1070,
-            1081
+            1072,
+            1083
           ],
           "loc": {
             "start": {
@@ -139,8 +139,8 @@
             "type": "Identifier",
             "name": "options",
             "range": [
-              1082,
-              1089
+              1084,
+              1091
             ],
             "loc": {
               "start": {
@@ -157,8 +157,8 @@
             "type": "Identifier",
             "name": "id",
             "range": [
-              1091,
-              1093
+              1093,
+              1095
             ],
             "loc": {
               "start": {
@@ -183,8 +183,8 @@
                   "type": "Identifier",
                   "name": "Promise",
                   "range": [
-                    1110,
-                    1117
+                    1112,
+                    1119
                   ],
                   "loc": {
                     "start": {
@@ -206,8 +206,8 @@
                         "type": "Identifier",
                         "name": "resolve",
                         "range": [
-                          1119,
-                          1126
+                          1121,
+                          1128
                         ],
                         "loc": {
                           "start": {
@@ -224,8 +224,8 @@
                         "type": "Identifier",
                         "name": "reject",
                         "range": [
-                          1128,
-                          1134
+                          1130,
+                          1136
                         ],
                         "loc": {
                           "start": {
@@ -260,8 +260,8 @@
                                       "type": "Identifier",
                                       "name": "post",
                                       "range": [
-                                        1145,
-                                        1149
+                                        1147,
+                                        1151
                                       ],
                                       "loc": {
                                         "start": {
@@ -284,8 +284,8 @@
                                               "type": "Identifier",
                                               "name": "id",
                                               "range": [
-                                                1158,
-                                                1160
+                                                1160,
+                                                1162
                                               ],
                                               "loc": {
                                                 "start": {
@@ -302,8 +302,8 @@
                                               "type": "Identifier",
                                               "name": "id",
                                               "range": [
-                                                1158,
-                                                1160
+                                                1160,
+                                                1162
                                               ],
                                               "loc": {
                                                 "start": {
@@ -321,8 +321,8 @@
                                             "shorthand": true,
                                             "computed": false,
                                             "range": [
-                                              1158,
-                                              1160
+                                              1160,
+                                              1162
                                             ],
                                             "loc": {
                                               "start": {
@@ -341,8 +341,8 @@
                                               "type": "Identifier",
                                               "name": "token",
                                               "range": [
-                                                1168,
-                                                1173
+                                                1170,
+                                                1175
                                               ],
                                               "loc": {
                                                 "start": {
@@ -362,8 +362,8 @@
                                                 "type": "Identifier",
                                                 "name": "options",
                                                 "range": [
-                                                  1175,
-                                                  1182
+                                                  1177,
+                                                  1184
                                                 ],
                                                 "loc": {
                                                   "start": {
@@ -380,8 +380,8 @@
                                                 "type": "Identifier",
                                                 "name": "token",
                                                 "range": [
-                                                  1183,
-                                                  1188
+                                                  1185,
+                                                  1190
                                                 ],
                                                 "loc": {
                                                   "start": {
@@ -395,8 +395,8 @@
                                                 }
                                               },
                                               "range": [
-                                                1175,
-                                                1188
+                                                1177,
+                                                1190
                                               ],
                                               "loc": {
                                                 "start": {
@@ -414,8 +414,8 @@
                                             "shorthand": false,
                                             "computed": false,
                                             "range": [
-                                              1168,
-                                              1188
+                                              1170,
+                                              1190
                                             ],
                                             "loc": {
                                               "start": {
@@ -434,8 +434,8 @@
                                               "type": "Identifier",
                                               "name": "url",
                                               "range": [
-                                                1196,
-                                                1199
+                                                1198,
+                                                1201
                                               ],
                                               "loc": {
                                                 "start": {
@@ -455,8 +455,8 @@
                                                 "type": "Identifier",
                                                 "name": "options",
                                                 "range": [
-                                                  1201,
-                                                  1208
+                                                  1203,
+                                                  1210
                                                 ],
                                                 "loc": {
                                                   "start": {
@@ -473,8 +473,8 @@
                                                 "type": "Identifier",
                                                 "name": "url",
                                                 "range": [
-                                                  1209,
-                                                  1212
+                                                  1211,
+                                                  1214
                                                 ],
                                                 "loc": {
                                                   "start": {
@@ -488,8 +488,8 @@
                                                 }
                                               },
                                               "range": [
-                                                1201,
-                                                1212
+                                                1203,
+                                                1214
                                               ],
                                               "loc": {
                                                 "start": {
@@ -507,8 +507,8 @@
                                             "shorthand": false,
                                             "computed": false,
                                             "range": [
-                                              1196,
-                                              1212
+                                              1198,
+                                              1214
                                             ],
                                             "loc": {
                                               "start": {
@@ -527,8 +527,8 @@
                                               "type": "Identifier",
                                               "name": "api",
                                               "range": [
-                                                1220,
-                                                1223
+                                                1222,
+                                                1225
                                               ],
                                               "loc": {
                                                 "start": {
@@ -546,8 +546,8 @@
                                               "value": "js_tags",
                                               "raw": "'js_tags'",
                                               "range": [
-                                                1225,
-                                                1234
+                                                1227,
+                                                1236
                                               ],
                                               "loc": {
                                                 "start": {
@@ -565,8 +565,8 @@
                                             "shorthand": false,
                                             "computed": false,
                                             "range": [
-                                              1220,
-                                              1234
+                                              1222,
+                                              1236
                                             ],
                                             "loc": {
                                               "start": {
@@ -585,8 +585,8 @@
                                               "type": "Identifier",
                                               "name": "obj",
                                               "range": [
-                                                1242,
-                                                1245
+                                                1244,
+                                                1247
                                               ],
                                               "loc": {
                                                 "start": {
@@ -606,8 +606,8 @@
                                                 "type": "Identifier",
                                                 "name": "options",
                                                 "range": [
-                                                  1247,
-                                                  1254
+                                                  1249,
+                                                  1256
                                                 ],
                                                 "loc": {
                                                   "start": {
@@ -624,8 +624,8 @@
                                                 "type": "Identifier",
                                                 "name": "jstag",
                                                 "range": [
-                                                  1255,
-                                                  1260
+                                                  1257,
+                                                  1262
                                                 ],
                                                 "loc": {
                                                   "start": {
@@ -639,8 +639,8 @@
                                                 }
                                               },
                                               "range": [
-                                                1247,
-                                                1260
+                                                1249,
+                                                1262
                                               ],
                                               "loc": {
                                                 "start": {
@@ -658,8 +658,8 @@
                                             "shorthand": false,
                                             "computed": false,
                                             "range": [
-                                              1242,
-                                              1260
+                                              1244,
+                                              1262
                                             ],
                                             "loc": {
                                               "start": {
@@ -674,8 +674,8 @@
                                           }
                                         ],
                                         "range": [
-                                          1150,
-                                          1266
+                                          1152,
+                                          1268
                                         ],
                                         "loc": {
                                           "start": {
@@ -690,8 +690,8 @@
                                       }
                                     ],
                                     "range": [
-                                      1145,
-                                      1267
+                                      1147,
+                                      1269
                                     ],
                                     "loc": {
                                       "start": {
@@ -708,8 +708,8 @@
                                     "type": "Identifier",
                                     "name": "then",
                                     "range": [
-                                      1268,
-                                      1272
+                                      1270,
+                                      1274
                                     ],
                                     "loc": {
                                       "start": {
@@ -723,8 +723,8 @@
                                     }
                                   },
                                   "range": [
-                                    1145,
-                                    1272
+                                    1147,
+                                    1274
                                   ],
                                   "loc": {
                                     "start": {
@@ -742,8 +742,8 @@
                                     "type": "Identifier",
                                     "name": "resolve",
                                     "range": [
-                                      1273,
-                                      1280
+                                      1275,
+                                      1282
                                     ],
                                     "loc": {
                                       "start": {
@@ -758,8 +758,8 @@
                                   }
                                 ],
                                 "range": [
-                                  1145,
-                                  1281
+                                  1147,
+                                  1283
                                 ],
                                 "loc": {
                                   "start": {
@@ -776,8 +776,8 @@
                                 "type": "Identifier",
                                 "name": "catch",
                                 "range": [
-                                  1289,
-                                  1294
+                                  1291,
+                                  1296
                                 ],
                                 "loc": {
                                   "start": {
@@ -791,8 +791,8 @@
                                 }
                               },
                               "range": [
-                                1145,
-                                1294
+                                1147,
+                                1296
                               ],
                               "loc": {
                                 "start": {
@@ -810,8 +810,8 @@
                                 "type": "Identifier",
                                 "name": "reject",
                                 "range": [
-                                  1295,
-                                  1301
+                                  1297,
+                                  1303
                                 ],
                                 "loc": {
                                   "start": {
@@ -826,8 +826,8 @@
                               }
                             ],
                             "range": [
-                              1145,
-                              1302
+                              1147,
+                              1304
                             ],
                             "loc": {
                               "start": {
@@ -841,8 +841,8 @@
                             }
                           },
                           "range": [
-                            1145,
-                            1303
+                            1147,
+                            1305
                           ],
                           "loc": {
                             "start": {
@@ -857,8 +857,8 @@
                         }
                       ],
                       "range": [
-                        1139,
-                        1307
+                        1141,
+                        1309
                       ],
                       "loc": {
                         "start": {
@@ -874,8 +874,8 @@
                     "generator": false,
                     "expression": false,
                     "range": [
-                      1118,
-                      1307
+                      1120,
+                      1309
                     ],
                     "loc": {
                       "start": {
@@ -890,8 +890,8 @@
                   }
                 ],
                 "range": [
-                  1106,
-                  1308
+                  1108,
+                  1310
                 ],
                 "loc": {
                   "start": {
@@ -905,8 +905,8 @@
                 }
               },
               "range": [
-                1099,
-                1309
+                1101,
+                1311
               ],
               "loc": {
                 "start": {
@@ -921,8 +921,8 @@
             }
           ],
           "range": [
-            1095,
-            1311
+            1097,
+            1313
           ],
           "loc": {
             "start": {
@@ -938,8 +938,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          1061,
-          1311
+          1063,
+          1313
         ],
         "loc": {
           "start": {
@@ -954,10 +954,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * POST /admin/js_tags.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        jstag: {\n *          'js-tag': {\n *            'type': 'JsTag::TextTag',\n *            'content': 'http://link'\n *          }\n *        }\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'file-tag':\n *        { 'account-id': '12345',\n *          'application-password-id': '12345',\n *          content: 'http://link',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          name: '',\n *          'updated-at': '2011-11-11 11:11:11 +0300' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.jstag Required, jstag\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n ",
+            "value": "*\n * POST /admin/js_tags.xml\n *\n * Examples:\n *\n *      insales.createJsTag({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        jstag: {\n *          'js-tag': {\n *            'type': 'JsTag::TextTag',\n *            'content': 'http://link'\n *          }\n *        }\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'file-tag':\n *        { 'account-id': '12345',\n *          'application-password-id': '12345',\n *          content: 'http://link',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          name: '',\n *          'updated-at': '2011-11-11 11:11:11 +0300' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.jstag Required, jstag\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n ",
             "range": [
               41,
-              1053
+              1055
             ],
             "loc": {
               "start": {
@@ -976,8 +976,8 @@
       "specifiers": [],
       "source": null,
       "range": [
-        1054,
-        1311
+        1056,
+        1313
       ],
       "loc": {
         "start": {
@@ -992,10 +992,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * POST /admin/js_tags.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        jstag: {\n *          'js-tag': {\n *            'type': 'JsTag::TextTag',\n *            'content': 'http://link'\n *          }\n *        }\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'file-tag':\n *        { 'account-id': '12345',\n *          'application-password-id': '12345',\n *          content: 'http://link',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          name: '',\n *          'updated-at': '2011-11-11 11:11:11 +0300' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.jstag Required, jstag\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n ",
+          "value": "*\n * POST /admin/js_tags.xml\n *\n * Examples:\n *\n *      insales.createJsTag({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        jstag: {\n *          'js-tag': {\n *            'type': 'JsTag::TextTag',\n *            'content': 'http://link'\n *          }\n *        }\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'file-tag':\n *        { 'account-id': '12345',\n *          'application-password-id': '12345',\n *          content: 'http://link',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          name: '',\n *          'updated-at': '2011-11-11 11:11:11 +0300' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.jstag Required, jstag\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n ",
           "range": [
             41,
-            1053
+            1055
           ],
           "loc": {
             "start": {
@@ -1014,7 +1014,7 @@
   "sourceType": "module",
   "range": [
     0,
-    1311
+    1313
   ],
   "loc": {
     "start": {
@@ -1029,10 +1029,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * POST /admin/js_tags.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        jstag: {\n *          'js-tag': {\n *            'type': 'JsTag::TextTag',\n *            'content': 'http://link'\n *          }\n *        }\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'file-tag':\n *        { 'account-id': '12345',\n *          'application-password-id': '12345',\n *          content: 'http://link',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          name: '',\n *          'updated-at': '2011-11-11 11:11:11 +0300' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.jstag Required, jstag\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n ",
+      "value": "*\n * POST /admin/js_tags.xml\n *\n * Examples:\n *\n *      insales.createJsTag({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        jstag: {\n *          'js-tag': {\n *            'type': 'JsTag::TextTag',\n *            'content': 'http://link'\n *          }\n *        }\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'file-tag':\n *        { 'account-id': '12345',\n *          'application-password-id': '12345',\n *          content: 'http://link',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          name: '',\n *          'updated-at': '2011-11-11 11:11:11 +0300' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.jstag Required, jstag\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n ",
       "range": [
         41,
-        1053
+        1055
       ],
       "loc": {
         "start": {
