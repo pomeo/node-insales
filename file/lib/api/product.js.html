@@ -48,7 +48,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listCoupon">listCoupon</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeCoupon">removeCoupon</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createFile">createFile</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getFile">getFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listFile">listFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeFile">removeFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uploadFile">uploadFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createJsTag">createJsTag</a></span></span></li>
@@ -71,6 +71,44 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { get } from &apos;../methods/get&apos;;
 import { post } from &apos;../methods/post&apos;;
 
+/**
+ * GET /admin/products/{id}.xml
+ *
+ * Examples:
+ *
+ *      insales.getProduct({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        productid: &apos;1076619&apos;
+ *      }).then(response =&gt; {
+ *        console.info(response.data);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;discount-code&apos;:
+ *         { &apos;act-once&apos;: &apos;false&apos;,
+ *           &apos;act-once-for-client&apos;: &apos;false&apos;,
+ *           code: &apos;WWWWWW&apos;,
+ *           &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *           description: &apos;&apos;,
+ *           disabled: &apos;false&apos;,
+ *           discount: &apos;10.0&apos;,
+ *           &apos;expired-at&apos;: &apos;2011-11-11&apos;,
+ *           id: &apos;1111111&apos;,
+ *           &apos;min-price&apos;: &apos;0.0&apos;,
+ *           &apos;type-id&apos;: &apos;1&apos;,
+ *           &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *           worked: &apos;true&apos;,
+ *           &apos;discount-collections&apos;: &apos;&apos; } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} options.productid Required, product id
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function getProduct(options, id) {
   return new Promise((resolve, reject) =&gt; {
     get({
@@ -99,7 +137,7 @@ export function createProduct(options, id) {
 export function listProduct(options, id) {
   const query = {};
   query.page = options.page ? options.page : 1;
-  query.per_page = options.per_page ? options.per_page : 250;
+  query.per_page = options.per_page ? options.per_page : 100;
   if ((options.updated_since) &amp;&amp; (options.updated_since !== false)) {
     query.updated_since = options.updated_since;
   }

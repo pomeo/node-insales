@@ -338,7 +338,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\nimport { put } from '../methods/put';\n\n/**\n * GET /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '1076619'\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'false',\n *           'act-once-for-client': 'false',\n *           code: 'WWWWWW',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: '',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2011-11-11',\n *           id: '1111111',\n *           'min-price': '0.0',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.id Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * GET /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.listCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-codes':\n *         { 'discount-code':\n *            [{ 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWW',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111111',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' },\n *            { 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWY',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111112',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' }]}}\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} [options.page=1] Page\n * @param {number|string} [options.per_page=250] Coupons per page\n * @param {string} [options.updated_since] Coupons updated since. Format YYYY-MM-DD\n * @param {boolean} [options.deleted] Deleted coupons\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function listCoupon(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 250;\n  if ((options.updated_since) && (options.updated_since !== false)) {\n    options.updated_since = options.updated_since;\n  }\n  if (options.deleted === true) {\n    query.deleted = true;\n  }\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * POST /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.createCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        coupon: {\n *           'discount_code': {\n *             'code': 'frandom2',\n *             'act_once': 'true',\n *             'discount': 10,\n *             'type_id': 1,\n *             'description': 'API code',\n *             'disabled': 0,\n *             'expired-at': '2030-06-09'\n *           }\n *        }\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'true',\n *           'act-once-for-client': '',\n *           code: 'frandom2',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: 'API code',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2030-06-09',\n *           id: '100000',\n *           'min-price': '',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.coupon Required, coupon\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * DELETE /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.removeCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '1076619'\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.couponid Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function removeCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function editCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    put({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\nimport { put } from '../methods/put';\n\n/**\n * GET /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '1076619'\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'false',\n *           'act-once-for-client': 'false',\n *           code: 'WWWWWW',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: '',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2011-11-11',\n *           id: '1111111',\n *           'min-price': '0.0',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.couponid Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * GET /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.listCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-codes':\n *         { 'discount-code':\n *            [{ 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWW',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111111',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' },\n *            { 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWY',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111112',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' }]}}\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} [options.page=1] Page\n * @param {number|string} [options.per_page=250] Coupons per page\n * @param {string} [options.updated_since] Coupons updated since. Format YYYY-MM-DD\n * @param {boolean} [options.deleted] Deleted coupons\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function listCoupon(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 250;\n  if ((options.updated_since) && (options.updated_since !== false)) {\n    options.updated_since = options.updated_since;\n  }\n  if (options.deleted === true) {\n    query.deleted = true;\n  }\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * POST /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.createCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        coupon: {\n *           'discount_code': {\n *             'code': 'frandom2',\n *             'act_once': 'true',\n *             'discount': 10,\n *             'type_id': 1,\n *             'description': 'API code',\n *             'disabled': 0,\n *             'expired-at': '2030-06-09'\n *           }\n *        }\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'true',\n *           'act-once-for-client': '',\n *           code: 'frandom2',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: 'API code',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2030-06-09',\n *           id: '100000',\n *           'min-price': '',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.coupon Required, coupon\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * DELETE /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.removeCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '1076619'\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.couponid Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function removeCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function editCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    put({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
     "__docId__": 11,
@@ -399,7 +399,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "options.id",
+        "name": "options.couponid",
         "description": "Required, coupon id"
       },
       {
@@ -757,20 +757,20 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\n\nexport function getFile(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `files/${options.fileid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function createFile(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'files',\n      obj: options.file\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function removeFile(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `files/${options.fileid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function uploadFile(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 250;\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'files',\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\n\nexport function listFile(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `files`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function createFile(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'files',\n      obj: options.file\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function removeFile(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `files/${options.fileid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function uploadFile(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 250;\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'files',\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
     "__docId__": 17,
     "kind": "function",
     "static": true,
     "variation": null,
-    "name": "getFile",
+    "name": "listFile",
     "memberof": "lib/api/file.js",
-    "longname": "lib/api/file.js~getFile",
+    "longname": "lib/api/file.js~listFile",
     "access": null,
     "export": true,
     "importPath": "insales/lib/api/file.js",
-    "importStyle": "{getFile}",
+    "importStyle": "{listFile}",
     "description": null,
     "lineNumber": 5,
     "undocument": true,
@@ -914,7 +914,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { post } from '../methods/post';\n\nexport function createJsTag(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'js_tags',\n      obj: options.jstag\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { post } from '../methods/post';\n\n/**\n * POST /admin/js_tags.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        jstag: {\n *          'js-tag': {\n *            'type': 'JsTag::TextTag',\n *            'content': 'http://link'\n *          }\n *        }\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'file-tag':\n *        { 'account-id': '12345',\n *          'application-password-id': '12345',\n *          content: 'http://link',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          name: '',\n *          'updated-at': '2011-11-11 11:11:11 +0300' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.jstag Required, jstag\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createJsTag(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'js_tags',\n      obj: options.jstag\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
     "__docId__": 22,
@@ -928,27 +928,74 @@
     "export": true,
     "importPath": "insales/lib/api/jstag.js",
     "importStyle": "{createJsTag}",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "POST /admin/js_tags.xml\n\nExamples:\n\n     insales.getCoupon({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       jstag: {\n         'js-tag': {\n           'type': 'JsTag::TextTag',\n           'content': 'http://link'\n         }\n       }\n     }).then(response => {\n       console.info(response.data);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     { 'file-tag':\n       { 'account-id': '12345',\n         'application-password-id': '12345',\n         content: 'http://link',\n         'created-at': '2011-11-11 11:11:11 +0300',\n         id: '12345',\n         name: '',\n         'updated-at': '2011-11-11 11:11:11 +0300' } }",
+    "lineNumber": 39,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.jstag",
+        "description": "Required, jstag"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -963,7 +1010,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\n\nexport function getProduct(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `products/${options.productid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function createProduct(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'products',\n      obj: options.product\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function listProduct(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 250;\n  if ((options.updated_since) && (options.updated_since !== false)) {\n    query.updated_since = options.updated_since;\n  }\n  if (options.deleted === true) {\n    query.deleted = true;\n  }\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'products',\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\n\n/**\n * GET /admin/products/{id}.xml\n *\n * Examples:\n *\n *      insales.getProduct({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        productid: '1076619'\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'false',\n *           'act-once-for-client': 'false',\n *           code: 'WWWWWW',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: '',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2011-11-11',\n *           id: '1111111',\n *           'min-price': '0.0',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.productid Required, product id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getProduct(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `products/${options.productid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function createProduct(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'products',\n      obj: options.product\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function listProduct(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 100;\n  if ((options.updated_since) && (options.updated_since !== false)) {\n    query.updated_since = options.updated_since;\n  }\n  if (options.deleted === true) {\n    query.deleted = true;\n  }\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'products',\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
     "__docId__": 24,
@@ -977,27 +1024,75 @@
     "export": true,
     "importPath": "insales/lib/api/product.js",
     "importStyle": "{getProduct}",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "GET /admin/products/{id}.xml\n\nExamples:\n\n     insales.getProduct({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       productid: '1076619'\n     }).then(response => {\n       console.info(response.data);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     { 'discount-code':\n        { 'act-once': 'false',\n          'act-once-for-client': 'false',\n          code: 'WWWWWW',\n          'created-at': '2011-11-11T11:11:11+03:00',\n          description: '',\n          disabled: 'false',\n          discount: '10.0',\n          'expired-at': '2011-11-11',\n          id: '1111111',\n          'min-price': '0.0',\n          'type-id': '1',\n          'updated-at': '2011-11-11T11:11:11+03:00',\n          worked: 'true',\n          'discount-collections': '' } }",
+    "lineNumber": 42,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.productid",
+        "description": "Required, product id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -1014,7 +1109,7 @@
     "importPath": "insales/lib/api/product.js",
     "importStyle": "{createProduct}",
     "description": null,
-    "lineNumber": 16,
+    "lineNumber": 54,
     "undocument": true,
     "params": [
       {
@@ -1050,7 +1145,7 @@
     "importPath": "insales/lib/api/product.js",
     "importStyle": "{listProduct}",
     "description": null,
-    "lineNumber": 29,
+    "lineNumber": 67,
     "undocument": true,
     "params": [
       {
@@ -1264,86 +1359,25 @@
     "kind": "file",
     "static": true,
     "variation": null,
-    "name": "lib/error.js",
+    "name": "lib/api.js",
     "memberof": null,
-    "longname": "lib/error.js",
+    "longname": "lib/api.js",
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "export function error(type, url, msg, response) {\n  return {\n    type,\n    url,\n    msg,\n    response\n  };\n}\n"
+    "content": "import { token }           from './api/token';\nimport { getAccount }      from './api/account';\nimport { getProduct,\n         createProduct,\n         listProduct }     from './api/product';\nimport { getCollection,\n         listCollection }  from './api/collection';\nimport { listFile,\n         createFile,\n         removeFile,\n         uploadFile }      from './api/file';\nimport { createJsTag }     from './api/jstag';\nimport { getRecurring,\n         createRecurring,\n         removeRecurring } from './api/recurringcharge';\nimport { getCharge,\n         createCharge,\n         removeCharge,\n         listCharge }      from './api/charge';\nimport { getCoupon,\n         createCoupon,\n         removeCoupon,\n         listCoupon,\n         editCoupon }      from './api/coupon';\n\nclass InSales {\n  constructor(options) {\n    const _options = options || {};\n    if (!_options.id) throw new Error('Missing app id');\n    if (!_options.secret) throw new Error('Missing app secret');\n\n    this.id = _options.id;\n    this.secret = _options.secret;\n  }\n\n  token(tok) {\n    return token(tok, this.secret);\n  }\n\n  getProduct(options) {\n    return getProduct(options, this.id);\n  }\n\n  createProduct(options) {\n    return createProduct(options, this.id);\n  }\n\n  listProduct(options) {\n    return listProduct(options, this.id);\n  }\n\n  getCollection(options) {\n    return getCollection(options, this.id);\n  }\n\n  listCollection(options) {\n    return listCollection(options, this.id);\n  }\n\n  listFile(options) {\n    return listFile(options, this.id);\n  }\n\n  createFile(options) {\n    return createFile(options, this.id);\n  }\n\n  removeFile(options) {\n    return removeFile(options, this.id);\n  }\n\n  uploadFile(options) {\n    return uploadFile(options, this.id);\n  }\n\n  getAccount(options) {\n    return getAccount(options, this.id);\n  }\n\n  createJsTag(options) {\n    return createJsTag(options, this.id);\n  }\n\n  getRecurring(options) {\n    return getRecurring(options, this.id);\n  }\n\n  createRecurring(options) {\n    return createRecurring(options, this.id);\n  }\n\n  removeRecurring(options) {\n    return removeRecurring(options, this.id);\n  }\n\n  getCharge(options) {\n    return getCharge(options, this.id);\n  }\n\n  createCharge(options) {\n    return createCharge(options, this.id);\n  }\n\n  removeCharge(options) {\n    return removeCharge(options, this.id);\n  }\n\n  listCharge(options) {\n    return listCharge(options, this.id);\n  }\n\n  getCoupon(options) {\n    return getCoupon(options, this.id);\n  }\n\n  createCoupon(options) {\n    return createCoupon(options, this.id);\n  }\n\n  removeCoupon(options) {\n    return removeCoupon(options, this.id);\n  }\n\n  listCoupon(options) {\n    return listCoupon(options, this.id);\n  }\n\n  editCoupon(options) {\n    return editCoupon(options, this.id);\n  }\n}\n\nexport default options => new InSales(options);\n"
   },
   {
     "__docId__": 34,
-    "kind": "function",
-    "static": true,
-    "variation": null,
-    "name": "error",
-    "memberof": "lib/error.js",
-    "longname": "lib/error.js~error",
-    "access": null,
-    "export": true,
-    "importPath": "insales/lib/error.js",
-    "importStyle": "{error}",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
-    "params": [
-      {
-        "name": "type",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "url",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "msg",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "response",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 35,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "lib/index.js",
-    "memberof": null,
-    "longname": "lib/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "import { token }           from './api/token';\nimport { getAccount }      from './api/account';\nimport { getProduct,\n         createProduct,\n         listProduct }     from './api/product';\nimport { getCollection,\n         listCollection }  from './api/collection';\nimport { getFile,\n         listFile,\n         removeFile,\n         uploadFile }      from './api/file';\nimport { createJsTag }     from './api/jstag';\nimport { getRecurring,\n         createRecurring,\n         removeRecurring } from './api/recurringcharge';\nimport { getCharge,\n         createCharge,\n         removeCharge,\n         listCharge }      from './api/charge';\nimport { getCoupon,\n         createCoupon,\n         removeCoupon,\n         listCoupon,\n         editCoupon }      from './api/coupon';\n\nclass InSales {\n  constructor(options) {\n    const _options = options || {};\n    if (!_options.id) throw new Error('Missing app id');\n    if (!_options.secret) throw new Error('Missing app secret');\n\n    this.id = _options.id;\n    this.secret = _options.secret;\n  }\n\n  token(tok) {\n    return token(tok, this.secret);\n  }\n\n  getProduct(options) {\n    return getProduct(options, this.id);\n  }\n\n  createProduct(options) {\n    return createProduct(options, this.id);\n  }\n\n  listProduct(options) {\n    return listProduct(options, this.id);\n  }\n\n  getCollection(options) {\n    return getCollection(options, this.id);\n  }\n\n  listCollection(options) {\n    return listCollection(options, this.id);\n  }\n\n  getFile(options) {\n    return getFile(options, this.id);\n  }\n\n  listFile(options) {\n    return listFile(options, this.id);\n  }\n\n  removeFile(options) {\n    return removeFile(options, this.id);\n  }\n\n  uploadFile(options) {\n    return uploadFile(options, this.id);\n  }\n\n  getAccount(options) {\n    return getAccount(options, this.id);\n  }\n\n  createJsTag(options) {\n    return createJsTag(options, this.id);\n  }\n\n  getRecurring(options) {\n    return getRecurring(options, this.id);\n  }\n\n  createRecurring(options) {\n    return createRecurring(options, this.id);\n  }\n\n  removeRecurring(options) {\n    return removeRecurring(options, this.id);\n  }\n\n  getCharge(options) {\n    return getCharge(options, this.id);\n  }\n\n  createCharge(options) {\n    return createCharge(options, this.id);\n  }\n\n  removeCharge(options) {\n    return removeCharge(options, this.id);\n  }\n\n  listCharge(options) {\n    return listCharge(options, this.id);\n  }\n\n  getCoupon(options) {\n    return getCoupon(options, this.id);\n  }\n\n  createCoupon(options) {\n    return createCoupon(options, this.id);\n  }\n\n  removeCoupon(options) {\n    return removeCoupon(options, this.id);\n  }\n\n  listCoupon(options) {\n    return listCoupon(options, this.id);\n  }\n\n  editCoupon(options) {\n    return editCoupon(options, this.id);\n  }\n}\n\nexport default options => new InSales(options);\n"
-  },
-  {
-    "__docId__": 36,
     "kind": "class",
     "static": true,
     "variation": null,
     "name": "InSales",
-    "memberof": "lib/index.js",
-    "longname": "lib/index.js~InSales",
+    "memberof": "lib/api.js",
+    "longname": "lib/api.js~InSales",
     "access": null,
     "export": false,
-    "importPath": "insales/lib/index.js",
+    "importPath": "insales/lib/api.js",
     "importStyle": null,
     "description": null,
     "lineNumber": 26,
@@ -1351,13 +1385,13 @@
     "interface": false
   },
   {
-    "__docId__": 37,
+    "__docId__": 35,
     "kind": "constructor",
     "static": false,
     "variation": null,
     "name": "constructor",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#constructor",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#constructor",
     "access": null,
     "description": null,
     "lineNumber": 27,
@@ -1373,13 +1407,13 @@
     "generator": false
   },
   {
-    "__docId__": 38,
+    "__docId__": 36,
     "kind": "member",
     "static": false,
     "variation": null,
     "name": "id",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#id",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#id",
     "access": null,
     "description": null,
     "lineNumber": 32,
@@ -1391,13 +1425,13 @@
     }
   },
   {
-    "__docId__": 39,
+    "__docId__": 37,
     "kind": "member",
     "static": false,
     "variation": null,
     "name": "secret",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#secret",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#secret",
     "access": null,
     "description": null,
     "lineNumber": 33,
@@ -1409,13 +1443,13 @@
     }
   },
   {
-    "__docId__": 40,
+    "__docId__": 38,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "token",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#token",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#token",
     "access": null,
     "description": null,
     "lineNumber": 36,
@@ -1436,16 +1470,70 @@
     "generator": false
   },
   {
-    "__docId__": 41,
+    "__docId__": 39,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "getProduct",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#getProduct",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#getProduct",
     "access": null,
     "description": null,
     "lineNumber": 40,
+    "undocument": true,
+    "params": [
+      {
+        "name": "options",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 40,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "createProduct",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#createProduct",
+    "access": null,
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "params": [
+      {
+        "name": "options",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 41,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "listProduct",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#listProduct",
+    "access": null,
+    "description": null,
+    "lineNumber": 48,
     "undocument": true,
     "params": [
       {
@@ -1467,12 +1555,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "createProduct",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#createProduct",
+    "name": "getCollection",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#getCollection",
     "access": null,
     "description": null,
-    "lineNumber": 44,
+    "lineNumber": 52,
     "undocument": true,
     "params": [
       {
@@ -1494,12 +1582,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "listProduct",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#listProduct",
+    "name": "listCollection",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#listCollection",
     "access": null,
     "description": null,
-    "lineNumber": 48,
+    "lineNumber": 56,
     "undocument": true,
     "params": [
       {
@@ -1521,12 +1609,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getCollection",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#getCollection",
+    "name": "listFile",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#listFile",
     "access": null,
     "description": null,
-    "lineNumber": 52,
+    "lineNumber": 60,
     "undocument": true,
     "params": [
       {
@@ -1548,12 +1636,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "listCollection",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#listCollection",
+    "name": "createFile",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#createFile",
     "access": null,
     "description": null,
-    "lineNumber": 56,
+    "lineNumber": 64,
     "undocument": true,
     "params": [
       {
@@ -1575,12 +1663,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getFile",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#getFile",
+    "name": "removeFile",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#removeFile",
     "access": null,
     "description": null,
-    "lineNumber": 60,
+    "lineNumber": 68,
     "undocument": true,
     "params": [
       {
@@ -1602,12 +1690,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "listFile",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#listFile",
+    "name": "uploadFile",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#uploadFile",
     "access": null,
     "description": null,
-    "lineNumber": 64,
+    "lineNumber": 72,
     "undocument": true,
     "params": [
       {
@@ -1629,12 +1717,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "removeFile",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#removeFile",
+    "name": "getAccount",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#getAccount",
     "access": null,
     "description": null,
-    "lineNumber": 68,
+    "lineNumber": 76,
     "undocument": true,
     "params": [
       {
@@ -1656,12 +1744,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "uploadFile",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#uploadFile",
+    "name": "createJsTag",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#createJsTag",
     "access": null,
     "description": null,
-    "lineNumber": 72,
+    "lineNumber": 80,
     "undocument": true,
     "params": [
       {
@@ -1683,12 +1771,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getAccount",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#getAccount",
+    "name": "getRecurring",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#getRecurring",
     "access": null,
     "description": null,
-    "lineNumber": 76,
+    "lineNumber": 84,
     "undocument": true,
     "params": [
       {
@@ -1710,12 +1798,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "createJsTag",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#createJsTag",
+    "name": "createRecurring",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#createRecurring",
     "access": null,
     "description": null,
-    "lineNumber": 80,
+    "lineNumber": 88,
     "undocument": true,
     "params": [
       {
@@ -1737,12 +1825,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getRecurring",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#getRecurring",
+    "name": "removeRecurring",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#removeRecurring",
     "access": null,
     "description": null,
-    "lineNumber": 84,
+    "lineNumber": 92,
     "undocument": true,
     "params": [
       {
@@ -1764,12 +1852,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "createRecurring",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#createRecurring",
+    "name": "getCharge",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#getCharge",
     "access": null,
     "description": null,
-    "lineNumber": 88,
+    "lineNumber": 96,
     "undocument": true,
     "params": [
       {
@@ -1791,12 +1879,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "removeRecurring",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#removeRecurring",
+    "name": "createCharge",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#createCharge",
     "access": null,
     "description": null,
-    "lineNumber": 92,
+    "lineNumber": 100,
     "undocument": true,
     "params": [
       {
@@ -1818,12 +1906,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getCharge",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#getCharge",
+    "name": "removeCharge",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#removeCharge",
     "access": null,
     "description": null,
-    "lineNumber": 96,
+    "lineNumber": 104,
     "undocument": true,
     "params": [
       {
@@ -1845,12 +1933,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "createCharge",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#createCharge",
+    "name": "listCharge",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#listCharge",
     "access": null,
     "description": null,
-    "lineNumber": 100,
+    "lineNumber": 108,
     "undocument": true,
     "params": [
       {
@@ -1872,12 +1960,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "removeCharge",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#removeCharge",
+    "name": "getCoupon",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#getCoupon",
     "access": null,
     "description": null,
-    "lineNumber": 104,
+    "lineNumber": 112,
     "undocument": true,
     "params": [
       {
@@ -1899,12 +1987,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "listCharge",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#listCharge",
+    "name": "createCoupon",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#createCoupon",
     "access": null,
     "description": null,
-    "lineNumber": 108,
+    "lineNumber": 116,
     "undocument": true,
     "params": [
       {
@@ -1926,12 +2014,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getCoupon",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#getCoupon",
+    "name": "removeCoupon",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#removeCoupon",
     "access": null,
     "description": null,
-    "lineNumber": 112,
+    "lineNumber": 120,
     "undocument": true,
     "params": [
       {
@@ -1953,12 +2041,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "createCoupon",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#createCoupon",
+    "name": "listCoupon",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#listCoupon",
     "access": null,
     "description": null,
-    "lineNumber": 116,
+    "lineNumber": 124,
     "undocument": true,
     "params": [
       {
@@ -1980,63 +2068,9 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "removeCoupon",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#removeCoupon",
-    "access": null,
-    "description": null,
-    "lineNumber": 120,
-    "undocument": true,
-    "params": [
-      {
-        "name": "options",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 62,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "listCoupon",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#listCoupon",
-    "access": null,
-    "description": null,
-    "lineNumber": 124,
-    "undocument": true,
-    "params": [
-      {
-        "name": "options",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 63,
-    "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "editCoupon",
-    "memberof": "lib/index.js~InSales",
-    "longname": "lib/index.js~InSales#editCoupon",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#editCoupon",
     "access": null,
     "description": null,
     "lineNumber": 128,
@@ -2057,7 +2091,147 @@
     "generator": false
   },
   {
+    "__docId__": 62,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/error.js",
+    "memberof": null,
+    "longname": "lib/error.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 14,
+    "content": "/**\n * Output Restler error, used to create Promise reject\n *\n * @param {String} type Required, name of error\n * @param {String} url Required, url where error happen\n * @param {?String} msg Error message\n * @param {?Object} response Response with error data\n * @returns {Object}\n * @property {String} type Name of error\n * @property {String} url Url where error happen\n * @property {?String} msg Error message\n * @property {?Object} response Response with error data\n */\nexport function error(type, url, msg, response) {\n  return {\n    type,\n    url,\n    msg,\n    response\n  };\n}\n"
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "error",
+    "memberof": "lib/error.js",
+    "longname": "lib/error.js~error",
+    "access": null,
+    "export": true,
+    "importPath": "insales/lib/error.js",
+    "importStyle": "{error}",
+    "description": "Output Restler error, used to create Promise reject",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "Required, name of error"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "url",
+        "description": "Required, url where error happen"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "msg",
+        "description": "Error message"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "Response with error data"
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "Name of error"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "url",
+        "description": "Url where error happen"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "msg",
+        "description": "Error message"
+      },
+      {
+        "nullable": true,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "Response with error data"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
     "__docId__": 64,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "lib/index.js",
+    "memberof": null,
+    "longname": "lib/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "module.exports = require('./api').default;\n"
+  },
+  {
+    "__docId__": 65,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2067,10 +2241,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { request } from '../request';\nimport rest from 'restler';\nimport options from '../options';\nconst opt = Object.create(options);\n\nexport function get(conn) {\n  if (conn.query) opt.query = conn.query;\n\n  const g = rest.get(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(g)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { request } from '../request';\nimport rest from 'restler';\nimport options from '../options';\nconst opt = Object.create(options);\n\n/**\n * GET request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @param {object} [conn.query] URL query string\n * @returns {Promise}\n */\nexport function get(conn) {\n  if (conn.query) opt.query = conn.query;\n\n  const g = rest.get(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(g)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
-    "__docId__": 65,
+    "__docId__": 66,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2091,7 +2265,7 @@
     }
   },
   {
-    "__docId__": 66,
+    "__docId__": 67,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2102,26 +2276,88 @@
     "export": true,
     "importPath": "insales/lib/methods/get.js",
     "importStyle": "{get}",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "GET request",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "conn",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.id",
+        "description": "Required, app id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.token",
+        "description": "Required, token to access shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.api",
+        "description": "Required, api endpoint"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "conn.query",
+        "description": "URL query string"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
-    "__docId__": 67,
+    "__docId__": 68,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2131,10 +2367,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { request } from '../request';\nimport rest from 'restler';\nimport { Js2Xml } from 'js2xml';\nimport options from '../options';\nconst opt = Object.create(options);\n\nexport function post(conn) {\n  if (conn.obj !== undefined) {\n    const js2xml = new Js2Xml(Object.keys(conn.obj)[0], conn.obj[Object.keys(conn.obj)[0]]);\n    opt.data = js2xml.toString();\n  }\n\n  const p = rest.post(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(p)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { request } from '../request';\nimport rest from 'restler';\nimport { Js2Xml } from 'js2xml';\nimport options from '../options';\nconst opt = Object.create(options);\n\n/**\n * POST request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @param {object} conn.obj HTTP POST data\n * @returns {Promise}\n */\nexport function post(conn) {\n  if (conn.obj !== undefined) {\n    const js2xml = new Js2Xml(Object.keys(conn.obj)[0], conn.obj[Object.keys(conn.obj)[0]]);\n    opt.data = js2xml.toString();\n  }\n\n  const p = rest.post(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(p)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
-    "__docId__": 68,
+    "__docId__": 69,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2155,7 +2391,7 @@
     }
   },
   {
-    "__docId__": 69,
+    "__docId__": 70,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2166,26 +2402,88 @@
     "export": true,
     "importPath": "insales/lib/methods/post.js",
     "importStyle": "{post}",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "POST request",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "conn",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.id",
+        "description": "Required, app id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.token",
+        "description": "Required, token to access shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.api",
+        "description": "Required, api endpoint"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.obj",
+        "description": "HTTP POST data"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
-    "__docId__": 70,
+    "__docId__": 71,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2195,10 +2493,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { request } from '../request';\nimport rest from 'restler';\nimport { Js2Xml } from 'js2xml';\nimport options from '../options';\nconst opt = Object.create(options);\n\nexport function put(conn) {\n  if (conn.obj !== undefined) {\n    const js2xml = new Js2Xml(Object.keys(conn.obj)[0], conn.obj[Object.keys(conn.obj)[0]]);\n    opt.data = js2xml.toString();\n  }\n  const p = rest.put(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(p)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { request } from '../request';\nimport rest from 'restler';\nimport { Js2Xml } from 'js2xml';\nimport options from '../options';\nconst opt = Object.create(options);\n\n/**\n * PUT request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @param {object} conn.obj HTTP PUT data\n * @returns {Promise}\n */\nexport function put(conn) {\n  if (conn.obj !== undefined) {\n    const js2xml = new Js2Xml(Object.keys(conn.obj)[0], conn.obj[Object.keys(conn.obj)[0]]);\n    opt.data = js2xml.toString();\n  }\n  const p = rest.put(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(p)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
-    "__docId__": 71,
+    "__docId__": 72,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2219,7 +2517,7 @@
     }
   },
   {
-    "__docId__": 72,
+    "__docId__": 73,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2230,26 +2528,88 @@
     "export": true,
     "importPath": "insales/lib/methods/put.js",
     "importStyle": "{put}",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "PUT request",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "conn",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.id",
+        "description": "Required, app id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.token",
+        "description": "Required, token to access shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.api",
+        "description": "Required, api endpoint"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.obj",
+        "description": "HTTP PUT data"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
-    "__docId__": 73,
+    "__docId__": 74,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2259,10 +2619,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { request } from '../request';\nimport rest from 'restler';\nimport options from '../options';\nconst opt = Object.create(options);\n\nexport function remove(conn) {\n  const d = rest.del(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(d)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { request } from '../request';\nimport rest from 'restler';\nimport options from '../options';\nconst opt = Object.create(options);\n\n/**\n * DELETE request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @returns {Promise}\n */\nexport function remove(conn) {\n  const d = rest.del(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(d)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
-    "__docId__": 74,
+    "__docId__": 75,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2283,7 +2643,7 @@
     }
   },
   {
-    "__docId__": 75,
+    "__docId__": 76,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2294,26 +2654,78 @@
     "export": true,
     "importPath": "insales/lib/methods/remove.js",
     "importStyle": "{remove}",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "DELETE request",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "conn",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.id",
+        "description": "Required, app id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.token",
+        "description": "Required, token to access shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "conn.api",
+        "description": "Required, api endpoint"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
-    "__docId__": 76,
+    "__docId__": 77,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2322,11 +2734,11 @@
     "longname": "lib/options.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export default {\n  headers: {\n    'Content-Type': 'application/xml'\n  },\n  xml2js: {\n    trim: false,\n    explicitArray: false,\n    ignoreAttrs: true\n  },\n  timeout: 15000\n};\n"
+    "lineNumber": 6,
+    "content": "/**\n * Options for Restler\n *\n * @returns {Object}\n */\nexport default {\n  headers: {\n    'Content-Type': 'application/xml'\n  },\n  xml2js: {\n    trim: false,\n    explicitArray: false,\n    ignoreAttrs: true\n  },\n  timeout: 30000\n};\n"
   },
   {
-    "__docId__": 77,
+    "__docId__": 78,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2335,11 +2747,11 @@
     "longname": "lib/output.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export function output(data, response) {\n  return {\n    data,\n    response\n  };\n}\n"
+    "lineNumber": 8,
+    "content": "/**\n * Output Restler response, used to create Promise resolve\n *\n * @returns {Object}\n * @property {Object} data\n * @property {Object} response\n */\nexport function output(data, response) {\n  return {\n    data,\n    response\n  };\n}\n"
   },
   {
-    "__docId__": 78,
+    "__docId__": 79,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2350,9 +2762,14 @@
     "export": true,
     "importPath": "insales/lib/output.js",
     "importStyle": "{output}",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "Output Restler response, used to create Promise resolve",
+    "lineNumber": 8,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object}"
+      }
+    ],
     "params": [
       {
         "name": "data",
@@ -2367,15 +2784,40 @@
         ]
       }
     ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": ""
+      }
+    ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
-    "__docId__": 79,
+    "__docId__": 80,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2385,10 +2827,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { error } from './error';\nimport { output } from './output';\n\nexport function request(r) {\n  return new Promise((resolve, reject) => {\n    r.once('timeout', ms => {\n      reject(error('Timeout', r.url.href, `timeout: ${ms}ms`));\n    }).once('error', (err, response) => {\n      reject(error('Error', r.url.href, err, response));\n    }).once('abort', () => {\n      reject(error('Abort', r.url.href, null, null));\n    }).once('fail', (data, response) => {\n      reject(error('Fail', r.url.href, data, response));\n    }).once('success', (data, response) => {\n      resolve(output(data, response));\n    });\n  });\n}\n"
+    "content": "import { error } from './error';\nimport { output } from './output';\n\n/**\n * Events of Restler\n *\n * @returns {Promise}\n */\nexport function request(r) {\n  return new Promise((resolve, reject) => {\n    r.once('timeout', ms => {\n      reject(error('Timeout', r.url.href, `timeout: ${ms}ms`, null));\n    }).once('error', (err, response) => {\n      reject(error('Error', r.url.href, err, response));\n    }).once('abort', () => {\n      reject(error('Abort', r.url.href, null, null));\n    }).once('fail', (data, response) => {\n      reject(error('Fail', r.url.href, data, response));\n    }).once('success', (data, response) => {\n      resolve(output(data, response));\n    });\n  });\n}\n"
   },
   {
-    "__docId__": 80,
+    "__docId__": 81,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2399,9 +2841,14 @@
     "export": true,
     "importPath": "insales/lib/request.js",
     "importStyle": "{request}",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Events of Restler",
+    "lineNumber": 9,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
         "name": "r",
@@ -2411,14 +2858,17 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
-    "__docId__": 82,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2431,7 +2881,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2444,7 +2894,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2457,7 +2907,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2470,7 +2920,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2483,7 +2933,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2496,7 +2946,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2509,7 +2959,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2522,7 +2972,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 91,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2535,7 +2985,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2548,7 +2998,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2561,7 +3011,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 94,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2574,7 +3024,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2587,7 +3037,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2600,7 +3050,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2613,7 +3063,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2626,7 +3076,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2639,7 +3089,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 100,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2652,7 +3102,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 101,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2665,7 +3115,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 101,
+    "__docId__": 102,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2678,7 +3128,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 102,
+    "__docId__": 103,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2691,7 +3141,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 104,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2704,7 +3154,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 105,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2717,7 +3167,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 106,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2730,7 +3180,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 107,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2743,7 +3193,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 108,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2756,7 +3206,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 109,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2769,7 +3219,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 109,
+    "__docId__": 110,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2782,7 +3232,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 111,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2795,7 +3245,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 111,
+    "__docId__": 112,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2808,7 +3258,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 112,
+    "__docId__": 113,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2821,7 +3271,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 113,
+    "__docId__": 114,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2834,7 +3284,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 114,
+    "__docId__": 115,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2847,7 +3297,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 115,
+    "__docId__": 116,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2860,7 +3310,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 116,
+    "__docId__": 117,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2873,7 +3323,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 117,
+    "__docId__": 118,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2886,7 +3336,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 118,
+    "__docId__": 119,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2899,7 +3349,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 119,
+    "__docId__": 120,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2912,7 +3362,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 120,
+    "__docId__": 121,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2925,7 +3375,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 121,
+    "__docId__": 122,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2938,7 +3388,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 122,
+    "__docId__": 123,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2951,7 +3401,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 123,
+    "__docId__": 124,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2964,7 +3414,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 124,
+    "__docId__": 125,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2977,7 +3427,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 125,
+    "__docId__": 126,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2990,7 +3440,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 126,
+    "__docId__": 127,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3003,7 +3453,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 127,
+    "__docId__": 128,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3016,7 +3466,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 128,
+    "__docId__": 129,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3029,7 +3479,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 130,
+    "__docId__": 131,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3042,7 +3492,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 131,
+    "__docId__": 132,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3055,7 +3505,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 132,
+    "__docId__": 133,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3068,7 +3518,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 133,
+    "__docId__": 134,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3081,7 +3531,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 134,
+    "__docId__": 135,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3094,7 +3544,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 135,
+    "__docId__": 136,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3107,7 +3557,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 136,
+    "__docId__": 137,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3120,7 +3570,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 137,
+    "__docId__": 138,
     "kind": "external",
     "static": true,
     "variation": null,

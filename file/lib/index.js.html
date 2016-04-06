@@ -48,7 +48,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listCoupon">listCoupon</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeCoupon">removeCoupon</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createFile">createFile</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getFile">getFile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listFile">listFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeFile">removeFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uploadFile">uploadFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createJsTag">createJsTag</a></span></span></li>
@@ -68,139 +68,7 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">lib/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { token }           from &apos;./api/token&apos;;
-import { getAccount }      from &apos;./api/account&apos;;
-import { getProduct,
-         createProduct,
-         listProduct }     from &apos;./api/product&apos;;
-import { getCollection,
-         listCollection }  from &apos;./api/collection&apos;;
-import { getFile,
-         listFile,
-         removeFile,
-         uploadFile }      from &apos;./api/file&apos;;
-import { createJsTag }     from &apos;./api/jstag&apos;;
-import { getRecurring,
-         createRecurring,
-         removeRecurring } from &apos;./api/recurringcharge&apos;;
-import { getCharge,
-         createCharge,
-         removeCharge,
-         listCharge }      from &apos;./api/charge&apos;;
-import { getCoupon,
-         createCoupon,
-         removeCoupon,
-         listCoupon,
-         editCoupon }      from &apos;./api/coupon&apos;;
-
-class InSales {
-  constructor(options) {
-    const _options = options || {};
-    if (!_options.id) throw new Error(&apos;Missing app id&apos;);
-    if (!_options.secret) throw new Error(&apos;Missing app secret&apos;);
-
-    this.id = _options.id;
-    this.secret = _options.secret;
-  }
-
-  token(tok) {
-    return token(tok, this.secret);
-  }
-
-  getProduct(options) {
-    return getProduct(options, this.id);
-  }
-
-  createProduct(options) {
-    return createProduct(options, this.id);
-  }
-
-  listProduct(options) {
-    return listProduct(options, this.id);
-  }
-
-  getCollection(options) {
-    return getCollection(options, this.id);
-  }
-
-  listCollection(options) {
-    return listCollection(options, this.id);
-  }
-
-  getFile(options) {
-    return getFile(options, this.id);
-  }
-
-  listFile(options) {
-    return listFile(options, this.id);
-  }
-
-  removeFile(options) {
-    return removeFile(options, this.id);
-  }
-
-  uploadFile(options) {
-    return uploadFile(options, this.id);
-  }
-
-  getAccount(options) {
-    return getAccount(options, this.id);
-  }
-
-  createJsTag(options) {
-    return createJsTag(options, this.id);
-  }
-
-  getRecurring(options) {
-    return getRecurring(options, this.id);
-  }
-
-  createRecurring(options) {
-    return createRecurring(options, this.id);
-  }
-
-  removeRecurring(options) {
-    return removeRecurring(options, this.id);
-  }
-
-  getCharge(options) {
-    return getCharge(options, this.id);
-  }
-
-  createCharge(options) {
-    return createCharge(options, this.id);
-  }
-
-  removeCharge(options) {
-    return removeCharge(options, this.id);
-  }
-
-  listCharge(options) {
-    return listCharge(options, this.id);
-  }
-
-  getCoupon(options) {
-    return getCoupon(options, this.id);
-  }
-
-  createCoupon(options) {
-    return createCoupon(options, this.id);
-  }
-
-  removeCoupon(options) {
-    return removeCoupon(options, this.id);
-  }
-
-  listCoupon(options) {
-    return listCoupon(options, this.id);
-  }
-
-  editCoupon(options) {
-    return editCoupon(options, this.id);
-  }
-}
-
-export default options =&gt; new InSales(options);
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">module.exports = require(&apos;./api&apos;).default;
 </code></pre>
 
 </div>

@@ -1,7 +1,7 @@
 {
-  "coverage": "19.35%",
+  "coverage": "48.38%",
   "expectCount": 31,
-  "actualCount": 6,
+  "actualCount": 15,
   "files": {
     "lib/api/charge.js": {
       "expectCount": 4,
@@ -32,18 +32,15 @@
     },
     "lib/api/jstag.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "lib/api/product.js": {
       "expectCount": 3,
-      "actualCount": 0,
+      "actualCount": 1,
       "undocumentLines": [
-        16,
-        4,
-        29
+        54,
+        67
       ]
     },
     "lib/api/recurringcharge.js": {
@@ -57,17 +54,13 @@
     },
     "lib/error.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "lib/methods/get.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        6
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "lib/api/account.js": {
       "expectCount": 1,
@@ -84,38 +77,28 @@
     },
     "lib/output.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "lib/methods/post.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        7
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "lib/methods/put.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        7
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "lib/methods/remove.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        6
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "lib/request.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        4
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "lib/api/token.js": {
       "expectCount": 1,

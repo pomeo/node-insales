@@ -78,12 +78,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "insales/lib/api/file.js~getfile",
-    "function/index.html#static-function-getFile",
-    "<span>getFile</span> <span class=\"search-result-import-path\">insales/lib/api/file.js</span>",
-    "function"
-  ],
-  [
     "insales/lib/api/product.js~getproduct",
     "function/index.html#static-function-getProduct",
     "<span>getProduct</span> <span class=\"search-result-import-path\">insales/lib/api/product.js</span>",
@@ -111,6 +105,12 @@ window.esdocSearchIndex = [
     "insales/lib/api/coupon.js~listcoupon",
     "function/index.html#static-function-listCoupon",
     "<span>listCoupon</span> <span class=\"search-result-import-path\">insales/lib/api/coupon.js</span>",
+    "function"
+  ],
+  [
+    "insales/lib/api/file.js~listfile",
+    "function/index.html#static-function-listFile",
+    "<span>listFile</span> <span class=\"search-result-import-path\">insales/lib/api/file.js</span>",
     "function"
   ],
   [
@@ -514,6 +514,12 @@ window.esdocSearchIndex = [
     "external/index.html",
     "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
     "external"
+  ],
+  [
+    "lib/api.js",
+    "file/lib/api.js.html",
+    "lib/api.js",
+    "file"
   ],
   [
     "lib/api/account.js",
