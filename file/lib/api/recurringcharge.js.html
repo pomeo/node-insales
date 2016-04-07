@@ -54,6 +54,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createProduct">createProduct</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getProduct">getProduct</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listProduct">listProduct</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeRecurring">changeRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createRecurring">createRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getRecurring">getRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeRecurring">removeRecurring</a></span></span></li>
@@ -69,8 +70,38 @@
 <div class="content" data-ice="content"><h1 data-ice="title">lib/api/recurringcharge.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { get } from &apos;../methods/get&apos;;
 import { post } from &apos;../methods/post&apos;;
+import { put } from &apos;../methods/put&apos;;
 import { remove } from &apos;../methods/remove&apos;;
 
+/**
+ * GET /admin/recurring_application_charge.xml
+ *
+ * Examples:
+ *
+ *      insales.getRecurring({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;
+ *      }).then(output =&gt; {
+ *        console.info(output.data);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;recurring-application-charge&apos;:
+ *        { blocked: &apos;false&apos;,
+ *          &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *          id: &apos;12345&apos;,
+ *          monthly: &apos;1000.0&apos;,
+ *          &apos;paid-till&apos;: &apos;2011-11-21&apos;,
+ *          &apos;trial-expired-at&apos;: &apos;2011-12-11&apos;,
+ *          &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos; } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function getRecurring(options, id) {
   return new Promise((resolve, reject) =&gt; {
     get({
@@ -83,6 +114,37 @@ export function getRecurring(options, id) {
   });
 }
 
+/**
+ * POST /admin/recurring_application_charge.xml
+ *
+ * Examples:
+ *
+ *      insales.createRecurring({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        price: 1000
+ *      }).then(output =&gt; {
+ *        console.info(output.data);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { &apos;recurring-application-charge&apos;:
+ *        { blocked: &apos;false&apos;,
+ *          &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
+ *          id: &apos;12345&apos;,
+ *          monthly: &apos;1000.0&apos;,
+ *          &apos;paid-till&apos;: &apos;2011-11-21&apos;,
+ *          &apos;trial-expired-at&apos;: &apos;2011-12-11&apos;,
+ *          &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos; } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {string|number} options.price Required, price
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function createRecurring(options, id) {
   const charge = {
     &apos;recurring-application-charge&apos;: {
@@ -102,6 +164,71 @@ export function createRecurring(options, id) {
   });
 }
 
+/**
+ * PUT /admin/recurring_application_charge.xml
+ *
+ * Examples:
+ *
+ *      insales.changeRecurring({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        price: 1010
+ *      }).then(output =&gt; {
+ *        console.info(output.response.statusCode);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      200
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {string|number} options.price Required, price
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
+export function changeRecurring(options, id) {
+  const charge = {
+    &apos;recurring-application-charge&apos;: {
+      &apos;monthly&apos;: options.price
+    }
+  };
+
+  return new Promise((resolve, reject) =&gt; {
+    put({
+      id,
+      token: options.token,
+      url: options.url,
+      api: `recurring_application_charge`,
+      obj: charge
+    }).then(resolve)
+      .catch(reject);
+  });
+}
+
+/**
+ * DELETE /admin/recurring_application_charge.xml
+ *
+ * Examples:
+ *
+ *      insales.changeRecurring({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;
+ *      }).then(output =&gt; {
+ *        console.info(output.response.statusCode);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      200
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function removeRecurring(options, id) {
   return new Promise((resolve, reject) =&gt; {
     remove({

@@ -41,15 +41,7 @@
     "docs": "./node_modules/.bin/esdoc -c esdoc.json",
     "test": "xo && make test-once",
     "compile": "babel --presets es2015 -d dist/ ./lib",
-    "prepublish": "npm run compile"
-  },
-  "config": {
-    "pre-compiled": {
-      "dir": "dist",
-      "files": [
-        "lib/index.js"
-      ]
-    }
+    "prepublish": "npm run compile && sed -i 's@dist/index.js@dist/index.js@' package.json"
   },
   "bugs": {
     "url": "https://github.com/pomeo/node-insales/issues"

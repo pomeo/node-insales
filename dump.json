@@ -1540,7 +1540,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\n\nexport function getRecurring(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `recurring_application_charge`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function createRecurring(options, id) {\n  const charge = {\n    'recurring-application-charge': {\n      'monthly': options.price\n    }\n  };\n\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'recurring_application_charge',\n      obj: charge\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function removeRecurring(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `recurring_application_charge`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { put } from '../methods/put';\nimport { remove } from '../methods/remove';\n\n/**\n * GET /admin/recurring_application_charge.xml\n *\n * Examples:\n *\n *      insales.getRecurring({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru'\n *      }).then(output => {\n *        console.info(output.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'recurring-application-charge':\n *        { blocked: 'false',\n *          'created-at': '2011-11-11T11:11:11+03:00',\n *          id: '12345',\n *          monthly: '1000.0',\n *          'paid-till': '2011-11-21',\n *          'trial-expired-at': '2011-12-11',\n *          'updated-at': '2011-11-11T11:11:11+03:00' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getRecurring(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `recurring_application_charge`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * POST /admin/recurring_application_charge.xml\n *\n * Examples:\n *\n *      insales.createRecurring({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        price: 1000\n *      }).then(output => {\n *        console.info(output.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'recurring-application-charge':\n *        { blocked: 'false',\n *          'created-at': '2011-11-11T11:11:11+03:00',\n *          id: '12345',\n *          monthly: '1000.0',\n *          'paid-till': '2011-11-21',\n *          'trial-expired-at': '2011-12-11',\n *          'updated-at': '2011-11-11T11:11:11+03:00' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {string|number} options.price Required, price\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createRecurring(options, id) {\n  const charge = {\n    'recurring-application-charge': {\n      'monthly': options.price\n    }\n  };\n\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: 'recurring_application_charge',\n      obj: charge\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * PUT /admin/recurring_application_charge.xml\n *\n * Examples:\n *\n *      insales.changeRecurring({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        price: 1010\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {string|number} options.price Required, price\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function changeRecurring(options, id) {\n  const charge = {\n    'recurring-application-charge': {\n      'monthly': options.price\n    }\n  };\n\n  return new Promise((resolve, reject) => {\n    put({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `recurring_application_charge`,\n      obj: charge\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * DELETE /admin/recurring_application_charge.xml\n *\n * Examples:\n *\n *      insales.changeRecurring({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru'\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function removeRecurring(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `recurring_application_charge`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
     "__docId__": 27,
@@ -1554,27 +1554,64 @@
     "export": true,
     "importPath": "insales/lib/api/recurringcharge.js",
     "importStyle": "{getRecurring}",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "GET /admin/recurring_application_charge.xml\n\nExamples:\n\n     insales.getRecurring({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru'\n     }).then(output => {\n       console.info(output.data);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     { 'recurring-application-charge':\n       { blocked: 'false',\n         'created-at': '2011-11-11T11:11:11+03:00',\n         id: '12345',\n         monthly: '1000.0',\n         'paid-till': '2011-11-21',\n         'trial-expired-at': '2011-12-11',\n         'updated-at': '2011-11-11T11:11:11+03:00' } }",
+    "lineNumber": 35,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -1590,32 +1627,164 @@
     "export": true,
     "importPath": "insales/lib/api/recurringcharge.js",
     "importStyle": "{createRecurring}",
-    "description": null,
-    "lineNumber": 17,
-    "undocument": true,
+    "description": "POST /admin/recurring_application_charge.xml\n\nExamples:\n\n     insales.createRecurring({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       price: 1000\n     }).then(output => {\n       console.info(output.data);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     { 'recurring-application-charge':\n       { blocked: 'false',\n         'created-at': '2011-11-11T11:11:11+03:00',\n         id: '12345',\n         monthly: '1000.0',\n         'paid-till': '2011-11-21',\n         'trial-expired-at': '2011-12-11',\n         'updated-at': '2011-11-11T11:11:11+03:00' } }",
+    "lineNumber": 78,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.price",
+        "description": "Required, price"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
     "__docId__": 29,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "changeRecurring",
+    "memberof": "lib/api/recurringcharge.js",
+    "longname": "lib/api/recurringcharge.js~changeRecurring",
+    "access": null,
+    "export": true,
+    "importPath": "insales/lib/api/recurringcharge.js",
+    "importStyle": "{changeRecurring}",
+    "description": "PUT /admin/recurring_application_charge.xml\n\nExamples:\n\n     insales.changeRecurring({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       price: 1010\n     }).then(output => {\n       console.info(output.response.statusCode);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     200",
+    "lineNumber": 121,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.price",
+        "description": "Required, price"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 30,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1626,32 +1795,69 @@
     "export": true,
     "importPath": "insales/lib/api/recurringcharge.js",
     "importStyle": "{removeRecurring}",
-    "description": null,
-    "lineNumber": 36,
-    "undocument": true,
+    "description": "DELETE /admin/recurring_application_charge.xml\n\nExamples:\n\n     insales.changeRecurring({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru'\n     }).then(output => {\n       console.info(output.response.statusCode);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     200",
+    "lineNumber": 162,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
-    "__docId__": 30,
+    "__docId__": 31,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1664,7 +1870,7 @@
     "content": "import crypto from 'crypto';\n\n/**\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String|Number} token Required, token receive when install app\n * @param {String|Number} secret Required, app secret\n * @returns {String} access token\n */\nexport function token(token, secret) {\n  return crypto.createHash('md5')\n    .update(token + secret)\n    .digest('hex');\n}\n"
   },
   {
-    "__docId__": 31,
+    "__docId__": 32,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1718,7 +1924,7 @@
     "generator": false
   },
   {
-    "__docId__": 32,
+    "__docId__": 33,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1728,10 +1934,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { token }           from './api/token';\nimport { getAccount }      from './api/account';\nimport { getProduct,\n         createProduct,\n         listProduct }     from './api/product';\nimport { getCollection,\n         listCollection }  from './api/collection';\nimport { listFile,\n         removeFile,\n         uploadFile }      from './api/file';\nimport { createJsTag }     from './api/jstag';\nimport { getRecurring,\n         createRecurring,\n         removeRecurring } from './api/recurringcharge';\nimport { getCharge,\n         createCharge,\n         declineCharge,\n         listCharge }      from './api/charge';\nimport { getCoupon,\n         createCoupon,\n         removeCoupon,\n         listCoupon,\n         editCoupon }      from './api/coupon';\n\nclass InSales {\n  constructor(options) {\n    const _options = options || {};\n    if (!_options.id) throw new Error('Missing app id');\n    if (!_options.secret) throw new Error('Missing app secret');\n\n    this.id = _options.id;\n    this.secret = _options.secret;\n  }\n\n  token(tok) {\n    return token(tok, this.secret);\n  }\n\n  getProduct(options) {\n    return getProduct(options, this.id);\n  }\n\n  createProduct(options) {\n    return createProduct(options, this.id);\n  }\n\n  listProduct(options) {\n    return listProduct(options, this.id);\n  }\n\n  getCollection(options) {\n    return getCollection(options, this.id);\n  }\n\n  listCollection(options) {\n    return listCollection(options, this.id);\n  }\n\n  listFile(options) {\n    return listFile(options, this.id);\n  }\n\n  removeFile(options) {\n    return removeFile(options, this.id);\n  }\n\n  uploadFile(options) {\n    return uploadFile(options, this.id);\n  }\n\n  getAccount(options) {\n    return getAccount(options, this.id);\n  }\n\n  createJsTag(options) {\n    return createJsTag(options, this.id);\n  }\n\n  getRecurring(options) {\n    return getRecurring(options, this.id);\n  }\n\n  createRecurring(options) {\n    return createRecurring(options, this.id);\n  }\n\n  removeRecurring(options) {\n    return removeRecurring(options, this.id);\n  }\n\n  getCharge(options) {\n    return getCharge(options, this.id);\n  }\n\n  createCharge(options) {\n    return createCharge(options, this.id);\n  }\n\n  declineCharge(options) {\n    return declineCharge(options, this.id);\n  }\n\n  listCharge(options) {\n    return listCharge(options, this.id);\n  }\n\n  getCoupon(options) {\n    return getCoupon(options, this.id);\n  }\n\n  createCoupon(options) {\n    return createCoupon(options, this.id);\n  }\n\n  removeCoupon(options) {\n    return removeCoupon(options, this.id);\n  }\n\n  listCoupon(options) {\n    return listCoupon(options, this.id);\n  }\n\n  editCoupon(options) {\n    return editCoupon(options, this.id);\n  }\n}\n\nexport default options => new InSales(options);\n"
+    "content": "import { token }           from './api/token';\nimport { getAccount }      from './api/account';\nimport { getProduct,\n         createProduct,\n         listProduct }     from './api/product';\nimport { getCollection,\n         listCollection }  from './api/collection';\nimport { listFile,\n         removeFile,\n         uploadFile }      from './api/file';\nimport { createJsTag }     from './api/jstag';\nimport { getRecurring,\n         createRecurring,\n         changeRecurring,\n         removeRecurring } from './api/recurringcharge';\nimport { getCharge,\n         createCharge,\n         declineCharge,\n         listCharge }      from './api/charge';\nimport { getCoupon,\n         createCoupon,\n         removeCoupon,\n         listCoupon,\n         editCoupon }      from './api/coupon';\n\nclass InSales {\n  constructor(options) {\n    const _options = options || {};\n    if (!_options.id) throw new Error('Missing app id');\n    if (!_options.secret) throw new Error('Missing app secret');\n\n    this.id = _options.id;\n    this.secret = _options.secret;\n  }\n\n  token(tok) {\n    return token(tok, this.secret);\n  }\n\n  getProduct(options) {\n    return getProduct(options, this.id);\n  }\n\n  createProduct(options) {\n    return createProduct(options, this.id);\n  }\n\n  listProduct(options) {\n    return listProduct(options, this.id);\n  }\n\n  getCollection(options) {\n    return getCollection(options, this.id);\n  }\n\n  listCollection(options) {\n    return listCollection(options, this.id);\n  }\n\n  listFile(options) {\n    return listFile(options, this.id);\n  }\n\n  removeFile(options) {\n    return removeFile(options, this.id);\n  }\n\n  uploadFile(options) {\n    return uploadFile(options, this.id);\n  }\n\n  getAccount(options) {\n    return getAccount(options, this.id);\n  }\n\n  createJsTag(options) {\n    return createJsTag(options, this.id);\n  }\n\n  getRecurring(options) {\n    return getRecurring(options, this.id);\n  }\n\n  createRecurring(options) {\n    return createRecurring(options, this.id);\n  }\n\n  changeRecurring(options) {\n    return changeRecurring(options, this.id);\n  }\n\n  removeRecurring(options) {\n    return removeRecurring(options, this.id);\n  }\n\n  getCharge(options) {\n    return getCharge(options, this.id);\n  }\n\n  createCharge(options) {\n    return createCharge(options, this.id);\n  }\n\n  declineCharge(options) {\n    return declineCharge(options, this.id);\n  }\n\n  listCharge(options) {\n    return listCharge(options, this.id);\n  }\n\n  getCoupon(options) {\n    return getCoupon(options, this.id);\n  }\n\n  createCoupon(options) {\n    return createCoupon(options, this.id);\n  }\n\n  removeCoupon(options) {\n    return removeCoupon(options, this.id);\n  }\n\n  listCoupon(options) {\n    return listCoupon(options, this.id);\n  }\n\n  editCoupon(options) {\n    return editCoupon(options, this.id);\n  }\n}\n\nexport default options => new InSales(options);\n"
   },
   {
-    "__docId__": 33,
+    "__docId__": 34,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -1743,12 +1949,12 @@
     "importPath": "insales/lib/api.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 25,
+    "lineNumber": 26,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 34,
+    "__docId__": 35,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1757,7 +1963,7 @@
     "longname": "lib/api.js~InSales#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 26,
+    "lineNumber": 27,
     "undocument": true,
     "params": [
       {
@@ -1770,31 +1976,13 @@
     "generator": false
   },
   {
-    "__docId__": 35,
+    "__docId__": 36,
     "kind": "member",
     "static": false,
     "variation": null,
     "name": "id",
     "memberof": "lib/api.js~InSales",
     "longname": "lib/api.js~InSales#id",
-    "access": null,
-    "description": null,
-    "lineNumber": 31,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 36,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "secret",
-    "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#secret",
     "access": null,
     "description": null,
     "lineNumber": 32,
@@ -1807,6 +1995,24 @@
   },
   {
     "__docId__": 37,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "secret",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#secret",
+    "access": null,
+    "description": null,
+    "lineNumber": 33,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 38,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1815,7 +2021,7 @@
     "longname": "lib/api.js~InSales#token",
     "access": null,
     "description": null,
-    "lineNumber": 35,
+    "lineNumber": 36,
     "undocument": true,
     "params": [
       {
@@ -1833,7 +2039,7 @@
     "generator": false
   },
   {
-    "__docId__": 38,
+    "__docId__": 39,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1842,34 +2048,7 @@
     "longname": "lib/api.js~InSales#getProduct",
     "access": null,
     "description": null,
-    "lineNumber": 39,
-    "undocument": true,
-    "params": [
-      {
-        "name": "options",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 39,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "createProduct",
-    "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#createProduct",
-    "access": null,
-    "description": null,
-    "lineNumber": 43,
+    "lineNumber": 40,
     "undocument": true,
     "params": [
       {
@@ -1891,12 +2070,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "listProduct",
+    "name": "createProduct",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#listProduct",
+    "longname": "lib/api.js~InSales#createProduct",
     "access": null,
     "description": null,
-    "lineNumber": 47,
+    "lineNumber": 44,
     "undocument": true,
     "params": [
       {
@@ -1918,12 +2097,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getCollection",
+    "name": "listProduct",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#getCollection",
+    "longname": "lib/api.js~InSales#listProduct",
     "access": null,
     "description": null,
-    "lineNumber": 51,
+    "lineNumber": 48,
     "undocument": true,
     "params": [
       {
@@ -1945,12 +2124,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "listCollection",
+    "name": "getCollection",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#listCollection",
+    "longname": "lib/api.js~InSales#getCollection",
     "access": null,
     "description": null,
-    "lineNumber": 55,
+    "lineNumber": 52,
     "undocument": true,
     "params": [
       {
@@ -1972,12 +2151,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "listFile",
+    "name": "listCollection",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#listFile",
+    "longname": "lib/api.js~InSales#listCollection",
     "access": null,
     "description": null,
-    "lineNumber": 59,
+    "lineNumber": 56,
     "undocument": true,
     "params": [
       {
@@ -1999,12 +2178,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "removeFile",
+    "name": "listFile",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#removeFile",
+    "longname": "lib/api.js~InSales#listFile",
     "access": null,
     "description": null,
-    "lineNumber": 63,
+    "lineNumber": 60,
     "undocument": true,
     "params": [
       {
@@ -2026,12 +2205,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "uploadFile",
+    "name": "removeFile",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#uploadFile",
+    "longname": "lib/api.js~InSales#removeFile",
     "access": null,
     "description": null,
-    "lineNumber": 67,
+    "lineNumber": 64,
     "undocument": true,
     "params": [
       {
@@ -2053,12 +2232,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getAccount",
+    "name": "uploadFile",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#getAccount",
+    "longname": "lib/api.js~InSales#uploadFile",
     "access": null,
     "description": null,
-    "lineNumber": 71,
+    "lineNumber": 68,
     "undocument": true,
     "params": [
       {
@@ -2080,12 +2259,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "createJsTag",
+    "name": "getAccount",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#createJsTag",
+    "longname": "lib/api.js~InSales#getAccount",
     "access": null,
     "description": null,
-    "lineNumber": 75,
+    "lineNumber": 72,
     "undocument": true,
     "params": [
       {
@@ -2107,12 +2286,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getRecurring",
+    "name": "createJsTag",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#getRecurring",
+    "longname": "lib/api.js~InSales#createJsTag",
     "access": null,
     "description": null,
-    "lineNumber": 79,
+    "lineNumber": 76,
     "undocument": true,
     "params": [
       {
@@ -2134,12 +2313,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "createRecurring",
+    "name": "getRecurring",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#createRecurring",
+    "longname": "lib/api.js~InSales#getRecurring",
     "access": null,
     "description": null,
-    "lineNumber": 83,
+    "lineNumber": 80,
     "undocument": true,
     "params": [
       {
@@ -2161,12 +2340,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "removeRecurring",
+    "name": "createRecurring",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#removeRecurring",
+    "longname": "lib/api.js~InSales#createRecurring",
     "access": null,
     "description": null,
-    "lineNumber": 87,
+    "lineNumber": 84,
     "undocument": true,
     "params": [
       {
@@ -2188,12 +2367,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getCharge",
+    "name": "changeRecurring",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#getCharge",
+    "longname": "lib/api.js~InSales#changeRecurring",
     "access": null,
     "description": null,
-    "lineNumber": 91,
+    "lineNumber": 88,
     "undocument": true,
     "params": [
       {
@@ -2215,12 +2394,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "createCharge",
+    "name": "removeRecurring",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#createCharge",
+    "longname": "lib/api.js~InSales#removeRecurring",
     "access": null,
     "description": null,
-    "lineNumber": 95,
+    "lineNumber": 92,
     "undocument": true,
     "params": [
       {
@@ -2242,12 +2421,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "declineCharge",
+    "name": "getCharge",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#declineCharge",
+    "longname": "lib/api.js~InSales#getCharge",
     "access": null,
     "description": null,
-    "lineNumber": 99,
+    "lineNumber": 96,
     "undocument": true,
     "params": [
       {
@@ -2269,12 +2448,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "listCharge",
+    "name": "createCharge",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#listCharge",
+    "longname": "lib/api.js~InSales#createCharge",
     "access": null,
     "description": null,
-    "lineNumber": 103,
+    "lineNumber": 100,
     "undocument": true,
     "params": [
       {
@@ -2296,12 +2475,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getCoupon",
+    "name": "declineCharge",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#getCoupon",
+    "longname": "lib/api.js~InSales#declineCharge",
     "access": null,
     "description": null,
-    "lineNumber": 107,
+    "lineNumber": 104,
     "undocument": true,
     "params": [
       {
@@ -2323,12 +2502,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "createCoupon",
+    "name": "listCharge",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#createCoupon",
+    "longname": "lib/api.js~InSales#listCharge",
     "access": null,
     "description": null,
-    "lineNumber": 111,
+    "lineNumber": 108,
     "undocument": true,
     "params": [
       {
@@ -2350,12 +2529,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "removeCoupon",
+    "name": "getCoupon",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#removeCoupon",
+    "longname": "lib/api.js~InSales#getCoupon",
     "access": null,
     "description": null,
-    "lineNumber": 115,
+    "lineNumber": 112,
     "undocument": true,
     "params": [
       {
@@ -2377,12 +2556,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "listCoupon",
+    "name": "createCoupon",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#listCoupon",
+    "longname": "lib/api.js~InSales#createCoupon",
     "access": null,
     "description": null,
-    "lineNumber": 119,
+    "lineNumber": 116,
     "undocument": true,
     "params": [
       {
@@ -2404,12 +2583,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "editCoupon",
+    "name": "removeCoupon",
     "memberof": "lib/api.js~InSales",
-    "longname": "lib/api.js~InSales#editCoupon",
+    "longname": "lib/api.js~InSales#removeCoupon",
     "access": null,
     "description": null,
-    "lineNumber": 123,
+    "lineNumber": 120,
     "undocument": true,
     "params": [
       {
@@ -2428,6 +2607,60 @@
   },
   {
     "__docId__": 60,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "listCoupon",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#listCoupon",
+    "access": null,
+    "description": null,
+    "lineNumber": 124,
+    "undocument": true,
+    "params": [
+      {
+        "name": "options",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "editCoupon",
+    "memberof": "lib/api.js~InSales",
+    "longname": "lib/api.js~InSales#editCoupon",
+    "access": null,
+    "description": null,
+    "lineNumber": 128,
+    "undocument": true,
+    "params": [
+      {
+        "name": "options",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 62,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2440,7 +2673,7 @@
     "content": "/**\n * Output Restler error, used to create Promise reject\n *\n * @param {String} type Required, name of error\n * @param {String} url Required, url where error happen\n * @param {?String} msg Error message\n * @param {?Object} response Response with error data\n * @returns {Object}\n * @property {String} type Name of error\n * @property {String} url Url where error happen\n * @property {?String} msg Error message\n * @property {?Object} response Response with error data\n */\nexport function error(type, url, msg, response) {\n  return {\n    type,\n    url,\n    msg,\n    response\n  };\n}\n"
   },
   {
-    "__docId__": 61,
+    "__docId__": 63,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2554,7 +2787,7 @@
     "generator": false
   },
   {
-    "__docId__": 62,
+    "__docId__": 64,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2567,7 +2800,7 @@
     "content": "module.exports = require('./api').default;\n"
   },
   {
-    "__docId__": 63,
+    "__docId__": 65,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2580,7 +2813,7 @@
     "content": "import { request } from '../request';\nimport rest from 'restler';\nimport options from '../options';\nconst opt = Object.create(options);\n\n/**\n * GET request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @param {object} [conn.query] URL query string\n * @returns {Promise}\n */\nexport function get(conn) {\n  if (conn.query) opt.query = conn.query;\n\n  const g = rest.get(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(g)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
-    "__docId__": 64,
+    "__docId__": 66,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2601,7 +2834,7 @@
     }
   },
   {
-    "__docId__": 65,
+    "__docId__": 67,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2693,7 +2926,7 @@
     "generator": false
   },
   {
-    "__docId__": 66,
+    "__docId__": 68,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2706,7 +2939,7 @@
     "content": "import { request } from '../request';\nimport rest from 'restler';\nimport { Js2Xml } from 'js2xml';\nimport options from '../options';\nconst opt = Object.create(options);\n\n/**\n * POST request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @param {object} [conn.obj] HTTP POST data\n * @returns {Promise}\n */\nexport function post(conn) {\n  if (conn.obj !== undefined) {\n    const js2xml = new Js2Xml(Object.keys(conn.obj)[0], conn.obj[Object.keys(conn.obj)[0]]);\n    opt.data = js2xml.toString();\n  }\n\n  const p = rest.post(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(p)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
-    "__docId__": 67,
+    "__docId__": 69,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2727,7 +2960,7 @@
     }
   },
   {
-    "__docId__": 68,
+    "__docId__": 70,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2819,7 +3052,7 @@
     "generator": false
   },
   {
-    "__docId__": 69,
+    "__docId__": 71,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2832,7 +3065,7 @@
     "content": "import { request } from '../request';\nimport rest from 'restler';\nimport { Js2Xml } from 'js2xml';\nimport options from '../options';\nconst opt = Object.create(options);\n\n/**\n * PUT request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @param {object} conn.obj HTTP PUT data\n * @returns {Promise}\n */\nexport function put(conn) {\n  if (conn.obj !== undefined) {\n    const js2xml = new Js2Xml(Object.keys(conn.obj)[0], conn.obj[Object.keys(conn.obj)[0]]);\n    opt.data = js2xml.toString();\n  }\n  const p = rest.put(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(p)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
-    "__docId__": 70,
+    "__docId__": 72,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2853,7 +3086,7 @@
     }
   },
   {
-    "__docId__": 71,
+    "__docId__": 73,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2945,7 +3178,7 @@
     "generator": false
   },
   {
-    "__docId__": 72,
+    "__docId__": 74,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2958,7 +3191,7 @@
     "content": "import { request } from '../request';\nimport rest from 'restler';\nimport options from '../options';\nconst opt = Object.create(options);\n\n/**\n * DELETE request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @returns {Promise}\n */\nexport function remove(conn) {\n  const d = rest.del(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);\n  return new Promise((resolve, reject) => {\n    request(d)\n      .then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
-    "__docId__": 73,
+    "__docId__": 75,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2979,7 +3212,7 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 76,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3061,7 +3294,7 @@
     "generator": false
   },
   {
-    "__docId__": 75,
+    "__docId__": 77,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3074,7 +3307,7 @@
     "content": "/**\n * Options for Restler\n *\n * @returns {Object}\n */\nexport default {\n  headers: {\n    'Content-Type': 'application/xml'\n  },\n  xml2js: {\n    trim: false,\n    explicitArray: false,\n    ignoreAttrs: true\n  },\n  timeout: 30000\n};\n"
   },
   {
-    "__docId__": 76,
+    "__docId__": 78,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3087,7 +3320,7 @@
     "content": "/**\n * Output Restler response, used to create Promise resolve\n *\n * @returns {Object}\n * @property {Object} data\n * @property {Object} response\n */\nexport function output(data, response) {\n  return {\n    data,\n    response\n  };\n}\n"
   },
   {
-    "__docId__": 77,
+    "__docId__": 79,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3153,7 +3386,7 @@
     "generator": false
   },
   {
-    "__docId__": 78,
+    "__docId__": 80,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3166,7 +3399,7 @@
     "content": "import { error } from './error';\nimport { output } from './output';\n\n/**\n * Events of Restler\n *\n * @returns {Promise}\n */\nexport function request(r) {\n  return new Promise((resolve, reject) => {\n    r.once('timeout', ms => {\n      reject(error('Timeout', r.url.href, `timeout: ${ms}ms`, null));\n    }).once('error', (err, response) => {\n      reject(error('Error', r.url.href, err, response));\n    }).once('abort', () => {\n      reject(error('Abort', r.url.href, null, null));\n    }).once('fail', (data, response) => {\n      reject(error('Fail', r.url.href, data, response));\n    }).once('success', (data, response) => {\n      resolve(output(data, response));\n    });\n  });\n}\n"
   },
   {
-    "__docId__": 79,
+    "__docId__": 81,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3204,7 +3437,7 @@
     "generator": false
   },
   {
-    "__docId__": 81,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3217,7 +3450,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3230,7 +3463,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3243,7 +3476,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3256,7 +3489,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3269,7 +3502,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3282,7 +3515,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3295,7 +3528,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3308,7 +3541,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 91,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3321,7 +3554,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3334,7 +3567,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3347,7 +3580,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 94,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3360,7 +3593,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3373,7 +3606,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3386,7 +3619,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3399,7 +3632,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3412,7 +3645,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3425,7 +3658,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 100,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3438,7 +3671,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 101,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3451,7 +3684,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 102,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3464,7 +3697,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 101,
+    "__docId__": 103,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3477,7 +3710,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 102,
+    "__docId__": 104,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3490,7 +3723,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 105,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3503,7 +3736,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 106,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3516,7 +3749,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 107,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3529,7 +3762,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 108,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3542,7 +3775,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 109,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3555,7 +3788,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 110,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3568,7 +3801,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 109,
+    "__docId__": 111,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3581,7 +3814,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 112,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3594,7 +3827,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 111,
+    "__docId__": 113,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3607,7 +3840,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 112,
+    "__docId__": 114,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3620,7 +3853,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 113,
+    "__docId__": 115,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3633,7 +3866,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 114,
+    "__docId__": 116,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3646,7 +3879,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 115,
+    "__docId__": 117,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3659,7 +3892,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 116,
+    "__docId__": 118,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3672,7 +3905,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 117,
+    "__docId__": 119,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3685,7 +3918,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 118,
+    "__docId__": 120,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3698,7 +3931,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 119,
+    "__docId__": 121,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3711,7 +3944,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 120,
+    "__docId__": 122,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3724,7 +3957,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 121,
+    "__docId__": 123,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3737,7 +3970,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 122,
+    "__docId__": 124,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3750,7 +3983,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 123,
+    "__docId__": 125,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3763,7 +3996,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 124,
+    "__docId__": 126,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3776,7 +4009,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 125,
+    "__docId__": 127,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3789,7 +4022,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 126,
+    "__docId__": 128,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3802,7 +4035,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 127,
+    "__docId__": 129,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3815,7 +4048,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 129,
+    "__docId__": 131,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3828,7 +4061,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 130,
+    "__docId__": 132,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3841,7 +4074,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 131,
+    "__docId__": 133,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3854,7 +4087,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 132,
+    "__docId__": 134,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3867,7 +4100,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 133,
+    "__docId__": 135,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3880,7 +4113,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 134,
+    "__docId__": 136,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3893,7 +4126,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 135,
+    "__docId__": 137,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3906,7 +4139,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 136,
+    "__docId__": 138,
     "kind": "external",
     "static": true,
     "variation": null,

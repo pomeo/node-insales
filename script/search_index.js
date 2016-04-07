@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "insales/lib/api/recurringcharge.js~changerecurring",
+    "function/index.html#static-function-changeRecurring",
+    "<span>changeRecurring</span> <span class=\"search-result-import-path\">insales/lib/api/recurringcharge.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/api/charge.js~createcharge",
     "function/index.html#static-function-createCharge",
     "<span>createCharge</span> <span class=\"search-result-import-path\">insales/lib/api/charge.js</span>",
