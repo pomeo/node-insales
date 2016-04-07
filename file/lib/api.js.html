@@ -47,7 +47,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getCoupon">getCoupon</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listCoupon">listCoupon</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeCoupon">removeCoupon</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createFile">createFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listFile">listFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeFile">removeFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uploadFile">uploadFile</a></span></span></li>
@@ -76,7 +75,6 @@ import { getProduct,
 import { getCollection,
          listCollection }  from &apos;./api/collection&apos;;
 import { listFile,
-         createFile,
          removeFile,
          uploadFile }      from &apos;./api/file&apos;;
 import { createJsTag }     from &apos;./api/jstag&apos;;
@@ -129,10 +127,6 @@ class InSales {
 
   listFile(options) {
     return listFile(options, this.id);
-  }
-
-  createFile(options) {
-    return createFile(options, this.id);
   }
 
   removeFile(options) {

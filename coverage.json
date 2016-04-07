@@ -1,7 +1,7 @@
 {
-  "coverage": "67.74%",
-  "expectCount": 31,
-  "actualCount": 21,
+  "coverage": "80%",
+  "expectCount": 30,
+  "actualCount": 24,
   "files": {
     "lib/api/charge.js": {
       "expectCount": 4,
@@ -13,16 +13,6 @@
       "actualCount": 4,
       "undocumentLines": [
         231
-      ]
-    },
-    "lib/api/file.js": {
-      "expectCount": 4,
-      "actualCount": 0,
-      "undocumentLines": [
-        17,
-        5,
-        30,
-        42
       ]
     },
     "lib/api/jstag.js": {
@@ -65,6 +55,11 @@
     "lib/api/collection.js": {
       "expectCount": 2,
       "actualCount": 2,
+      "undocumentLines": []
+    },
+    "lib/api/file.js": {
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "lib/output.js": {

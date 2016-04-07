@@ -12,12 +12,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "insales/lib/api/file.js~createfile",
-    "function/index.html#static-function-createFile",
-    "<span>createFile</span> <span class=\"search-result-import-path\">insales/lib/api/file.js</span>",
-    "function"
-  ],
-  [
     "insales/lib/api/jstag.js~createjstag",
     "function/index.html#static-function-createJsTag",
     "<span>createJsTag</span> <span class=\"search-result-import-path\">insales/lib/api/jstag.js</span>",
