@@ -73,3 +73,6 @@ insales.getAccount({
 [getRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring)  
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
+
+## TODO
+Add other APIs
