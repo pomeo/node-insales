@@ -1,7 +1,7 @@
 {
   "name": "insales",
   "homepage": "https://github.com/pomeo/node-insales",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Insales.ru module for node.js",
   "keywords": [
     "insales",
@@ -41,7 +41,7 @@
     "docs": "./node_modules/.bin/esdoc -c esdoc.json",
     "test": "xo && make test-once",
     "compile": "babel --presets es2015 -d dist/ ./lib",
-    "prepublish": "npm run compile && sed -i 's@\s"index.js"@ "dist/index.js"@' package.json"
+    "prepublish": "npm run compile && sed -i 's@ \"index.js\"@ \"dist/index.js\"@' package.json"
   },
   "bugs": {
     "url": "https://github.com/pomeo/node-insales/issues"
