@@ -1,7 +1,7 @@
 {
-  "coverage": "90.32%",
+  "coverage": "93.54%",
   "expectCount": 31,
-  "actualCount": 28,
+  "actualCount": 29,
   "files": {
     "lib/api/recurringcharge.js": {
       "expectCount": 4,
@@ -15,10 +15,8 @@
     },
     "lib/api/coupon.js": {
       "expectCount": 5,
-      "actualCount": 4,
-      "undocumentLines": [
-        231
-      ]
+      "actualCount": 5,
+      "undocumentLines": []
     },
     "lib/api/jstag.js": {
       "expectCount": 1,

@@ -603,7 +603,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\nimport { put } from '../methods/put';\n\n/**\n * GET /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '1076619'\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'false',\n *           'act-once-for-client': 'false',\n *           code: 'WWWWWW',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: '',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2011-11-11',\n *           id: '1111111',\n *           'min-price': '0.0',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.couponid Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * GET /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.listCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-codes':\n *         { 'discount-code':\n *            [{ 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWW',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111111',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' },\n *            { 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWY',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111112',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' }]}}\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} [options.page=1] Page\n * @param {number|string} [options.per_page=250] Coupons per page\n * @param {string} [options.updated_since] Coupons updated since. Format YYYY-MM-DD\n * @param {boolean} [options.deleted] Deleted coupons\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function listCoupon(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 250;\n  if ((options.updated_since) && (options.updated_since !== false)) {\n    options.updated_since = options.updated_since;\n  }\n  if (options.deleted === true) {\n    query.deleted = true;\n  }\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * POST /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.createCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        coupon: {\n *           'discount_code': {\n *             'code': 'frandom2',\n *             'act_once': 'true',\n *             'discount': 10,\n *             'type_id': 1,\n *             'description': 'API code',\n *             'disabled': 0,\n *             'expired-at': '2030-06-09'\n *           }\n *        }\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'true',\n *           'act-once-for-client': '',\n *           code: 'frandom2',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: 'API code',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2030-06-09',\n *           id: '100000',\n *           'min-price': '',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.coupon Required, coupon\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * DELETE /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.removeCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '1076619'\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.couponid Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function removeCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\nexport function editCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    put({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
+    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\nimport { put } from '../methods/put';\n\n/**\n * GET /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.getCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '1076619'\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'false',\n *           'act-once-for-client': 'false',\n *           code: 'WWWWWW',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: '',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2011-11-11',\n *           id: '1111111',\n *           'min-price': '0.0',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.couponid Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * GET /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.listCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-codes':\n *         { 'discount-code':\n *            [{ 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWW',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111111',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' },\n *            { 'act-once': 'false',\n *              'act-once-for-client': 'false',\n *              code: 'WWWWWY',\n *              'created-at': '2011-11-11T11:11:11+03:00',\n *              description: '',\n *              disabled: 'false',\n *              discount: '10.0',\n *              'expired-at': '2011-11-11',\n *              id: '1111112',\n *              'min-price': '0.0',\n *              'type-id': '1',\n *              'updated-at': '2011-11-11T11:11:11+03:00',\n *              worked: 'true',\n *              'discount-collections': '' }]}}\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} [options.page=1] Page\n * @param {number|string} [options.per_page=250] Coupons per page\n * @param {string} [options.updated_since] Coupons updated since. Format YYYY-MM-DD\n * @param {boolean} [options.deleted] Deleted coupons\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function listCoupon(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 250;\n  if ((options.updated_since) && (options.updated_since !== false)) {\n    options.updated_since = options.updated_since;\n  }\n  if (options.deleted === true) {\n    query.deleted = true;\n  }\n\n  return new Promise((resolve, reject) => {\n    get({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      query\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * POST /admin/discount_codes.xml\n *\n * Examples:\n *\n *      insales.createCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        coupon: {\n *           'discount_code': {\n *             'code': 'frandom2',\n *             'act_once': 'true',\n *             'discount': 10,\n *             'type_id': 1,\n *             'description': 'API code',\n *             'disabled': 0,\n *             'expired-at': '2030-06-09'\n *           }\n *        }\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'discount-code':\n *         { 'act-once': 'true',\n *           'act-once-for-client': '',\n *           code: 'frandom2',\n *           'created-at': '2011-11-11T11:11:11+03:00',\n *           description: 'API code',\n *           disabled: 'false',\n *           discount: '10.0',\n *           'expired-at': '2030-06-09',\n *           id: '100000',\n *           'min-price': '',\n *           'type-id': '1',\n *           'updated-at': '2011-11-11T11:11:11+03:00',\n *           worked: 'true',\n *           'discount-collections': '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.coupon Required, coupon\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    post({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * DELETE /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.removeCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '100000'\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.couponid Required, coupon id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function removeCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    remove({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n\n/**\n * PUT /admin/discount_codes/{id}.xml\n *\n * Examples:\n *\n *      insales.editCoupon({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        couponid: '100000',\n *        coupon: {\n *          'discount_code': {\n *            'code': 'frandom3'\n *          }\n *        }\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.couponid Required, coupon id\n * @param {object} options.coupon Required, coupon\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function editCoupon(options, id) {\n  return new Promise((resolve, reject) => {\n    put({\n      id,\n      token: options.token,\n      url: options.url,\n      api: `discount_codes/${options.couponid}`,\n      obj: options.coupon\n    }).then(resolve)\n      .catch(reject);\n  });\n}\n"
   },
   {
     "__docId__": 11,
@@ -903,7 +903,7 @@
     "export": true,
     "importPath": "insales/lib/api/coupon.js",
     "importStyle": "{removeCoupon}",
-    "description": "DELETE /admin/discount_codes/{id}.xml\n\nExamples:\n\n     insales.removeCoupon({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       couponid: '1076619'\n     }).then(output => {\n       console.info(output.response.statusCode);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     200",
+    "description": "DELETE /admin/discount_codes/{id}.xml\n\nExamples:\n\n     insales.removeCoupon({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       couponid: '100000'\n     }).then(output => {\n       console.info(output.response.statusCode);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     200",
     "lineNumber": 219,
     "unknown": [
       {
@@ -987,27 +987,85 @@
     "export": true,
     "importPath": "insales/lib/api/coupon.js",
     "importStyle": "{editCoupon}",
-    "description": null,
-    "lineNumber": 231,
-    "undocument": true,
+    "description": "PUT /admin/discount_codes/{id}.xml\n\nExamples:\n\n     insales.editCoupon({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       couponid: '100000',\n       coupon: {\n         'discount_code': {\n           'code': 'frandom3'\n         }\n       }\n     }).then(output => {\n       console.info(output.response.statusCode);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     200",
+    "lineNumber": 261,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
-        "name": "options",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
       },
       {
-        "name": "id",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.couponid",
+        "description": "Required, coupon id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.coupon",
+        "description": "Required, coupon"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -3316,8 +3374,8 @@
     "longname": "lib/output.js",
     "access": null,
     "description": null,
-    "lineNumber": 8,
-    "content": "/**\n * Output Restler response, used to create Promise resolve\n *\n * @returns {Object}\n * @property {Object} data\n * @property {Object} response\n */\nexport function output(data, response) {\n  return {\n    data,\n    response\n  };\n}\n"
+    "lineNumber": 10,
+    "content": "/**\n * Output Restler response, used to create Promise resolve\n *\n * @param {Object} data Required\n * @param {Object} response Required\n * @returns {Object}\n * @property {Object} data\n * @property {Object} response\n */\nexport function output(data, response) {\n  return {\n    data,\n    response\n  };\n}\n"
   },
   {
     "__docId__": 79,
@@ -3332,7 +3390,7 @@
     "importPath": "insales/lib/output.js",
     "importStyle": "{output}",
     "description": "Output Restler response, used to create Promise resolve",
-    "lineNumber": 8,
+    "lineNumber": 10,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3341,16 +3399,24 @@
     ],
     "params": [
       {
-        "name": "data",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "Required"
       },
       {
-        "name": "response",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "response",
+        "description": "Required"
       }
     ],
     "properties": [
@@ -3396,7 +3462,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { error } from './error';\nimport { output } from './output';\n\n/**\n * Events of Restler\n *\n * @returns {Promise}\n */\nexport function request(r) {\n  return new Promise((resolve, reject) => {\n    r.once('timeout', ms => {\n      reject(error('Timeout', r.url.href, `timeout: ${ms}ms`, null));\n    }).once('error', (err, response) => {\n      reject(error('Error', r.url.href, err, response));\n    }).once('abort', () => {\n      reject(error('Abort', r.url.href, null, null));\n    }).once('fail', (data, response) => {\n      reject(error('Fail', r.url.href, data, response));\n    }).once('success', (data, response) => {\n      resolve(output(data, response));\n    });\n  });\n}\n"
+    "content": "import { error } from './error';\nimport { output } from './output';\n\n/**\n * Events of Restler\n *\n * @param {Object} r Required, restler\n * @returns {Promise}\n */\nexport function request(r) {\n  return new Promise((resolve, reject) => {\n    r.once('timeout', ms => {\n      reject(error('Timeout', r.url.href, `timeout: ${ms}ms`, null));\n    }).once('error', (err, response) => {\n      reject(error('Error', r.url.href, err, response));\n    }).once('abort', () => {\n      reject(error('Abort', r.url.href, null, null));\n    }).once('fail', (data, response) => {\n      reject(error('Fail', r.url.href, data, response));\n    }).once('success', (data, response) => {\n      resolve(output(data, response));\n    });\n  });\n}\n"
   },
   {
     "__docId__": 81,
@@ -3411,7 +3477,7 @@
     "importPath": "insales/lib/request.js",
     "importStyle": "{request}",
     "description": "Events of Restler",
-    "lineNumber": 9,
+    "lineNumber": 10,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3420,10 +3486,14 @@
     ],
     "params": [
       {
-        "name": "r",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "r",
+        "description": "Required, restler"
       }
     ],
     "return": {

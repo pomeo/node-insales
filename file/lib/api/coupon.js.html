@@ -270,7 +270,7 @@ export function createCoupon(options, id) {
  *      insales.removeCoupon({
  *        token: &apos;1234567890&apos;,
  *        url: &apos;shop-test.myinsales.ru&apos;,
- *        couponid: &apos;1076619&apos;
+ *        couponid: &apos;100000&apos;
  *      }).then(output =&gt; {
  *        console.info(output.response.statusCode);
  *      }).catch(err =&gt; {
@@ -298,6 +298,36 @@ export function removeCoupon(options, id) {
   });
 }
 
+/**
+ * PUT /admin/discount_codes/{id}.xml
+ *
+ * Examples:
+ *
+ *      insales.editCoupon({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        couponid: &apos;100000&apos;,
+ *        coupon: {
+ *          &apos;discount_code&apos;: {
+ *            &apos;code&apos;: &apos;frandom3&apos;
+ *          }
+ *        }
+ *      }).then(output =&gt; {
+ *        console.info(output.response.statusCode);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      200
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} options.couponid Required, coupon id
+ * @param {object} options.coupon Required, coupon
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
 export function editCoupon(options, id) {
   return new Promise((resolve, reject) =&gt; {
     put({
