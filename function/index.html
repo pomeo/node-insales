@@ -52,8 +52,10 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uploadFile">uploadFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createJsTag">createJsTag</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createProduct">createProduct</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-editProduct">editProduct</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getProduct">getProduct</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listProduct">listProduct</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeProduct">removeProduct</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeRecurring">changeRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createRecurring">createRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getRecurring">getRecurring</a></span></span></li>
@@ -187,13 +189,14 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-createProduct">createProduct</a></span></span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-createProduct">createProduct</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>POST /admin/products.xml</p>
+</div>
       </div>
     </td>
     <td>
@@ -271,6 +274,32 @@
         
         
         <div data-ice="description"><p>PUT /admin/discount_codes/{id}.xml</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-editProduct">editProduct</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>PUT /admin/products/{id}.xml</p>
 </div>
       </div>
     </td>
@@ -602,13 +631,14 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-listProduct">listProduct</a></span></span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-listProduct">listProduct</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>GET /admin/products.xml</p>
+</div>
       </div>
     </td>
     <td>
@@ -764,6 +794,32 @@
         
         
         <div data-ice="description"><p>DELETE /admin/files/{id}.xml</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-removeProduct">removeProduct</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>DELETE /admin/products/{id}.xml</p>
 </div>
       </div>
     </td>
@@ -1367,18 +1423,68 @@
     
     
     
-    <span data-ice="name">createProduct</span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">createProduct</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/product.js.html#lineNumber54">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/product.js.html#lineNumber128">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createProduct} from &apos;<span><a href="file/lib/api/product.js.html#lineNumber54">insales/lib/api/product.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {createProduct} from &apos;<span><a href="file/lib/api/product.js.html#lineNumber128">insales/lib/api/product.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>POST /admin/products.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.createProduct({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+   product: {
+     &apos;product&apos;: {
+       &apos;category-id&apos;: &apos;1&apos;,
+       &apos;title&apos;: &apos;Product 1&apos;,
+       &apos;variants-attributes&apos;: {
+         &apos;variants-attribute&apos;: {
+           &apos;sku&apos;: &apos;12345&apos;,
+           &apos;quantity&apos;: &apos;1&apos;,
+           &apos;price&apos;: &apos;100&apos;
+         }
+       }
+     }
+   }
+ }).then(output =&gt; {
+   console.info(output.data);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { product:
+   { archived: &apos;false&apos;,
+     available: &apos;&apos;,
+     &apos;canonical-url-collection-id&apos;: &apos;&apos;,
+     &apos;category-id&apos;: &apos;1&apos;,
+     &apos;created-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+     id: &apos;12345&apos;,
+     &apos;is-hidden&apos;: &apos;false&apos;,
+     &apos;sort-weight&apos;: &apos;&apos;,
+     unit: &apos;pcs&apos;,
+     &apos;updated-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+     title: &apos;Product 1&apos;,
+     &apos;short-description&apos;: &apos;&apos;,
+     permalink: &apos;product-1&apos;,
+     &apos;html-title&apos;: &apos;&apos;,
+     &apos;meta-keywords&apos;: &apos;&apos;,
+     &apos;meta-description&apos;: &apos;&apos;,
+     &apos;currency-code&apos;: &apos;RUR&apos;,
+     &apos;collections-ids&apos;: &apos;&apos;,
+     images: &apos;&apos;,
+     &apos;option-names&apos;: &apos;&apos;,
+     properties: &apos;&apos;,
+     characteristics: &apos;&apos;,
+     &apos;product-field-values&apos;: &apos;&apos;,
+     variants: { variant: [Object] },
+     description: &apos;&apos; } }</code>
+</code></pre></div>
 
   
 
@@ -1392,15 +1498,37 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.coupon</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, product</p>
+</td>
+    </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1411,7 +1539,7 @@
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
         
       </tr>
     </table>
@@ -1742,6 +1870,150 @@
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Required, coupon</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">id</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-editProduct">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">editProduct</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/api/product.js.html#lineNumber196">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {editProduct} from &apos;<span><a href="file/lib/api/product.js.html#lineNumber196">insales/lib/api/product.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>PUT /admin/products/{id}.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.editProduct({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+   productid: &apos;12345&apos;,
+   product: {
+     &apos;product&apos;: {
+       &apos;title&apos;: &apos;Product 2&apos;,
+     }
+   }
+ }).then(output =&gt; {
+   console.info(output.data);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { product:
+   { archived: &apos;false&apos;,
+     available: &apos;&apos;,
+     &apos;canonical-url-collection-id&apos;: &apos;&apos;,
+     &apos;category-id&apos;: &apos;1&apos;,
+     &apos;created-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+     id: &apos;12345&apos;,
+     &apos;is-hidden&apos;: &apos;false&apos;,
+     &apos;sort-weight&apos;: &apos;&apos;,
+     unit: &apos;pcs&apos;,
+     &apos;updated-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+     title: &apos;Product 2&apos;,
+     &apos;short-description&apos;: &apos;&apos;,
+     permalink: &apos;product-1&apos;,
+     &apos;html-title&apos;: &apos;&apos;,
+     &apos;meta-keywords&apos;: &apos;&apos;,
+     &apos;meta-description&apos;: &apos;&apos;,
+     &apos;currency-code&apos;: &apos;RUR&apos;,
+     &apos;collections-ids&apos;: &apos;&apos;,
+     images: &apos;&apos;,
+     &apos;option-names&apos;: &apos;&apos;,
+     properties: &apos;&apos;,
+     characteristics: &apos;&apos;,
+     &apos;product-field-values&apos;: &apos;&apos;,
+     variants: { variant: [Object] },
+     description: &apos;&apos; } }</code>
+</code></pre></div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">options</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.productid</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, product id</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.product</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, product</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
@@ -2509,11 +2781,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/product.js.html#lineNumber42">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/product.js.html#lineNumber55">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getProduct} from &apos;<span><a href="file/lib/api/product.js.html#lineNumber42">insales/lib/api/product.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getProduct} from &apos;<span><a href="file/lib/api/product.js.html#lineNumber55">insales/lib/api/product.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>GET /admin/products/{id}.xml</p>
@@ -2521,28 +2793,39 @@
 <pre><code><code class="source-code prettyprint"> insales.getProduct({
    token: &apos;1234567890&apos;,
    url: &apos;shop-test.myinsales.ru&apos;,
-   productid: &apos;1076619&apos;
+   productid: &apos;12345&apos;
  }).then(response =&gt; {
    console.info(response.data);
  }).catch(err =&gt; {
    console.error(err);
  });</code>
 </code></pre><p>Output:</p>
-<pre><code><code class="source-code prettyprint"> { &apos;discount-code&apos;:
-    { &apos;act-once&apos;: &apos;false&apos;,
-      &apos;act-once-for-client&apos;: &apos;false&apos;,
-      code: &apos;WWWWWW&apos;,
-      &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
-      description: &apos;&apos;,
-      disabled: &apos;false&apos;,
-      discount: &apos;10.0&apos;,
-      &apos;expired-at&apos;: &apos;2011-11-11&apos;,
-      id: &apos;1111111&apos;,
-      &apos;min-price&apos;: &apos;0.0&apos;,
-      &apos;type-id&apos;: &apos;1&apos;,
-      &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
-      worked: &apos;true&apos;,
-      &apos;discount-collections&apos;: &apos;&apos; } }</code>
+<pre><code><code class="source-code prettyprint"> { product:
+   { archived: &apos;false&apos;,
+     available: &apos;true&apos;,
+     &apos;canonical-url-collection-id&apos;: &apos;&apos;,
+     &apos;category-id&apos;: &apos;1&apos;,
+     &apos;created-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+     id: &apos;12345&apos;,
+     &apos;is-hidden&apos;: &apos;false&apos;,
+     &apos;sort-weight&apos;: &apos;&apos;,
+     unit: &apos;pcs&apos;,
+     &apos;updated-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+     title: &apos;Product 1&apos;,
+     &apos;short-description&apos;: &apos;&apos;,
+     permalink: &apos;product-1&apos;,
+     &apos;html-title&apos;: &apos;&apos;,
+     &apos;meta-keywords&apos;: &apos;&apos;,
+     &apos;meta-description&apos;: &apos;&apos;,
+     &apos;currency-code&apos;: &apos;RUR&apos;,
+     &apos;collections-ids&apos;: &apos;&apos;,
+     images: &apos;&apos;,
+     &apos;option-names&apos;: &apos;&apos;,
+     properties: &apos;&apos;,
+     characteristics: &apos;&apos;,
+     &apos;product-field-values&apos;: &apos;&apos;,
+     variants: { variant: [Object] },
+     description: &apos;&apos; } }</code>
 </code></pre></div>
 
   
@@ -3235,18 +3518,81 @@
     
     
     
-    <span data-ice="name">listProduct</span><span data-ice="signature">(options: <span>*</span>, id: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">listProduct</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/product.js.html#lineNumber67">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/product.js.html#lineNumber322">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {listProduct} from &apos;<span><a href="file/lib/api/product.js.html#lineNumber67">insales/lib/api/product.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {listProduct} from &apos;<span><a href="file/lib/api/product.js.html#lineNumber322">insales/lib/api/product.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>GET /admin/products.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.listProduct({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+ }).then(response =&gt; {
+   console.info(response.data);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { products:
+   { product:
+      [{ archived: &apos;false&apos;,
+        available: &apos;&apos;,
+        &apos;canonical-url-collection-id&apos;: &apos;&apos;,
+        &apos;category-id&apos;: &apos;1&apos;,
+        &apos;created-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+        id: &apos;12345&apos;,
+        &apos;is-hidden&apos;: &apos;false&apos;,
+        &apos;sort-weight&apos;: &apos;&apos;,
+        unit: &apos;pcs&apos;,
+        &apos;updated-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+        title: &apos;Product 1&apos;,
+        &apos;short-description&apos;: &apos;&apos;,
+        permalink: &apos;product-1&apos;,
+        &apos;html-title&apos;: &apos;&apos;,
+        &apos;meta-keywords&apos;: &apos;&apos;,
+        &apos;meta-description&apos;: &apos;&apos;,
+        &apos;currency-code&apos;: &apos;RUR&apos;,
+        &apos;collections-ids&apos;: &apos;&apos;,
+        images: &apos;&apos;,
+        &apos;option-names&apos;: &apos;&apos;,
+        properties: &apos;&apos;,
+        characteristics: &apos;&apos;,
+        &apos;product-field-values&apos;: &apos;&apos;,
+        variants: { variant: [Object] },
+        description: &apos;&apos; },
+      { archived: &apos;false&apos;,
+        available: &apos;&apos;,
+        &apos;canonical-url-collection-id&apos;: &apos;&apos;,
+        &apos;category-id&apos;: &apos;1&apos;,
+        &apos;created-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+        id: &apos;123456&apos;,
+        &apos;is-hidden&apos;: &apos;false&apos;,
+        &apos;sort-weight&apos;: &apos;&apos;,
+        unit: &apos;pcs&apos;,
+        &apos;updated-at&apos;: &apos;2011-11-11 11:11:11 +0300&apos;,
+        title: &apos;Product 2&apos;,
+        &apos;short-description&apos;: &apos;&apos;,
+        permalink: &apos;product-2&apos;,
+        &apos;html-title&apos;: &apos;&apos;,
+        &apos;meta-keywords&apos;: &apos;&apos;,
+        &apos;meta-description&apos;: &apos;&apos;,
+        &apos;currency-code&apos;: &apos;RUR&apos;,
+        &apos;collections-ids&apos;: &apos;&apos;,
+        images: &apos;&apos;,
+        &apos;option-names&apos;: &apos;&apos;,
+        properties: &apos;&apos;,
+        characteristics: &apos;&apos;,
+        &apos;product-field-values&apos;: &apos;&apos;,
+        variants: { variant: [Object] },
+        description: &apos;&apos; }]}}</code>
+</code></pre></div>
 
   
 
@@ -3260,15 +3606,60 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.page</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: 1</li></ul></td>
+      <td data-ice="description"><p>Page</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.per_page</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: 100</li></ul></td>
+      <td data-ice="description"><p>Per page</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.updated_since</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Products updated since. Format YYYY-MM-DD</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.deleted</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Deleted products</p>
+</td>
+    </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">id</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -3279,7 +3670,7 @@
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
         
       </tr>
     </table>
@@ -3871,6 +4262,113 @@
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Required, file id</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">id</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-removeProduct">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">removeProduct</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/api/product.js.html#lineNumber233">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {removeProduct} from &apos;<span><a href="file/lib/api/product.js.html#lineNumber233">insales/lib/api/product.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>DELETE /admin/products/{id}.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.removeProduct({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+   productid: &apos;12345&apos;
+ }).then(output =&gt; {
+   console.info(output.response.statusCode);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> 200</code>
+</code></pre></div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">options</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.productid</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, product id</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">

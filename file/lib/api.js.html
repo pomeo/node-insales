@@ -52,8 +52,10 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uploadFile">uploadFile</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createJsTag">createJsTag</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createProduct">createProduct</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-editProduct">editProduct</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getProduct">getProduct</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listProduct">listProduct</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeProduct">removeProduct</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-changeRecurring">changeRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createRecurring">createRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getRecurring">getRecurring</a></span></span></li>
@@ -72,6 +74,8 @@
 import { getAccount }      from &apos;./api/account&apos;;
 import { getProduct,
          createProduct,
+         editProduct,
+         removeProduct,
          listProduct }     from &apos;./api/product&apos;;
 import { getCollection,
          listCollection }  from &apos;./api/collection&apos;;
@@ -113,6 +117,14 @@ class InSales {
 
   createProduct(options) {
     return createProduct(options, this.id);
+  }
+
+  editProduct(options) {
+    return editProduct(options, this.id);
+  }
+
+  removeProduct(options) {
+    return removeProduct(options, this.id);
   }
 
   listProduct(options) {

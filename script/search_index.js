@@ -48,6 +48,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "insales/lib/api/product.js~editproduct",
+    "function/index.html#static-function-editProduct",
+    "<span>editProduct</span> <span class=\"search-result-import-path\">insales/lib/api/product.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/error.js~error",
     "function/index.html#static-function-error",
     "<span>error</span> <span class=\"search-result-import-path\">insales/lib/error.js</span>",
@@ -159,6 +165,12 @@ window.esdocSearchIndex = [
     "insales/lib/api/file.js~removefile",
     "function/index.html#static-function-removeFile",
     "<span>removeFile</span> <span class=\"search-result-import-path\">insales/lib/api/file.js</span>",
+    "function"
+  ],
+  [
+    "insales/lib/api/product.js~removeproduct",
+    "function/index.html#static-function-removeProduct",
+    "<span>removeProduct</span> <span class=\"search-result-import-path\">insales/lib/api/product.js</span>",
     "function"
   ],
   [
