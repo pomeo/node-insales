@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">lib/options.js | API Document</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">lib/api/asset.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -70,23 +70,62 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">lib/options.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * Options for Restler
+<div class="content" data-ice="content"><h1 data-ice="title">lib/api/asset.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { post } from &apos;../methods/post&apos;;
+
+/**
+ * POST /admin/themes/#{theme_id}/assets.xml
  *
- * @returns {Object}
+ * Examples:
+ *
+ *      insales.uploadAsset({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        theme: &apos;643879&apos;,
+ *        asset: {
+ *           &apos;name&apos;: &apos;logo.png&apos;,
+ *           &apos;src&apos;: &apos;http://www.insales.ru/assets/images/content/logo.png&apos;,
+ *           &apos;type&apos;: &apos;Asset::Media&apos;
+ *           }
+ *        }
+ *      }).then(output =&gt; {
+ *        console.info(output.data);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      { asset:
+ *         { id: &apos;60374631&apos;,
+ *           &apos;theme-id&apos;: &apos;643879&apos;,
+ *           type: &apos;Asset::Media&apos;,
+ *           name: &apos;logo.png&apos;,
+ *           &apos;content-type&apos;: &apos;image/jpeg&apos;,
+ *           &apos;file-size&apos;: &apos;71373&apos;,
+ *           &apos;human-readable-name&apos;: &apos;logo.png&apos;,
+ *             asset_url: &apos;/assets/1/4903/643879/v_1467231594/logo.png?1467234697&apos; } }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {Number|String} options.theme Required, theme id
+ * @param {Number|String} id Required, app id
+ * @param {object} options.asset Required, asset property
+ * @returns {Promise}
  */
-export default {
-  headers: {
-    &apos;Content-Type&apos;: &apos;application/xml&apos;
-  },
-  xml2js: {
-    trim: false,
-    explicitArray: false,
-    ignoreAttrs: true
-  },
-  timeout: 30000
-};
+export function uploadAsset(options, id) {
+  return new Promise((resolve, reject) =&gt; {
+    post({
+      id,
+      token: options.token,
+      url: options.url,
+      api: `themes/${options.theme}/assets`,
+      obj: {
+        &apos;asset&apos;: options.asset
+      }
+    }).then(resolve)
+      .catch(reject);
+  });
+}
 </code></pre>
 
 </div>

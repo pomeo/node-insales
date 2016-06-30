@@ -192,6 +192,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "insales/lib/api/asset.js~uploadasset",
+    "function/index.html#static-function-uploadAsset",
+    "<span>uploadAsset</span> <span class=\"search-result-import-path\">insales/lib/api/asset.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/api/file.js~uploadfile",
     "function/index.html#static-function-uploadFile",
     "<span>uploadFile</span> <span class=\"search-result-import-path\">insales/lib/api/file.js</span>",
@@ -537,6 +543,12 @@ window.esdocSearchIndex = [
     "lib/api/account.js",
     "file/lib/api/account.js.html",
     "lib/api/account.js",
+    "file"
+  ],
+  [
+    "lib/api/asset.js",
+    "file/lib/api/asset.js.html",
+    "lib/api/asset.js",
     "file"
   ],
   [

@@ -36,6 +36,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-output">output</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">api</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uploadAsset">uploadAsset</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCharge">createCharge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-declineCharge">declineCharge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getCharge">getCharge</a></span></span></li>
@@ -898,6 +899,32 @@
         
         
         <div data-ice="description"><p>Generate access token for shop</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-uploadAsset">uploadAsset</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>POST /admin/themes/#{theme_id}/assets.xml</p>
 </div>
       </div>
     </td>
@@ -3416,11 +3443,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/file.js.html#lineNumber34">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/file.js.html#lineNumber36">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {listFile} from &apos;<span><a href="file/lib/api/file.js.html#lineNumber34">insales/lib/api/file.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {listFile} from &apos;<span><a href="file/lib/api/file.js.html#lineNumber36">insales/lib/api/file.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>GET /admin/files.xml</p>
@@ -3472,6 +3499,22 @@
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.page</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: 1</li></ul></td>
+      <td data-ice="description"><p>Page</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.per_page</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: 250</li></ul></td>
+      <td data-ice="description"><p>Files per page</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
@@ -4205,11 +4248,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/file.js.html#lineNumber70">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/file.js.html#lineNumber77">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {removeFile} from &apos;<span><a href="file/lib/api/file.js.html#lineNumber70">insales/lib/api/file.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {removeFile} from &apos;<span><a href="file/lib/api/file.js.html#lineNumber77">insales/lib/api/file.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>DELETE /admin/files/{id}.xml</p>
@@ -4656,6 +4699,134 @@
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-uploadAsset">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">uploadAsset</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/lib/api/asset.js.html#lineNumber42">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {uploadAsset} from &apos;<span><a href="file/lib/api/asset.js.html#lineNumber42">insales/lib/api/asset.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>POST /admin/themes/#{theme_id}/assets.xml</p>
+<p>Examples:</p>
+<pre><code><code class="source-code prettyprint"> insales.uploadAsset({
+   token: &apos;1234567890&apos;,
+   url: &apos;shop-test.myinsales.ru&apos;,
+   theme: &apos;643879&apos;,
+   asset: {
+      &apos;name&apos;: &apos;logo.png&apos;,
+      &apos;src&apos;: &apos;http://www.insales.ru/assets/images/content/logo.png&apos;,
+      &apos;type&apos;: &apos;Asset::Media&apos;
+      }
+   }
+ }).then(output =&gt; {
+   console.info(output.data);
+ }).catch(err =&gt; {
+   console.error(err);
+ });</code>
+</code></pre><p>Output:</p>
+<pre><code><code class="source-code prettyprint"> { asset:
+    { id: &apos;60374631&apos;,
+      &apos;theme-id&apos;: &apos;643879&apos;,
+      type: &apos;Asset::Media&apos;,
+      name: &apos;logo.png&apos;,
+      &apos;content-type&apos;: &apos;image/jpeg&apos;,
+      &apos;file-size&apos;: &apos;71373&apos;,
+      &apos;human-readable-name&apos;: &apos;logo.png&apos;,
+        asset_url: &apos;/assets/1/4903/643879/v_1467231594/logo.png?1467234697&apos; } }</code>
+</code></pre></div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">options</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.token</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, access token for shop</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.url</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, shop url</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.theme</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, theme id</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">id</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, app id</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.asset</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Required, asset property</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-function-uploadFile">
     <span class="access" data-ice="access">public</span>
     
@@ -4666,11 +4837,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/api/file.js.html#lineNumber113">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/api/file.js.html#lineNumber120">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {uploadFile} from &apos;<span><a href="file/lib/api/file.js.html#lineNumber113">insales/lib/api/file.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {uploadFile} from &apos;<span><a href="file/lib/api/file.js.html#lineNumber120">insales/lib/api/file.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>POST /admin/files.xml</p>
@@ -4678,7 +4849,7 @@
 <pre><code><code class="source-code prettyprint"> insales.uploadFile({
    token: &apos;1234567890&apos;,
    url: &apos;shop-test.myinsales.ru&apos;,
-   coupon: {
+   files: {
       &apos;file&apos;: {
         &apos;src&apos;: &apos;http://url&apos;
       }
@@ -4773,7 +4944,7 @@
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.6)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
 </footer>
 
 <script src="script/search_index.js"></script>
