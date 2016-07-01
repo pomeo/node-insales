@@ -42,6 +42,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "insales/lib/api/asset.js~editasset",
+    "function/index.html#static-function-editAsset",
+    "<span>editAsset</span> <span class=\"search-result-import-path\">insales/lib/api/asset.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/api/coupon.js~editcoupon",
     "function/index.html#static-function-editCoupon",
     "<span>editCoupon</span> <span class=\"search-result-import-path\">insales/lib/api/coupon.js</span>",
@@ -72,6 +78,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "insales/lib/api/asset.js~getasset",
+    "function/index.html#static-function-getAsset",
+    "<span>getAsset</span> <span class=\"search-result-import-path\">insales/lib/api/asset.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/api/charge.js~getcharge",
     "function/index.html#static-function-getCharge",
     "<span>getCharge</span> <span class=\"search-result-import-path\">insales/lib/api/charge.js</span>",
@@ -99,6 +111,12 @@ window.esdocSearchIndex = [
     "insales/lib/api/recurringcharge.js~getrecurring",
     "function/index.html#static-function-getRecurring",
     "<span>getRecurring</span> <span class=\"search-result-import-path\">insales/lib/api/recurringcharge.js</span>",
+    "function"
+  ],
+  [
+    "insales/lib/api/asset.js~listasset",
+    "function/index.html#static-function-listAsset",
+    "<span>listAsset</span> <span class=\"search-result-import-path\">insales/lib/api/asset.js</span>",
     "function"
   ],
   [
@@ -156,6 +174,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "insales/lib/api/asset.js~removeasset",
+    "function/index.html#static-function-removeAsset",
+    "<span>removeAsset</span> <span class=\"search-result-import-path\">insales/lib/api/asset.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/api/coupon.js~removecoupon",
     "function/index.html#static-function-removeCoupon",
     "<span>removeCoupon</span> <span class=\"search-result-import-path\">insales/lib/api/coupon.js</span>",
@@ -177,6 +201,12 @@ window.esdocSearchIndex = [
     "insales/lib/api/recurringcharge.js~removerecurring",
     "function/index.html#static-function-removeRecurring",
     "<span>removeRecurring</span> <span class=\"search-result-import-path\">insales/lib/api/recurringcharge.js</span>",
+    "function"
+  ],
+  [
+    "insales/lib/api/asset.js~renameasset",
+    "function/index.html#static-function-renameAsset",
+    "<span>renameAsset</span> <span class=\"search-result-import-path\">insales/lib/api/asset.js</span>",
     "function"
   ],
   [

@@ -36,6 +36,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-output">output</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">api</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-editAsset">editAsset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAsset">getAsset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listAsset">listAsset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeAsset">removeAsset</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-renameAsset">renameAsset</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uploadAsset">uploadAsset</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createCharge">createCharge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-declineCharge">declineCharge</a></span></span></li>
@@ -83,7 +88,12 @@ import { getCollection,
 import { listFile,
          removeFile,
          uploadFile }      from &apos;./api/file&apos;;
-import { uploadAsset }     from &apos;./api/asset&apos;;
+import { listAsset,
+         getAsset,
+         editAsset,
+         renameAsset,
+         removeAsset,
+         uploadAsset }     from &apos;./api/asset&apos;;
 import { createJsTag }     from &apos;./api/jstag&apos;;
 import { getRecurring,
          createRecurring,
@@ -151,6 +161,26 @@ class InSales {
 
   uploadFile(options) {
     return uploadFile(options, this.id);
+  }
+
+  listAsset(options) {
+    return listAsset(options, this.id);
+  }
+
+  getAsset(options) {
+    return getAsset(options, this.id);
+  }
+
+  editAsset(options) {
+    return editAsset(options, this.id);
+  }
+
+  renameAsset(options) {
+    return renameAsset(options, this.id);
+  }
+
+  removeAsset(options) {
+    return removeAsset(options, this.id);
   }
 
   uploadAsset(options) {

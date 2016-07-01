@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 34,
-  "actualCount": 34,
+  "expectCount": 39,
+  "actualCount": 39,
   "files": {
     "lib/api/recurringcharge.js": {
       "expectCount": 4,
@@ -26,6 +26,11 @@
     "lib/api/product.js": {
       "expectCount": 5,
       "actualCount": 5,
+      "undocumentLines": []
+    },
+    "lib/api/asset.js": {
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "lib/error.js": {
@@ -79,11 +84,6 @@
       "undocumentLines": []
     },
     "lib/api/token.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "lib/api/asset.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
