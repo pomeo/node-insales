@@ -150,6 +150,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "insales/lib/api/themes.js~listthemes",
+    "function/index.html#static-function-listThemes",
+    "<span>listThemes</span> <span class=\"search-result-import-path\">insales/lib/api/themes.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/output.js~output",
     "function/index.html#static-function-output",
     "<span>output</span> <span class=\"search-result-import-path\">insales/lib/output.js</span>",
@@ -621,6 +627,12 @@ window.esdocSearchIndex = [
     "lib/api/recurringcharge.js",
     "file/lib/api/recurringcharge.js.html",
     "lib/api/recurringcharge.js",
+    "file"
+  ],
+  [
+    "lib/api/themes.js",
+    "file/lib/api/themes.js.html",
+    "lib/api/themes.js",
     "file"
   ],
   [

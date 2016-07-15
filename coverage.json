@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 39,
-  "actualCount": 39,
+  "expectCount": 40,
+  "actualCount": 40,
   "files": {
     "lib/api/recurringcharge.js": {
       "expectCount": 4,
@@ -56,6 +56,11 @@
     "lib/api/file.js": {
       "expectCount": 3,
       "actualCount": 3,
+      "undocumentLines": []
+    },
+    "lib/api/themes.js": {
+      "expectCount": 1,
+      "actualCount": 1,
       "undocumentLines": []
     },
     "lib/output.js": {

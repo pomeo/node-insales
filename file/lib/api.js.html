@@ -66,6 +66,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createRecurring">createRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getRecurring">getRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeRecurring">removeRecurring</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listThemes">listThemes</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-token">token</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">methods</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post">post</a></span></span></li>
@@ -76,7 +77,8 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">lib/api.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { token }           from &apos;./api/token&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import   opts              from &apos;./options&apos;;
+import { token }           from &apos;./api/token&apos;;
 import { getAccount }      from &apos;./api/account&apos;;
 import { getProduct,
          createProduct,
@@ -95,6 +97,7 @@ import { listAsset,
          removeAsset,
          uploadAsset }     from &apos;./api/asset&apos;;
 import { createJsTag }     from &apos;./api/jstag&apos;;
+import { listThemes }      from &apos;./api/themes&apos;;
 import { getRecurring,
          createRecurring,
          changeRecurring,
@@ -114,6 +117,7 @@ class InSales {
     const _options = options || {};
     if (!_options.id) throw new Error(&apos;Missing app id&apos;);
     if (!_options.secret) throw new Error(&apos;Missing app secret&apos;);
+    if (_options.http) opts.scheme = &apos;http&apos;;
 
     this.id = _options.id;
     this.secret = _options.secret;
@@ -185,6 +189,10 @@ class InSales {
 
   uploadAsset(options) {
     return uploadAsset(options, this.id);
+  }
+
+  listThemes(options) {
+    return listThemes(options, this.id);
   }
 
   getAccount(options) {

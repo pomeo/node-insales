@@ -66,6 +66,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createRecurring">createRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getRecurring">getRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeRecurring">removeRecurring</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listThemes">listThemes</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-token">token</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">methods</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post">post</a></span></span></li>
@@ -95,7 +96,7 @@ const opt = Object.create(options);
 export function get(conn) {
   if (conn.query) opt.query = conn.query;
 
-  const g = rest.get(`https://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);
+  const g = rest.get(`${opt.scheme}://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.xml`, opt);
   return new Promise((resolve, reject) =&gt; {
     request(g)
       .then(resolve)
