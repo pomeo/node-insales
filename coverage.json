@@ -1,11 +1,16 @@
 {
-  "coverage": "100%",
-  "expectCount": 40,
+  "coverage": "48.78%",
+  "expectCount": 82,
   "actualCount": 40,
   "files": {
-    "lib/api/recurringcharge.js": {
-      "expectCount": 4,
-      "actualCount": 4,
+    "lib/api/account.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "lib/api/asset.js": {
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "lib/api/charge.js": {
@@ -13,9 +18,19 @@
       "actualCount": 4,
       "undocumentLines": []
     },
+    "lib/api/collection.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
     "lib/api/coupon.js": {
       "expectCount": 5,
       "actualCount": 5,
+      "undocumentLines": []
+    },
+    "lib/api/file.js": {
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "lib/api/jstag.js": {
@@ -28,34 +43,9 @@
       "actualCount": 5,
       "undocumentLines": []
     },
-    "lib/api/asset.js": {
-      "expectCount": 6,
-      "actualCount": 6,
-      "undocumentLines": []
-    },
-    "lib/error.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "lib/methods/get.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "lib/api/account.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "lib/api/collection.js": {
-      "expectCount": 2,
-      "actualCount": 2,
-      "undocumentLines": []
-    },
-    "lib/api/file.js": {
-      "expectCount": 3,
-      "actualCount": 3,
+    "lib/api/recurringcharge.js": {
+      "expectCount": 4,
+      "actualCount": 4,
       "undocumentLines": []
     },
     "lib/api/themes.js": {
@@ -63,32 +53,94 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "lib/api/token.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "lib/api.js": {
+      "expectCount": 38,
+      "actualCount": 0,
+      "undocumentLines": [
+        36,
+        37,
+        43,
+        44,
+        47,
+        51,
+        55,
+        59,
+        63,
+        67,
+        71,
+        75,
+        79,
+        83,
+        87,
+        91,
+        95,
+        99,
+        103,
+        107,
+        111,
+        115,
+        119,
+        123,
+        127,
+        131,
+        135,
+        139,
+        143,
+        147,
+        151,
+        155,
+        159,
+        163,
+        167,
+        171,
+        175,
+        180
+      ]
+    },
+    "lib/error.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "lib/methods/get.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "lib/methods/post.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "lib/methods/put.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "lib/methods/remove.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        4
+      ]
+    },
     "lib/output.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "lib/methods/post.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "lib/methods/put.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "lib/methods/remove.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
     "lib/request.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "lib/api/token.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []

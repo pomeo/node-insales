@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl">
-  <title data-ice="title">API Document</title>
+  <title data-ice="title">Home | insales</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-</head>
+<meta name="description" content="Insales.ru module for node.js"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="insales"><meta property="twitter:description" content="Insales.ru module for node.js"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -18,7 +16,6 @@
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
   
   <div class="search-box">
   <span>
@@ -32,10 +29,11 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-api">api</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-output">output</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">api</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-editAsset">editAsset</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAsset">getAsset</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listAsset">listAsset</a></span></span></li>
@@ -68,7 +66,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeRecurring">removeRecurring</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-listThemes">listThemes</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-token">token</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">methods</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#methods">methods</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-get">get</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post">post</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-put">put</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-remove">remove</a></span></span></li>
@@ -76,17 +74,14 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="insales">InSales</h1>
-<p><a href="http://travis-ci.org/pomeo/node-insales"><img src="https://api.travis-ci.org/pomeo/node-insales.png" alt="Build Status"></a>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="insales">InSales</h1><p><a href="http://travis-ci.org/pomeo/node-insales"><img src="https://api.travis-ci.org/pomeo/node-insales.png" alt="Build Status"></a>
 <a href="https://coveralls.io/r/pomeo/node-insales"><img src="https://img.shields.io/coveralls/pomeo/node-insales.svg" alt="Coverage Status"></a>
 <a href="https://david-dm.org/pomeo/node-insales"><img src="https://david-dm.org/pomeo/node-insales.png" alt="Dependencies"></a>
 <a href="http://badge.fury.io/js/insales"><img src="https://badge.fury.io/js/insales.svg" alt="NPM version"></a>
 <a href="https://pomeo.github.io/node-insales"><img src="https://pomeo.github.io/node-insales/badge.svg" alt="ESDoc"></a></p>
 <p>InSales module that allows you to communicate with the <a href="http://api.insales.ru">InSales API</a> from node.js</p>
-<h2 id="installation">Installation</h2>
-<pre><code><code class="source-code prettyprint">npm install insales --save</code>
-</code></pre><h2 id="usage">Usage</h2>
-<pre><code class="lang-js"><code class="source-code prettyprint">// Import a module
+<h2 id="installation">Installation</h2><pre><code><code class="source-code prettyprint">npm install insales --save</code>
+</code></pre><h2 id="usage">Usage</h2><pre><code class="lang-js"><code class="source-code prettyprint">// Import a module
 import InSales from &apos;insales&apos;;
 // Create an instance with your API credentials
 const insales = InSales({
@@ -104,23 +99,20 @@ insales.getAccount({
   console.error(err);
 });</code>
 </code></pre>
-<h2 id="api-limits">API limits</h2>
-<pre><code class="lang-js"><code class="source-code prettyprint">insales.getAccount({
+<h2 id="api-limits">API limits</h2><pre><code class="lang-js"><code class="source-code prettyprint">insales.getAccount({
   token: &apos;token for shop&apos;,
   url: &apos;shop-test.myinsales.ru&apos;
 }).then(output =&gt; {
   console.info(output.response.headers[&apos;api-usage-limit&apos;].split(&apos;/&apos;)[0]); // 1
 })</code>
 </code></pre>
-<h2 id="methods">Methods</h2>
-<p><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getAccount">getAccount</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createCharge">createCharge</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getCharge">getCharge</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-listCharge">listCharge</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-removeCharge">removeCharge</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getCollection">getCollection</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-listCollection">listCollection</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createCoupon">createCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-editCoupon">editCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getCoupon">getCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-listCoupon">listCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-removeCoupon">removeCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createFile">createFile</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getFile">getFile</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-removeFile">removeFile</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-uploadFile">uploadFile</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createJsTag">createJsTag</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createProduct">createProduct</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getProduct">getProduct</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-listProduct">listProduct</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createRecurring">createRecurring</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring">getRecurring</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring">removeRecurring</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-token">token</a></p>
-<h2 id="todo">TODO</h2>
-<p>Add other APIs</p>
+<h2 id="methods">Methods</h2><p><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getAccount">getAccount</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createCharge">createCharge</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getCharge">getCharge</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-listCharge">listCharge</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-removeCharge">removeCharge</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getCollection">getCollection</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-listCollection">listCollection</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createCoupon">createCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-editCoupon">editCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getCoupon">getCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-listCoupon">listCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-removeCoupon">removeCoupon</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createFile">createFile</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getFile">getFile</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-removeFile">removeFile</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-uploadFile">uploadFile</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createJsTag">createJsTag</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createProduct">createProduct</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getProduct">getProduct</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-listProduct">listProduct</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-createRecurring">createRecurring</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring">getRecurring</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring">removeRecurring</a><br><a href="https://pomeo.github.io/node-insales/function/index.html#static-function-token">token</a></p>
+<h2 id="todo">TODO</h2><p>Add other APIs</p>
 </div>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>
