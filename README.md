@@ -43,7 +43,7 @@ insales.getAccount({
   token: 'token for shop',
   url: 'shop-test.myinsales.ru'
 }).then(output => {
-  console.info(output.response.headers['api-usage-limit'].split('/')[0]); // 1
+  console.info(output.callLimits); //  { remaining: 498, current: 2, max: 500 } }
 })
 ```
 
