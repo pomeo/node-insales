@@ -3,7 +3,7 @@ import InSales from '../lib/api';
 
 describe('Token', () => {
   const should = chai.should();
-  const insales = InSales({
+  const insales = new InSales({
     id: '12345',
     secret: '12345'
   });
