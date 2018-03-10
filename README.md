@@ -48,30 +48,38 @@ insales.getAccount({
 ```
 
 ## Methods
-
+#### Account
 [getAccount](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccount)  
+#### Charge
 [createCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-createCharge)  
 [getCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-getCharge)  
 [listCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-listCharge)  
 [removeCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCharge)  
+#### Collection
 [getCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollection)  
 [listCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollection)  
+#### Coupon
 [createCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-createCoupon)  
 [editCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-editCoupon)  
 [getCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-getCoupon)  
 [listCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-listCoupon)  
 [removeCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCoupon)  
+#### File
 [createFile](https://pomeo.github.io/node-insales/function/index.html#static-function-createFile)  
 [getFile](https://pomeo.github.io/node-insales/function/index.html#static-function-getFile)  
 [removeFile](https://pomeo.github.io/node-insales/function/index.html#static-function-removeFile)  
 [uploadFile](https://pomeo.github.io/node-insales/function/index.html#static-function-uploadFile)  
+#### JsTag
 [createJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-createJsTag)  
+#### Product
 [createProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-createProduct)  
 [getProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-getProduct)  
 [listProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-listProduct)  
+#### Recurring
 [createRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-createRecurring)  
 [getRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring)  
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
+#### Token
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
 
 ## TODO
