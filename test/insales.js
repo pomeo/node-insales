@@ -1,7 +1,10 @@
-import should from 'should';
-import InSales from '../';
+import chai    from 'chai';
+import InSales from '../lib/api';
 
 describe('InSales', () => {
+  const should = chai.should();
+  const assert = chai.assert;
+
   describe('Initialize without app id and app secret', () => {
     it('Should return "Missing app id"', () => {
       (() => {
@@ -36,7 +39,7 @@ describe('InSales', () => {
         id: '12345',
         secret: '12345'
       });
-      insales.should.be.type('object');
+      assert.typeOf(insales, 'object');
     });
   });
 });
