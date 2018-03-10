@@ -29,8 +29,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-api">api</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-output">output</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
@@ -75,8 +74,10 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">lib/methods/get.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import request from &apos;request-promise&apos;;
-import options from &apos;../options&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import rp          from &apos;request-promise&apos;;
+import options     from &apos;../options&apos;;
+import { request } from &apos;../request&apos;;
+
 const opt = Object.create(options);
 
 /**
@@ -94,7 +95,9 @@ export function get(conn) {
   if (conn.query) opt.qs = conn.query;
 
   opt.uri = `${opt.scheme}://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.json`;
-  return request(opt);
+  opt.method = &apos;GET&apos;;
+
+  return request(rp(opt));
 }
 </code></pre>
 

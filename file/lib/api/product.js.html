@@ -29,8 +29,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-api">api</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-output">output</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
@@ -130,14 +129,11 @@ import { remove } from &apos;../methods/remove&apos;;
  * @returns {Promise}
  */
 export function getProduct(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    get({
-      id,
-      token: options.token,
-      url: options.url,
-      api: `products/${options.productid}`
-    }).then(resolve)
-      .catch(reject);
+  return get({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `products/${options.productid}`
   });
 }
 
@@ -203,15 +199,12 @@ export function getProduct(options, id) {
  * @returns {Promise}
  */
 export function createProduct(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    post({
-      id,
-      token: options.token,
-      url: options.url,
-      api: &apos;products&apos;,
-      obj: options.product
-    }).then(resolve)
-      .catch(reject);
+  return post({
+    id,
+    token: options.token,
+    url: options.url,
+    api: &apos;products&apos;,
+    obj: options.product
   });
 }
 
@@ -271,15 +264,12 @@ export function createProduct(options, id) {
  * @returns {Promise}
  */
 export function editProduct(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    put({
-      id,
-      token: options.token,
-      url: options.url,
-      api: `products/${options.productid}`,
-      obj: options.product
-    }).then(resolve)
-      .catch(reject);
+  return put({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `products/${options.productid}`,
+    obj: options.product
   });
 }
 
@@ -308,14 +298,11 @@ export function editProduct(options, id) {
  * @returns {Promise}
  */
 export function removeProduct(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    remove({
-      id,
-      token: options.token,
-      url: options.url,
-      api: `products/${options.productid}`
-    }).then(resolve)
-      .catch(reject);
+  return remove({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `products/${options.productid}`
   });
 }
 
@@ -407,15 +394,12 @@ export function listProduct(options, id) {
     query.deleted = true;
   }
 
-  return new Promise((resolve, reject) =&gt; {
-    get({
-      id,
-      token: options.token,
-      url: options.url,
-      api: &apos;products&apos;,
-      query
-    }).then(resolve)
-      .catch(reject);
+  return get({
+    id,
+    token: options.token,
+    url: options.url,
+    api: &apos;products&apos;,
+    query
   });
 }
 </code></pre>

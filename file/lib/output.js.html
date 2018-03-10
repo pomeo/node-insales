@@ -29,8 +29,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-api">api</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-output">output</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
@@ -76,20 +75,30 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">lib/output.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * Output Restler response, used to create Promise resolve
+ * Output Request-Promise response, used to create Promise resolve
  *
- * @param {Object} data Required
  * @param {Object} response Required
  * @returns {Object}
- * @property {Object} data
- * @property {Object} response
+ * @property {Object} data Response body
+ * @property {Object} response Full response
+ * @property {Number} statusCode Status code
+ * @property {Object} callLimits API call limit
+ * @property {number} callLimits.current
+ * @property {number} callLimits.remaining
+ * @property {Number} callLimits.max
  */
-export function output(data, response) {
+export default response =&gt; {
   return {
-    data,
-    response
+    data: response.body,
+    response,
+    statusCode: response.statusCode,
+    callLimits: {
+      remaining: response.headers[&apos;api-usage-limit&apos;].split(&apos;/&apos;)[1] - response.headers[&apos;api-usage-limit&apos;].split(&apos;/&apos;)[0],
+      current: Number(response.headers[&apos;api-usage-limit&apos;].split(&apos;/&apos;)[0]),
+      max: Number(response.headers[&apos;api-usage-limit&apos;].split(&apos;/&apos;)[1])
+    }
   };
-}
+};
 </code></pre>
 
 </div>

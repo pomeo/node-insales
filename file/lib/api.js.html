@@ -110,6 +110,7 @@ import { getCoupon,
          listCoupon,
          editCoupon }      from &apos;./api/coupon&apos;;
 
+/** @ignore **/
 class InSales {
   constructor(options) {
     const _options = options || {};
@@ -121,42 +122,52 @@ class InSales {
     this.secret = _options.secret;
   }
 
+  /** @ignore **/
   token(tok) {
     return token(tok, this.secret);
   }
 
+  /** @ignore **/
   getProduct(options) {
     return getProduct(options, this.id);
   }
 
+  /** @ignore **/
   createProduct(options) {
     return createProduct(options, this.id);
   }
 
+  /** @ignore **/
   editProduct(options) {
     return editProduct(options, this.id);
   }
 
+  /** @ignore **/
   removeProduct(options) {
     return removeProduct(options, this.id);
   }
 
+  /** @ignore **/
   listProduct(options) {
     return listProduct(options, this.id);
   }
 
+  /** @ignore **/
   getCollection(options) {
     return getCollection(options, this.id);
   }
 
+  /** @ignore **/
   listCollection(options) {
     return listCollection(options, this.id);
   }
 
+  /** @ignore **/
   listFile(options) {
     return listFile(options, this.id);
   }
 
+  /** @ignore **/
   removeFile(options) {
     return removeFile(options, this.id);
   }

@@ -29,8 +29,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-api">api</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-output">output</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
@@ -115,15 +114,12 @@ export function listFile(options, id) {
   query.page = options.page ? options.page : 1;
   query.per_page = options.per_page ? options.per_page : 250;
 
-  return new Promise((resolve, reject) =&gt; {
-    get({
-      id,
-      token: options.token,
-      url: options.url,
-      api: `files`,
-      query
-    }).then(resolve)
-      .catch(reject);
+  return get({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `files`,
+    query
   });
 }
 
@@ -152,14 +148,11 @@ export function listFile(options, id) {
  * @returns {Promise}
  */
 export function removeFile(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    remove({
-      id,
-      token: options.token,
-      url: options.url,
-      api: `files/${options.fileid}`
-    }).then(resolve)
-      .catch(reject);
+  return remove({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `files/${options.fileid}`
   });
 }
 
@@ -195,15 +188,12 @@ export function removeFile(options, id) {
  * @returns {Promise}
  */
 export function uploadFile(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    post({
-      id,
-      token: options.token,
-      url: options.url,
-      api: &apos;files&apos;,
-      obj: options.files
-    }).then(resolve)
-      .catch(reject);
+  return post({
+    id,
+    token: options.token,
+    url: options.url,
+    api: &apos;files&apos;,
+    obj: options.files
   });
 }
 </code></pre>

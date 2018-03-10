@@ -1,6 +1,6 @@
 {
-  "coverage": "48.78%",
-  "expectCount": 82,
+  "coverage": "90.9%",
+  "expectCount": 44,
   "actualCount": 40,
   "files": {
     "lib/api/account.js": {
@@ -58,50 +58,6 @@
       "actualCount": 1,
       "undocumentLines": []
     },
-    "lib/api.js": {
-      "expectCount": 38,
-      "actualCount": 0,
-      "undocumentLines": [
-        36,
-        37,
-        43,
-        44,
-        47,
-        51,
-        55,
-        59,
-        63,
-        67,
-        71,
-        75,
-        79,
-        83,
-        87,
-        91,
-        95,
-        99,
-        103,
-        107,
-        111,
-        115,
-        119,
-        123,
-        127,
-        131,
-        135,
-        139,
-        143,
-        147,
-        151,
-        155,
-        159,
-        163,
-        167,
-        171,
-        175,
-        180
-      ]
-    },
     "lib/error.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -111,7 +67,7 @@
       "expectCount": 2,
       "actualCount": 1,
       "undocumentLines": [
-        3
+        5
       ]
     },
     "lib/methods/post.js": {
@@ -132,7 +88,7 @@
       "expectCount": 2,
       "actualCount": 1,
       "undocumentLines": [
-        4
+        5
       ]
     },
     "lib/output.js": {

@@ -1,11 +1,5 @@
 window.esdocSearchIndex = [
   [
-    "insales/lib/api.js~api",
-    "function/index.html#static-function-api",
-    "<span>api</span> <span class=\"search-result-import-path\">insales/lib/api.js</span>",
-    "function"
-  ],
-  [
     "insales/lib/api/recurringcharge.js~changerecurring",
     "function/index.html#static-function-changeRecurring",
     "<span>changeRecurring</span> <span class=\"search-result-import-path\">insales/lib/api/recurringcharge.js</span>",
@@ -526,12 +520,6 @@ window.esdocSearchIndex = [
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "lib/.external-ecmascript.js~undefined",
     "external"
-  ],
-  [
-    "lib/api.js",
-    "file/lib/api.js.html",
-    "lib/api.js",
-    "file"
   ],
   [
     "lib/api/account.js",

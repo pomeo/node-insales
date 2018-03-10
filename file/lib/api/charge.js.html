@@ -29,8 +29,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-api">api</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-output">output</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-request">request</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getAccount">getAccount</a></span></span></li>
@@ -112,14 +111,11 @@ import { post } from &apos;../methods/post&apos;;
  * @returns {Promise}
  */
 export function getCharge(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    get({
-      id,
-      token: options.token,
-      url: options.url,
-      api: `application_charges/${options.chargeid}`
-    }).then(resolve)
-      .catch(reject);
+  return get({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `application_charges/${options.chargeid}`
   });
 }
 
@@ -163,15 +159,12 @@ export function getCharge(options, id) {
  * @returns {Promise}
  */
 export function createCharge(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    post({
-      id,
-      token: options.token,
-      url: options.url,
-      api: `application_charges`,
-      obj: options.charge
-    }).then(resolve)
-      .catch(reject);
+  return post({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `application_charges`,
+    obj: options.charge
   });
 }
 
@@ -208,14 +201,11 @@ export function createCharge(options, id) {
  * @returns {Promise}
  */
 export function listCharge(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    get({
-      id,
-      token: options.token,
-      url: options.url,
-      api: &apos;application_charges&apos;
-    }).then(resolve)
-      .catch(reject);
+  return get({
+    id,
+    token: options.token,
+    url: options.url,
+    api: &apos;application_charges&apos;
   });
 }
 
@@ -253,14 +243,11 @@ export function listCharge(options, id) {
  * @returns {Promise}
  */
 export function declineCharge(options, id) {
-  return new Promise((resolve, reject) =&gt; {
-    post({
-      id,
-      token: options.token,
-      url: options.url,
-      api: `application_charges/${options.chargeid}/decline`
-    }).then(resolve)
-      .catch(reject);
+  return post({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `application_charges/${options.chargeid}/decline`
   });
 }
 </code></pre>
