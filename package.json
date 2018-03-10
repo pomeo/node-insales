@@ -53,9 +53,21 @@
     "esnext": true,
     "space": true,
     "rules": {
-      "space-before-function-paren": 0,
-      "curly": 0
+      "space-before-function-paren": ["error", {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }],
+      "curly": 0,
+      "object-curly-spacing": ["error", "always"],
+      "no-multi-spaces": 0,
+      "indent": 0,
+      "import/prefer-default-export": 0,
+      "camelcase": "warn"
     },
+    "ignores": [
+      "test"
+    ],
     "envs": [
       "node",
       "mocha"
