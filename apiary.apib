@@ -7,54 +7,56 @@ HOST: http://insales.ru/
 --
 
 Получение информации о аккаунте
-GET /admin/account.xml
+GET /admin/account.json
 < 200
-< Content-Type: application/xml
-<?xml version="1.0" encoding="UTF-8"?>
-<account>
-    <blocked type="boolean">false</blocked>
-    <city>Москва</city>
-    <contact-phone nil="true"/>
-    <country>RU</country>
-    <enable-cart-discounts type="boolean">true</enable-cart-discounts>
-    <enable-client-discounts type="boolean">false</enable-client-discounts>
-    <enable-group-discounts type="boolean">true</enable-group-discounts>
-    <enable-order-discounts type="boolean">false</enable-order-discounts>
-    <hide-items-out-of-stock type="boolean">false</hide-items-out-of-stock>
-    <id type="integer">12345</id>
-    <notification-email nil="true"/>
-    <organization nil="true"/>
-    <sms-notification-phone></sms-notification-phone>
-    <state>г Москва</state>
-    <subdomain>shop-test</subdomain>
-    <email>mail@mail.ru</email>
-    <icq nil="true"/>
-    <phone>+71234567890</phone>
-    <title>Название магазина</title>
-    <minimum-items-price nil="true"/>
-    <stock-currency-exchange-rate type="float">1.0</stock-currency-exchange-rate>
-    <client-cookies-whitelist>cookies1
-cookies2
-cookies3</client-cookies-whitelist>
-    <main-host>shop-test.myinsales.ru</main-host>
-    <next-order-number type="integer">1040</next-order-number>
-    <time-zone>Moscow</time-zone>
-    <owner>
-        <created-at type="timestamp">2013-02-18 00:20:01 +0400</created-at>
-        <email>mail@mail.ru</email>
-        <id type="integer">12345</id>
-        <name>Иван</name>
-    </owner>
-</account>
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
+{
+  "blocked": false,
+  "city": "Москва",
+  "contact_phone": null,
+  "country": "RU",
+  "enable_cart_discounts": false,
+  "enable_client_discounts": false,
+  "enable_group_discounts": false,
+  "enable_order_discounts": false,
+  "hide_items_out_of_stock": false,
+  "id": 12345,
+  "inviter_id": null,
+  "notification_email": null,
+  "organization": null,
+  "paid_till": "2009-03-02",
+  "sms_notification_phone": null,
+  "state": "г Москва",
+  "subdomain": "shop-test",
+  "email": "mail@mail.ru",
+  "icq": null,
+  "phone": "+71234567890",
+  "title": "Название магазина",
+  "minimum_items_price": null,
+  "stock_currency_exchange_rate": "30.0",
+  "client_cookies_whitelist": null,
+  "main_host": "shop-test.myinsales.ru",
+  "main_host_protocol": "http",
+  "next_order_number": 1006,
+  "time_zone": "Moscow",
+  "owner": {
+    "created_at": "2013-02-18 00:20:01 +0400",
+    "email": "mail@mail.ru",
+    "id": 12345,
+    "name": "Иван"
+  }
+}
 
 --
 Категории на складе
 --
 
 Получение списка категорий
-GET /admin/categories.xml
+GET /admin/categories.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <categories type="array">
     <category>
@@ -92,9 +94,10 @@ GET /admin/categories.xml
 </categories>
 
 Получение информации о категории
-GET /admin/categories/32142.xml
+GET /admin/categories/32142.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <category>
     <id type="integer">32142</id>
@@ -106,8 +109,8 @@ GET /admin/categories/32142.xml
 </category>
 
 Добавление новой категории
-POST /admin/categories.xml
-> Content-Type: application/xml
+POST /admin/categories.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <category>
     <parent-id type="integer">28429</parent-id>
@@ -126,8 +129,8 @@ POST /admin/categories.xml
 </category>
 
 Редактирование категории
-PUT /admin/categories/32142.xml
-> Content-Type: application/xml
+PUT /admin/categories/32142.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <category>
     <id type="integer">32142</id>
@@ -146,7 +149,7 @@ PUT /admin/categories/32142.xml
 </category>
 
 Удаление категории
-DELETE /admin/categories/32142.xml
+DELETE /admin/categories/32142.json
 < 200
 
 --
@@ -154,9 +157,10 @@ DELETE /admin/categories/32142.xml
 --
 
 Получение списка товаров
-GET /admin/products.xml?category_id=478
+GET /admin/products.json?category_id=478
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <products type="array">
     <product>
@@ -274,9 +278,10 @@ GET /admin/products.xml?category_id=478
 </products>
 
 Получение информации о товаре
-GET /admin/products/41658.xml
+GET /admin/products/41658.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <product>
     <category-id type="integer">478</category-id>
@@ -340,8 +345,8 @@ GET /admin/products/41658.xml
 --
 
 Добавление товара с параметрами
-POST /admin/products.xml
-> Content-Type: application/xml
+POST /admin/products.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product>
     <category-id type="integer">478</category-id>
@@ -417,8 +422,8 @@ POST /admin/products.xml
 </product>
 
 Добавление товара со свойствами
-POST /admin/products.xml
-> Content-Type: application/xml
+POST /admin/products.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product>
     <category-id type="integer">478</category-id>
@@ -444,7 +449,7 @@ POST /admin/products.xml
     </variants-attributes>
 </product>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product>
     <id type="integer">41658</id>
@@ -505,8 +510,8 @@ POST /admin/products.xml
 </product>
 
 Добавление товара с несколькими модификациями
-PUT /admin/products/478.xml
-> Content-Type: application/xml
+PUT /admin/products/478.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product>
     <id type="integer">478</category-id>
@@ -544,8 +549,8 @@ PUT /admin/products/478.xml
 --
 
 Изменение наименования товара
-PUT /admin/products/41658.xml
-> Content-Type: application/xml
+PUT /admin/products/41658.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product>
     <id type="integer">41658</id>
@@ -554,8 +559,8 @@ PUT /admin/products/41658.xml
 < 200
 
 Изменение параметров товара
-PUT /admin/products/41658.xml
-> Content-Type: application/xml
+PUT /admin/products/41658.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product>
     <id type="integer">41658</id>
@@ -569,7 +574,7 @@ PUT /admin/products/41658.xml
 < 200
 
 Удаление товара
-DELETE /admin/products/41658.xml
+DELETE /admin/products/41658.json
 < 200
 
 --
@@ -577,9 +582,10 @@ DELETE /admin/products/41658.xml
 --
 
 Получение всех изображений
-GET /admin/products/2336153/images.xml
+GET /admin/products/2336153/images.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <images type="array">
     <image>
@@ -601,9 +607,10 @@ GET /admin/products/2336153/images.xml
 </images>
 
 Получение изображения
-GET /admin/products/2336153/images/1489191.xml
+GET /admin/products/2336153/images/1489191.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <image>
     <id type="integer">1489191</id>
@@ -619,8 +626,8 @@ GET /admin/products/2336153/images/1489191.xml
 --
 
 Добавлении изображения выложенного в интернет
-POST /admin/products/2336153/images.xml
-> Content-Type: application/xml
+POST /admin/products/2336153/images.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <image>
     <title>ImageTile</title>
@@ -628,7 +635,8 @@ POST /admin/products/2336153/images.xml
     <src>http://some-hosting.ru/some_image.jpg</src>
 </image>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <image>
     <id type="integer">1489191</id>
@@ -640,8 +648,8 @@ POST /admin/products/2336153/images.xml
 </image>
 
 Передача изображения в теле запроса
-POST /admin/products/2336153/images.xml
-> Content-Type: application/xml
+POST /admin/products/2336153/images.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <image>
     <title>ImageTile</title>
@@ -703,7 +711,8 @@ AAAAAAAAAAAAAAAgBIAAAAAAAAAAAAAAAAAAAAAAgB//2Q==
     </attachment>
 </image>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <image>
     <id type="integer">1489191</id>
@@ -715,8 +724,8 @@ AAAAAAAAAAAAAAAgBIAAAAAAAAAAAAAAAAAAAAAAgB//2Q==
 </image>
 
 Изменение изображения
-PUT /admin/products/2336153/images/1489191.xml
-> Content-Type: application/xml
+PUT /admin/products/2336153/images/1489191.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <image>
     <position type="integer">5</position>
@@ -725,7 +734,7 @@ PUT /admin/products/2336153/images/1489191.xml
 < 200
 
 Удаление изображения
-DELETE /admin/products/2336153/images/1489191.xml
+DELETE /admin/products/2336153/images/1489191.json
 < 200
 
 --
@@ -733,9 +742,10 @@ DELETE /admin/products/2336153/images/1489191.xml
 --
 
 Получение всех модификаций товара
-GET /admin/products/1157664/variants.xml
+GET /admin/products/1157664/variants.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <variants type="array">
     <variant>
@@ -816,9 +826,10 @@ GET /admin/products/1157664/variants.xml
 </variants>
 
 Получение модификации
-GET /admin/products/182183/variants/1157664.xml
+GET /admin/products/182183/variants/1157664.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <variant>
     <id type="integer">1157664</id>
@@ -847,8 +858,8 @@ GET /admin/products/182183/variants/1157664.xml
 </variant>
 
 Добавление модификации
-POST /admin/products/182183/variants.xml
-> Content-Type: application/xml
+POST /admin/products/182183/variants.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <variant>
     <price type="decimal">440.0</price>
@@ -864,7 +875,8 @@ POST /admin/products/182183/variants.xml
     </options>
 </variant>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <variant>
     <id type="integer">1157664</id>
@@ -893,8 +905,8 @@ POST /admin/products/182183/variants.xml
 </variant>
 
 Изменение модификации
-PUT /admin/products/182183/variants/1157664.xml
-> Content-Type: application/xml
+PUT /admin/products/182183/variants/1157664.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <variant>
     <id type="integer">1157664</id>
@@ -930,12 +942,12 @@ PUT /admin/products/182183/variants/1157664.xml
 </variant>
 
 Удаление модификации
-DELETE /admin/products/182183/variants/1157664.xml
+DELETE /admin/products/182183/variants/1157664.json
 < 200
 
 Групповое обновление модификаций
-PUT /admin/products/variants_group_update.xml
-> Content-Type: application/xml
+PUT /admin/products/variants_group_update.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <variants type="array">
   <variant>
@@ -950,7 +962,8 @@ PUT /admin/products/variants_group_update.xml
   </variant>
 </variants>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <objects type="array">
   <object>
@@ -968,9 +981,10 @@ PUT /admin/products/variants_group_update.xml
 --
 
 Получение списка свойств
-GET /admin/option_names.xml
+GET /admin/option_names.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <option-names type="array">
     <option-name>
@@ -1006,9 +1020,10 @@ GET /admin/option_names.xml
 </option-names>
 
 Получение информации о свойстве
-GET /admin/option_names/1575.xml
+GET /admin/option_names/1575.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <option-name>
     <id type="integer">1575</id>
@@ -1017,8 +1032,8 @@ GET /admin/option_names/1575.xml
 </option-name>
 
 Добавление свойства
-POST /admin/option_names.xml
-> Content-Type: application/xml
+POST /admin/option_names.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <option-name>
     <title>Размер</title>
@@ -1033,14 +1048,15 @@ POST /admin/option_names.xml
 </option-name>
 
 Изменение свойства
-PUT /admin/option_names/1575.xml
-> Content-Type: application/xml
+PUT /admin/option_names/1575.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <option-name>
     <position type="integer">7</position>
 </option-name>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <option-name>
     <id type="integer">1575</id>
@@ -1049,7 +1065,7 @@ PUT /admin/option_names/1575.xml
 </option-name>
 
 Удаление свойства
-DELETE /admin/option_names/1575.xml
+DELETE /admin/option_names/1575.json
 < 200
 
 --
@@ -1061,9 +1077,10 @@ DELETE /admin/option_names/1575.xml
 --
 
 Вывод значений для всех свойств
-GET /admin/option_values.xml
+GET /admin/option_values.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <option-values type="array">
     <option-value>
@@ -1099,9 +1116,10 @@ GET /admin/option_values.xml
 </option-values>
 
 Вывод значения для определённого свойства
-GET /admin/option_names/1576/option_values.xml
+GET /admin/option_names/1576/option_values.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <option-values type="array">
     <option-value>
@@ -1125,9 +1143,10 @@ GET /admin/option_names/1576/option_values.xml
 </option-values>
 
 Получение информации о значении свойства
-GET /admin/option_names/1576/option_values/7942.xml
+GET /admin/option_names/1576/option_values/7942.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <option-value>
     <id type="integer">7942</id>
@@ -1137,8 +1156,8 @@ GET /admin/option_names/1576/option_values/7942.xml
 </option-value>
 
 Добавление значения свойства
-POST /admin/option_names/1576/option_values.xml
-> Content-Type: application/xml
+POST /admin/option_names/1576/option_values.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <option-value>
     <title>Бежевый</title>
@@ -1154,14 +1173,15 @@ POST /admin/option_names/1576/option_values.xml
 </option-value>
 
 Изменение значения свойства
-PUT /admin/option_names/1576/option_values/7942.xml
-> Content-Type: application/xml
+PUT /admin/option_names/1576/option_values/7942.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <option-value>
     <position type="integer">7</position>
 </option-value>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <option-value>
     <id type="integer">7942</id>
@@ -1171,7 +1191,7 @@ PUT /admin/option_names/1576/option_values/7942.xml
 </option-value>
 
 Удаление значения свойства
-DELETE /admin/option_names/1576/option_values/7942.xml
+DELETE /admin/option_names/1576/option_values/7942.json
 < 200
 
 --
@@ -1179,9 +1199,10 @@ DELETE /admin/option_names/1576/option_values/7942.xml
 --
 
 Получение списка дополнительных полей
-GET /admin/product_fields.xml
+GET /admin/product_fields.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <objects type="array">
   <product-field>
@@ -1205,9 +1226,10 @@ GET /admin/product_fields.xml
 </objects>
 
 Получение информации о дополнительном поле
-GET /admin/product_fields/8.xml
+GET /admin/product_fields/8.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <product-field>
   <application-id type="integer" nil="true"/>
@@ -1220,8 +1242,8 @@ GET /admin/product_fields/8.xml
 </product-field>
 
 Добавление дополнительного поля
-POST /admin/product_fields.xml
-> Content-Type: application/xml
+POST /admin/product_fields.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product-field>
   <title>Размер</title>
@@ -1242,14 +1264,15 @@ POST /admin/product_fields.xml
 </product-field>
 
 Изменение дополнительного поля
-PUT /admin/product_fields/9.xml
-> Content-Type: application/xml
+PUT /admin/product_fields/9.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product-field>
   <position>2</position>
 </product-field>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <product-field>
   <application-id type="integer">2</application-id>
@@ -1262,7 +1285,7 @@ PUT /admin/product_fields/9.xml
 </product-field>
 
 Удаление дополнительного поля
-DELETE /admin/product_fields/9.xml
+DELETE /admin/product_fields/9.json
 < 200
 
 --
@@ -1270,9 +1293,10 @@ DELETE /admin/product_fields/9.xml
 --
 
 Получение списка значений дополнительных полей товара
-GET /admin/products/1/product_field_values.xml
+GET /admin/products/1/product_field_values.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <product-field-values type="array">
   <product-field-value>
@@ -1288,9 +1312,10 @@ GET /admin/products/1/product_field_values.xml
 </product-field-values>
 
 Получение информации о значении дополнительного поля товара
-GET /admin/products/1/product_field_values/9.xml
+GET /admin/products/1/product_field_values/9.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
   <product-field-value>
     <id type="integer">851</id>
@@ -1299,15 +1324,16 @@ GET /admin/products/1/product_field_values/9.xml
   </product-field-value>
 
 Добавление значения дополнительного поля товара
-POST /admin/products/1/product_field_values.xml
-> Content-Type: application/xml
+POST /admin/products/1/product_field_values.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product-field-value>
   <product-field-id>8</product-field-id>
   <value>seek and destroy</value>
 </product-field-value>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <product-field-value>
   <id type="integer">853</id>
@@ -1316,14 +1342,15 @@ POST /admin/products/1/product_field_values.xml
 </product-field-value>
 
 Изменение значения дополнительного поля товара
-PUT /admin/products/1/product_field_values/8.xml
-> Content-Type: application/xml
+PUT /admin/products/1/product_field_values/8.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <product-field-value>
   <value>updated value</value>
 </product-field-value>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <product-field-value>
   <id type="integer">853</id>
@@ -1332,7 +1359,7 @@ PUT /admin/products/1/product_field_values/8.xml
 </product-field-value>
 
 Удаление значения дополнительного поля товара
-DELETE /admin/products/1/product_field_values/8.xml
+DELETE /admin/products/1/product_field_values/8.json
 < 200
 
 --
@@ -1340,9 +1367,10 @@ DELETE /admin/products/1/product_field_values/8.xml
 --
 
 Получение списка сопутствующих товаров
-GET /admin/products/1/supplementaries.xml
+GET /admin/products/1/supplementaries.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <products type="array">
   <product>
@@ -1354,14 +1382,14 @@ GET /admin/products/1/supplementaries.xml
 </products>
 
 Добавление сопутствующего товара
-POST /admin/products/1/supplementaries.xml
-> Content-Type: application/xml
+POST /admin/products/1/supplementaries.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <supplementary_ids>87987</supplementary_ids>
 < 200
 
 Удаление сопутствующего товара
-DELETE /admin/products/1/supplementaries/87987.xml
+DELETE /admin/products/1/supplementaries/87987.json
 < 200
 
 --
@@ -1369,9 +1397,10 @@ DELETE /admin/products/1/supplementaries/87987.xml
 --
 
 Получение списка аналогичных товаров
-GET /admin/products/1/similars.xml
+GET /admin/products/1/similars.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <products type="array">
   <product>
@@ -1383,14 +1412,14 @@ GET /admin/products/1/similars.xml
 </products>
 
 Добавление аналогичного товара
-POST /admin/products/1/similars.xml
-> Content-Type: application/xml
+POST /admin/products/1/similars.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <similar_ids>87987</similar_ids>
 < 200
 
 Удаление аналогичного товара
-DELETE /admin/products/1/similars/87987.xml
+DELETE /admin/products/1/similars/87987.json
 < 200
 
 --
@@ -1398,9 +1427,10 @@ DELETE /admin/products/1/similars/87987.xml
 --
 
 Получение списка категорий
-GET /admin/collections.xml
+GET /admin/collections.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <collections type="array">
     <collection>
@@ -1462,9 +1492,10 @@ GET /admin/collections.xml
 </collections>
 
 Получение информации о категории
-GET /admin/collections/7830.xml
+GET /admin/collections/7830.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <collection>
     <id type="integer">7830</id>
     <is-hidden type="boolean">false</is-hidden>
@@ -1481,14 +1512,15 @@ GET /admin/collections/7830.xml
 </collection>
 
 Добавление новой категории
-POST /admin/collections.xml
-> Content-Type: application/xml
+POST /admin/collections.json
+> Content-Type: application/json
 <collection>
     <parent-id type="integer">2628</parent-id>
     <title>Moleskine XLarge 19х25</title>
 </collection>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <collection>
     <id type="integer">7830</id>
     <is-hidden type="boolean">false</is-hidden>
@@ -1505,13 +1537,14 @@ POST /admin/collections.xml
 </collection>
 
 Редактирование категории
-PUT /admin/collections/7830.xml
-> Content-Type: application/xml
+PUT /admin/collections/7830.json
+> Content-Type: application/json
 <collection>
     <is-hidden type="boolean">true</is-hidden>
 </collection>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <collection>
     <id type="integer">7830</id>
     <is-hidden type="boolean">true</is-hidden>
@@ -1529,7 +1562,7 @@ PUT /admin/collections/7830.xml
 </collection>
 
 Удаление категории
-DELETE /admin/collections/7830.xml
+DELETE /admin/collections/7830.json
 < 200
 
 --
@@ -1537,15 +1570,16 @@ DELETE /admin/collections/7830.xml
 --
 
 Добавление товара в категорию
-POST /admin/collects.xml
-> Content-Type: application/xml
+POST /admin/collects.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <collect>
     <collection-id type="integer">12148</collection-id>
     <product-id type="integer">89973</product-id>
 </collect>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <collect>
     <id type="integer">47514</id>
@@ -1556,13 +1590,14 @@ POST /admin/collects.xml
 </collect>
 
 Удаление товара из категории
-DELETE /admin/collects/89973.xml
+DELETE /admin/collects/89973.json
 < 200
 
 Получение списка размещений
-GET /admin/collects.xml
+GET /admin/collects.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <collects type="array">
     <collect>
@@ -1610,9 +1645,10 @@ GET /admin/collects.xml
 </collects>
 
 Получение списка категорий содержащих товар
-GET /admin/collects.xml?product_id=89973
+GET /admin/collects.json?product_id=89973
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <collects type="array">
     <collect>
@@ -1632,9 +1668,10 @@ GET /admin/collects.xml?product_id=89973
 </collects>
 
 Получение списка товаров в категории
-GET /admin/collects.xml?collection_id=108528
+GET /admin/collects.json?collection_id=108528
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <collects type="array">
     <collect>
@@ -1668,14 +1705,15 @@ GET /admin/collects.xml?collection_id=108528
 </collects>
 
 Ручная сортировка
-PUT /admin/collects/89973.xml
-> Content-Type: application/xml
+PUT /admin/collects/89973.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <collect>
     <position type="integer">10</position>
 </collect>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <collect>
     <id type="integer">47514</id>
@@ -1686,14 +1724,15 @@ PUT /admin/collects/89973.xml
 </collect>
 
 Перемещение товара из одной категории в другую
-PUT /admin/collects/89973.xml
-> Content-Type: application/xml
+PUT /admin/collects/89973.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <collect>
     <collection-id type="integer">12148</collection-id>
 </collect>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <collect>
     <id type="integer">47514</id>
@@ -1708,9 +1747,10 @@ PUT /admin/collects/89973.xml
 --
 
 Получение списка заказов
-GET /admin/orders.xml
+GET /admin/orders.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <orders type="array">
     <order>
@@ -1894,9 +1934,10 @@ GET /admin/orders.xml
 </orders>
 
 Получение информации о заказе
-GET /admin/orders/58409.xml
+GET /admin/orders/58409.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <order>
     <accepted-at type="timestamp" nil="true"/>
@@ -2006,8 +2047,8 @@ GET /admin/orders/58409.xml
 </order>
 
 Редактирование заказа
-PUT /admin/orders/46443.xml
-> Content-Type: application/xml
+PUT /admin/orders/46443.json
+> Content-Type: application/json
 <order>
     <id type="integer">46443</id>
     <order-lines-attributes type="array">
@@ -2022,13 +2063,14 @@ PUT /admin/orders/46443.xml
 < 200
 
 Удаление заказа
-DELETE /admin/orders/46443.xml
+DELETE /admin/orders/46443.json
 < 200
 
 Получение списка полей для оформления заказа
-GET /admin/orders/fields.xml
+GET /admin/orders/fields.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <fields>
   <client-fields type="array">
@@ -2148,8 +2190,8 @@ GET /admin/orders/fields.xml
 </fields>
 
 Получение способов доставки
-POST /admin/delivery_variants.xml
-> Content-Type: application/xml
+POST /admin/delivery_variants.json
+> Content-Type: application/json
 <?xml version="1.0" encoding="UTF-8"?>
 <order>
   <shipping-address>
@@ -2168,7 +2210,8 @@ POST /admin/delivery_variants.xml
   </order-lines-attributes>
 </order>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <delivery-variants type="array">
   <delivery-variant>
@@ -2195,8 +2238,8 @@ POST /admin/delivery_variants.xml
 </delivery-variants>
 
 Получение способов оплаты
-POST /admin/payment_gateways.xml
-> Content-Type: application/xml
+POST /admin/payment_gateways.json
+> Content-Type: application/json
 <order>
     <shipping-address>
       <address>Moscow sdfsdfsdf</address>
@@ -2215,7 +2258,8 @@ POST /admin/payment_gateways.xml
     <delivery-variant-id type="integer">12398</delivery-variant-id>
 </order>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <payment-gateways type="array">
   <payment-gateway>
@@ -2311,8 +2355,8 @@ POST /admin/payment_gateways.xml
 </payment-gateways>
 
 Создание заказа
-POST /admin/orders.xml
-> Content-Type: application/xml
+POST /admin/orders.json
+> Content-Type: application/json
 <order>
     <shipping-address>
       <address>Moscow sdfsdfsdf</address>
@@ -2338,7 +2382,8 @@ POST /admin/orders.xml
     <delivery-variant-id type="integer">12398</delivery-variant-id>
 </order>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <order>
   <accepted-at type="timestamp" nil="true"></accepted-at>
@@ -2407,9 +2452,10 @@ POST /admin/orders.xml
 --
 
 Получение списка купонов
-GET /admin/discount_codes.xml
+GET /admin/discount_codes.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <discount-codes type="array">
   <discount-code>
@@ -2475,9 +2521,10 @@ GET /admin/discount_codes.xml
 </discount-codes>
 
 Получение информации о купоне
-GET /admin/discount_codes/626.xml
+GET /admin/discount_codes/626.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <discount-code>
   <act-once type="boolean">true</act-once>
@@ -2493,8 +2540,8 @@ GET /admin/discount_codes/626.xml
 </discount-code>
 
 Добавление купона
-POST /admin/discount_codes.xml
-> Content-Type: application/xml
+POST /admin/discount_codes.json
+> Content-Type: application/json
 <discount_code>
   <code>frandom2</code>
   <act_once>true</act_once>
@@ -2521,8 +2568,8 @@ POST /admin/discount_codes.xml
 </discount-code>
 
 Редактирование купона
-PUT /admin/discount_codes/1.xml
-> Content-Type: application/xml
+PUT /admin/discount_codes/1.json
+> Content-Type: application/json
 <discount_code>
   <code>frandom3</code>
   <act_once>true</act_once>
@@ -2535,7 +2582,7 @@ PUT /admin/discount_codes/1.xml
 < 200
 
 Удаление купона
-DELETE /admin/discount_codes/1.xml
+DELETE /admin/discount_codes/1.json
 < 200
 
 --
@@ -2543,9 +2590,10 @@ DELETE /admin/discount_codes/1.xml
 --
 
 Получение списка
-GET /admin/delivery_variants.xml
+GET /admin/delivery_variants.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <objects type="array">
   <object>
@@ -2580,9 +2628,10 @@ GET /admin/delivery_variants.xml
 </objects>
 
 Получение информации о способе доставки
-GET /admin/delivery_variants/57955.xml
+GET /admin/delivery_variants/57955.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <object>
   <id type="integer">57955</id>
@@ -2596,8 +2645,8 @@ GET /admin/delivery_variants/57955.xml
 </object>
 
 Добавление
-POST /admin/delivery_variants.xml
-> Content-Type: application/xml
+POST /admin/delivery_variants.json
+> Content-Type: application/json
 <delivery-variant>
   <title>Курьером</title>
   <description>Супер быстрая доставка</description>
@@ -2614,7 +2663,8 @@ POST /admin/delivery_variants.xml
   <type>DeliveryVariant::PriceDepend</type>
 </delivery-variant>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <object>
   <id type="integer">57802</id>
@@ -2639,7 +2689,7 @@ POST /admin/delivery_variants.xml
 </object>
 
 Удаление
-DELETE /admin/delivery_variants/57802.xml
+DELETE /admin/delivery_variants/57802.json
 < 200
 
 --
@@ -2647,9 +2697,10 @@ DELETE /admin/delivery_variants/57802.xml
 --
 
 Получение списка
-GET /admin/fields.xml
+GET /admin/fields.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <objects type="array">
   <field>
@@ -2876,9 +2927,10 @@ GET /admin/fields.xml
 </objects>
 
 Получение информации
-GET /admin/fields/389591.xml
+GET /admin/fields/389591.json
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <field>
   <position type="integer">8</position>
@@ -2895,8 +2947,8 @@ GET /admin/fields/389591.xml
 </field>
 
 Добавление
-POST /admin/fields.xml
-> Content-Type: application/xml
+POST /admin/fields.json
+> Content-Type: application/json
 <field>
   <type>Field::TextField</type>
   <for-buyer type="boolean">true</for-buyer>
@@ -2906,7 +2958,8 @@ POST /admin/fields.xml
   <destiny type="integer">2</destiny>
 </field>
 < 200
-< Content-Type: application/xml
+< Content-Type: application/json; charset=utf-8
+< API-Usage-Limit: 2/500
 <?xml version="1.0" encoding="UTF-8"?>
 <field>
   <position type="integer">8</position>
@@ -2922,5 +2975,5 @@ POST /admin/fields.xml
   <system-name nil="true"></system-name>
 </field>
 
-DELETE /admin/fields/389591.xml
+DELETE /admin/fields/389591.json
 < 200
