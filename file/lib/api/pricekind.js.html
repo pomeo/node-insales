@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">lib/api/charge.js | insales</title>
+  <title data-ice="title">lib/api/pricekind.js | insales</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -78,181 +78,218 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">lib/api/charge.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">lib/api/pricekind.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { get } from &apos;../methods/get&apos;;
 import { post } from &apos;../methods/post&apos;;
+import { remove } from &apos;../methods/remove&apos;;
+import { put } from &apos;../methods/put&apos;;
 
 /**
- * GET /admin/application_charges/{id}.xml
+ * GET /admin/price_kinds/{id}.json
  *
  * Examples:
  *
- *      insales.getCharge({
+ *      insales.getPriceKind({
  *        token: &apos;1234567890&apos;,
  *        url: &apos;shop-test.myinsales.ru&apos;,
- *        chargeid: &apos;12345&apos;
- *      }).then(output =&gt; {
- *        console.info(output.response.statusCode);
+ *        id: &apos;111&apos;
+ *      }).then(response =&gt; {
+ *        console.info(response.data);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ *
+ * Output:
+ *      {
+ *        &quot;id&quot;: 111,
+ *        &quot;price_index&quot;: 1,
+ *        &quot;show_in_lists&quot;: true,
+ *        &quot;title&quot;: &quot;&#x442;&#x435;&#x441;&#x442; 1&quot;,
+ *        &quot;variant_price_method_name&quot;: &quot;price2&quot;
+ *      }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} options.id Required, price kind id
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
+export function getPriceKind(options, id) {
+  return get({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `price_kinds/${options.id}`
+  });
+}
+
+/**
+ * GET /admin/price_kinds.json
+ *
+ * Examples:
+ *
+ *      insales.listPriceKind({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *      }).then(response =&gt; {
+ *        console.info(response.data);
  *      }).catch(err =&gt; {
  *        console.error(err);
  *      });
  * Output:
  *
- *      { &apos;application-charge&apos;:
- *        { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
- *          id: &apos;1234&apos;,
- *          name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
- *          price: &apos;180.0&apos;,
- *          &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
- *          status: &apos;pending&apos;,
- *          test: &apos;&apos;,
- *          &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
- *          &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } }
+ *      [
+ *        {
+ *            &quot;id&quot;: 111,
+ *            &quot;price_index&quot;: 1,
+ *            &quot;show_in_lists&quot;: true,
+ *            &quot;title&quot;: &quot;&#x442;&#x435;&#x441;&#x442; 1&quot;,
+ *            &quot;variant_price_method_name&quot;: &quot;price2&quot;
+ *        },
+ *        {
+ *            &quot;id&quot;: 112,
+ *            &quot;price_index&quot;: 2,
+ *            &quot;show_in_lists&quot;: true,
+ *            &quot;title&quot;: &quot;&#x442;&#x435;&#x441;&#x442;2&quot;,
+ *            &quot;variant_price_method_name&quot;: &quot;price3&quot;
+ *        }
+ *      ]
  * @param {Object} options
  * @param {string} options.token Required, access token for shop
  * @param {string} options.url Required, shop url
- * @param {number|string} options.chargeid Required, charge id
  * @param {Number|String} id Required, app id
  * @returns {Promise}
  */
-export function getCharge(options, id) {
+export function listPriceKind(options, id) {
   return get({
     id,
     token: options.token,
     url: options.url,
-    api: `application_charges/${options.chargeid}`
+    api: `price_kinds`
   });
 }
 
 /**
- * POST /admin/application_charges.xml
+ * POST /admin/price_kinds.json
  *
  * Examples:
  *
- *      insales.createCharge({
+ *      insales.createPriceKind({
  *        token: &apos;1234567890&apos;,
  *        url: &apos;shop-test.myinsales.ru&apos;,
- *        charge: {
- *           &apos;application-charge&apos;: {
- *             &apos;name&apos;: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
- *             &apos;price&apos;: &apos;180.0&apos;,
- *             &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;
+ *        pricekind: {
+ *           &apos;price_kind&apos;: {
+ *             &apos;title&apos;: &apos;name&apos;
  *           }
  *        }
  *      }).then(output =&gt; {
- *        console.info(output.response.statusCode);
+ *        console.info(output.data);
  *      }).catch(err =&gt; {
  *        console.error(err);
  *      });
+ *
  * Output:
  *
- *      { &apos;application-charge&apos;:
- *        { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
- *          id: &apos;1234&apos;,
- *          name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
- *          price: &apos;180.0&apos;,
- *          &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
- *          status: &apos;pending&apos;,
- *          test: &apos;&apos;,
- *          &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
- *          &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } }
+ *      {
+ *        &quot;id&quot;: 113,
+ *        &quot;price_index&quot;: 3,
+ *        &quot;show_in_lists&quot;: true,
+ *        &quot;title&quot;: &quot;name&quot;,
+ *        &quot;variant_price_method_name&quot;: &quot;price3&quot;
+ *      }
  * @param {Object} options
  * @param {string} options.token Required, access token for shop
  * @param {string} options.url Required, shop url
- * @param {object} options.charge Required, charge info
+ * @param {object} options.pricekind Required, price kind
  * @param {Number|String} id Required, app id
  * @returns {Promise}
  */
-export function createCharge(options, id) {
+export function createPriceKind(options, id) {
   return post({
     id,
     token: options.token,
     url: options.url,
-    api: `application_charges`,
-    obj: options.charge
+    api: `price_kinds`,
+    obj: options.pricekind
   });
 }
 
 /**
- * GET /admin/application_charges.xml
+ * DELETE /admin/price_kinds/{id}.json
  *
  * Examples:
  *
- *      insales.listCharge({
- *        token: &apos;1234567890&apos;,
- *        url: &apos;shop-test.myinsales.ru&apos;
- *      }).then(output =&gt; {
- *        console.info(output.response.statusCode);
- *      }).catch(err =&gt; {
- *        console.error(err);
- *      });
- * Output:
- *
- *      { &apos;application-charges&apos;:
- *        { &apos;application-charge&apos;:
- *           { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
- *             id: &apos;1234&apos;,
- *             name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
- *             price: &apos;180.0&apos;,
- *             &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
- *             status: &apos;pending&apos;,
- *             test: &apos;&apos;,
- *             &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
- *             &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } } }
- * @param {Object} options
- * @param {string} options.token Required, access token for shop
- * @param {string} options.url Required, shop url
- * @param {Number|String} id Required, app id
- * @returns {Promise}
- */
-export function listCharge(options, id) {
-  return get({
-    id,
-    token: options.token,
-    url: options.url,
-    api: &apos;application_charges&apos;
-  });
-}
-
-/**
- * POST /admin/application_charges/{id}/decline.xml
- *
- * Examples:
- *
- *      insales.declineCharge({
+ *      insales.removePriceKind({
  *        token: &apos;1234567890&apos;,
  *        url: &apos;shop-test.myinsales.ru&apos;,
- *        chargeid: &apos;12345&apos;
+ *        id: &apos;111&apos;
  *      }).then(output =&gt; {
- *        console.info(output.response.statusCode);
+ *        console.info(output.statusCode);
  *      }).catch(err =&gt; {
  *        console.error(err);
  *      });
  * Output:
  *
- *      { &apos;application-charge&apos;:
- *        { &apos;created-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
- *          id: &apos;1234&apos;,
- *          name: &apos;&#x41A;&#x443;&#x43F;&#x438; &#x441;&#x43B;&#x43E;&#x43D;&#x430;&apos;,
- *          price: &apos;180.0&apos;,
- *          &apos;return-url&apos;: &apos;http://application.my/check_payment_url/%id_in_my_application&apos;,
- *          status: &apos;declined&apos;,
- *          test: &apos;&apos;,
- *          &apos;updated-at&apos;: &apos;2011-11-11T11:11:11+03:00&apos;,
- *          &apos;confirmation-url&apos;: &apos;http://shop-test.myinsales.ru/admin/invoices/123456&apos; } }
+ *      200
  * @param {Object} options
  * @param {string} options.token Required, access token for shop
  * @param {string} options.url Required, shop url
- * @param {number|string} options.chargeid Required, charge id
+ * @param {number|string} options.id Required, price kind id
  * @param {Number|String} id Required, app id
  * @returns {Promise}
  */
-export function declineCharge(options, id) {
-  return post({
+export function removePriceKind(options, id) {
+  return remove({
     id,
     token: options.token,
     url: options.url,
-    api: `application_charges/${options.chargeid}/decline`
+    api: `price_kinds/${options.id}`
+  });
+}
+
+/**
+ * PUT /admin/price_kinds/{id}.xml
+ *
+ * Examples:
+ *
+ *      insales.editPriceKind({
+ *        token: &apos;1234567890&apos;,
+ *        url: &apos;shop-test.myinsales.ru&apos;,
+ *        id: &apos;111&apos;,
+ *        pricekind: {
+ *           &apos;price_kind&apos;: {
+ *             &apos;title&apos;: &apos;name123&apos;
+ *           }
+ *        }
+ *      }).then(output =&gt; {
+ *        console.info(output.data);
+ *      }).catch(err =&gt; {
+ *        console.error(err);
+ *      });
+ * Output:
+ *
+ *      {
+ *        &quot;id&quot;: 111,
+ *        &quot;price_index&quot;: 3,
+ *        &quot;show_in_lists&quot;: true,
+ *        &quot;title&quot;: &quot;name123&quot;,
+ *        &quot;variant_price_method_name&quot;: &quot;price3&quot;
+ *      }
+ * @param {Object} options
+ * @param {string} options.token Required, access token for shop
+ * @param {string} options.url Required, shop url
+ * @param {number|string} options.id Required, price kind id
+ * @param {object} options.pricekind Required, price kind
+ * @param {Number|String} id Required, app id
+ * @returns {Promise}
+ */
+export function editPriceKind(options, id) {
+  return put({
+    id,
+    token: options.token,
+    url: options.url,
+    api: `price_kinds/${options.id}`,
+    obj: options.pricekind
   });
 }
 </code></pre>

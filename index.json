@@ -2588,6 +2588,435 @@
   {
     "__docId__": 77,
     "kind": "file",
+    "name": "lib/api/pricekind.js",
+    "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { remove } from '../methods/remove';\nimport { put } from '../methods/put';\n\n/**\n * GET /admin/price_kinds/{id}.json\n *\n * Examples:\n *\n *      insales.getPriceKind({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        id: '111'\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n *\n * Output:\n *      {\n *        \"id\": 111,\n *        \"price_index\": 1,\n *        \"show_in_lists\": true,\n *        \"title\": \"тест 1\",\n *        \"variant_price_method_name\": \"price2\"\n *      }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.id Required, price kind id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getPriceKind(options, id) {\n  return get({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `price_kinds/${options.id}`\n  });\n}\n\n/**\n * GET /admin/price_kinds.json\n *\n * Examples:\n *\n *      insales.listPriceKind({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      [\n *        {\n *            \"id\": 111,\n *            \"price_index\": 1,\n *            \"show_in_lists\": true,\n *            \"title\": \"тест 1\",\n *            \"variant_price_method_name\": \"price2\"\n *        },\n *        {\n *            \"id\": 112,\n *            \"price_index\": 2,\n *            \"show_in_lists\": true,\n *            \"title\": \"тест2\",\n *            \"variant_price_method_name\": \"price3\"\n *        }\n *      ]\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function listPriceKind(options, id) {\n  return get({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `price_kinds`\n  });\n}\n\n/**\n * POST /admin/price_kinds.json\n *\n * Examples:\n *\n *      insales.createPriceKind({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        pricekind: {\n *           'price_kind': {\n *             'title': 'name'\n *           }\n *        }\n *      }).then(output => {\n *        console.info(output.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n *\n * Output:\n *\n *      {\n *        \"id\": 113,\n *        \"price_index\": 3,\n *        \"show_in_lists\": true,\n *        \"title\": \"name\",\n *        \"variant_price_method_name\": \"price3\"\n *      }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.pricekind Required, price kind\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createPriceKind(options, id) {\n  return post({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `price_kinds`,\n    obj: options.pricekind\n  });\n}\n\n/**\n * DELETE /admin/price_kinds/{id}.json\n *\n * Examples:\n *\n *      insales.removePriceKind({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        id: '111'\n *      }).then(output => {\n *        console.info(output.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.id Required, price kind id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function removePriceKind(options, id) {\n  return remove({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `price_kinds/${options.id}`\n  });\n}\n\n/**\n * PUT /admin/price_kinds/{id}.xml\n *\n * Examples:\n *\n *      insales.editPriceKind({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        id: '111',\n *        pricekind: {\n *           'price_kind': {\n *             'title': 'name123'\n *           }\n *        }\n *      }).then(output => {\n *        console.info(output.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      {\n *        \"id\": 111,\n *        \"price_index\": 3,\n *        \"show_in_lists\": true,\n *        \"title\": \"name123\",\n *        \"variant_price_method_name\": \"price3\"\n *      }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.id Required, price kind id\n * @param {object} options.pricekind Required, price kind\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function editPriceKind(options, id) {\n  return put({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `price_kinds/${options.id}`,\n    obj: options.pricekind\n  });\n}\n",
+    "static": true,
+    "longname": "/home/pomeo/www/github/node-insales/lib/api/pricekind.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 78,
+    "kind": "function",
+    "name": "getPriceKind",
+    "memberof": "lib/api/pricekind.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/api/pricekind.js~getPriceKind",
+    "access": "public",
+    "export": true,
+    "importPath": "insales/lib/api/pricekind.js",
+    "importStyle": "{getPriceKind}",
+    "description": "GET /admin/price_kinds/{id}.json\n\nExamples:\n\n     insales.getPriceKind({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       id: '111'\n     }).then(response => {\n       console.info(response.data);\n     }).catch(err => {\n       console.error(err);\n     });\n\nOutput:\n     {\n       \"id\": 111,\n       \"price_index\": 1,\n       \"show_in_lists\": true,\n       \"title\": \"тест 1\",\n       \"variant_price_method_name\": \"price2\"\n     }",
+    "lineNumber": 36,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.id",
+        "description": "Required, price kind id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "function",
+    "name": "listPriceKind",
+    "memberof": "lib/api/pricekind.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/api/pricekind.js~listPriceKind",
+    "access": "public",
+    "export": true,
+    "importPath": "insales/lib/api/pricekind.js",
+    "importStyle": "{listPriceKind}",
+    "description": "GET /admin/price_kinds.json\n\nExamples:\n\n     insales.listPriceKind({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n     }).then(response => {\n       console.info(response.data);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     [\n       {\n           \"id\": 111,\n           \"price_index\": 1,\n           \"show_in_lists\": true,\n           \"title\": \"тест 1\",\n           \"variant_price_method_name\": \"price2\"\n       },\n       {\n           \"id\": 112,\n           \"price_index\": 2,\n           \"show_in_lists\": true,\n           \"title\": \"тест2\",\n           \"variant_price_method_name\": \"price3\"\n       }\n     ]",
+    "lineNumber": 82,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "function",
+    "name": "createPriceKind",
+    "memberof": "lib/api/pricekind.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/api/pricekind.js~createPriceKind",
+    "access": "public",
+    "export": true,
+    "importPath": "insales/lib/api/pricekind.js",
+    "importStyle": "{createPriceKind}",
+    "description": "POST /admin/price_kinds.json\n\nExamples:\n\n     insales.createPriceKind({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       pricekind: {\n          'price_kind': {\n            'title': 'name'\n          }\n       }\n     }).then(output => {\n       console.info(output.data);\n     }).catch(err => {\n       console.error(err);\n     });\n\nOutput:\n\n     {\n       \"id\": 113,\n       \"price_index\": 3,\n       \"show_in_lists\": true,\n       \"title\": \"name\",\n       \"variant_price_method_name\": \"price3\"\n     }",
+    "lineNumber": 126,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.pricekind",
+        "description": "Required, price kind"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "function",
+    "name": "removePriceKind",
+    "memberof": "lib/api/pricekind.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/api/pricekind.js~removePriceKind",
+    "access": "public",
+    "export": true,
+    "importPath": "insales/lib/api/pricekind.js",
+    "importStyle": "{removePriceKind}",
+    "description": "DELETE /admin/price_kinds/{id}.json\n\nExamples:\n\n     insales.removePriceKind({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       id: '111'\n     }).then(output => {\n       console.info(output.statusCode);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     200",
+    "lineNumber": 160,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.id",
+        "description": "Required, price kind id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "function",
+    "name": "editPriceKind",
+    "memberof": "lib/api/pricekind.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/api/pricekind.js~editPriceKind",
+    "access": "public",
+    "export": true,
+    "importPath": "insales/lib/api/pricekind.js",
+    "importStyle": "{editPriceKind}",
+    "description": "PUT /admin/price_kinds/{id}.xml\n\nExamples:\n\n     insales.editPriceKind({\n       token: '1234567890',\n       url: 'shop-test.myinsales.ru',\n       id: '111',\n       pricekind: {\n          'price_kind': {\n            'title': 'name123'\n          }\n       }\n     }).then(output => {\n       console.info(output.data);\n     }).catch(err => {\n       console.error(err);\n     });\nOutput:\n\n     {\n       \"id\": 111,\n       \"price_index\": 3,\n       \"show_in_lists\": true,\n       \"title\": \"name123\",\n       \"variant_price_method_name\": \"price3\"\n     }",
+    "lineNumber": 205,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.token",
+        "description": "Required, access token for shop"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.url",
+        "description": "Required, shop url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number",
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.id",
+        "description": "Required, price kind id"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.pricekind",
+        "description": "Required, price kind"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Required, app id"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "file",
     "name": "lib/api/product.js",
     "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { put } from '../methods/put';\nimport { remove } from '../methods/remove';\n\n/**\n * GET /admin/products/{id}.xml\n *\n * Examples:\n *\n *      insales.getProduct({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        productid: '12345'\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { product:\n *        { archived: 'false',\n *          available: 'true',\n *          'canonical-url-collection-id': '',\n *          'category-id': '1',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          'is-hidden': 'false',\n *          'sort-weight': '',\n *          unit: 'pcs',\n *          'updated-at': '2011-11-11 11:11:11 +0300',\n *          title: 'Product 1',\n *          'short-description': '',\n *          permalink: 'product-1',\n *          'html-title': '',\n *          'meta-keywords': '',\n *          'meta-description': '',\n *          'currency-code': 'RUR',\n *          'collections-ids': '',\n *          images: '',\n *          'option-names': '',\n *          properties: '',\n *          characteristics: '',\n *          'product-field-values': '',\n *          variants: { variant: [Object] },\n *          description: '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.productid Required, product id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getProduct(options, id) {\n  return get({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `products/${options.productid}`\n  });\n}\n\n/**\n * POST /admin/products.xml\n *\n * Examples:\n *\n *      insales.createProduct({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        product: {\n *          'product': {\n *            'category-id': '1',\n *            'title': 'Product 1',\n *            'variants-attributes': {\n *              'variants-attribute': {\n *                'sku': '12345',\n *                'quantity': '1',\n *                'price': '100'\n *              }\n *            }\n *          }\n *        }\n *      }).then(output => {\n *        console.info(output.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { product:\n *        { archived: 'false',\n *          available: '',\n *          'canonical-url-collection-id': '',\n *          'category-id': '1',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          'is-hidden': 'false',\n *          'sort-weight': '',\n *          unit: 'pcs',\n *          'updated-at': '2011-11-11 11:11:11 +0300',\n *          title: 'Product 1',\n *          'short-description': '',\n *          permalink: 'product-1',\n *          'html-title': '',\n *          'meta-keywords': '',\n *          'meta-description': '',\n *          'currency-code': 'RUR',\n *          'collections-ids': '',\n *          images: '',\n *          'option-names': '',\n *          properties: '',\n *          characteristics: '',\n *          'product-field-values': '',\n *          variants: { variant: [Object] },\n *          description: '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {object} options.coupon Required, product\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createProduct(options, id) {\n  return post({\n    id,\n    token: options.token,\n    url: options.url,\n    api: 'products',\n    obj: options.product\n  });\n}\n\n/**\n * PUT /admin/products/{id}.xml\n *\n * Examples:\n *\n *      insales.editProduct({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        productid: '12345',\n *        product: {\n *          'product': {\n *            'title': 'Product 2',\n *          }\n *        }\n *      }).then(output => {\n *        console.info(output.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { product:\n *        { archived: 'false',\n *          available: '',\n *          'canonical-url-collection-id': '',\n *          'category-id': '1',\n *          'created-at': '2011-11-11 11:11:11 +0300',\n *          id: '12345',\n *          'is-hidden': 'false',\n *          'sort-weight': '',\n *          unit: 'pcs',\n *          'updated-at': '2011-11-11 11:11:11 +0300',\n *          title: 'Product 2',\n *          'short-description': '',\n *          permalink: 'product-1',\n *          'html-title': '',\n *          'meta-keywords': '',\n *          'meta-description': '',\n *          'currency-code': 'RUR',\n *          'collections-ids': '',\n *          images: '',\n *          'option-names': '',\n *          properties: '',\n *          characteristics: '',\n *          'product-field-values': '',\n *          variants: { variant: [Object] },\n *          description: '' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.productid Required, product id\n * @param {object} options.product Required, product\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function editProduct(options, id) {\n  return put({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `products/${options.productid}`,\n    obj: options.product\n  });\n}\n\n/**\n * DELETE /admin/products/{id}.xml\n *\n * Examples:\n *\n *      insales.removeProduct({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        productid: '12345'\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {number|string} options.productid Required, product id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function removeProduct(options, id) {\n  return remove({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `products/${options.productid}`\n  });\n}\n\n/**\n * GET /admin/products.xml\n *\n * Examples:\n *\n *      insales.listProduct({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *      }).then(response => {\n *        console.info(response.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { products:\n *        { product:\n *           [{ archived: 'false',\n *             available: '',\n *             'canonical-url-collection-id': '',\n *             'category-id': '1',\n *             'created-at': '2011-11-11 11:11:11 +0300',\n *             id: '12345',\n *             'is-hidden': 'false',\n *             'sort-weight': '',\n *             unit: 'pcs',\n *             'updated-at': '2011-11-11 11:11:11 +0300',\n *             title: 'Product 1',\n *             'short-description': '',\n *             permalink: 'product-1',\n *             'html-title': '',\n *             'meta-keywords': '',\n *             'meta-description': '',\n *             'currency-code': 'RUR',\n *             'collections-ids': '',\n *             images: '',\n *             'option-names': '',\n *             properties: '',\n *             characteristics: '',\n *             'product-field-values': '',\n *             variants: { variant: [Object] },\n *             description: '' },\n *           { archived: 'false',\n *             available: '',\n *             'canonical-url-collection-id': '',\n *             'category-id': '1',\n *             'created-at': '2011-11-11 11:11:11 +0300',\n *             id: '123456',\n *             'is-hidden': 'false',\n *             'sort-weight': '',\n *             unit: 'pcs',\n *             'updated-at': '2011-11-11 11:11:11 +0300',\n *             title: 'Product 2',\n *             'short-description': '',\n *             permalink: 'product-2',\n *             'html-title': '',\n *             'meta-keywords': '',\n *             'meta-description': '',\n *             'currency-code': 'RUR',\n *             'collections-ids': '',\n *             images: '',\n *             'option-names': '',\n *             properties: '',\n *             characteristics: '',\n *             'product-field-values': '',\n *             variants: { variant: [Object] },\n *             description: '' }]}}\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {string|number} [options.page=1] Page\n * @param {string|number} [options.per_page=100] Per page\n * @param {string} [options.updated_since] Products updated since. Format YYYY-MM-DD\n * @param {boolean} [options.deleted] Deleted products\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function listProduct(options, id) {\n  const query = {};\n  query.page = options.page ? options.page : 1;\n  query.per_page = options.per_page ? options.per_page : 100;\n  if ((options.updated_since) && (options.updated_since !== false)) {\n    query.updated_since = options.updated_since;\n  }\n  if (options.deleted === true) {\n    query.deleted = true;\n  }\n\n  return get({\n    id,\n    token: options.token,\n    url: options.url,\n    api: 'products',\n    query\n  });\n}\n",
     "static": true,
@@ -2597,7 +3026,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 78,
+    "__docId__": 84,
     "kind": "function",
     "name": "getProduct",
     "memberof": "lib/api/product.js",
@@ -2681,7 +3110,7 @@
     }
   },
   {
-    "__docId__": 79,
+    "__docId__": 85,
     "kind": "function",
     "name": "createProduct",
     "memberof": "lib/api/product.js",
@@ -2764,7 +3193,7 @@
     }
   },
   {
-    "__docId__": 80,
+    "__docId__": 86,
     "kind": "function",
     "name": "editProduct",
     "memberof": "lib/api/product.js",
@@ -2858,7 +3287,7 @@
     }
   },
   {
-    "__docId__": 81,
+    "__docId__": 87,
     "kind": "function",
     "name": "removeProduct",
     "memberof": "lib/api/product.js",
@@ -2942,7 +3371,7 @@
     }
   },
   {
-    "__docId__": 82,
+    "__docId__": 88,
     "kind": "function",
     "name": "listProduct",
     "memberof": "lib/api/product.js",
@@ -3061,7 +3490,7 @@
     }
   },
   {
-    "__docId__": 83,
+    "__docId__": 89,
     "kind": "file",
     "name": "lib/api/recurringcharge.js",
     "content": "import { get } from '../methods/get';\nimport { post } from '../methods/post';\nimport { put } from '../methods/put';\nimport { remove } from '../methods/remove';\n\n/**\n * GET /admin/recurring_application_charge.xml\n *\n * Examples:\n *\n *      insales.getRecurring({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru'\n *      }).then(output => {\n *        console.info(output.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'recurring-application-charge':\n *        { blocked: 'false',\n *          'created-at': '2011-11-11T11:11:11+03:00',\n *          id: '12345',\n *          monthly: '1000.0',\n *          'paid-till': '2011-11-21',\n *          'trial-expired-at': '2011-12-11',\n *          'updated-at': '2011-11-11T11:11:11+03:00' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function getRecurring(options, id) {\n  return get({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `recurring_application_charge`\n  });\n}\n\n/**\n * POST /admin/recurring_application_charge.xml\n *\n * Examples:\n *\n *      insales.createRecurring({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        price: 1000\n *      }).then(output => {\n *        console.info(output.data);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'recurring-application-charge':\n *        { blocked: 'false',\n *          'created-at': '2011-11-11T11:11:11+03:00',\n *          id: '12345',\n *          monthly: '1000.0',\n *          'paid-till': '2011-11-21',\n *          'trial-expired-at': '2011-12-11',\n *          'updated-at': '2011-11-11T11:11:11+03:00' } }\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {string|number} options.price Required, price\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function createRecurring(options, id) {\n  const charge = {\n    'recurring-application-charge': {\n      monthly: options.price\n    }\n  };\n\n  return post({\n    id,\n    token: options.token,\n    url: options.url,\n    api: 'recurring_application_charge',\n    obj: charge\n  });\n}\n\n/**\n * PUT /admin/recurring_application_charge.xml\n *\n * Examples:\n *\n *      insales.changeRecurring({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru',\n *        price: 1010\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {string|number} options.price Required, price\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function changeRecurring(options, id) {\n  const charge = {\n    'recurring-application-charge': {\n      monthly: options.price\n    }\n  };\n\n  return put({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `recurring_application_charge`,\n    obj: charge\n  });\n}\n\n/**\n * DELETE /admin/recurring_application_charge.xml\n *\n * Examples:\n *\n *      insales.changeRecurring({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru'\n *      }).then(output => {\n *        console.info(output.response.statusCode);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      200\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function removeRecurring(options, id) {\n  return remove({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `recurring_application_charge`\n  });\n}\n",
@@ -3072,7 +3501,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 84,
+    "__docId__": 90,
     "kind": "function",
     "name": "getRecurring",
     "memberof": "lib/api/recurringcharge.js",
@@ -3145,7 +3574,7 @@
     }
   },
   {
-    "__docId__": 85,
+    "__docId__": 91,
     "kind": "function",
     "name": "createRecurring",
     "memberof": "lib/api/recurringcharge.js",
@@ -3229,7 +3658,7 @@
     }
   },
   {
-    "__docId__": 86,
+    "__docId__": 92,
     "kind": "function",
     "name": "changeRecurring",
     "memberof": "lib/api/recurringcharge.js",
@@ -3313,7 +3742,7 @@
     }
   },
   {
-    "__docId__": 87,
+    "__docId__": 93,
     "kind": "function",
     "name": "removeRecurring",
     "memberof": "lib/api/recurringcharge.js",
@@ -3386,7 +3815,7 @@
     }
   },
   {
-    "__docId__": 88,
+    "__docId__": 94,
     "kind": "file",
     "name": "lib/api/themes.js",
     "content": "import { get } from '../methods/get';\n\n/**\n * GET /admin/themes.xml\n *\n * Examples:\n *\n *      insales.listThemes({\n *        token: '1234567890',\n *        url: 'shop-test.myinsales.ru'\n *      }).then(response => {\n *        console.info(response.data.themes);\n *      }).catch(err => {\n *        console.error(err);\n *      });\n * Output:\n *\n *      { 'themes':\n *         { theme:\n*             [ { 'created-at': '2016-05-12 20:12:08 +0300',\n*                 description: '',\n*                 'errors-text': '',\n*                 id: '626874',\n*                 'is-mobile': 'false',\n*                 'is-published': 'false',\n*                 title: 'Custom',\n*                 'updated-at': '2016-06-17 07:59:26 +0300' },\n*               { 'created-at': '2016-06-01 21:55:16 +0300',\n*                 description: '',\n*                 'errors-text': '',\n*                 id: '634252',\n*                 'is-mobile': 'false',\n*                 'is-published': 'true',\n*                 title: 'Custom2',\n*                 'updated-at': '2016-07-14 06:19:55 +0300' }]}};\n * @param {Object} options\n * @param {string} options.token Required, access token for shop\n * @param {string} options.url Required, shop url\n * @param {Number|String} options.theme Required, theme id\n * @param {Number|String} id Required, app id\n * @returns {Promise}\n */\nexport function listThemes(options, id) {\n  return get({\n    id,\n    token: options.token,\n    url: options.url,\n    api: `themes`\n  });\n}\n",
@@ -3397,7 +3826,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 89,
+    "__docId__": 95,
     "kind": "function",
     "name": "listThemes",
     "memberof": "lib/api/themes.js",
@@ -3481,7 +3910,7 @@
     }
   },
   {
-    "__docId__": 90,
+    "__docId__": 96,
     "kind": "file",
     "name": "lib/api/token.js",
     "content": "import crypto from 'crypto';\n\n/**\n * Generate access token for shop\n *\n * Examples:\n *\n *      insales.token('12345');\n *\n * Output:\n *\n *      8cfa2282b17de0a598c010f5f0109e7d\n * @param {String|Number} token Required, token receive when install app\n * @param {String|Number} secret Required, app secret\n * @returns {String} access token\n */\nexport function token(token, secret) {\n  return crypto.createHash('md5')\n    .update(token + secret)\n    .digest('hex');\n}\n",
@@ -3492,7 +3921,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 91,
+    "__docId__": 97,
     "kind": "function",
     "name": "token",
     "memberof": "lib/api/token.js",
@@ -3546,7 +3975,7 @@
     }
   },
   {
-    "__docId__": 92,
+    "__docId__": 98,
     "kind": "file",
     "name": "lib/error.js",
     "content": "/**\n * Output Request-Promise error, used to create Promise reject\n *\n * @param {Object} response Required, full response data\n * @returns {Object}\n * @property {String} type Name of error\n * @property {String} url Url where error happen\n * @property {String} method Http method\n * @property {String} msg Error message\n * @property {Object} response Full response\n * @property {Number} statusCode Status code\n */\nexport default response => {\n  return {\n    type: response.name,\n    url: response.options.uri,\n    method: response.options.method,\n    msg: response.error,\n    response,\n    statusCode: response.statusCode\n  };\n};\n",
@@ -3557,7 +3986,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 93,
+    "__docId__": 99,
     "kind": "function",
     "name": "error",
     "memberof": "lib/error.js",
@@ -3661,7 +4090,7 @@
     }
   },
   {
-    "__docId__": 94,
+    "__docId__": 100,
     "kind": "file",
     "name": "lib/index.js",
     "content": "module.exports = require('./api').default;\n",
@@ -3672,7 +4101,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 95,
+    "__docId__": 101,
     "kind": "file",
     "name": "lib/methods/get.js",
     "content": "import rp          from 'request-promise';\nimport options     from '../options';\nimport { request } from '../request';\n\nconst opt = Object.create(options);\n\n/**\n * GET request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @param {object} [conn.query] URL query string\n * @returns {Promise}\n */\nexport function get(conn) {\n  if (conn.query) opt.qs = conn.query;\n\n  opt.uri = `${opt.scheme}://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.json`;\n  opt.method = 'GET';\n\n  return request(rp(opt));\n}\n",
@@ -3683,7 +4112,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 96,
+    "__docId__": 102,
     "kind": "variable",
     "name": "opt",
     "memberof": "lib/methods/get.js",
@@ -3704,7 +4133,7 @@
     "ignore": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 103,
     "kind": "function",
     "name": "get",
     "memberof": "lib/methods/get.js",
@@ -3796,7 +4225,7 @@
     }
   },
   {
-    "__docId__": 98,
+    "__docId__": 104,
     "kind": "file",
     "name": "lib/methods/post.js",
     "content": "import rp          from 'request-promise';\nimport { request } from '../request';\nimport options from '../options';\n\nconst opt = Object.create(options);\n\n/**\n * POST request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @param {object} [conn.obj] HTTP POST data\n * @returns {Promise}\n */\nexport function post(conn) {\n  if (conn.obj !== undefined) {\n    opt.body = conn.obj;\n  }\n\n  opt.uri = `${opt.scheme}://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.json`;\n  opt.method = 'POST';\n\n  return request(rp(opt));\n}\n",
@@ -3807,7 +4236,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 99,
+    "__docId__": 105,
     "kind": "variable",
     "name": "opt",
     "memberof": "lib/methods/post.js",
@@ -3828,7 +4257,7 @@
     "ignore": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 106,
     "kind": "function",
     "name": "post",
     "memberof": "lib/methods/post.js",
@@ -3920,7 +4349,7 @@
     }
   },
   {
-    "__docId__": 101,
+    "__docId__": 107,
     "kind": "file",
     "name": "lib/methods/put.js",
     "content": "import rp          from 'request-promise';\nimport { request } from '../request';\nimport options from '../options';\n\nconst opt = Object.create(options);\n\n/**\n * PUT request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @param {object} conn.obj HTTP PUT data\n * @returns {Promise}\n */\nexport function put(conn) {\n  if (conn.obj !== undefined) {\n    opt.body = conn.obj;\n  }\n\n  opt.uri = `${opt.scheme}://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.json`;\n  opt.method = 'PUT';\n\n  return request(rp(opt));\n}\n",
@@ -3931,7 +4360,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 102,
+    "__docId__": 108,
     "kind": "variable",
     "name": "opt",
     "memberof": "lib/methods/put.js",
@@ -3952,7 +4381,7 @@
     "ignore": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 109,
     "kind": "function",
     "name": "put",
     "memberof": "lib/methods/put.js",
@@ -4044,7 +4473,7 @@
     }
   },
   {
-    "__docId__": 104,
+    "__docId__": 110,
     "kind": "file",
     "name": "lib/methods/remove.js",
     "content": "import rp          from 'request-promise';\nimport { request } from '../request';\nimport options from '../options';\n\nconst opt = Object.create(options);\n\n/**\n * DELETE request\n *\n * @param {Object} conn\n * @param {string} conn.id Required, app id\n * @param {string} conn.token Required, token to access shop\n * @param {string} conn.url Required, shop url\n * @param {string} conn.api Required, api endpoint\n * @returns {Promise}\n */\nexport function remove(conn) {\n  opt.uri = `${opt.scheme}://${conn.id}:${conn.token}@${conn.url}/admin/${conn.api}.json`;\n  opt.method = 'DELETE';\n\n  return request(rp(opt));\n}\n",
@@ -4055,7 +4484,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 105,
+    "__docId__": 111,
     "kind": "variable",
     "name": "opt",
     "memberof": "lib/methods/remove.js",
@@ -4076,7 +4505,7 @@
     "ignore": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 112,
     "kind": "function",
     "name": "remove",
     "memberof": "lib/methods/remove.js",
@@ -4158,7 +4587,7 @@
     }
   },
   {
-    "__docId__": 107,
+    "__docId__": 113,
     "kind": "file",
     "name": "lib/options.js",
     "content": "/**\n * Options for Restler\n *\n * @returns {Object}\n */\nexport default {\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  json: true,\n  timeout: 30000,\n  resolveWithFullResponse: true,\n  scheme: 'https'\n};\n",
@@ -4169,7 +4598,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 108,
+    "__docId__": 114,
     "kind": "file",
     "name": "lib/output.js",
     "content": "/**\n * Output Request-Promise response, used to create Promise resolve\n *\n * @param {Object} response Required\n * @returns {Object}\n * @property {Object} data Response body\n * @property {Object} response Full response\n * @property {Number} statusCode Status code\n * @property {Object} callLimits API call limit\n * @property {number} callLimits.current\n * @property {number} callLimits.remaining\n * @property {Number} callLimits.max\n */\nexport default response => {\n  return {\n    data: response.body,\n    response,\n    statusCode: response.statusCode,\n    callLimits: {\n      remaining: response.headers['api-usage-limit'].split('/')[1] - response.headers['api-usage-limit'].split('/')[0],\n      current: Number(response.headers['api-usage-limit'].split('/')[0]),\n      max: Number(response.headers['api-usage-limit'].split('/')[1])\n    }\n  };\n};\n",
@@ -4180,7 +4609,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 109,
+    "__docId__": 115,
     "kind": "function",
     "name": "output",
     "memberof": "lib/output.js",
@@ -4294,7 +4723,7 @@
     }
   },
   {
-    "__docId__": 110,
+    "__docId__": 116,
     "kind": "file",
     "name": "lib/request.js",
     "content": "import error  from './error';\nimport output from './output';\n\n/**\n * Events of Request-Promise\n *\n * @param {Object} r Required, request-promise\n * @returns {Promise}\n */\nexport function request(r) {\n  return new Promise((resolve, reject) => {\n    r.then(response => {\n      resolve(output(response));\n    }).catch(err => {\n      reject(error(err));\n    });\n  });\n}\n",
@@ -4305,7 +4734,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 111,
+    "__docId__": 117,
     "kind": "function",
     "name": "request",
     "memberof": "lib/request.js",
@@ -4348,7 +4777,7 @@
   },
   {
     "kind": "index",
-    "content": "InSales\n============\n[![Build Status](https://api.travis-ci.org/pomeo/node-insales.png)](http://travis-ci.org/pomeo/node-insales)\n[![Coverage Status](https://img.shields.io/coveralls/pomeo/node-insales.svg)](https://coveralls.io/r/pomeo/node-insales)\n[![Dependencies](https://david-dm.org/pomeo/node-insales.png)](https://david-dm.org/pomeo/node-insales)\n[![NPM version](https://badge.fury.io/js/insales.svg)](http://badge.fury.io/js/insales)\n[![ESDoc](https://pomeo.github.io/node-insales/badge.svg)](https://pomeo.github.io/node-insales)\n\nInSales module that allows you to communicate with the [InSales API](http://api.insales.ru) from node.js\n\n## Installation\n\n```\nnpm install insales --save\n```\n\n## Usage\n\n```js\n// Import a module\nimport InSales from 'insales';\n// Create an instance with your API credentials\nconst insales = InSales({\n  id: 'your app id',\n  secret: 'your app secret'\n});\n\n// Get things done\ninsales.getAccount({\n  token: 'token for shop',\n  url: 'shop-test.myinsales.ru'\n}).then(output => {\n  console.info(output.data);\n}).catch(err => {\n  console.error(err);\n});\n```\n\n## API limits\n\n```js\ninsales.getAccount({\n  token: 'token for shop',\n  url: 'shop-test.myinsales.ru'\n}).then(output => {\n  console.info(output.callLimits); //  { remaining: 498, current: 2, max: 500 } }\n})\n```\n\n## Methods\n\n[getAccount](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccount)  \n[createCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-createCharge)  \n[getCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-getCharge)  \n[listCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-listCharge)  \n[removeCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCharge)  \n[getCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollection)  \n[listCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollection)  \n[createCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-createCoupon)  \n[editCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-editCoupon)  \n[getCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-getCoupon)  \n[listCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-listCoupon)  \n[removeCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCoupon)  \n[createFile](https://pomeo.github.io/node-insales/function/index.html#static-function-createFile)  \n[getFile](https://pomeo.github.io/node-insales/function/index.html#static-function-getFile)  \n[removeFile](https://pomeo.github.io/node-insales/function/index.html#static-function-removeFile)  \n[uploadFile](https://pomeo.github.io/node-insales/function/index.html#static-function-uploadFile)  \n[createJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-createJsTag)  \n[createProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-createProduct)  \n[getProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-getProduct)  \n[listProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-listProduct)  \n[createRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-createRecurring)  \n[getRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring)  \n[removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  \n[token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)\n\n## TODO\nAdd other APIs\n",
+    "content": "InSales\n============\n[![Build Status](https://api.travis-ci.org/pomeo/node-insales.png)](http://travis-ci.org/pomeo/node-insales)\n[![Coverage Status](https://img.shields.io/coveralls/pomeo/node-insales.svg)](https://coveralls.io/r/pomeo/node-insales)\n[![Dependencies](https://david-dm.org/pomeo/node-insales.png)](https://david-dm.org/pomeo/node-insales)\n[![NPM version](https://badge.fury.io/js/insales.svg)](http://badge.fury.io/js/insales)\n[![ESDoc](https://pomeo.github.io/node-insales/badge.svg)](https://pomeo.github.io/node-insales)\n\nInSales module that allows you to communicate with the [InSales API](http://api.insales.ru) from node.js\n\n## Installation\n\n```\nnpm install insales --save\n```\n\n## Usage\n\n```js\n// Import a module\nimport InSales from 'insales';\n// Create an instance with your API credentials\nconst insales = InSales({\n  id: 'your app id',\n  secret: 'your app secret'\n});\n\n// Get things done\ninsales.getAccount({\n  token: 'token for shop',\n  url: 'shop-test.myinsales.ru'\n}).then(output => {\n  console.info(output.data);\n}).catch(err => {\n  console.error(err);\n});\n```\n\n## API limits\n\n```js\ninsales.getAccount({\n  token: 'token for shop',\n  url: 'shop-test.myinsales.ru'\n}).then(output => {\n  console.info(output.callLimits); //  { remaining: 498, current: 2, max: 500 } }\n})\n```\n\n## Methods\n#### Account\n[getAccount](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccount)  \n#### Charge\n[createCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-createCharge)  \n[getCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-getCharge)  \n[listCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-listCharge)  \n[removeCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCharge)  \n#### Collection\n[getCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollection)  \n[listCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollection)  \n#### Coupon\n[createCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-createCoupon)  \n[editCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-editCoupon)  \n[getCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-getCoupon)  \n[listCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-listCoupon)  \n[removeCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCoupon)  \n#### File\n[createFile](https://pomeo.github.io/node-insales/function/index.html#static-function-createFile)  \n[getFile](https://pomeo.github.io/node-insales/function/index.html#static-function-getFile)  \n[removeFile](https://pomeo.github.io/node-insales/function/index.html#static-function-removeFile)  \n[uploadFile](https://pomeo.github.io/node-insales/function/index.html#static-function-uploadFile)  \n#### JsTag\n[createJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-createJsTag)  \n#### Product\n[createProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-createProduct)  \n[getProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-getProduct)  \n[listProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-listProduct)  \n#### Recurring\n[createRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-createRecurring)  \n[getRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring)  \n[removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  \n#### Token\n[token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)\n\n## TODO\nAdd other APIs\n",
     "longname": "/home/pomeo/www/github/node-insales/README.md",
     "name": "./README.md",
     "static": true,
@@ -4356,7 +4785,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"insales\",\n  \"homepage\": \"https://github.com/pomeo/node-insales\",\n  \"version\": \"2.0.0\",\n  \"description\": \"Insales.ru module for node.js\",\n  \"keywords\": [\n    \"insales\",\n    \"insales.ru\",\n    \"api\"\n  ],\n  \"author\": \"Sergey Ovechkin <me@pomeo.me>\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/pomeo/node-insales.git\"\n  },\n  \"directories\": {\n    \"lib\": \"lib\",\n    \"test\": \"test\"\n  },\n  \"main\": \"index.js\",\n  \"files\": [\n    \"dist\"\n  ],\n  \"dependencies\": {\n    \"request\": \"^2.83.0\",\n    \"request-promise\": \"^4.2.2\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.0.0-beta.40\",\n    \"@babel/core\": \"^7.0.0-beta.40\",\n    \"@babel/preset-env\": \"^7.0.0-beta.40\",\n    \"@babel/register\": \"^7.0.0-beta.40\",\n    \"chai\": \"^4.1.2\",\n    \"coveralls\": \"^3.0.0\",\n    \"esdoc\": \"^1.0.4\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"istanbul\": \"^0.4.5\",\n    \"mocha\": \"^5.0.1\",\n    \"xo\": \"^0.20.3\"\n  },\n  \"scripts\": {\n    \"docs\": \"./node_modules/.bin/esdoc -c esdoc.json\",\n    \"test\": \"./node_modules/.bin/xo && make test-once\",\n    \"compile\": \"./node_modules/.bin/babel --presets @babel/preset-env -d dist/ ./lib\",\n    \"prepublish\": \"sed -i 's@ \\\"index.js\\\"@ \\\"dist/index.js\\\"@' package.json && npm run compile\",\n    \"postpublish\": \"sed -i 's@ \\\"dist/index.js\\\"@ \\\"index.js\\\"@' package.json\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/pomeo/node-insales/issues\"\n  },\n  \"xo\": {\n    \"esnext\": true,\n    \"space\": true,\n    \"rules\": {\n      \"space-before-function-paren\": [\"error\", {\n        \"anonymous\": \"always\",\n        \"named\": \"never\",\n        \"asyncArrow\": \"always\"\n      }],\n      \"curly\": 0,\n      \"object-curly-spacing\": [\"error\", \"always\"],\n      \"no-multi-spaces\": 0,\n      \"indent\": 0,\n      \"import/prefer-default-export\": 0,\n      \"camelcase\": \"warn\"\n    },\n    \"ignores\": [\n      \"test\"\n    ],\n    \"envs\": [\n      \"node\",\n      \"mocha\"\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"insales\",\n  \"homepage\": \"https://github.com/pomeo/node-insales\",\n  \"version\": \"2.0.1\",\n  \"description\": \"Insales.ru module for node.js\",\n  \"keywords\": [\n    \"insales\",\n    \"insales.ru\",\n    \"api\"\n  ],\n  \"author\": \"Sergey Ovechkin <me@pomeo.me>\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/pomeo/node-insales.git\"\n  },\n  \"directories\": {\n    \"lib\": \"lib\",\n    \"test\": \"test\"\n  },\n  \"main\": \"index.js\",\n  \"files\": [\n    \"dist\"\n  ],\n  \"dependencies\": {\n    \"request\": \"^2.83.0\",\n    \"request-promise\": \"^4.2.2\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.0.0-beta.40\",\n    \"@babel/core\": \"^7.0.0-beta.40\",\n    \"@babel/preset-env\": \"^7.0.0-beta.40\",\n    \"@babel/register\": \"^7.0.0-beta.40\",\n    \"chai\": \"^4.1.2\",\n    \"coveralls\": \"^3.0.0\",\n    \"esdoc\": \"^1.0.4\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"istanbul\": \"^0.4.5\",\n    \"mocha\": \"^5.0.1\",\n    \"xo\": \"^0.20.3\"\n  },\n  \"scripts\": {\n    \"docs\": \"./node_modules/.bin/esdoc -c esdoc.json\",\n    \"test\": \"./node_modules/.bin/xo && make test-once\",\n    \"compile\": \"./node_modules/.bin/babel --presets @babel/preset-env -d dist/ ./lib\",\n    \"prepublish\": \"sed -i 's@ \\\"index.js\\\"@ \\\"dist/index.js\\\"@' package.json && npm run compile\",\n    \"postpublish\": \"sed -i 's@ \\\"dist/index.js\\\"@ \\\"index.js\\\"@' package.json\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/pomeo/node-insales/issues\"\n  },\n  \"xo\": {\n    \"esnext\": true,\n    \"space\": true,\n    \"rules\": {\n      \"space-before-function-paren\": [\"error\", {\n        \"anonymous\": \"always\",\n        \"named\": \"never\",\n        \"asyncArrow\": \"always\"\n      }],\n      \"curly\": 0,\n      \"object-curly-spacing\": [\"error\", \"always\"],\n      \"no-multi-spaces\": 0,\n      \"indent\": 0,\n      \"import/prefer-default-export\": 0,\n      \"camelcase\": \"warn\"\n    },\n    \"ignores\": [\n      \"test\"\n    ],\n    \"envs\": [\n      \"node\",\n      \"mocha\"\n    ]\n  }\n}\n",
     "longname": "/home/pomeo/www/github/node-insales/package.json",
     "name": "package.json",
     "static": true,

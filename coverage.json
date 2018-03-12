@@ -1,7 +1,7 @@
 {
-  "coverage": "90.9%",
-  "expectCount": 44,
-  "actualCount": 40,
+  "coverage": "91.83%",
+  "expectCount": 49,
+  "actualCount": 45,
   "files": {
     "lib/api/account.js": {
       "expectCount": 1,
@@ -36,6 +36,11 @@
     "lib/api/jstag.js": {
       "expectCount": 1,
       "actualCount": 1,
+      "undocumentLines": []
+    },
+    "lib/api/pricekind.js": {
+      "expectCount": 5,
+      "actualCount": 5,
       "undocumentLines": []
     },
     "lib/api/product.js": {

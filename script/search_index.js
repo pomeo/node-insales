@@ -24,6 +24,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "insales/lib/api/pricekind.js~createpricekind",
+    "function/index.html#static-function-createPriceKind",
+    "<span>createPriceKind</span> <span class=\"search-result-import-path\">insales/lib/api/pricekind.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/api/product.js~createproduct",
     "function/index.html#static-function-createProduct",
     "<span>createProduct</span> <span class=\"search-result-import-path\">insales/lib/api/product.js</span>",
@@ -51,6 +57,12 @@ window.esdocSearchIndex = [
     "insales/lib/api/coupon.js~editcoupon",
     "function/index.html#static-function-editCoupon",
     "<span>editCoupon</span> <span class=\"search-result-import-path\">insales/lib/api/coupon.js</span>",
+    "function"
+  ],
+  [
+    "insales/lib/api/pricekind.js~editpricekind",
+    "function/index.html#static-function-editPriceKind",
+    "<span>editPriceKind</span> <span class=\"search-result-import-path\">insales/lib/api/pricekind.js</span>",
     "function"
   ],
   [
@@ -102,6 +114,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "insales/lib/api/pricekind.js~getpricekind",
+    "function/index.html#static-function-getPriceKind",
+    "<span>getPriceKind</span> <span class=\"search-result-import-path\">insales/lib/api/pricekind.js</span>",
+    "function"
+  ],
+  [
     "insales/lib/api/product.js~getproduct",
     "function/index.html#static-function-getProduct",
     "<span>getProduct</span> <span class=\"search-result-import-path\">insales/lib/api/product.js</span>",
@@ -141,6 +159,12 @@ window.esdocSearchIndex = [
     "insales/lib/api/file.js~listfile",
     "function/index.html#static-function-listFile",
     "<span>listFile</span> <span class=\"search-result-import-path\">insales/lib/api/file.js</span>",
+    "function"
+  ],
+  [
+    "insales/lib/api/pricekind.js~listpricekind",
+    "function/index.html#static-function-listPriceKind",
+    "<span>listPriceKind</span> <span class=\"search-result-import-path\">insales/lib/api/pricekind.js</span>",
     "function"
   ],
   [
@@ -195,6 +219,12 @@ window.esdocSearchIndex = [
     "insales/lib/api/file.js~removefile",
     "function/index.html#static-function-removeFile",
     "<span>removeFile</span> <span class=\"search-result-import-path\">insales/lib/api/file.js</span>",
+    "function"
+  ],
+  [
+    "insales/lib/api/pricekind.js~removepricekind",
+    "function/index.html#static-function-removePriceKind",
+    "<span>removePriceKind</span> <span class=\"search-result-import-path\">insales/lib/api/pricekind.js</span>",
     "function"
   ],
   [
@@ -561,6 +591,12 @@ window.esdocSearchIndex = [
     "lib/api/jstag.js",
     "file/lib/api/jstag.js.html",
     "lib/api/jstag.js",
+    "file"
+  ],
+  [
+    "lib/api/pricekind.js",
+    "file/lib/api/pricekind.js.html",
+    "lib/api/pricekind.js",
     "file"
   ],
   [
