@@ -71,6 +71,12 @@ insales.getAccount({
 [uploadFile](https://pomeo.github.io/node-insales/function/index.html#static-function-uploadFile)  
 #### JsTag
 [createJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-createJsTag)  
+#### Price Kind
+[createPriceKind](https://pomeo.github.io/node-insales/function/index.html#static-function-createPriceKind)  
+[editPriceKind](https://pomeo.github.io/node-insales/function/index.html#static-function-editPriceKind)  
+[getPriceKind](https://pomeo.github.io/node-insales/function/index.html#static-function-getPriceKind)  
+[listPriceKind](https://pomeo.github.io/node-insales/function/index.html#static-function-listPriceKind)  
+[removePriceKind](https://pomeo.github.io/node-insales/function/index.html#static-function-removePriceKind)  
 #### Product
 [createProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-createProduct)  
 [getProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-getProduct)  
