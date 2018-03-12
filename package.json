@@ -43,7 +43,7 @@
     "docs": "./node_modules/.bin/esdoc -c esdoc.json",
     "test": "./node_modules/.bin/xo && make test-once",
     "compile": "./node_modules/.bin/babel --presets @babel/preset-env -d dist/ ./lib",
-    "prepublish": "sed -i 's@ \"index.js\"@ \"dist/index.js\"@' package.json && npm run compile",
+    "prepare": "sed -i 's@ \"index.js\"@ \"dist/index.js\"@' package.json && npm run compile",
     "postpublish": "sed -i 's@ \"dist/index.js\"@ \"index.js\"@' package.json"
   },
   "bugs": {
