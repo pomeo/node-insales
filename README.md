@@ -87,6 +87,41 @@ insales.getAccount({
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 #### Token
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
+#### Blog
+[createBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-createBlog)  
+[editBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-editBlog)  
+[getBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-getBlog)  
+[listBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-listBlog)  
+[removeBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-removeBlog)  
+#### Article
+[createArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-createArticle)  
+[editArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-editArticle)  
+[getArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-getArticle)  
+[listArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-listArticle)  
+[removeArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-removeArticle)  
+#### Page
+[createPage](https://pomeo.github.io/node-insales/function/index.html#static-function-createPage)  
+[editPage](https://pomeo.github.io/node-insales/function/index.html#static-function-editPage)  
+[getPage](https://pomeo.github.io/node-insales/function/index.html#static-function-getPage)  
+[listPage](https://pomeo.github.io/node-insales/function/index.html#static-function-listPage)  
+[removePage](https://pomeo.github.io/node-insales/function/index.html#static-function-removePage)  
+#### Menu
+[createMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-createMenu)  
+[editMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-editMenu)  
+[getMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-getMenu)  
+[listMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-listMenu)  
+[removeMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-removeMenu)  
+#### Menu Item
+[createMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-createMenuItem)  
+[editMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-editMenuItem)  
+[getMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-getMenuItem)  
+[listMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-listMenuItem)  
+[removeMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-removeMenuItem)  
+#### Redirect
+[createRedirect](https://pomeo.github.io/node-insales/function/index.html#static-function-createRedirect)  
+[getRedirect](https://pomeo.github.io/node-insales/function/index.html#static-function-getRedirect)  
+[listRedirect](https://pomeo.github.io/node-insales/function/index.html#static-function-listRedirect)  
+[removeRedirect](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRedirect)  
 
 ## TODO
 Add other APIs
