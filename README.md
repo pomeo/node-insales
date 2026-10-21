@@ -65,12 +65,16 @@ insales.getAccount({
 [listCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-listCoupon)  
 [removeCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCoupon)  
 #### File
-[createFile](https://pomeo.github.io/node-insales/function/index.html#static-function-createFile)  
 [getFile](https://pomeo.github.io/node-insales/function/index.html#static-function-getFile)  
+[listFile](https://pomeo.github.io/node-insales/function/index.html#static-function-listFile)  
 [removeFile](https://pomeo.github.io/node-insales/function/index.html#static-function-removeFile)  
 [uploadFile](https://pomeo.github.io/node-insales/function/index.html#static-function-uploadFile)  
 #### JsTag
 [createJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-createJsTag)  
+[editJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-editJsTag)  
+[getJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-getJsTag)  
+[listJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-listJsTag)  
+[removeJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-removeJsTag)  
 #### Price Kind
 [createPriceKind](https://pomeo.github.io/node-insales/function/index.html#static-function-createPriceKind)  
 [editPriceKind](https://pomeo.github.io/node-insales/function/index.html#static-function-editPriceKind)  
@@ -87,6 +91,12 @@ insales.getAccount({
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 #### Token
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
+#### Review
+[createReview](https://pomeo.github.io/node-insales/function/index.html#static-function-createReview)  
+[editReview](https://pomeo.github.io/node-insales/function/index.html#static-function-editReview)  
+[getReview](https://pomeo.github.io/node-insales/function/index.html#static-function-getReview)  
+[listReview](https://pomeo.github.io/node-insales/function/index.html#static-function-listReview)  
+[removeReview](https://pomeo.github.io/node-insales/function/index.html#static-function-removeReview)  
 
 ## TODO
 Add other APIs
