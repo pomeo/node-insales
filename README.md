@@ -152,6 +152,33 @@ insales.getAccount({
 [getCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-getCategory)  
 [listCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-listCategory)  
 [removeCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCategory)  
+#### Property
+[createProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-createProperty)  
+[editProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-editProperty)  
+[getProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-getProperty)  
+[listProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-listProperty)  
+[removeProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-removeProperty)  
+#### Characteristic
+[createCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-createCharacteristic)  
+[editCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-editCharacteristic)  
+[getCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-getCharacteristic)  
+[listCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-listCharacteristic)  
+[removeCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCharacteristic)  
+#### Option Name
+[createOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-createOptionName)  
+[editOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-editOptionName)  
+[getOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-getOptionName)  
+[listOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-listOptionName)  
+[removeOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOptionName)  
+#### Option Value
+[createOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-createOptionValue)  
+[editOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editOptionValue)  
+[getOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getOptionValue)  
+[getOptionValueDestroyStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-getOptionValueDestroyStatus)  
+[listAllOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listAllOptionValue)  
+[listOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listOptionValue)  
+[removeOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOptionValue)  
+[removeOptionValueImage](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOptionValueImage)  
 
 ## TODO
 Add other APIs
