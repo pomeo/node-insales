@@ -87,6 +87,30 @@ insales.getAccount({
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 #### Token
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
+#### Product Field
+[createProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-createProductField)  
+[editProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-editProductField)  
+[getProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-getProductField)  
+[listProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-listProductField)  
+[removeProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-removeProductField)  
+#### Product Field Value
+[createProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-createProductFieldValue)  
+[editProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editProductFieldValue)  
+[getProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getProductFieldValue)  
+[listProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listProductFieldValue)  
+[removeProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeProductFieldValue)  
+#### Variant Field
+[createVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-createVariantField)  
+[editVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-editVariantField)  
+[getVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-getVariantField)  
+[listVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-listVariantField)  
+[removeVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-removeVariantField)  
+#### Variant Field Value
+[createVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-createVariantFieldValue)  
+[editVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editVariantFieldValue)  
+[getVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getVariantFieldValue)  
+[listVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listVariantFieldValue)  
+[removeVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeVariantFieldValue)  
 
 ## TODO
 Add other APIs
