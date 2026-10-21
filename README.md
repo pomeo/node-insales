@@ -87,6 +87,24 @@ insales.getAccount({
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 #### Token
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
+#### Order
+[countOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-countOrder)  
+[createOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-createOrder)  
+[editOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-editOrder)  
+[getOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-getOrder)  
+[listOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-listOrder)  
+#### Custom Status
+[createCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-createCustomStatus)  
+[editCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-editCustomStatus)  
+[getCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-getCustomStatus)  
+[listCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-listCustomStatus)  
+[removeCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCustomStatus)  
+#### External Discount
+[createExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-createExternalDiscount)  
+[editExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-editExternalDiscount)  
+[getExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-getExternalDiscount)  
+[listExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-listExternalDiscount)  
+[removeExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-removeExternalDiscount)  
 
 ## TODO
 Add other APIs
