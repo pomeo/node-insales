@@ -49,6 +49,7 @@ insales.getAccount({
 
 ## Methods
 #### Account
+[editAccount](https://pomeo.github.io/node-insales/function/index.html#static-function-editAccount)  
 [getAccount](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccount)  
 #### Charge
 [createCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-createCharge)  
@@ -82,11 +83,56 @@ insales.getAccount({
 [getProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-getProduct)  
 [listProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-listProduct)  
 #### Recurring
+[addRecurringFreeDays](https://pomeo.github.io/node-insales/function/index.html#static-function-addRecurringFreeDays)  
 [createRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-createRecurring)  
 [getRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring)  
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 #### Token
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
+#### Domain
+[createDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-createDomain)  
+[editDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-editDomain)  
+[getDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-getDomain)  
+[listDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-listDomain)  
+[removeDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-removeDomain)  
+#### User Task
+[createUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-createUserTask)  
+[editUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-editUserTask)  
+[getUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-getUserTask)  
+[listUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-listUserTask)  
+[removeUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-removeUserTask)  
+#### Marketplace
+[createMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-createMarketplace)  
+[editMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-editMarketplace)  
+[getMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-getMarketplace)  
+[listMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-listMarketplace)  
+[removeMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-removeMarketplace)  
+#### Application Action
+[createApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-createApplicationAction)  
+[editApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-editApplicationAction)  
+[getApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-getApplicationAction)  
+[listApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-listApplicationAction)  
+[removeApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-removeApplicationAction)  
+#### Application Widget
+[createApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-createApplicationWidget)  
+[editApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-editApplicationWidget)  
+[getApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-getApplicationWidget)  
+[listApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-listApplicationWidget)  
+[removeApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-removeApplicationWidget)  
+#### Webhook
+[createWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-createWebhook)  
+[editWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-editWebhook)  
+[getWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-getWebhook)  
+[listWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-listWebhook)  
+[removeWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-removeWebhook)  
+#### OAuth App
+[createOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-createOAuthApp)  
+[editOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-editOAuthApp)  
+[getOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-getOAuthApp)  
+[listOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-listOAuthApp)  
+[removeOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOAuthApp)  
+#### Provider Token
+[createProviderToken](https://pomeo.github.io/node-insales/function/index.html#static-function-createProviderToken)  
 
 ## TODO
 Add other APIs
