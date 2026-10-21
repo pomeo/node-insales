@@ -87,6 +87,24 @@ insales.getAccount({
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 #### Token
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
+#### Delivery Variant
+[createDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-createDeliveryVariant)  
+[editDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-editDeliveryVariant)  
+[getDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-getDeliveryVariant)  
+[listDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-listDeliveryVariant)  
+[removeDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-removeDeliveryVariant)  
+#### Payment Gateway
+[createPaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-createPaymentGateway)  
+[editPaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-editPaymentGateway)  
+[getPaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-getPaymentGateway)  
+[listPaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-listPaymentGateway)  
+[removePaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-removePaymentGateway)  
+#### Outlet
+[createOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-createOutlet)  
+[editOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-editOutlet)  
+[getOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-getOutlet)  
+[listOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-listOutlet)  
+[removeOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOutlet)  
 
 ## TODO
 Add other APIs
