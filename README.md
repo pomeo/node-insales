@@ -85,6 +85,7 @@ insales.getAccount({
 [createProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-createProduct)  
 [getProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-getProduct)  
 [listProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-listProduct)  
+[countProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-countProduct)  
 #### Recurring
 [createRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-createRecurring)  
 [getRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring)  
@@ -132,6 +133,25 @@ insales.getAccount({
 [getReview](https://pomeo.github.io/node-insales/function/index.html#static-function-getReview)  
 [listReview](https://pomeo.github.io/node-insales/function/index.html#static-function-listReview)  
 [removeReview](https://pomeo.github.io/node-insales/function/index.html#static-function-removeReview)  
+#### Image
+[createImage](https://pomeo.github.io/node-insales/function/index.html#static-function-createImage)  
+[editImage](https://pomeo.github.io/node-insales/function/index.html#static-function-editImage)  
+[getImage](https://pomeo.github.io/node-insales/function/index.html#static-function-getImage)  
+[listImage](https://pomeo.github.io/node-insales/function/index.html#static-function-listImage)  
+[removeImage](https://pomeo.github.io/node-insales/function/index.html#static-function-removeImage)  
+#### Variant
+[createVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-createVariant)  
+[editVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-editVariant)  
+[editVariantGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-editVariantGroup)  
+[getVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-getVariant)  
+[listVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-listVariant)  
+[removeVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-removeVariant)  
+#### Category
+[createCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-createCategory)  
+[editCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-editCategory)  
+[getCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-getCategory)  
+[listCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-listCategory)  
+[removeCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCategory)  
 
 ## TODO
 Add other APIs
