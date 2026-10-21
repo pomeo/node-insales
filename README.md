@@ -179,6 +179,29 @@ insales.getAccount({
 [listOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listOptionValue)  
 [removeOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOptionValue)  
 [removeOptionValueImage](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOptionValueImage)  
+#### Similar
+[createSimilar](https://pomeo.github.io/node-insales/function/index.html#static-function-createSimilar)  
+[listSimilar](https://pomeo.github.io/node-insales/function/index.html#static-function-listSimilar)  
+[removeSimilar](https://pomeo.github.io/node-insales/function/index.html#static-function-removeSimilar)  
+#### Supplementary
+[createSupplementary](https://pomeo.github.io/node-insales/function/index.html#static-function-createSupplementary)  
+[listSupplementary](https://pomeo.github.io/node-insales/function/index.html#static-function-listSupplementary)  
+[removeSupplementary](https://pomeo.github.io/node-insales/function/index.html#static-function-removeSupplementary)  
+#### Accessory
+[createAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-createAccessory)  
+[editAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-editAccessory)  
+[getAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccessory)  
+[listAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-listAccessory)  
+[removeAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-removeAccessory)  
+#### Accessory Value
+[createAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-createAccessoryValue)  
+[editAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editAccessoryValue)  
+[getAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccessoryValue)  
+[listAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listAccessoryValue)  
+[removeAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeAccessoryValue)  
+[createAccessoryLink](https://pomeo.github.io/node-insales/function/index.html#static-function-createAccessoryLink)  
+[listAccessoryLink](https://pomeo.github.io/node-insales/function/index.html#static-function-listAccessoryLink)  
+[removeAccessoryLink](https://pomeo.github.io/node-insales/function/index.html#static-function-removeAccessoryLink)  
 
 ## TODO
 Add other APIs
