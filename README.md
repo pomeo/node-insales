@@ -138,12 +138,12 @@ insales.getAccount({
 [getReview](https://pomeo.github.io/node-insales/function/index.html#static-function-getReview)  
 [listReview](https://pomeo.github.io/node-insales/function/index.html#static-function-listReview)  
 [removeReview](https://pomeo.github.io/node-insales/function/index.html#static-function-removeReview)  
-#### Image
-[createImage](https://pomeo.github.io/node-insales/function/index.html#static-function-createImage)  
-[editImage](https://pomeo.github.io/node-insales/function/index.html#static-function-editImage)  
-[getImage](https://pomeo.github.io/node-insales/function/index.html#static-function-getImage)  
-[listImage](https://pomeo.github.io/node-insales/function/index.html#static-function-listImage)  
-[removeImage](https://pomeo.github.io/node-insales/function/index.html#static-function-removeImage)  
+#### Product Image
+[createProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-createProductImage)  
+[editProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-editProductImage)  
+[getProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-getProductImage)  
+[listProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-listProductImage)  
+[removeProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-removeProductImage)  
 #### Variant
 [createVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-createVariant)  
 [editVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-editVariant)  
