@@ -56,8 +56,11 @@ insales.getAccount({
 [listCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-listCharge)  
 [removeCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCharge)  
 #### Collection
+[createCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-createCollection)  
+[editCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollection)  
 [getCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollection)  
 [listCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollection)  
+[removeCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCollection)  
 #### Coupon
 [createCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-createCoupon)  
 [editCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-editCoupon)  
@@ -202,6 +205,27 @@ insales.getAccount({
 [createAccessoryLink](https://pomeo.github.io/node-insales/function/index.html#static-function-createAccessoryLink)  
 [listAccessoryLink](https://pomeo.github.io/node-insales/function/index.html#static-function-listAccessoryLink)  
 [removeAccessoryLink](https://pomeo.github.io/node-insales/function/index.html#static-function-removeAccessoryLink)  
+#### Collect
+[createCollect](https://pomeo.github.io/node-insales/function/index.html#static-function-createCollect)  
+[editCollect](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollect)  
+[listCollect](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollect)  
+[removeCollect](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCollect)  
+#### Collection Filter
+[createCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-createCollectionFilter)  
+[editCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollectionFilter)  
+[getCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollectionFilter)  
+[listCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollectionFilter)  
+[removeCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCollectionFilter)  
+#### Collection Field
+[createCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-createCollectionField)  
+[editCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollectionField)  
+[getCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollectionField)  
+[listCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollectionField)  
+[removeCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCollectionField)  
+#### Collection Field Value
+[editCollectionFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollectionFieldValue)  
+[getCollectionFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollectionFieldValue)  
+[listCollectionFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollectionFieldValue)  
 
 ## TODO
 Add other APIs
