@@ -250,6 +250,24 @@ insales.getAccount({
 [getVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getVariantFieldValue)  
 [listVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listVariantFieldValue)  
 [removeVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeVariantFieldValue)  
+#### Warehouse
+[createWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-createWarehouse)  
+[editWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-editWarehouse)  
+[getWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-getWarehouse)  
+[listWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-listWarehouse)  
+[removeWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-removeWarehouse)  
+#### Stock Currency
+[createStockCurrency](https://pomeo.github.io/node-insales/function/index.html#static-function-createStockCurrency)  
+[editStockCurrency](https://pomeo.github.io/node-insales/function/index.html#static-function-editStockCurrency)  
+[getStockCurrency](https://pomeo.github.io/node-insales/function/index.html#static-function-getStockCurrency)  
+[listStockCurrency](https://pomeo.github.io/node-insales/function/index.html#static-function-listStockCurrency)  
+#### Unit
+[listUnit](https://pomeo.github.io/node-insales/function/index.html#static-function-listUnit)  
+#### Sales Channel
+[createSalesChannel](https://pomeo.github.io/node-insales/function/index.html#static-function-createSalesChannel)  
+[getSalesChannel](https://pomeo.github.io/node-insales/function/index.html#static-function-getSalesChannel)  
+[listSalesChannel](https://pomeo.github.io/node-insales/function/index.html#static-function-listSalesChannel)  
+[removeSalesChannel](https://pomeo.github.io/node-insales/function/index.html#static-function-removeSalesChannel)  
 
 ## TODO
 Add other APIs
