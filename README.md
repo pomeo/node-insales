@@ -87,6 +87,29 @@ insales.getAccount({
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 #### Token
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
+#### Client
+[createClient](https://pomeo.github.io/node-insales/function/index.html#static-function-createClient)  
+[editClient](https://pomeo.github.io/node-insales/function/index.html#static-function-editClient)  
+[getClient](https://pomeo.github.io/node-insales/function/index.html#static-function-getClient)  
+[listClient](https://pomeo.github.io/node-insales/function/index.html#static-function-listClient)  
+[removeClient](https://pomeo.github.io/node-insales/function/index.html#static-function-removeClient)  
+#### Client Group
+[createClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-createClientGroup)  
+[editClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-editClientGroup)  
+[getClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-getClientGroup)  
+[listClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-listClientGroup)  
+[removeClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-removeClientGroup)  
+#### Bonus Transaction
+[createBonusTransaction](https://pomeo.github.io/node-insales/function/index.html#static-function-createBonusTransaction)  
+[getBonusTransaction](https://pomeo.github.io/node-insales/function/index.html#static-function-getBonusTransaction)  
+[listBonusTransaction](https://pomeo.github.io/node-insales/function/index.html#static-function-listBonusTransaction)  
+[listClientBonusTransaction](https://pomeo.github.io/node-insales/function/index.html#static-function-listClientBonusTransaction)  
+#### Field
+[createField](https://pomeo.github.io/node-insales/function/index.html#static-function-createField)  
+[editField](https://pomeo.github.io/node-insales/function/index.html#static-function-editField)  
+[getField](https://pomeo.github.io/node-insales/function/index.html#static-function-getField)  
+[listField](https://pomeo.github.io/node-insales/function/index.html#static-function-listField)  
+[removeField](https://pomeo.github.io/node-insales/function/index.html#static-function-removeField)  
 
 ## TODO
 Add other APIs
