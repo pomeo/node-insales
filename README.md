@@ -49,6 +49,7 @@ insales.getAccount({
 
 ## Methods
 #### Account
+[editAccount](https://pomeo.github.io/node-insales/function/index.html#static-function-editAccount)  
 [getAccount](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccount)  
 #### Charge
 [createCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-createCharge)  
@@ -56,8 +57,11 @@ insales.getAccount({
 [listCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-listCharge)  
 [removeCharge](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCharge)  
 #### Collection
+[createCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-createCollection)  
+[editCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollection)  
 [getCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollection)  
 [listCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollection)  
+[removeCollection](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCollection)  
 #### Coupon
 [createCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-createCoupon)  
 [editCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-editCoupon)  
@@ -65,12 +69,16 @@ insales.getAccount({
 [listCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-listCoupon)  
 [removeCoupon](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCoupon)  
 #### File
-[createFile](https://pomeo.github.io/node-insales/function/index.html#static-function-createFile)  
 [getFile](https://pomeo.github.io/node-insales/function/index.html#static-function-getFile)  
+[listFile](https://pomeo.github.io/node-insales/function/index.html#static-function-listFile)  
 [removeFile](https://pomeo.github.io/node-insales/function/index.html#static-function-removeFile)  
 [uploadFile](https://pomeo.github.io/node-insales/function/index.html#static-function-uploadFile)  
 #### JsTag
 [createJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-createJsTag)  
+[editJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-editJsTag)  
+[getJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-getJsTag)  
+[listJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-listJsTag)  
+[removeJsTag](https://pomeo.github.io/node-insales/function/index.html#static-function-removeJsTag)  
 #### Price Kind
 [createPriceKind](https://pomeo.github.io/node-insales/function/index.html#static-function-createPriceKind)  
 [editPriceKind](https://pomeo.github.io/node-insales/function/index.html#static-function-editPriceKind)  
@@ -81,12 +89,290 @@ insales.getAccount({
 [createProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-createProduct)  
 [getProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-getProduct)  
 [listProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-listProduct)  
+[countProduct](https://pomeo.github.io/node-insales/function/index.html#static-function-countProduct)  
 #### Recurring
+[addRecurringFreeDays](https://pomeo.github.io/node-insales/function/index.html#static-function-addRecurringFreeDays)  
 [createRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-createRecurring)  
 [getRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-getRecurring)  
 [removeRecurring](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRecurring)  
 #### Token
 [token](https://pomeo.github.io/node-insales/function/index.html#static-function-token)
+#### Blog
+[createBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-createBlog)  
+[editBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-editBlog)  
+[getBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-getBlog)  
+[listBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-listBlog)  
+[removeBlog](https://pomeo.github.io/node-insales/function/index.html#static-function-removeBlog)  
+#### Article
+[createArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-createArticle)  
+[editArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-editArticle)  
+[getArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-getArticle)  
+[listArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-listArticle)  
+[removeArticle](https://pomeo.github.io/node-insales/function/index.html#static-function-removeArticle)  
+#### Page
+[createPage](https://pomeo.github.io/node-insales/function/index.html#static-function-createPage)  
+[editPage](https://pomeo.github.io/node-insales/function/index.html#static-function-editPage)  
+[getPage](https://pomeo.github.io/node-insales/function/index.html#static-function-getPage)  
+[listPage](https://pomeo.github.io/node-insales/function/index.html#static-function-listPage)  
+[removePage](https://pomeo.github.io/node-insales/function/index.html#static-function-removePage)  
+#### Menu
+[createMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-createMenu)  
+[editMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-editMenu)  
+[getMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-getMenu)  
+[listMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-listMenu)  
+[removeMenu](https://pomeo.github.io/node-insales/function/index.html#static-function-removeMenu)  
+#### Menu Item
+[createMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-createMenuItem)  
+[editMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-editMenuItem)  
+[getMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-getMenuItem)  
+[listMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-listMenuItem)  
+[removeMenuItem](https://pomeo.github.io/node-insales/function/index.html#static-function-removeMenuItem)  
+#### Redirect
+[createRedirect](https://pomeo.github.io/node-insales/function/index.html#static-function-createRedirect)  
+[getRedirect](https://pomeo.github.io/node-insales/function/index.html#static-function-getRedirect)  
+[listRedirect](https://pomeo.github.io/node-insales/function/index.html#static-function-listRedirect)  
+[removeRedirect](https://pomeo.github.io/node-insales/function/index.html#static-function-removeRedirect)  
+#### Review
+[createReview](https://pomeo.github.io/node-insales/function/index.html#static-function-createReview)  
+[editReview](https://pomeo.github.io/node-insales/function/index.html#static-function-editReview)  
+[getReview](https://pomeo.github.io/node-insales/function/index.html#static-function-getReview)  
+[listReview](https://pomeo.github.io/node-insales/function/index.html#static-function-listReview)  
+[removeReview](https://pomeo.github.io/node-insales/function/index.html#static-function-removeReview)  
+#### Product Image
+[createProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-createProductImage)  
+[editProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-editProductImage)  
+[getProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-getProductImage)  
+[listProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-listProductImage)  
+[removeProductImage](https://pomeo.github.io/node-insales/function/index.html#static-function-removeProductImage)  
+#### Variant
+[createVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-createVariant)  
+[editVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-editVariant)  
+[editVariantGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-editVariantGroup)  
+[getVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-getVariant)  
+[listVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-listVariant)  
+[removeVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-removeVariant)  
+#### Category
+[createCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-createCategory)  
+[editCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-editCategory)  
+[getCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-getCategory)  
+[listCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-listCategory)  
+[removeCategory](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCategory)  
+#### Property
+[createProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-createProperty)  
+[editProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-editProperty)  
+[getProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-getProperty)  
+[listProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-listProperty)  
+[removeProperty](https://pomeo.github.io/node-insales/function/index.html#static-function-removeProperty)  
+#### Characteristic
+[createCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-createCharacteristic)  
+[editCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-editCharacteristic)  
+[getCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-getCharacteristic)  
+[listCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-listCharacteristic)  
+[removeCharacteristic](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCharacteristic)  
+#### Option Name
+[createOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-createOptionName)  
+[editOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-editOptionName)  
+[getOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-getOptionName)  
+[listOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-listOptionName)  
+[removeOptionName](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOptionName)  
+#### Option Value
+[createOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-createOptionValue)  
+[editOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editOptionValue)  
+[getOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getOptionValue)  
+[getOptionValueDestroyStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-getOptionValueDestroyStatus)  
+[listAllOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listAllOptionValue)  
+[listOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listOptionValue)  
+[removeOptionValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOptionValue)  
+[removeOptionValueImage](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOptionValueImage)  
+#### Similar
+[createSimilar](https://pomeo.github.io/node-insales/function/index.html#static-function-createSimilar)  
+[listSimilar](https://pomeo.github.io/node-insales/function/index.html#static-function-listSimilar)  
+[removeSimilar](https://pomeo.github.io/node-insales/function/index.html#static-function-removeSimilar)  
+#### Supplementary
+[createSupplementary](https://pomeo.github.io/node-insales/function/index.html#static-function-createSupplementary)  
+[listSupplementary](https://pomeo.github.io/node-insales/function/index.html#static-function-listSupplementary)  
+[removeSupplementary](https://pomeo.github.io/node-insales/function/index.html#static-function-removeSupplementary)  
+#### Accessory
+[createAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-createAccessory)  
+[editAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-editAccessory)  
+[getAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccessory)  
+[listAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-listAccessory)  
+[removeAccessory](https://pomeo.github.io/node-insales/function/index.html#static-function-removeAccessory)  
+#### Accessory Value
+[createAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-createAccessoryValue)  
+[editAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editAccessoryValue)  
+[getAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getAccessoryValue)  
+[listAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listAccessoryValue)  
+[removeAccessoryValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeAccessoryValue)  
+[createAccessoryLink](https://pomeo.github.io/node-insales/function/index.html#static-function-createAccessoryLink)  
+[listAccessoryLink](https://pomeo.github.io/node-insales/function/index.html#static-function-listAccessoryLink)  
+[removeAccessoryLink](https://pomeo.github.io/node-insales/function/index.html#static-function-removeAccessoryLink)  
+#### Collect
+[createCollect](https://pomeo.github.io/node-insales/function/index.html#static-function-createCollect)  
+[editCollect](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollect)  
+[listCollect](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollect)  
+[removeCollect](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCollect)  
+#### Collection Filter
+[createCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-createCollectionFilter)  
+[editCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollectionFilter)  
+[getCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollectionFilter)  
+[listCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollectionFilter)  
+[removeCollectionFilter](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCollectionFilter)  
+#### Collection Field
+[createCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-createCollectionField)  
+[editCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollectionField)  
+[getCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollectionField)  
+[listCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollectionField)  
+[removeCollectionField](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCollectionField)  
+#### Collection Field Value
+[editCollectionFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editCollectionFieldValue)  
+[getCollectionFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getCollectionFieldValue)  
+[listCollectionFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listCollectionFieldValue)  
+#### Product Field
+[createProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-createProductField)  
+[editProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-editProductField)  
+[getProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-getProductField)  
+[listProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-listProductField)  
+[removeProductField](https://pomeo.github.io/node-insales/function/index.html#static-function-removeProductField)  
+#### Product Field Value
+[createProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-createProductFieldValue)  
+[editProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editProductFieldValue)  
+[getProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getProductFieldValue)  
+[listProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listProductFieldValue)  
+[removeProductFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeProductFieldValue)  
+#### Variant Field
+[createVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-createVariantField)  
+[editVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-editVariantField)  
+[getVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-getVariantField)  
+[listVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-listVariantField)  
+[removeVariantField](https://pomeo.github.io/node-insales/function/index.html#static-function-removeVariantField)  
+#### Variant Field Value
+[createVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-createVariantFieldValue)  
+[editVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-editVariantFieldValue)  
+[getVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-getVariantFieldValue)  
+[listVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-listVariantFieldValue)  
+[removeVariantFieldValue](https://pomeo.github.io/node-insales/function/index.html#static-function-removeVariantFieldValue)  
+#### Warehouse
+[createWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-createWarehouse)  
+[editWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-editWarehouse)  
+[getWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-getWarehouse)  
+[listWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-listWarehouse)  
+[removeWarehouse](https://pomeo.github.io/node-insales/function/index.html#static-function-removeWarehouse)  
+#### Stock Currency
+[createStockCurrency](https://pomeo.github.io/node-insales/function/index.html#static-function-createStockCurrency)  
+[editStockCurrency](https://pomeo.github.io/node-insales/function/index.html#static-function-editStockCurrency)  
+[getStockCurrency](https://pomeo.github.io/node-insales/function/index.html#static-function-getStockCurrency)  
+[listStockCurrency](https://pomeo.github.io/node-insales/function/index.html#static-function-listStockCurrency)  
+#### Unit
+[listUnit](https://pomeo.github.io/node-insales/function/index.html#static-function-listUnit)  
+#### Sales Channel
+[createSalesChannel](https://pomeo.github.io/node-insales/function/index.html#static-function-createSalesChannel)  
+[getSalesChannel](https://pomeo.github.io/node-insales/function/index.html#static-function-getSalesChannel)  
+[listSalesChannel](https://pomeo.github.io/node-insales/function/index.html#static-function-listSalesChannel)  
+[removeSalesChannel](https://pomeo.github.io/node-insales/function/index.html#static-function-removeSalesChannel)  
+#### Order
+[countOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-countOrder)  
+[createOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-createOrder)  
+[editOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-editOrder)  
+[getOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-getOrder)  
+[listOrder](https://pomeo.github.io/node-insales/function/index.html#static-function-listOrder)  
+#### Custom Status
+[createCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-createCustomStatus)  
+[editCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-editCustomStatus)  
+[getCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-getCustomStatus)  
+[listCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-listCustomStatus)  
+[removeCustomStatus](https://pomeo.github.io/node-insales/function/index.html#static-function-removeCustomStatus)  
+#### External Discount
+[createExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-createExternalDiscount)  
+[editExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-editExternalDiscount)  
+[getExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-getExternalDiscount)  
+[listExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-listExternalDiscount)  
+[removeExternalDiscount](https://pomeo.github.io/node-insales/function/index.html#static-function-removeExternalDiscount)  
+#### Client
+[createClient](https://pomeo.github.io/node-insales/function/index.html#static-function-createClient)  
+[editClient](https://pomeo.github.io/node-insales/function/index.html#static-function-editClient)  
+[getClient](https://pomeo.github.io/node-insales/function/index.html#static-function-getClient)  
+[listClient](https://pomeo.github.io/node-insales/function/index.html#static-function-listClient)  
+[removeClient](https://pomeo.github.io/node-insales/function/index.html#static-function-removeClient)  
+#### Client Group
+[createClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-createClientGroup)  
+[editClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-editClientGroup)  
+[getClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-getClientGroup)  
+[listClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-listClientGroup)  
+[removeClientGroup](https://pomeo.github.io/node-insales/function/index.html#static-function-removeClientGroup)  
+#### Bonus Transaction
+[createBonusTransaction](https://pomeo.github.io/node-insales/function/index.html#static-function-createBonusTransaction)  
+[getBonusTransaction](https://pomeo.github.io/node-insales/function/index.html#static-function-getBonusTransaction)  
+[listBonusTransaction](https://pomeo.github.io/node-insales/function/index.html#static-function-listBonusTransaction)  
+[listClientBonusTransaction](https://pomeo.github.io/node-insales/function/index.html#static-function-listClientBonusTransaction)  
+#### Field
+[createField](https://pomeo.github.io/node-insales/function/index.html#static-function-createField)  
+[editField](https://pomeo.github.io/node-insales/function/index.html#static-function-editField)  
+[getField](https://pomeo.github.io/node-insales/function/index.html#static-function-getField)  
+[listField](https://pomeo.github.io/node-insales/function/index.html#static-function-listField)  
+[removeField](https://pomeo.github.io/node-insales/function/index.html#static-function-removeField)  
+#### Delivery Variant
+[createDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-createDeliveryVariant)  
+[editDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-editDeliveryVariant)  
+[getDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-getDeliveryVariant)  
+[listDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-listDeliveryVariant)  
+[removeDeliveryVariant](https://pomeo.github.io/node-insales/function/index.html#static-function-removeDeliveryVariant)  
+#### Payment Gateway
+[createPaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-createPaymentGateway)  
+[editPaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-editPaymentGateway)  
+[getPaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-getPaymentGateway)  
+[listPaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-listPaymentGateway)  
+[removePaymentGateway](https://pomeo.github.io/node-insales/function/index.html#static-function-removePaymentGateway)  
+#### Outlet
+[createOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-createOutlet)  
+[editOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-editOutlet)  
+[getOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-getOutlet)  
+[listOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-listOutlet)  
+[removeOutlet](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOutlet)  
+#### Domain
+[createDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-createDomain)  
+[editDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-editDomain)  
+[getDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-getDomain)  
+[listDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-listDomain)  
+[removeDomain](https://pomeo.github.io/node-insales/function/index.html#static-function-removeDomain)  
+#### User Task
+[createUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-createUserTask)  
+[editUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-editUserTask)  
+[getUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-getUserTask)  
+[listUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-listUserTask)  
+[removeUserTask](https://pomeo.github.io/node-insales/function/index.html#static-function-removeUserTask)  
+#### Marketplace
+[createMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-createMarketplace)  
+[editMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-editMarketplace)  
+[getMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-getMarketplace)  
+[listMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-listMarketplace)  
+[removeMarketplace](https://pomeo.github.io/node-insales/function/index.html#static-function-removeMarketplace)  
+#### Application Action
+[createApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-createApplicationAction)  
+[editApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-editApplicationAction)  
+[getApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-getApplicationAction)  
+[listApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-listApplicationAction)  
+[removeApplicationAction](https://pomeo.github.io/node-insales/function/index.html#static-function-removeApplicationAction)  
+#### Application Widget
+[createApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-createApplicationWidget)  
+[editApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-editApplicationWidget)  
+[getApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-getApplicationWidget)  
+[listApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-listApplicationWidget)  
+[removeApplicationWidget](https://pomeo.github.io/node-insales/function/index.html#static-function-removeApplicationWidget)  
+#### Webhook
+[createWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-createWebhook)  
+[editWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-editWebhook)  
+[getWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-getWebhook)  
+[listWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-listWebhook)  
+[removeWebhook](https://pomeo.github.io/node-insales/function/index.html#static-function-removeWebhook)  
+#### OAuth App
+[createOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-createOAuthApp)  
+[editOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-editOAuthApp)  
+[getOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-getOAuthApp)  
+[listOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-listOAuthApp)  
+[removeOAuthApp](https://pomeo.github.io/node-insales/function/index.html#static-function-removeOAuthApp)  
+#### Provider Token
+[createProviderToken](https://pomeo.github.io/node-insales/function/index.html#static-function-createProviderToken)  
 
 ## TODO
 Add other APIs
